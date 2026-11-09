@@ -4,7 +4,7 @@ import math
 import random
 import textwrap
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 from .common import FONT_CAPTION, FONT_EMOJI, FONT_UI, FONT_UI_BOLD, H, W
 
@@ -98,8 +98,10 @@ CHATS = {
 }
 
 
-def chat(name):
+def chat(name, visible=None, struck=0):
+    """visible: quantas mensagens aparecem; struck: quantas levam X vermelho."""
     spec = CHATS[name]
+    msgs = spec["msgs"] if visible is None else spec["msgs"][:visible]
     bg = Image.new("RGB", (W, H), (242, 242, 247))
     d = ImageDraw.Draw(bg)
     # barra superior
@@ -119,7 +121,7 @@ def chat(name):
     y = 360
     f_name = font(FONT_UI, 30)
     f_msg = font(FONT_UI, 46)
-    for i, (who, kind, val, mine) in enumerate(spec["msgs"]):
+    for i, (who, kind, val, mine) in enumerate(msgs):
         bw = 700 if kind == "voice" else int(d.textlength(val, font=f_msg)) + 80
         bh = 140 if kind == "voice" else 110
         if mine:
@@ -142,12 +144,54 @@ def chat(name):
             d.text((x + bw - 140, y + bh / 2 - 24), val, font=font(FONT_UI_BOLD, 42), fill=fg)
         else:
             d.text((x + 40, y + 26), val, font=f_msg, fill=fg)
+        if i < struck:
+            red, m = (235, 20, 20), 18
+            d.line((x - m, y - m, x + bw + m, y + bh + m), fill=red, width=26)
+            d.line((x + bw + m, y - m, x - m, y + bh + m), fill=red, width=26)
         y += bh + 46
     # barra de digitar
     d.rectangle((0, H - 170, W, H), fill=(248, 248, 250))
     d.rounded_rectangle((120, H - 140, W - 60, H - 60), radius=40, outline=(200, 200, 205), width=3, fill="white")
     d.text((160, H - 122), "iMessage", font=font(FONT_UI, 38), fill=(170, 170, 175))
     return bg
+
+
+def phone(label, color, bg=None, sx=1.0):
+    """Celular na mão do espectador: fundo desfocado + aparelho + ícone do app.
+    sx: escala horizontal do ícone (para o flip)."""
+    if bg is not None:
+        base = ImageOps.fit(bg, (W, H), Image.LANCZOS).filter(ImageFilter.GaussianBlur(28))
+        base = Image.blend(base, Image.new("RGB", (W, H), (0, 0, 0)), 0.45)
+    else:
+        base = Image.new("RGB", (W, H), (12, 12, 18))
+    d = ImageDraw.Draw(base)
+    pw, ph = 640, 1300
+    x0, y0 = (W - pw) // 2, (H - ph) // 2 - 140
+    shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(shadow).rounded_rectangle((x0 + 20, y0 + 40, x0 + pw + 20, y0 + ph + 40), 90, fill=(0, 0, 0, 150))
+    base.paste(shadow.filter(ImageFilter.GaussianBlur(30)), (0, 0), shadow.filter(ImageFilter.GaussianBlur(30)))
+    d.rounded_rectangle((x0, y0, x0 + pw, y0 + ph), 90, fill=(25, 25, 30), outline=(90, 90, 100), width=6)
+    d.rounded_rectangle((x0 + 22, y0 + 22, x0 + pw - 22, y0 + ph - 22), 72, fill=(245, 245, 250))
+    d.rounded_rectangle((x0 + pw / 2 - 90, y0 + 42, x0 + pw / 2 + 90, y0 + 92), 25, fill=(25, 25, 30))
+    icon = bubble_icon(color, 300)
+    if label:
+        num = glow_text(label, font(FONT_CAPTION, 300), color, pad=40)
+        num = num.resize((int(num.width * 0.9), int(num.height * 0.9)))
+        group = Image.new("RGBA", (icon.width + num.width - 30, max(icon.height, num.height)), (0, 0, 0, 0))
+        group.paste(icon, (0, (group.height - icon.height) // 2), icon)
+        group.paste(num, (icon.width - 30, (group.height - num.height) // 2), num)
+    else:
+        group = icon
+    if group.width > pw - 80:
+        r = (pw - 80) / group.width
+        group = group.resize((int(group.width * r), int(group.height * r)), Image.LANCZOS)
+    gw = max(1, int(group.width * abs(sx)))
+    group = group.resize((gw, group.height), Image.BILINEAR)
+    base.paste(group, (W // 2 - gw // 2, y0 + ph // 2 - group.height // 2 - 60), group)
+    name = "iMessage" + (f" {label}" if label else "")
+    f = font(FONT_UI_BOLD, 54)
+    d.text((W / 2 - d.textlength(name, font=f) / 2, y0 + ph // 2 + 170), name, font=f, fill=(30, 30, 35))
+    return base
 
 
 def outro(handles, accent=(245, 168, 0)):
@@ -190,6 +234,9 @@ def make(ref, handles=None):
         return app_icon(label, color or "#34C759")
     if kind == "chat":
         return chat(rest)
+    if kind == "phone":
+        label, _, color = rest.partition(":")
+        return phone(label, color or "#34C759", None)
     if kind == "outro":
         return outro(handles or [])
     raise ValueError(f"asset desconhecido: {ref}")

@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont, ImageOps
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 from . import assets
 from . import transitions as T
@@ -191,21 +191,53 @@ class Captioner:
 
 
 # ---------------------------------------------------------------- imagens
-def load_shot_image(proj, shot, size, handles):
-    w, h = size
+def open_image(proj, ref, prompt=None):
+    p = proj / "images" / ref
+    if not p.exists():
+        alt = list((proj / "images").glob(Path(ref).stem + ".*"))
+        p = alt[0] if alt else p
+    if p.exists():
+        return ImageOps.exif_transpose(Image.open(p)).convert("RGB")
+    print(f"  ! faltando {ref}, usando placeholder")
+    return assets.placeholder(ref, prompt)
+
+
+def apply_inset(proj, im, inset):
+    """Cola outra imagem dentro de uma área (ex.: a nuvem de pensamento), com máscara oval suave."""
+    x0, y0, x1, y1 = inset["box"]
+    w, h = im.size
+    box = (int(x0 * w), int(y0 * h), int(x1 * w), int(y1 * h))
+    bw, bh = box[2] - box[0], box[3] - box[1]
+    src = ImageOps.fit(open_image(proj, inset["img"]), (bw, bh), Image.LANCZOS,
+                       centering=tuple(inset.get("center", (0.5, 0.4))))
+    mask = Image.new("L", (bw, bh), 0)
+    ImageDraw.Draw(mask).ellipse((0, 0, bw - 1, bh - 1), fill=255)
+    mask = mask.filter(ImageFilter.GaussianBlur(max(2, bw // 40)))
+    im = im.copy()
+    im.paste(src, box[:2], mask)
+    return im
+
+
+def raw_image(proj, shot, handles, state=None):
+    """Imagem crua do shot. state: estado de animação (chat, flip)."""
     ref = shot["img"]
+    if ref.startswith("@phone:"):
+        label, color, sx = state if state else (*ref[7:].partition(":")[::2], 1.0)
+        bg = open_image(proj, shot["phone_bg"]) if shot.get("phone_bg") else None
+        return assets.phone(label, color or "#34C759", bg, sx)
+    if ref.startswith("@chat:") and state is not None:
+        return assets.chat(ref[6:], *state)
     if ref.startswith("@"):
-        im = assets.make(ref, handles)
-    else:
-        p = proj / "images" / ref
-        if not p.exists():
-            alt = list((proj / "images").glob(Path(ref).stem + ".*"))
-            p = alt[0] if alt else p
-        if p.exists():
-            im = ImageOps.exif_transpose(Image.open(p)).convert("RGB")
-        else:
-            print(f"  ! faltando {ref}, usando placeholder")
-            im = assets.placeholder(ref, shot.get("prompt"))
+        return assets.make(ref, handles)
+    im = open_image(proj, ref, shot.get("prompt"))
+    if shot.get("inset"):
+        im = apply_inset(proj, im, shot["inset"])
+    return im
+
+
+def load_shot_image(proj, shot, size, handles, state=None):
+    w, h = size
+    im = raw_image(proj, shot, handles, state)
     # base com folga de 18% para zoom e tremida
     bw, bh = int(w * 1.18), int(h * 1.18)
     if shot.get("fit") == "contain":
@@ -282,7 +314,10 @@ def build_shots(script, timeline, total):
         for k, sh in enumerate(beat["shots"]):
             n = sh.get("n", 1)
             start = tl["start"] if k == 0 else caps[min(i, len(caps) - 1)]["start"]
-            shots.append(dict(sh, start=start))
+            item = dict(sh, start=start)
+            if "flip_cap" in sh:
+                item["flip_t"] = caps[min(i + sh["flip_cap"], len(caps) - 1)]["start"]
+            shots.append(item)
             i += n
     shots[0]["start"] = 0
     for a, b in zip(shots, shots[1:]):
@@ -297,25 +332,77 @@ def build_shots(script, timeline, total):
     return shots
 
 
+FLIP = 0.28   # duração do giro do ícone
+
+
+def anim_state(sh, t):
+    """Estado de animação do shot no tempo t (ou None se for imagem fixa)."""
+    if sh.get("flip_t") is not None:
+        a, b = sh["img"][7:].partition(":")[::2]
+        c, d = sh["flip_to"][7:].partition(":")[::2]
+        u = (t - (sh["flip_t"] - FLIP / 2)) / FLIP
+        if u <= 0:
+            return (a, b, 1.0)
+        if u >= 1:
+            return (c, d, 1.0)
+        sx = round(abs(math.cos(math.pi * u)), 1)
+        return (a, b, sx) if u < 0.5 else (c, d, sx)
+    if sh.get("anim") in ("reveal", "reveal_strike"):
+        n = len(assets.CHATS[sh["img"][6:]]["msgs"])
+        vis = sum(1 for x in sh["reveal_t"] if x <= t)
+        st = sum(1 for x in sh.get("strike_t", []) if x <= t)
+        return (max(1, vis), st)
+    return None
+
+
 class ShotCache:
     def __init__(self, proj, shots, size, handles):
         self.proj, self.shots, self.size, self.handles = proj, shots, size, handles
         self.cache = {}
 
-    def base(self, i):
-        if i not in self.cache:
-            if len(self.cache) > 3:
-                self.cache.pop(min(self.cache))
-            self.cache[i] = load_shot_image(self.proj, self.shots[i], self.size, self.handles)
-        return self.cache[i]
+    def base(self, i, state=None):
+        key = (i, state)
+        if key not in self.cache:
+            if len(self.cache) > 12:
+                self.cache.pop(next(iter(self.cache)))
+            self.cache[key] = load_shot_image(self.proj, self.shots[i], self.size, self.handles, state)
+        return self.cache[key]
 
     def frame(self, i, t, f, scale):
         sh = self.shots[i]
         p = (t - sh["start"]) / max(0.01, sh["end"] - sh["start"])
         pc = min(1, max(0, p))
         z, dx, dy = zoom_for(sh.get("fx", "zoom_in"), pc, f)
-        img = frame_from(self.base(i), self.size, z, dx * scale, dy * scale)
+        img = frame_from(self.base(i, anim_state(sh, t)), self.size, z, dx * scale, dy * scale)
         return draw_overlay(img, sh.get("overlay"), scale, pc)
+
+
+def plan_events(shots):
+    """Calcula tempos das animações e a lista de efeitos sonoros."""
+    ev = []
+    for i, sh in enumerate(shots):
+        a, b = sh["start"], sh["end"]
+        L = b - a
+        kind = sh.get("tr_in", "cut")
+        if i > 0 and kind in ("whip", "zoom", "fade"):
+            w0, _ = T.window(kind, a)
+            ev.append((w0 - 0.08, "whoosh"))
+        elif i > 0 and kind == "punch":
+            ev.append((a, "impact"))
+        extra = sh.get("sfx", [])
+        for name in ([extra] if isinstance(extra, str) else extra):
+            ev.append((a + 0.05, name))
+        if sh.get("anim") in ("reveal", "reveal_strike"):
+            n = len(assets.CHATS[sh["img"][6:]]["msgs"])
+            span = 0.38 if sh["anim"] == "reveal_strike" else 0.6
+            sh["reveal_t"] = [a + L * span * k / n for k in range(n)]
+            ev += [(x + 0.02, "ding") for x in sh["reveal_t"][1:]]
+            if sh["anim"] == "reveal_strike":
+                sh["strike_t"] = [a + L * (0.45 + 0.45 * k / n) for k in range(n)]
+                ev += [(x, "thud") for x in sh["strike_t"]]
+        if sh.get("flip_t") is not None:
+            ev.append((sh["flip_t"] - FLIP / 2, "swish"))
+    return ev
 
 
 def narrate(script, out, keep_audio):
@@ -352,15 +439,21 @@ def render(proj, preview=False, keep_audio=False):
     if full < MIN_SECONDS:
         print(f"  ! ATENÇÃO: abaixo de {MIN_SECONDS:.0f}s")
 
-    print("trilha...")
+    print("trilha e efeitos...")
     music(full, out / "music.wav")
+    import soundfile as sf
+    from . import sfx
+    events = plan_events(shots)
+    sf.write(out / "sfx.wav", sfx.track(events, full), sfx.SR)
+    print(f"  {len(events)} efeitos sonoros")
     mix = out / "mix.wav"
     vol = script.get("music_volume", 0.16)
     subprocess.run([
         "ffmpeg", "-v", "error", "-y", "-i", str(out / "narration.wav"), "-i", str(out / "music.wav"),
-        "-filter_complex",
+        "-i", str(out / "sfx.wav"), "-filter_complex",
         f"[0:a]aresample=44100,apad=pad_dur={full},volume=1.6[v];[1:a]volume={vol}[m];"
-        f"[v][m]amix=inputs=2:duration=longest:normalize=0,alimiter=limit=0.95[a]",
+        f"[2:a]volume={script.get('sfx_volume', 0.8)}[s];"
+        f"[v][m][s]amix=inputs=3:duration=longest:normalize=0,alimiter=limit=0.95[a]",
         "-map", "[a]", "-t", f"{full:.3f}", str(mix)], check=True)
 
     caps = [c for tl in timeline for c in tl["captions"]]

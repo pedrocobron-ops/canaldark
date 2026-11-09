@@ -61,12 +61,19 @@ Saídas em `out/`: `video.mp4`, `narration.wav`, `music.wav`, `mix.wav`, `timeli
 - **fit:** `cover` (padrão, preenche a tela) ou `contain` (imagem inteira sobre fundo branco, para personagem recortado e boneco 3D).
 - **fx:** `zoom_in` (padrão), `zoom_out`, `pop` (impacto), `shake` (tremida, para alarme, susto e raiva), `pan_left`, `pan_right`, `static`.
 - **tr:** transição de entrada do shot: `whip` (chicote lateral com desfoque), `zoom` (zoom através), `punch` (entra grande e assenta), `fade` (passa pelo escuro), `cut` (seco). Sem `tr`, o editor alterna sozinho seguindo `CYCLE` em `editor/transitions.py`. Use `punch` para impacto e revelação, e `whip` para mudança de assunto.
+- **sfx:** efeitos sonoros extras no início do shot: `alarm`, `ding`, `pop`, `impact`, `thud`, `whoosh`, `swish`. Os whooshes das transições e o impacto do punch entram sozinhos. Volume geral em `sfx_volume` (padrão 0.8).
+- **anim** (só para `@chat:*`): `reveal` faz as mensagens aparecerem uma por uma com "ding"; `reveal_strike` revela e depois risca cada áudio com X vermelho e batida. Prefira isso a um chat parado.
+- **@phone:<rótulo>:<#cor>** desenha um celular com o ícone do app, sobre o fundo desfocado de `phone_bg` (uma imagem do projeto). Para virar um ícone em outro: `"flip_to": "@phone:2:#FF8A00", "flip_cap": 3` (gira na 4ª legenda do shot, com swish). Prefira isso à tela preta com ícone.
+- **inset:** cola outra imagem dentro de uma área oval, por exemplo na nuvem de pensamento do boneco 3D: `{"img": "12.png", "box": [x0, y0, x1, y1], "center": [0.5, 0.35]}`, com coordenadas de 0 a 1 da imagem.
 - **overlay:** `{"circle": [x, y, raio], "arrow": true}` com coordenadas de 0 a 1 da tela, para a "prova" com círculo e seta vermelhos. `{"x": true}` põe um X vermelho gigante.
 
 Canal, marca d'água e redes do cartão final ficam em `channel.json`, na raiz.
 
 ## Regras de edição (tiradas dos vídeos de referência do "Você Sabo?")
 - **Todo vídeo passa de 1 minuto: mínimo de 61 s, ideal entre 62 e 75 s.** O editor avisa e desacelera a voz se ficar curto, mas o certo é acrescentar uma frase ao roteiro (de 175 a 190 palavras em speed 0.9).
+- **Nunca deixar mais de 4 s parado no mesmo visual sem animação.** Chat tem que revelar ou riscar, ícone tem que girar ou estar no celular.
+- **Boneco 3D pensativo no final sempre com algo dentro da nuvem** (o personagem na cena mais engraçada), usando `inset`.
+- **Efeitos sonoros em toda transição e nos objetos que fazem barulho** (alarme, notificação).
 - **Sem cartão final de redes.** O vídeo termina na última fala, segurando a imagem por 0,7 s.
 - **Transições entre quase todos os shots** (chicote, zoom, punch, escurecer), com poucos cortes secos. Cada uma dura de 0,2 a 0,36 s.
 - A legenda troca a cada 0,5 a 1,2 s. A imagem troca a cada 2 a 4 legendas, e nunca fica mais de 4 s parada.
