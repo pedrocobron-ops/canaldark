@@ -131,17 +131,26 @@
       ]
     },
     {
-      "say": "It was {y:11:40 PM} | on a {y:Sunday}, | just {r:twenty minutes} | before {r:Monday}.",
+      "say": "It was {y:11:40 PM} | on a {y:Sunday}, | the exact minute | the ship hit the {r:iceberg}, | just {r:twenty minutes} | before {r:Monday}.",
       "shots": [
         {
           "img": "@cal:sunday",
-          "n": 3,
+          "n": 2,
           "fx": "zoom_in",
           "tr": "whip"
         },
         {
+          "img": "06.png",
+          "n": 2,
+          "fx": "shake",
+          "tr": "punch",
+          "sfx": [
+            "impact"
+          ]
+        },
+        {
           "img": "@cal:monday",
-          "n": 1,
+          "n": 2,
           "fx": "shake",
           "tr": "punch"
         }
@@ -208,11 +217,11 @@
       ]
     },
     {
-      "say": "The only key | to the binocular locker | was in the pocket | of an officer | who {r:never boarded} the ship.",
+      "say": "The key | to their locker | {r:left the ship} | in an officer's {r:pocket}.",
       "shots": [
         {
           "img": "15.png",
-          "n": 5,
+          "n": 4,
           "fx": "zoom_in",
           "overlay": {
             "circle": [
@@ -226,7 +235,7 @@
       ]
     },
     {
-      "say": "And the Titanic | finished sinking | on a {r:Monday} morning.",
+      "say": "And the Titanic | finished sinking | on a {r:Monday} morning. | Garfield says that's proof | Mondays are {r:cursed}.",
       "shots": [
         {
           "img": "@cal:monday_sink",
@@ -236,6 +245,13 @@
           "sfx": [
             "impact"
           ]
+        },
+        {
+          "img": "01.png",
+          "n": 2,
+          "fit": "contain",
+          "fx": "zoom_in",
+          "tr": "whip"
         }
       ]
     },
