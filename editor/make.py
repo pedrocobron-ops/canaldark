@@ -269,8 +269,12 @@ def load_shot_image(proj, shot, size, handles, state=None):
     im = raw_image(proj, shot, handles, state)
     # base com folga de 18% para zoom e tremida
     bw, bh = int(w * 1.18), int(h * 1.18)
-    if shot.get("fit") == "contain":
-        canvas = Image.new("RGB", (bw, bh), shot.get("bg", "white"))
+    fit = shot.get("fit")
+    if fit is None and shot["img"].startswith("@"):
+        fit = "contain"   # assets desenhados entram no tamanho em que foram desenhados
+    if fit == "contain":
+        bgc = shot.get("bg") or (im.getpixel((2, H // 2 if im.height > H // 2 else 2)) if shot["img"].startswith("@") else "white")
+        canvas = Image.new("RGB", (bw, bh), bgc)
         c = ImageOps.contain(im, (int(bw / 1.18), int(bh / 1.18)), Image.LANCZOS)  # inteira no zoom 1.0
         canvas.paste(c, ((bw - c.width) // 2, (bh - c.height) // 2))
         return canvas

@@ -244,6 +244,81 @@ def lock(name, visible=None, struck=0):
     return bg
 
 
+CALS = {
+    "sunday": {"month": "APRIL 1912", "num": "14", "day": "SUNDAY", "time": "11:40 PM", "color": (200, 30, 40)},
+    "monday": {"month": "APRIL 1912", "num": "15", "day": "MONDAY", "time": "12:00 AM", "color": (200, 30, 40)},
+    "monday_sink": {"month": "APRIL 1912", "num": "15", "day": "MONDAY", "time": "2:20 AM", "color": (200, 30, 40)},
+}
+
+
+def calendar(name):
+    """Folhinha de calendário antiga com dia, nome do dia e hora."""
+    c = CALS[name]
+    bg = Image.new("RGB", (W, H), (28, 24, 22))
+    d = ImageDraw.Draw(bg)
+    for i in range(0, H, 6):
+        d.line((0, i, W, i), fill=(34, 29, 26))
+    x0, y0, x1, y1 = 170, 250, W - 170, 1140     # acima da legenda (63% da altura)
+    sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(sh).rounded_rectangle((x0 + 25, y0 + 35, x1 + 25, y1 + 35), 30, fill=(0, 0, 0, 170))
+    sh = sh.filter(ImageFilter.GaussianBlur(25))
+    bg.paste(sh, (0, 0), sh)
+    d.rounded_rectangle((x0, y0, x1, y1), 30, fill=(246, 240, 226))
+    d.rounded_rectangle((x0, y0, x1, y0 + 200), 30, fill=c["color"])
+    d.rectangle((x0, y0 + 150, x1, y0 + 200), fill=c["color"])
+    for rx in (x0 + 160, x1 - 160):
+        d.ellipse((rx - 28, y0 - 40, rx + 28, y0 + 16), fill=(70, 70, 75))
+    d.text((W / 2, y0 + 104), c["month"], font=font(FONT_CAPTION, 100), fill="white", anchor="mm")
+    d.text((W / 2, y0 + 430), c["num"], font=font(FONT_CAPTION, 360), fill=(30, 30, 30), anchor="mm")
+    d.text((W / 2, y0 + 700), c["day"], font=font(FONT_CAPTION, 140), fill=c["color"], anchor="mm")
+    d.text((W / 2, y0 + 812), c["time"], font=font(FONT_UI_BOLD, 66), fill=(90, 80, 70), anchor="mm")
+    return bg
+
+
+FB = {
+    "garfield": {"name": "Garfield", "when": "April 14, 1912 at 11:41 PM", "text": "I hate Mondays 😩",
+                 "likes": "1.2K", "comments": "312 comments", "avatar": (245, 140, 20)},
+}
+
+
+def facebook(name):
+    """Post falso do Facebook (anacronismo)."""
+    f = FB[name]
+    bg = Image.new("RGB", (W, H), (240, 242, 245))
+    d = ImageDraw.Draw(bg)
+    d.rectangle((0, 0, W, 170), fill=(255, 255, 255))
+    d.text((50, 85), "facebook", font=font(FONT_UI_BOLD, 76), fill=(24, 119, 242), anchor="lm")
+    x0, y0, x1 = 30, 420, W - 30
+    d.rounded_rectangle((x0, y0, x1, y0 + 820), 30, fill="white")
+    d.ellipse((x0 + 40, y0 + 40, x0 + 180, y0 + 180), fill=f["avatar"])
+    d.text((x0 + 110, y0 + 110), f["name"][0], font=font(FONT_UI_BOLD, 80), fill="white", anchor="mm")
+    d.text((x0 + 210, y0 + 75), f["name"], font=font(FONT_UI_BOLD, 54), fill=(5, 5, 5), anchor="lm")
+    d.text((x0 + 210, y0 + 145), f["when"], font=font(FONT_UI, 36), fill=(101, 103, 107),
+           anchor="lm", embedded_color=True)
+    tf = font(FONT_UI, 88)
+    tx = x0 + 50
+    for part in f["text"].split(" "):
+        if any(ord(ch) > 0x2600 for ch in part):
+            e = emoji(part, 92)
+            bg.paste(e, (int(tx), y0 + 300), e)
+            tx += e.width + 20
+        else:
+            d.text((tx, y0 + 300), part, font=tf, fill=(5, 5, 5))
+            tx += d.textlength(part + " ", font=tf)
+    re_ = [emoji("😆", 60), emoji("😢", 60), emoji("👍", 60)]
+    rx = x0 + 50
+    for e in re_:
+        bg.paste(e, (rx, y0 + 560), e)
+        rx += 55
+    d.text((rx + 20, y0 + 590), f["likes"], font=font(FONT_UI, 40), fill=(101, 103, 107), anchor="lm")
+    d.text((x1 - 50, y0 + 590), f["comments"], font=font(FONT_UI, 40), fill=(101, 103, 107), anchor="rm")
+    d.line((x0 + 40, y0 + 660, x1 - 40, y0 + 660), fill=(220, 222, 226), width=3)
+    for i, lab in enumerate(["Like", "Comment", "Share"]):
+        cx = x0 + (x1 - x0) * (i * 2 + 1) / 6
+        d.text((cx, y0 + 740), lab, font=font(FONT_UI_BOLD, 42), fill=(101, 103, 107), anchor="mm")
+    return bg
+
+
 def anim_count(ref):
     """Quantos itens um asset animado revela (mensagens ou notificações)."""
     kind, _, name = ref[1:].partition(":")
@@ -296,6 +371,10 @@ def make(ref, handles=None):
         return chat(rest)
     if kind == "lock":
         return lock(rest)
+    if kind == "cal":
+        return calendar(rest)
+    if kind == "fb":
+        return facebook(rest)
     if kind == "phone":
         label, _, color = rest.partition(":")
         return phone(label, color or "#34C759", None)

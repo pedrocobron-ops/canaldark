@@ -1,0 +1,304 @@
+{
+  "title": "Why didn't Garfield stop the Titanic in 1912?",
+  "format": "A",
+  "voice": "am_adam",
+  "speed": 0.9,
+  "music_volume": 0.24,
+  "post": "Why didn't Garfield stop the Titanic? 🧊🍝 #history #titanic #garfield #funny #fyp",
+  "style_suffix": "2D cartoon illustration in the classic Garfield comic style, bold black outlines, vibrant saturated colors, vertical 9:16 composition",
+  "cover": {
+    "img": "12.png",
+    "text": "Why didn't {y:Garfield} stop the {b:Titanic}?",
+    "y": 0.68
+  },
+  "beats": [
+    {
+      "say": "Why didn't {y:Garfield} | stop the sinking | of the {b:Titanic} | in {y:1912}?",
+      "shots": [
+        {
+          "img": "01.png",
+          "n": 2,
+          "fit": "contain",
+          "fx": "zoom_in",
+          "prompt": "Garfield the orange cat from the Garfield comics sitting with a bored half-closed eyes expression, full body, plain pure white background"
+        },
+        {
+          "img": "02.png",
+          "n": 2,
+          "fx": "zoom_out",
+          "prompt": "Old sepia historical photograph of the RMS Titanic docked at the port of Southampton in 1912, crowds on the pier, film grain, scratches, vintage archive photo look"
+        }
+      ]
+    },
+    {
+      "say": "It's no {y:secret} to anyone | that Garfield was | the ship's official {y:lookout}.",
+      "shots": [
+        {
+          "img": "../../002-fred-pompeii/images/03.png",
+          "n": 1,
+          "fit": "contain",
+          "fx": "zoom_in"
+        },
+        {
+          "img": "03.png",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "prompt": "Garfield the orange cat from the Garfield comics wearing a 1912 sailor uniform and cap, standing in the crow's nest lookout basket high on the mast of the Titanic at night, looking bored, starry sky"
+        }
+      ]
+    },
+    {
+      "say": "Cats can see | in the {y:dark}, | so the captain | trusted him {r:completely}.",
+      "shots": [
+        {
+          "img": "04.png",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "prompt": "Extreme close-up of Garfield the orange cat from the Garfield comics with glowing yellow cat eyes in the dark, night ocean reflected in his eyes, dramatic lighting"
+        },
+        {
+          "img": "05.png",
+          "n": 2,
+          "fx": "zoom_out",
+          "prompt": "Old black and white 1912 style photograph portrait of a stern bearded ship captain in a white naval uniform on the deck of an ocean liner, film grain, vintage archive photo"
+        }
+      ]
+    },
+    {
+      "say": "That night, | the Titanic hit an {r:iceberg}, | and more than {r:1,500 people} | lost their lives.",
+      "shots": [
+        {
+          "img": "06.png",
+          "n": 2,
+          "fx": "shake",
+          "sfx": [
+            "impact"
+          ],
+          "tr": "zoom",
+          "prompt": "Dramatic oil painting of the Titanic scraping along a huge iceberg at night on a calm black ocean, cold blue moonlight, museum painting texture"
+        },
+        {
+          "img": "07.png",
+          "n": 2,
+          "fx": "zoom_out",
+          "prompt": "Dramatic oil painting of the Titanic sinking at night with the stern raised high, lifeboats rowing away on the freezing ocean, stars above, museum painting texture"
+        }
+      ]
+    },
+    {
+      "say": "Garfield claims | someone {r:stole} his binoculars.",
+      "shots": [
+        {
+          "img": "08.png",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "prompt": "Garfield the orange cat from the Garfield comics in a sailor uniform showing his empty paws with an innocent fake surprised face, in the crow's nest at night"
+        }
+      ]
+    },
+    {
+      "say": "But many say | {r:that's a lie}.",
+      "shots": [
+        {
+          "img": "../../001-squidward-imessage/images/06.png",
+          "n": 2,
+          "fit": "contain",
+          "fx": "zoom_in",
+          "tr": "punch"
+        }
+      ]
+    },
+    {
+      "say": "{y:Restored photos} | from that night | show exactly | where he was.",
+      "shots": [
+        {
+          "img": "09.png",
+          "n": 4,
+          "fx": "zoom_in",
+          "overlay": {
+            "circle": [
+              0.5,
+              0.55,
+              0.17
+            ],
+            "arrow": true
+          },
+          "prompt": "Grainy old black and white photograph of a narrow corridor inside the Titanic in 1912, an orange cartoon cat seen from behind sneaking into a cabin door, film grain, scratches, faded vintage photo look"
+        }
+      ]
+    },
+    {
+      "say": "It was {y:11:40 PM} | on a {y:Sunday}, | just {r:twenty minutes} | before {r:Monday}.",
+      "shots": [
+        {
+          "img": "@cal:sunday",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "whip"
+        },
+        {
+          "img": "@cal:monday",
+          "n": 1,
+          "fx": "shake",
+          "tr": "punch"
+        }
+      ]
+    },
+    {
+      "say": "Garfield was in his cabin, | {r:depressed} about Monday, | watching {y:football} | and scrolling {b:Facebook}.",
+      "shots": [
+        {
+          "img": "10.png",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "zoom",
+          "prompt": "Garfield the orange cat from the Garfield comics lying in a bed in a luxurious 1912 ship cabin, sad depressed face, watching American football on a small old television, holding a smartphone"
+        },
+        {
+          "img": "@fb:garfield",
+          "n": 1,
+          "fx": "pop",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ],
+          "fit": "contain",
+          "bg": "#F0F2F5"
+        }
+      ]
+    },
+    {
+      "say": "That's when | a man in a {y:top hat} | offered him | a {y:hot lasagna} | for his {r:binoculars}.",
+      "shots": [
+        {
+          "img": "11.png",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "fade",
+          "prompt": "Mysterious man in a black top hat and long coat standing in a dim ship corridor, face hidden in shadow, holding a steaming tray, film noir lighting, cartoon style"
+        },
+        {
+          "img": "12.png",
+          "n": 2,
+          "fx": "pop",
+          "tr": "punch",
+          "prompt": "Garfield the orange cat from the Garfield comics with huge sparkling hungry eyes staring at a glowing steaming hot lasagna, golden light rays and sparkles, drooling"
+        },
+        {
+          "img": "13.png",
+          "n": 1,
+          "fx": "zoom_in",
+          "prompt": "Garfield the orange cat from the Garfield comics happily handing a pair of brass binoculars to a gloved hand while holding a lasagna dish, ship cabin"
+        }
+      ]
+    },
+    {
+      "say": "And here's the part | nobody tells you: | the lookouts really had | {r:no binoculars} that night.",
+      "shots": [
+        {
+          "img": "14.png",
+          "n": 4,
+          "fx": "zoom_in",
+          "tr": "fade",
+          "prompt": "Old black and white photograph of the empty crow's nest lookout basket on the mast of the Titanic at night, no one inside, film grain, vintage archive photo"
+        }
+      ]
+    },
+    {
+      "say": "The only key | to the binocular locker | was in the pocket | of an officer | who {r:never boarded} the ship.",
+      "shots": [
+        {
+          "img": "15.png",
+          "n": 5,
+          "fx": "zoom_in",
+          "overlay": {
+            "circle": [
+              0.5,
+              0.5,
+              0.2
+            ]
+          },
+          "prompt": "Realistic photo of an old small brass key with a paper tag on a vintage wooden museum table, soft spotlight, dark background"
+        }
+      ]
+    },
+    {
+      "say": "And the Titanic | finished sinking | on a {r:Monday} morning.",
+      "shots": [
+        {
+          "img": "@cal:monday_sink",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "sfx": [
+            "impact"
+          ]
+        }
+      ]
+    },
+    {
+      "say": "{y:Witnesses} confirm | he said it was | the {y:best lasagna} | of his life.",
+      "shots": [
+        {
+          "img": "../../001-squidward-imessage/images/14.png",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "whip"
+        },
+        {
+          "img": "16.png",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "prompt": "Garfield the orange cat from the Garfield comics hugging an empty lasagna dish with a blissful satisfied face, tomato sauce on his mouth, hearts floating"
+        }
+      ]
+    },
+    {
+      "say": "{r:Unlike} the passengers | in the {r:freezing water}, | Garfield spent the night | {y:warm in bed}.",
+      "shots": [
+        {
+          "img": "07.png",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "zoom"
+        },
+        {
+          "img": "17.png",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "prompt": "Garfield the orange cat from the Garfield comics sleeping happily in a cozy bed under a warm blanket in a ship cabin, an empty lasagna dish on the nightstand, Zzz floating"
+        }
+      ]
+    },
+    {
+      "say": "Would you have traded | your binoculars | for a {y:lasagna}?",
+      "shots": [
+        {
+          "img": "../../001-squidward-imessage/images/19.png",
+          "n": 3,
+          "fit": "contain",
+          "fx": "zoom_in",
+          "inset": {
+            "img": "16.png",
+            "box": [
+              0.17,
+              0.06,
+              0.87,
+              0.28
+            ],
+            "center": [
+              0.5,
+              0.4
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "outro": {}
+}
