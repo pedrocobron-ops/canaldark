@@ -1,9 +1,7 @@
 {
-  "name": "Canal Dark",
-  "watermark": "@canaldark",
+  "name": "Did You Knew?",
+  "watermark": "@didyouknew",
   "socials": [
-    {"label": "TikTok", "handle": "@canaldark"},
-    {"label": "Instagram", "handle": "@canaldark"},
-    {"label": "YouTube", "handle": "@canaldark"}
+    {"label": "TikTok", "handle": "@didyouknew"}
   ]
 }
