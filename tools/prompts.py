@@ -18,10 +18,11 @@ for b in d["beats"]:
             continue
         seen.add(sh["img"])
         p = sh["prompt"]
-        if sh.get("style") == "photo" or p.lower().startswith("realistic"):
-            p += ", photorealistic, vertical 9:16"
-        elif "3D" in p:
-            p += ", vertical 9:16"
+        low = p.lower()
+        if sh.get("style") == "photo" or low.startswith("realistic") or "photograph" in low.split(" of ")[0]:
+            p += ", vertical 9:16" if "photograph" in low else ", photorealistic, vertical 9:16"
+        elif "painting" in low.split(" of ")[0] or "3d" in low:
+            p += ", vertical 9:16"     # pintura ou boneco 3D: nunca recebe o estilo cartoon
         else:
             p += ", " + suffix
         out += [f"## {sh['img']}", "", "```", p, "```", ""]

@@ -14,7 +14,7 @@ Garfield the orange cat from the Garfield comics sitting with a bored half-close
 ## 02.png
 
 ```
-Old sepia historical photograph of the RMS Titanic docked at the port of Southampton in 1912, crowds on the pier, film grain, scratches, vintage archive photo look, 2D cartoon illustration in the classic Garfield comic style, bold black outlines, vibrant saturated colors, vertical 9:16 composition
+Old sepia historical photograph of the RMS Titanic docked at the port of Southampton in 1912, crowds on the pier, film grain, scratches, vintage archive photo look, vertical 9:16
 ```
 
 ## 03.png
@@ -32,19 +32,19 @@ Extreme close-up of Garfield the orange cat from the Garfield comics with glowin
 ## 05.png
 
 ```
-Old black and white 1912 style photograph portrait of a stern bearded ship captain in a white naval uniform on the deck of an ocean liner, film grain, vintage archive photo, 2D cartoon illustration in the classic Garfield comic style, bold black outlines, vibrant saturated colors, vertical 9:16 composition
+Old black and white 1912 style photograph portrait of a stern bearded ship captain in a white naval uniform on the deck of an ocean liner, film grain, vintage archive photo, vertical 9:16
 ```
 
 ## 06.png
 
 ```
-Dramatic oil painting of the Titanic scraping along a huge iceberg at night on a calm black ocean, cold blue moonlight, museum painting texture, 2D cartoon illustration in the classic Garfield comic style, bold black outlines, vibrant saturated colors, vertical 9:16 composition
+Dramatic oil painting of the Titanic scraping along a huge iceberg at night on a calm black ocean, cold blue moonlight, museum painting texture, vertical 9:16
 ```
 
 ## 07.png
 
 ```
-Dramatic oil painting of the Titanic sinking at night with the stern raised high, lifeboats rowing away on the freezing ocean, stars above, museum painting texture, 2D cartoon illustration in the classic Garfield comic style, bold black outlines, vibrant saturated colors, vertical 9:16 composition
+Dramatic oil painting of the Titanic sinking at night with the stern raised high, lifeboats rowing away on the freezing ocean, stars above, museum painting texture, vertical 9:16
 ```
 
 ## 08.png
@@ -56,7 +56,7 @@ Garfield the orange cat from the Garfield comics in a sailor uniform showing his
 ## 09.png
 
 ```
-Grainy old black and white photograph of a narrow corridor inside the Titanic in 1912, an orange cartoon cat seen from behind sneaking into a cabin door, film grain, scratches, faded vintage photo look, 2D cartoon illustration in the classic Garfield comic style, bold black outlines, vibrant saturated colors, vertical 9:16 composition
+Grainy old black and white photograph of a narrow corridor inside the Titanic in 1912, an orange cartoon cat seen from behind sneaking into a cabin door, film grain, scratches, faded vintage photo look, vertical 9:16
 ```
 
 ## 10.png
@@ -86,7 +86,7 @@ Garfield the orange cat from the Garfield comics happily handing a pair of brass
 ## 14.png
 
 ```
-Old black and white photograph of the empty crow's nest lookout basket on the mast of the Titanic at night, no one inside, film grain, vintage archive photo, 2D cartoon illustration in the classic Garfield comic style, bold black outlines, vibrant saturated colors, vertical 9:16 composition
+Old black and white photograph of the empty crow's nest lookout basket on the mast of the Titanic at night, no one inside, film grain, vintage archive photo, vertical 9:16
 ```
 
 ## 15.png
