@@ -502,6 +502,7 @@ def render(proj, preview=False, keep_audio=False):
     capper = Captioner(scale)
     wm_font = ImageFont.truetype(str(FONT_UI_BOLD), int(34 * scale))
     handle = channel.get("watermark", "")
+    wm = watermark(channel, scale)
     cache = ShotCache(proj, shots, size, handles)
 
     video = out / ("preview.mp4" if preview else "video.mp4")
@@ -552,15 +553,11 @@ def render(proj, preview=False, keep_audio=False):
                 cx = (size[0] - cim.width) // 2
                 cy = int(size[1] * 0.63) - cim.height // 2
                 img.paste(cim, (cx, cy), cim)
-            if handle:
-                d = ImageDraw.Draw(img, "RGBA")
+            if wm is not None:
                 corner = corners[0 if sh.get("loop") else si % 2]
-                tw = d.textlength(handle, font=wm_font)
-                m = int(40 * scale)
-                x = m if corner in ("tl", "bl") else size[0] - m - tw
-                y = int(90 * scale) if corner in ("tl", "tr") else int(size[1] * 0.80)
-                d.text((x, y), handle, font=wm_font, fill=(255, 255, 255, 150),
-                       stroke_width=max(1, int(3 * scale)), stroke_fill=(0, 0, 0, 120))
+                m = int(36 * scale)
+                x = m if corner == "tl" else size[0] - m - wm.width
+                img.paste(wm, (x, int(70 * scale)), wm)
         ff.stdin.write(img.tobytes())
         if f == int(2.0 * FPS):
             img.save(out / "thumb.jpg", quality=90)
@@ -574,6 +571,34 @@ def render(proj, preview=False, keep_audio=False):
         print(f"capa: {make_cover(proj, script, out, handles)}")
     print(f"pronto: {video}")
     return video
+
+
+def watermark(channel, scale):
+    """Logo do canal + @, semitransparente (como o selo do 'Você Sabo?')."""
+    handle = channel.get("watermark", "")
+    logo_path = ROOT / channel["watermark_logo"] if channel.get("watermark_logo") else None
+    if not handle and not logo_path:
+        return None
+    f = ImageFont.truetype(str(FONT_CAPTION), int(40 * scale))
+    tmp = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
+    tw = int(tmp.textlength(handle, font=f)) if handle else 0
+    lh = int(150 * scale)
+    logo = None
+    if logo_path and logo_path.exists():
+        logo = Image.open(logo_path).convert("RGBA")
+        logo = logo.resize((int(logo.width * lh / logo.height), lh), Image.LANCZOS)
+    gap = int(10 * scale)
+    lw = logo.width if logo else 0
+    stroke = max(1, int(4 * scale))
+    im = Image.new("RGBA", (lw + gap + tw + stroke * 2, lh), (0, 0, 0, 0))
+    if logo:
+        im.paste(logo, (0, 0), logo)
+    if handle:
+        ImageDraw.Draw(im).text((lw + gap, lh // 2), handle, font=f, fill="white", anchor="lm",
+                                stroke_width=stroke, stroke_fill="black")
+    a = im.getchannel("A").point(lambda v: int(v * channel.get("watermark_opacity", 0.8)))
+    im.putalpha(a)
+    return im
 
 
 def make_cover(proj, script, out, handles):
