@@ -225,10 +225,11 @@
           "fx": "zoom_in",
           "overlay": {
             "circle": [
-              0.5,
-              0.5,
-              0.2
-            ]
+              0.36,
+              0.47,
+              0.13
+            ],
+            "arrow": true
           },
           "prompt": "Realistic photo of an old small brass key with a paper tag on a vintage wooden museum table, soft spotlight, dark background"
         }
@@ -309,7 +310,7 @@
             ],
             "center": [
               0.5,
-              0.4
+              0.18
             ]
           }
         }

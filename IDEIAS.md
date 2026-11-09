@@ -4,7 +4,7 @@
 |---|---|---|---|---|---|
 | Why is Squidward refusing to work on iMessage 2? | B | Lula Molusco | áudio longo no grupo da família | ama mandar áudio de clarinete | feito (001) |
 | Why didn't Fred Flintstone stop Pompeii? | A | Fred Flintstone | erupção do Vesúvio | noite de boliche | feito (002) |
-| Why didn't Garfield stop the Titanic? | A | Garfield | naufrágio do Titanic | lasanha e segunda-feira | em produção (003) |
+| Why didn't Garfield stop the Titanic? | A | Garfield | naufrágio do Titanic | lasanha e segunda-feira | feito (003) |
 | Why didn't the Backyardigans find the Lost Colony of Roanoke in 1590? | A | Backyardigans (a turma) | colônia perdida de Roanoke | pararam para o lanche | ideia do Pedro |
 | Why is Garfield refusing to work on Google Calendar 2? | B | Garfield | calendário sem segunda-feira | sem segunda ele não tem do que reclamar | ideia |
 | Why is Patrick Star refusing to test the new iPhone alarm? | B | Patrick | despertador sem soneca | ama apertar soneca | ideia |
