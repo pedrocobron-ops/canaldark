@@ -1,0 +1,122 @@
+{
+  "title": "Why is Squidward refusing to work on iMessage 2?",
+  "format": "B",
+  "voice": "am_onyx",
+  "speed": 0.9,
+  "post": "Squidward said NO to iMessage 2 and honestly... 🎷📵 #squidward #imessage #familygroupchat #funny #fyp",
+  "style_suffix": "2D cartoon illustration, bold black outlines, vibrant saturated colors, vertical 9:16 composition",
+  "beats": [
+    {
+      "say": "Why is {y:Squidward} | refusing to work | on the new {b:iMessage 2}?",
+      "shots": [
+        {"img": "01.png", "n": 2, "fit": "contain", "fx": "zoom_in",
+         "prompt": "Squidward Tentacles from SpongeBob SquarePants standing with arms crossed, annoyed half-closed eyes, full body, plain pure white background"},
+        {"img": "02.png", "n": 1, "fx": "zoom_out",
+         "prompt": "Realistic photo of a modern tech office, software developers at laptops seen from behind, a big wall TV screen showing a blue chat bubble app logo with the text 'iMessage 2', natural light"}
+      ]
+    },
+    {
+      "say": "Squidward is one of | the greatest {y:musicians} | of our time.",
+      "shots": [
+        {"img": "03.png", "n": 3, "fx": "zoom_in",
+         "prompt": "Squidward Tentacles from SpongeBob SquarePants in a black tuxedo playing the clarinet on a grand concert hall stage, dramatic spotlight, red velvet curtains, proud expression"}
+      ]
+    },
+    {
+      "say": "He is also | the man {r:responsible} | for inventing | the {r:car alarm}.",
+      "shots": [
+        {"img": "04.png", "n": 2, "fx": "zoom_in", "overlay": {"circle": [0.5, 0.42, 0.2], "arrow": true},
+         "prompt": "Old black and white 1950s photograph of Squidward Tentacles from SpongeBob SquarePants in a white lab coat proudly standing next to a vintage car in a workshop, film grain, scratches, historical archive photo look"},
+        {"img": "05.png", "n": 2, "fx": "shake",
+         "prompt": "Realistic photo at night of a parked car with flashing orange headlights and car alarm going off on a suburban American street, angry neighbors in pajamas looking out of windows"}
+      ]
+    },
+    {
+      "say": "Recently, | several {y:rumors} say | that {b:Apple} | has been trying | to hire him | for {b:iMessage 2}.",
+      "shots": [
+        {"img": "06.png", "n": 2, "fit": "contain", "fx": "zoom_in",
+         "prompt": "Two white 3D PowerPoint stick figure people, one whispering a secret into the other's ear, glossy white plastic render, plain pure white background"},
+        {"img": "07.png", "n": 3, "fx": "zoom_out",
+         "prompt": "Squidward Tentacles from SpongeBob SquarePants outdoors surrounded by many reporters' microphones pushed toward his face, camera flashes, looking suspicious"},
+        {"img": "@icon:2:#1E7BFF", "n": 1, "fx": "pop"}
+      ]
+    },
+    {
+      "say": "iMessage 2 will have | the same features | as the first one, | but it will be {o:orange} | instead of {g:green}.",
+      "shots": [
+        {"img": "@icon::#34C759", "n": 3, "fx": "zoom_in"},
+        {"img": "@icon:2:#FF8A00", "n": 2, "fx": "pop"}
+      ]
+    },
+    {
+      "say": "And it will | {r:automatically delete} | every {y:voice message} | longer than {r:one minute} | sent in the | {y:family group chat}.",
+      "shots": [
+        {"img": "@chat:family", "n": 2, "fx": "zoom_in"},
+        {"img": "@chat:family", "n": 4, "fx": "zoom_in", "overlay": {"x": true}}
+      ]
+    },
+    {
+      "say": "That means no more | {y:nine-minute} audios | from your {y:aunt} | about her {y:neighbor's dog}.",
+      "shots": [
+        {"img": "08.png", "n": 3, "fx": "zoom_in",
+         "prompt": "Realistic stock photo of a cheerful middle-aged American woman in her kitchen holding her phone close to her mouth recording a long voice message, coffee mug, morning light"},
+        {"img": "09.png", "n": 1, "fx": "shake",
+         "prompt": "Realistic photo of a small angry chihuahua barking aggressively behind a white picket fence in an American suburb"}
+      ]
+    },
+    {
+      "say": "Squidward said {r:no} | precisely because | every morning | at {y:6 AM} | he sends his family | a {r:seven-minute} | voice message | of himself | playing the {y:clarinet}.",
+      "shots": [
+        {"img": "10.png", "n": 2, "fx": "zoom_in",
+         "prompt": "Close-up of Squidward Tentacles from SpongeBob SquarePants furious, wagging his finger saying no, plain light blue background"},
+        {"img": "11.png", "n": 2, "fx": "zoom_in",
+         "prompt": "Realistic photo of a vintage red twin bell alarm clock showing exactly 6:00, on a nightstand, early morning blue light"},
+        {"img": "12.png", "n": 3, "fx": "zoom_out",
+         "prompt": "Squidward Tentacles from SpongeBob SquarePants in pajamas and a nightcap at dawn, playing the clarinet badly into a smartphone propped on a table, recording a voice message, musical notes in the air"},
+        {"img": "@chat:squidward", "n": 2, "fx": "zoom_in"}
+      ]
+    },
+    {
+      "say": "He said | the new feature | is {r:censorship} | and an attack | on {y:artists}.",
+      "shots": [
+        {"img": "13.png", "n": 5, "fx": "zoom_in",
+         "prompt": "Squidward Tentacles from SpongeBob SquarePants shouting furiously at a press conference podium full of microphones, veins on his head, dramatic red background"}
+      ]
+    },
+    {
+      "say": "{y:Witnesses} say | his family group | has been {r:muted} | since {y:2019}.",
+      "shots": [
+        {"img": "14.png", "n": 2, "fx": "zoom_in",
+         "prompt": "Realistic stock photo of two coworkers talking in an office hallway holding coffee cups, one gesturing while explaining something, bright corporate lighting"},
+        {"img": "15.png", "n": 2, "fx": "zoom_out",
+         "prompt": "Realistic photo of an American family at the dinner table covering their ears in pain while a smartphone on the table plays a loud audio message"}
+      ]
+    },
+    {
+      "say": "Now, Squidward | will work | on his own project, | {r:iMessage 3}.",
+      "shots": [
+        {"img": "16.png", "n": 3, "fx": "zoom_in",
+         "prompt": "Squidward Tentacles from SpongeBob SquarePants in a messy garage laboratory full of old computers and wires, typing with an evil determined smile, glowing monitors"},
+        {"img": "@icon:3:#FF2D2D", "n": 1, "fx": "pop"}
+      ]
+    },
+    {
+      "say": "It will be {r:red}, | and voice messages | will have | {y:no time limit}.",
+      "shots": [
+        {"img": "@icon:3:#FF2D2D", "n": 1, "fx": "zoom_in"},
+        {"img": "17.png", "n": 3, "fx": "zoom_in",
+         "prompt": "Squidward Tentacles from SpongeBob SquarePants happily hugging a giant smartphone whose screen shows a voice message bar with the timer 59:59, sparkles, joyful expression"}
+      ]
+    },
+    {
+      "say": "And {y:you}? | Would you {r:mute} | Squidward's | family group?",
+      "shots": [
+        {"img": "18.png", "n": 1, "fx": "zoom_in",
+         "prompt": "Realistic stock photo of a businessman in a dark suit pointing his finger directly at the camera, shallow depth of field, white background"},
+        {"img": "19.png", "n": 3, "fit": "contain", "fx": "zoom_in",
+         "prompt": "White 3D PowerPoint stick figure person thinking with hand on chin, a big empty thought bubble above, glossy white plastic render, plain pure white background"}
+      ]
+    }
+  ],
+  "outro": {"seconds": 3.5}
+}

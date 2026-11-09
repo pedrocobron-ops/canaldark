@@ -1,0 +1,5 @@
+models/*.onnx
+models/*.bin
+models/*.log
+projects/*/out/
+__pycache__/
