@@ -92,7 +92,7 @@ Canal, marca d'água e redes do cartão final ficam em `channel.json`, na raiz.
 3. Renderizar o final e entregar o `video.mp4` com `SendUserFile`, mais o texto do post.
 
 ## Imagens vindas do Google Drive
-O Pedro gera as imagens com os prompts do `PROMPTS.md` e sobe numa pasta do Drive. Normalmente ele manda o link da pasta. Os arquivos podem vir com nomes descritivos, e não `01.png`.
+O Pedro gera as imagens com os prompts do `PROMPTS.md` e sobe numa pasta do Drive. **O conector do Drive só aguenta arquivos abaixo de cerca de 6 MB**: acima disso a conexão cai. Peça sempre as imagens em JPG. Se alguma passar do limite, peça que ele mande aquela imagem direto no chat ou reenvie em JPG. Baixe uma imagem por vez, nunca em paralelo. Normalmente ele manda o link da pasta. Os arquivos podem vir com nomes descritivos, e não `01.png`.
 
 1. Liste a pasta com `mcp__Google_Drive__search_files`, usando a query `parentId = '<id da pasta>'` e `excludeContentSnippets: true`. Pagine até acabar.
 2. Relacione cada arquivo ao shot pelo título e pelo prompt, e salve o mapa em `projects/<slug>/drive_map.json` no formato `{"<fileId>": "01.png"}`.
