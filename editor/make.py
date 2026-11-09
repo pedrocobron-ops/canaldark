@@ -254,6 +254,8 @@ def raw_image(proj, shot, handles, state=None):
         return assets.phone(label, color or "#34C759", bg, sx)
     if ref.startswith("@chat:") and state is not None:
         return assets.chat(ref[6:], *state)
+    if ref.startswith("@lock:") and state is not None:
+        return assets.lock(ref[6:], *state)
     if ref.startswith("@"):
         return assets.make(ref, handles)
     im = open_image(proj, ref, shot.get("prompt"))
@@ -381,7 +383,6 @@ def anim_state(sh, t):
         sx = round(abs(math.cos(math.pi * u)), 1)
         return (a, b, sx) if u < 0.5 else (c, d, sx)
     if sh.get("anim") in ("reveal", "reveal_strike"):
-        n = len(assets.CHATS[sh["img"][6:]]["msgs"])
         vis = sum(1 for x in sh["reveal_t"] if x <= t)
         st = sum(1 for x in sh.get("strike_t", []) if x <= t)
         return (max(1, vis), st)
@@ -426,7 +427,7 @@ def plan_events(shots):
         for name in ([extra] if isinstance(extra, str) else extra):
             ev.append((a + 0.05, name))
         if sh.get("anim") in ("reveal", "reveal_strike"):
-            n = len(assets.CHATS[sh["img"][6:]]["msgs"])
+            n = assets.anim_count(sh["img"])
             span = 0.38 if sh["anim"] == "reveal_strike" else 0.6
             sh["reveal_t"] = [a + L * span * k / n for k in range(n)]
             ev += [(x + 0.02, "ding") for x in sh["reveal_t"][1:]]

@@ -1,0 +1,278 @@
+{
+  "title": "Why didn't Fred Flintstone stop the eruption of Mount Vesuvius in 79 AD?",
+  "format": "A",
+  "voice": "am_adam",
+  "speed": 0.9,
+  "music_volume": 0.24,
+  "post": "Why didn't Fred Flintstone stop Pompeii? 🌋🎳 #history #pompeii #flintstones #funny #fyp",
+  "style_suffix": "2D cartoon illustration in the classic Flintstones style, bold black outlines, vibrant saturated colors, vertical 9:16 composition",
+  "cover": {
+    "img": "13.png",
+    "text": "Why didn't {y:Fred Flintstone} stop {r:Pompeii}?",
+    "y": 0.68
+  },
+  "beats": [
+    {
+      "say": "Why didn't {y:Fred Flintstone} | stop the eruption | of {r:Mount Vesuvius} | in {y:79 AD}?",
+      "shots": [
+        {
+          "img": "01.png",
+          "n": 2,
+          "fit": "contain",
+          "fx": "zoom_in",
+          "prompt": "Fred Flintstone from The Flintstones standing with hands on hips, confident smile, full body, plain pure white background"
+        },
+        {
+          "img": "02.png",
+          "n": 2,
+          "fx": "zoom_out",
+          "prompt": "Dramatic 18th century oil painting of Mount Vesuvius erupting at night over the ancient Roman city of Pompeii, glowing lava, huge ash column, tiny fleeing people, museum painting texture"
+        }
+      ]
+    },
+    {
+      "say": "It's no {y:secret} to anyone | that Fred was | the official {y:volcano inspector} | of {r:Pompeii}.",
+      "shots": [
+        {
+          "img": "03.png",
+          "n": 1,
+          "fit": "contain",
+          "fx": "zoom_in",
+          "prompt": "White 3D PowerPoint stick figure person shrugging with both palms up, glossy white plastic render, plain pure white background"
+        },
+        {
+          "img": "04.png",
+          "n": 3,
+          "fx": "zoom_in",
+          "prompt": "Fred Flintstone from The Flintstones wearing a Roman toga, a yellow hard hat and an ID badge that says VOLCANO INSPECTOR, holding a stone clipboard, standing proudly in front of Mount Vesuvius with the Roman city of Pompeii behind him"
+        }
+      ]
+    },
+    {
+      "say": "After all, | he spent his whole life | working in a {y:rock quarry}.",
+      "shots": [
+        {
+          "img": "05.png",
+          "n": 3,
+          "fx": "pan_right",
+          "prompt": "Fred Flintstone from The Flintstones operating a dinosaur crane at the Bedrock rock quarry, lifting giant boulders, dust in the air, sunny day"
+        }
+      ]
+    },
+    {
+      "say": "He could identify | any {y:rock} in Bedrock | just by {r:licking it}.",
+      "shots": [
+        {
+          "img": "18.png",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "prompt": "Fred Flintstone from The Flintstones licking a big rock with his tongue out while holding a magnifying glass, very serious expert face, rock quarry background"
+        }
+      ]
+    },
+    {
+      "say": "On that day, | Vesuvius buried | an entire city | under {r:twenty feet} of {r:ash}.",
+      "shots": [
+        {
+          "img": "06.png",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "zoom",
+          "prompt": "Dramatic realistic painting of a gigantic dark ash cloud swallowing an ancient Roman city, panicked Roman citizens running through the streets, falling ash, orange glow, cinematic"
+        },
+        {
+          "img": "07.png",
+          "n": 2,
+          "fx": "zoom_out",
+          "prompt": "Realistic photograph of the ruins of Pompeii today, stone columns and empty streets, Mount Vesuvius in the background under a clear sky"
+        }
+      ]
+    },
+    {
+      "say": "Fred claims | his {y:stone phone} | had {r:no signal} | inside the quarry.",
+      "shots": [
+        {
+          "img": "08.png",
+          "n": 4,
+          "fx": "zoom_in",
+          "prompt": "Fred Flintstone from The Flintstones holding a prehistoric stone age phone made of rock with a small bird as the speaker, innocent shrugging face, a big no signal icon floating next to him, plain light blue background"
+        }
+      ]
+    },
+    {
+      "say": "But many say | {r:that's a lie}.",
+      "shots": [
+        {
+          "img": "../../001-squidward-imessage/images/06.png",
+          "n": 2,
+          "fit": "contain",
+          "fx": "zoom_in",
+          "tr": "punch"
+        }
+      ]
+    },
+    {
+      "say": "{y:Security footage} | from that afternoon | shows exactly | where Fred was.",
+      "shots": [
+        {
+          "img": "09.png",
+          "n": 4,
+          "fx": "zoom_in",
+          "overlay": {
+            "circle": [
+              0.5,
+              0.45,
+              0.17
+            ],
+            "arrow": true
+          },
+          "prompt": "Grainy black and white security camera footage still of an ancient Roman street, a cartoon caveman in an orange spotted outfit walking into a stone building with a sign that says BOWLING, CCTV timestamp in the corner reading AUG 24 0079 1:07 PM, scan lines, low quality surveillance look"
+        }
+      ]
+    },
+    {
+      "say": "It was {y:bowling night} | at the {y:Water Buffalo Lodge}.",
+      "shots": [
+        {
+          "img": "10.png",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "prompt": "Fred Flintstone from The Flintstones wearing the furry Water Buffalo lodge hat with horns, holding a stone bowling ball, standing in a stone age bowling alley with Roman columns, excited face"
+        }
+      ]
+    },
+    {
+      "say": "Fred was on a {y:winning streak} | when the ground | started {r:shaking}.",
+      "shots": [
+        {
+          "img": "11.png",
+          "n": 3,
+          "fx": "shake",
+          "sfx": [
+            "impact"
+          ],
+          "prompt": "Fred Flintstone and Barney Rubble from The Flintstones celebrating at a stone age bowling alley, bowling pins flying, while through a big window behind them Mount Vesuvius is erupting with lava, the floor cracking"
+        }
+      ]
+    },
+    {
+      "say": "{b:Wilma} called him | {r:forty-seven} times. | Fred put his phone | on {y:silent}.",
+      "shots": [
+        {
+          "img": "12.png",
+          "n": 2,
+          "fx": "zoom_in",
+          "prompt": "Wilma Flintstone from The Flintstones furious, holding a stone age phone to her ear, ash falling outside her window, angry eyebrows, steam coming from her head"
+        },
+        {
+          "img": "@lock:wilma",
+          "n": 2,
+          "fx": "zoom_in",
+          "anim": "reveal",
+          "tr": "punch"
+        }
+      ]
+    },
+    {
+      "say": "{y:Witnesses} say | that when the sky | turned {r:black}, | Fred screamed | {y:Yabba Dabba Doo} | because he had just | bowled a {y:perfect strike}.",
+      "shots": [
+        {
+          "img": "../../001-squidward-imessage/images/14.png",
+          "n": 2,
+          "fx": "zoom_in"
+        },
+        {
+          "img": "13.png",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "prompt": "Fred Flintstone from The Flintstones screaming with joy with both arms in the air at a stone age bowling alley, all bowling pins exploding, the sky outside the window completely black with ash and lava"
+        },
+        {
+          "img": "14.png",
+          "n": 2,
+          "fx": "pop",
+          "sfx": [
+            "impact"
+          ],
+          "prompt": "A stone age bowling scoreboard carved in rock showing the word STRIKE and a perfect score written in Roman numerals CCC, sparkles, cartoon style, ash falling in the background"
+        }
+      ]
+    },
+    {
+      "say": "{y:Pliny the Younger} | watched the eruption | from across the bay | and wrote {y:everything} down.",
+      "shots": [
+        {
+          "img": "15.png",
+          "n": 4,
+          "fx": "zoom_out",
+          "tr": "fade",
+          "prompt": "Classical oil painting of a young Roman man in a white toga writing on a scroll on a seaside terrace, Mount Vesuvius erupting across the bay in the background, golden light, museum painting texture"
+        }
+      ]
+    },
+    {
+      "say": "Strangely, | he never mentioned | {r:Fred}.",
+      "shots": [
+        {
+          "img": "16.png",
+          "n": 3,
+          "fx": "zoom_in",
+          "overlay": {
+            "circle": [
+              0.5,
+              0.5,
+              0.2
+            ]
+          },
+          "prompt": "Close-up of an ancient Roman papyrus scroll with Latin handwriting in black ink, aged paper texture, soft light, realistic photo"
+        }
+      ]
+    },
+    {
+      "say": "{r:Unlike} the people | of Pompeii, | Fred went home that night | with a {y:brand new trophy}.",
+      "shots": [
+        {
+          "img": "06.png",
+          "n": 2,
+          "fx": "zoom_out",
+          "tr": "zoom"
+        },
+        {
+          "img": "17.png",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "prompt": "Fred Flintstone from The Flintstones smiling proudly and hugging a giant golden bowling trophy, walking home, Mount Vesuvius erupting behind him, ash falling, he does not notice"
+        }
+      ]
+    },
+    {
+      "say": "What's your {y:opinion} | on this {r:controversial} event?",
+      "shots": [
+        {
+          "img": "../../001-squidward-imessage/images/19.png",
+          "n": 2,
+          "fit": "contain",
+          "fx": "zoom_in",
+          "inset": {
+            "img": "17.png",
+            "box": [
+              0.17,
+              0.06,
+              0.87,
+              0.28
+            ],
+            "center": [
+              0.5,
+              0.35
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "outro": {}
+}

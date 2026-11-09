@@ -194,6 +194,66 @@ def phone(label, color, bg=None, sx=1.0):
     return base
 
 
+LOCKS = {
+    "wilma": {
+        "time": "1:07", "date": "Tuesday, August 24",
+        "notifs": [
+            ("Phone", "Wilma ❤️", "Missed call"),
+            ("Phone", "Wilma ❤️", "Missed call (12)"),
+            ("Messages", "Wilma ❤️", "FRED THE MOUNTAIN IS ON FIRE"),
+            ("Phone", "Wilma ❤️", "Missed call (31)"),
+            ("Messages", "Wilma ❤️", "PICK UP"),
+            ("Phone", "Wilma ❤️", "47 missed calls"),
+        ],
+    },
+}
+
+
+def lock(name, visible=None, struck=0):
+    """Tela de bloqueio com notificações empilhando (ligações perdidas)."""
+    spec = LOCKS[name]
+    notifs = spec["notifs"] if visible is None else spec["notifs"][:visible]
+    bg = Image.new("RGB", (W, H))
+    # papel de parede: degradê escuro
+    top, bot = (35, 25, 70), (190, 70, 40)
+    for y in range(H):
+        k = y / H
+        ImageDraw.Draw(bg).line((0, y, W, y), fill=tuple(int(top[i] + (bot[i] - top[i]) * k) for i in range(3)))
+    d = ImageDraw.Draw(bg)
+    fd = font(FONT_UI_BOLD, 44)
+    d.text((W / 2 - d.textlength(spec["date"], font=fd) / 2, 210), spec["date"], font=fd, fill=(255, 255, 255))
+    ft = font(FONT_UI_BOLD, 230)
+    d.text((W / 2 - d.textlength(spec["time"], font=ft) / 2, 250), spec["time"], font=ft, fill=(255, 255, 255))
+    y = 620
+    fa, fb, fc = font(FONT_UI, 30), font(FONT_UI_BOLD, 40), font(FONT_UI, 38)
+    for i, (app, who, txt) in enumerate(reversed(notifs)):
+        card = Image.new("RGBA", (W - 100, 170), (0, 0, 0, 0))
+        cd = ImageDraw.Draw(card)
+        cd.rounded_rectangle((0, 0, card.width - 1, 169), 40, fill=(245, 245, 250, 225))
+        icon_c = (52, 199, 89) if app != "Messages" else (52, 199, 89)
+        cd.rounded_rectangle((28, 40, 118, 130), 22, fill=icon_c)
+        glyph = emoji("📞" if app == "Phone" else "💬", 52)
+        card.paste(glyph, (73 - glyph.width // 2, 85 - glyph.height // 2), glyph)
+        cd.text((145, 28), app.upper(), font=fa, fill=(110, 110, 120))
+        cd.text((card.width - 120, 28), "now", font=fa, fill=(110, 110, 120))
+        cd.text((145, 66), who, font=fb, fill=(20, 20, 25), embedded_color=True)
+        red = "missed" in txt.lower() or txt.isupper()
+        cd.text((145, 116), txt, font=fc, fill=(215, 30, 30) if red else (40, 40, 45))
+        bg.paste(card, (50, y), card)
+        y += 190
+    return bg
+
+
+def anim_count(ref):
+    """Quantos itens um asset animado revela (mensagens ou notificações)."""
+    kind, _, name = ref[1:].partition(":")
+    if kind == "chat":
+        return len(CHATS[name]["msgs"])
+    if kind == "lock":
+        return len(LOCKS[name]["notifs"])
+    return 0
+
+
 def outro(handles, accent=(245, 168, 0)):
     """Cartão final: fundo amarelo com interrogações, joinha e as redes."""
     bg = Image.new("RGB", (W, H), accent)
@@ -234,6 +294,8 @@ def make(ref, handles=None):
         return app_icon(label, color or "#34C759")
     if kind == "chat":
         return chat(rest)
+    if kind == "lock":
+        return lock(rest)
     if kind == "phone":
         label, _, color = rest.partition(":")
         return phone(label, color or "#34C759", None)
