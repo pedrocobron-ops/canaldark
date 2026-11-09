@@ -47,7 +47,7 @@ Saídas em `out/`: `video.mp4`, `narration.wav`, `music.wav`, `mix.wav`, `timeli
       ]
     }
   ],
-  "outro": {"seconds": 3.5}
+  "outro": {}                // sem cartão final (regra do canal)
 }
 ```
 
@@ -60,12 +60,15 @@ Saídas em `out/`: `video.mp4`, `narration.wav`, `music.wav`, `mix.wav`, `timeli
   - `@chat:family` e `@chat:squidward` desenham prints falsos de grupo da família. Para criar outros, adicione em `CHATS`, no arquivo `editor/assets.py`.
 - **fit:** `cover` (padrão, preenche a tela) ou `contain` (imagem inteira sobre fundo branco, para personagem recortado e boneco 3D).
 - **fx:** `zoom_in` (padrão), `zoom_out`, `pop` (impacto), `shake` (tremida, para alarme, susto e raiva), `pan_left`, `pan_right`, `static`.
+- **tr:** transição de entrada do shot: `whip` (chicote lateral com desfoque), `zoom` (zoom através), `punch` (entra grande e assenta), `fade` (passa pelo escuro), `cut` (seco). Sem `tr`, o editor alterna sozinho seguindo `CYCLE` em `editor/transitions.py`. Use `punch` para impacto e revelação, e `whip` para mudança de assunto.
 - **overlay:** `{"circle": [x, y, raio], "arrow": true}` com coordenadas de 0 a 1 da tela, para a "prova" com círculo e seta vermelhos. `{"x": true}` põe um X vermelho gigante.
 
 Canal, marca d'água e redes do cartão final ficam em `channel.json`, na raiz.
 
 ## Regras de edição (tiradas dos vídeos de referência do "Você Sabo?")
-- Entre 60 e 75 s no total. Medir com o `timeline.json` e ajustar `speed` ou o texto.
+- **Todo vídeo passa de 1 minuto: mínimo de 61 s, ideal entre 62 e 75 s.** O editor avisa e desacelera a voz se ficar curto, mas o certo é acrescentar uma frase ao roteiro (de 175 a 190 palavras em speed 0.9).
+- **Sem cartão final de redes.** O vídeo termina na última fala, segurando a imagem por 0,7 s.
+- **Transições entre quase todos os shots** (chicote, zoom, punch, escurecer), com poucos cortes secos. Cada uma dura de 0,2 a 0,36 s.
 - A legenda troca a cada 0,5 a 1,2 s. A imagem troca a cada 2 a 4 legendas, e nunca fica mais de 4 s parada.
 - O personagem aparece no primeiro quadro, e o tema (evento, app) no segundo shot.
 - Alternar as fontes de imagem: cartoon do personagem, foto realista, banco de imagem, boneco 3D branco, print de celular, ícone.

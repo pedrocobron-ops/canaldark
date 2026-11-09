@@ -19,6 +19,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 from . import assets
+from . import transitions as T
 from .common import COLORS, FONT_CAPTION, FONT_UI_BOLD, FPS, H, ROOT, W
 
 TOKEN = re.compile(r"\{(\w):([^}]*)\}")
@@ -269,7 +270,11 @@ def draw_overlay(img, ov, s, p):
 
 
 # ---------------------------------------------------------------- montagem
-def build_shots(script, timeline, total, outro_s):
+MIN_SECONDS = 61.0   # regra do canal: todo vídeo passa de 1 minuto
+TAIL = 0.7           # segura a última imagem depois da última palavra
+
+
+def build_shots(script, timeline, total):
     shots = []
     for beat, tl in zip(script["beats"], timeline):
         caps = tl["captions"]
@@ -279,13 +284,55 @@ def build_shots(script, timeline, total, outro_s):
             start = tl["start"] if k == 0 else caps[min(i, len(caps) - 1)]["start"]
             shots.append(dict(sh, start=start))
             i += n
-    if shots:
-        shots[0]["start"] = 0
+    shots[0]["start"] = 0
     for a, b in zip(shots, shots[1:]):
         a["end"] = b["start"]
     shots[-1]["end"] = total
-    shots.append({"img": "@outro", "start": total, "end": total + outro_s, "fx": "static", "outro": True})
+    # transição de entrada de cada shot (o primeiro entra seco)
+    for i, sh in enumerate(shots):
+        sh["tr_in"] = "cut" if i == 0 else sh.get("tr", T.CYCLE[(i - 1) % len(T.CYCLE)])
+    if script.get("outro", {}).get("seconds"):
+        shots.append({"img": "@outro", "start": total, "end": total + script["outro"]["seconds"],
+                      "fx": "static", "outro": True, "tr_in": "fade"})
     return shots
+
+
+class ShotCache:
+    def __init__(self, proj, shots, size, handles):
+        self.proj, self.shots, self.size, self.handles = proj, shots, size, handles
+        self.cache = {}
+
+    def base(self, i):
+        if i not in self.cache:
+            if len(self.cache) > 3:
+                self.cache.pop(min(self.cache))
+            self.cache[i] = load_shot_image(self.proj, self.shots[i], self.size, self.handles)
+        return self.cache[i]
+
+    def frame(self, i, t, f, scale):
+        sh = self.shots[i]
+        p = (t - sh["start"]) / max(0.01, sh["end"] - sh["start"])
+        pc = min(1, max(0, p))
+        z, dx, dy = zoom_for(sh.get("fx", "zoom_in"), pc, f)
+        img = frame_from(self.base(i), self.size, z, dx * scale, dy * scale)
+        return draw_overlay(img, sh.get("overlay"), scale, pc)
+
+
+def narrate(script, out, keep_audio):
+    tl_path = out / "timeline.json"
+    if keep_audio and tl_path.exists() and (out / "narration.wav").exists():
+        data = json.loads(tl_path.read_text())
+        return data["timeline"], data["total"]
+    print("narração...")
+    timeline, total = synth(script, out)
+    if total + TAIL < MIN_SECONDS:
+        base = script.get("speed", 1.0)
+        new = max(0.8, round(base * (total + TAIL) / (MIN_SECONDS + 0.4), 3))
+        print(f"  ! {total + TAIL:.1f}s é menos que {MIN_SECONDS:.0f}s: refazendo a voz com speed {new}")
+        print("    (melhor ainda: acrescente uma frase ao roteiro)")
+        timeline, total = synth(dict(script, speed=new), out)
+    tl_path.write_text(json.dumps({"timeline": timeline, "total": total}, indent=1))
+    return timeline, total
 
 
 def render(proj, preview=False, keep_audio=False):
@@ -298,17 +345,12 @@ def render(proj, preview=False, keep_audio=False):
     scale = 0.5 if preview else 1.0
     size = (int(W * scale) // 2 * 2, int(H * scale) // 2 * 2)
 
-    tl_path = out / "timeline.json"
-    if keep_audio and tl_path.exists() and (out / "narration.wav").exists():
-        data = json.loads(tl_path.read_text())
-        timeline, total = data["timeline"], data["total"]
-    else:
-        print("narração...")
-        timeline, total = synth(script, out)
-        tl_path.write_text(json.dumps({"timeline": timeline, "total": total}, indent=1))
-    outro_s = script.get("outro", {}).get("seconds", 3.5)
-    full = total + outro_s
+    timeline, total = narrate(script, out, keep_audio)
+    shots = build_shots(script, timeline, total + TAIL)
+    full = shots[-1]["end"]
     print(f"duração: {full:.1f}s")
+    if full < MIN_SECONDS:
+        print(f"  ! ATENÇÃO: abaixo de {MIN_SECONDS:.0f}s")
 
     print("trilha...")
     music(full, out / "music.wav")
@@ -317,15 +359,15 @@ def render(proj, preview=False, keep_audio=False):
     subprocess.run([
         "ffmpeg", "-v", "error", "-y", "-i", str(out / "narration.wav"), "-i", str(out / "music.wav"),
         "-filter_complex",
-        f"[0:a]aresample=44100,apad=pad_dur={outro_s},volume=1.6[v];[1:a]volume={vol}[m];"
+        f"[0:a]aresample=44100,apad=pad_dur={full},volume=1.6[v];[1:a]volume={vol}[m];"
         f"[v][m]amix=inputs=2:duration=longest:normalize=0,alimiter=limit=0.95[a]",
         "-map", "[a]", "-t", f"{full:.3f}", str(mix)], check=True)
 
-    shots = build_shots(script, timeline, total, outro_s)
     caps = [c for tl in timeline for c in tl["captions"]]
     capper = Captioner(scale)
     wm_font = ImageFont.truetype(str(FONT_UI_BOLD), int(34 * scale))
     handle = channel.get("watermark", "")
+    cache = ShotCache(proj, shots, size, handles)
 
     video = out / ("preview.mp4" if preview else "video.mp4")
     cmd = ["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24",
@@ -336,22 +378,31 @@ def render(proj, preview=False, keep_audio=False):
     ff = subprocess.Popen(cmd, stdin=subprocess.PIPE)
 
     nframes = int(math.ceil(full * FPS))
-    cur_shot, base, ci = -1, None, 0
+    si, ci = 0, 0
     corners = ["tl", "tr", "bl"]
     print(f"renderizando {nframes} frames...")
     for f in range(nframes):
         t = f / FPS
-        si = cur_shot if cur_shot >= 0 else 0
         while si + 1 < len(shots) and shots[si + 1]["start"] <= t:
             si += 1
-        if si != cur_shot:
-            cur_shot = si
-            base = load_shot_image(proj, shots[si], size, handles)
+        img = None
+        # transição saindo do shot atual para o próximo (começa antes do corte)
+        if si + 1 < len(shots):
+            kind = shots[si + 1]["tr_in"]
+            a0, a1 = T.window(kind, shots[si + 1]["start"])
+            if a0 <= t < a1 and kind != "cut":
+                q = (t - a0) / (a1 - a0)
+                img = T.blend(kind, cache.frame(si, t, f, scale), cache.frame(si + 1, t, f, scale), q, size)
+        # transição entrando no shot atual (continua depois do corte)
+        if img is None and si > 0:
+            kind = shots[si]["tr_in"]
+            a0, a1 = T.window(kind, shots[si]["start"])
+            if a0 <= t < a1 and kind != "cut":
+                q = (t - a0) / (a1 - a0)
+                img = T.blend(kind, cache.frame(si - 1, t, f, scale), cache.frame(si, t, f, scale), q, size)
+        if img is None:
+            img = cache.frame(si, t, f, scale)
         sh = shots[si]
-        p = (t - sh["start"]) / max(0.01, sh["end"] - sh["start"])
-        z, dx, dy = zoom_for(sh.get("fx", "zoom_in"), min(1, max(0, p)), f)
-        img = frame_from(base, size, z, dx * scale, dy * scale)
-        img = draw_overlay(img, sh.get("overlay"), scale, p)
 
         if not sh.get("outro"):
             while ci < len(caps) and caps[ci]["end"] <= t:

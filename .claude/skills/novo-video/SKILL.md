@@ -14,14 +14,14 @@ Conversa em português, roteiro em inglês, nunca travessão.
 2. **Pasta do projeto.** `projects/NNN-<slug>/`, numerando a partir do último existente.
 
 3. **Roteiro (`script.json`).** Seguir as batidas do formato A ou B e o formato descrito na skill `editor-video`. Use `projects/001-squidward-imessage/script.json` como modelo.
-   - Narração entre 150 e 185 palavras (dá 60 a 70 s em speed 0.9).
+   - Narração entre 175 e 190 palavras: o vídeo tem que passar de 1 minuto (mínimo de 61 s). Sem cartão final.
    - Legendas de 1 a 4 palavras, uma palavra-chave colorida por legenda.
    - Tudo que for app, print ou ícone sai como asset desenhado (`@icon`, `@chat`), para poupar imagem do Pedro.
    - De 16 a 22 imagens geradas por vídeo. Cada shot com imagem gerada tem um `prompt` em inglês. Prompt de personagem começa pelo nome completo e pela obra ("Squidward Tentacles from SpongeBob SquarePants ...").
 
 4. **Prompts para o Pedro.** Gerar o `PROMPTS.md` a partir do JSON (o script em `tools/prompts.py` faz isso) e mandar com `SendUserFile`. Pedir que ele suba tudo numa pasta do Drive com o nome do slug.
 
-5. **Prévia enquanto espera.** Rodar `python -m editor.make projects/<slug> --preview` com os placeholders, para validar duração e ritmo. Ajustar o texto se ficar fora de 60 a 75 s.
+5. **Prévia enquanto espera.** Rodar `python -m editor.make projects/<slug> --preview` com os placeholders, para validar duração e ritmo. Ajustar o texto se ficar abaixo de 61 s ou acima de 75 s.
 
 6. **Imagens.** Quando o Pedro avisar, baixar do Drive para `projects/<slug>/images/` (ver `editor-video`).
 

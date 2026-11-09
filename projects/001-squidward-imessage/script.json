@@ -32,6 +32,12 @@
       ]
     },
     {
+      "say": "To this day, | nobody knows | how to {r:turn one off}.",
+      "shots": [
+        {"img": "05.png", "n": 3, "fx": "shake", "tr": "punch"}
+      ]
+    },
+    {
       "say": "Recently, | several {y:rumors} say | that {b:Apple} | has been trying | to hire him | for {b:iMessage 2}.",
       "shots": [
         {"img": "06.png", "n": 2, "fit": "contain", "fx": "zoom_in",
@@ -118,5 +124,5 @@
       ]
     }
   ],
-  "outro": {"seconds": 3.5}
+  "outro": {}
 }
