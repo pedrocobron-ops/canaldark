@@ -23,11 +23,10 @@
           "prompt": "Fred Flintstone from The Flintstones standing with hands on hips, confident smile, full body, plain pure white background"
         },
         {
-          "img": "06.png",
+          "img": "02.png",
           "n": 2,
           "fx": "zoom_out",
-          "prompt": "Dramatic 18th century oil painting of Mount Vesuvius erupting at night over the ancient Roman city of Pompeii, glowing lava, huge ash column, tiny fleeing people, museum painting texture",
-          "img_final": "02.png"
+          "prompt": "Dramatic 18th century oil painting of Mount Vesuvius erupting at night over the ancient Roman city of Pompeii, glowing lava, huge ash column, tiny fleeing people, museum painting texture"
         }
       ]
     },
