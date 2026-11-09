@@ -267,5 +267,11 @@
       ]
     }
   ],
-  "outro": {}
+  "outro": {},
+  "music_volume": 0.24,
+  "cover": {
+    "img": "10.png",
+    "text": "Why is {y:Squidward} refusing | to work on {b:iMessage 2}?",
+    "y": 0.66
+  }
 }

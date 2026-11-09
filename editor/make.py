@@ -69,15 +69,19 @@ def synth(script, out_dir):
         samples = trim(samples, sr)
         dur = len(samples) / sr
         chunks = chunks_of(beat)
-        # tempo de cada legenda proporcional ao tamanho falado
-        weights = [len(plain(c)) + 4 for c in chunks]
-        tot = sum(weights)
-        acc = t
+        # tempo de cada legenda: duração real de cada trecho falado sozinho,
+        # depois a fronteira é encaixada na pausa mais próxima da fala
+        if len(chunks) > 1:
+            weights = []
+            for c in chunks:
+                cs, _ = k.create(plain(c).strip(), voice=voice, speed=speed, lang="en-us")
+                weights.append(len(trim(cs, sr)) / sr)
+        else:
+            weights = [1.0]
+        bounds = snap_bounds(samples, sr, weights)
         caps = []
-        for c, w in zip(chunks, weights):
-            d = dur * w / tot
-            caps.append({"text": c, "start": acc, "end": acc + d})
-            acc += d
+        for ci, c in enumerate(chunks):
+            caps.append({"text": c, "start": t + bounds[ci], "end": t + bounds[ci + 1]})
         timeline.append({"beat": bi, "start": t, "end": t + dur, "captions": caps})
         audio += [samples.astype(np.float32), np.zeros(int(GAP * sr), dtype=np.float32)]
         t += dur + GAP
@@ -85,6 +89,29 @@ def synth(script, out_dir):
     wav = np.concatenate(audio)
     sf.write(out_dir / "narration.wav", wav, sr)
     return timeline, len(wav) / sr
+
+
+def snap_bounds(samples, sr, weights, search=0.18, min_len=0.25):
+    """Fronteiras (em s, relativas ao início) das legendas dentro da frase."""
+    dur = len(samples) / sr
+    tot = sum(weights)
+    pred = np.cumsum([0] + [w / tot * dur for w in weights])
+    hop = int(0.01 * sr)
+    env = np.array([np.abs(samples[i:i + hop * 3]).mean() for i in range(0, len(samples), hop)])
+    floor = np.median(env) * 0.35
+    out = [0.0]
+    for b in pred[1:-1]:
+        i0, i1 = int((b - search) / 0.01), int((b + search) / 0.01)
+        i0, i1 = max(0, i0), min(len(env) - 1, i1)
+        best = b
+        if i1 > i0:
+            j = i0 + int(np.argmin(env[i0:i1]))
+            if env[j] < floor:
+                best = j * 0.01 + 0.015
+        best = max(best, out[-1] + min_len)
+        out.append(best)
+    out.append(dur)
+    return out
 
 
 def trim(x, sr, thr=0.01):
@@ -326,6 +353,12 @@ def build_shots(script, timeline, total):
     # transição de entrada de cada shot (o primeiro entra seco)
     for i, sh in enumerate(shots):
         sh["tr_in"] = "cut" if i == 0 else sh.get("tr", T.CYCLE[(i - 1) % len(T.CYCLE)])
+    if script.get("loop", True) and not script.get("outro", {}).get("seconds"):
+        # a última imagem passa direto para a primeira: o replay emenda sem quebra
+        first = dict(shots[0], fx="static", overlay=None, tr_in="whip", loop=True,
+                     start=shots[-1]["end"] - T.DUR["whip"] / 2 - 0.15, end=shots[-1]["end"])
+        shots[-1]["end"] = first["start"]
+        shots.append(first)
     if script.get("outro", {}).get("seconds"):
         shots.append({"img": "@outro", "start": total, "end": total + script["outro"]["seconds"],
                       "fx": "static", "outro": True, "tr_in": "fade"})
@@ -447,13 +480,22 @@ def render(proj, preview=False, keep_audio=False):
     sf.write(out / "sfx.wav", sfx.track(events, full), sfx.SR)
     print(f"  {len(events)} efeitos sonoros")
     mix = out / "mix.wav"
-    vol = script.get("music_volume", 0.16)
+    vol = script.get("music_volume", 0.24)
+    # voz "documentário": corta ronco, encorpa o grave, dá presença, tira chiado do S e comprime
+    voice_fx = ("aresample=44100,highpass=f=70,bass=g=3:f=120,"
+                "equalizer=f=3200:t=q:w=1.2:g=2,deesser=i=0.4,"
+                "acompressor=threshold=-20dB:ratio=3:attack=5:release=90:makeup=2,"
+                f"apad=pad_dur={full},volume=1.5")
     subprocess.run([
         "ffmpeg", "-v", "error", "-y", "-i", str(out / "narration.wav"), "-i", str(out / "music.wav"),
         "-i", str(out / "sfx.wav"), "-filter_complex",
-        f"[0:a]aresample=44100,apad=pad_dur={full},volume=1.6[v];[1:a]volume={vol}[m];"
+        f"[0:a]{voice_fx},asplit=2[v][vsc];"
+        f"[1:a]volume={vol}[m0];"
+        # trilha abaixa sozinha quando a voz fala (ducking)
+        f"[m0][vsc]sidechaincompress=threshold=0.02:ratio=6:attack=30:release=350[m];"
         f"[2:a]volume={script.get('sfx_volume', 0.8)}[s];"
-        f"[v][m][s]amix=inputs=3:duration=longest:normalize=0,alimiter=limit=0.95[a]",
+        f"[v][m][s]amix=inputs=3:duration=longest:normalize=0,"
+        f"loudnorm=I=-14:TP=-1.5:LRA=9,aresample=44100[a]",
         "-map", "[a]", "-t", f"{full:.3f}", str(mix)], check=True)
 
     caps = [c for tl in timeline for c in tl["captions"]]
@@ -472,7 +514,7 @@ def render(proj, preview=False, keep_audio=False):
 
     nframes = int(math.ceil(full * FPS))
     si, ci = 0, 0
-    corners = ["tl", "tr", "bl"]
+    corners = ["tl", "tr"]
     print(f"renderizando {nframes} frames...")
     for f in range(nframes):
         t = f / FPS
@@ -512,7 +554,7 @@ def render(proj, preview=False, keep_audio=False):
                 img.paste(cim, (cx, cy), cim)
             if handle:
                 d = ImageDraw.Draw(img, "RGBA")
-                corner = corners[si % 3]
+                corner = corners[0 if sh.get("loop") else si % 2]
                 tw = d.textlength(handle, font=wm_font)
                 m = int(40 * scale)
                 x = m if corner in ("tl", "bl") else size[0] - m - tw
@@ -528,8 +570,36 @@ def render(proj, preview=False, keep_audio=False):
     ff.wait()
     if ff.returncode:
         sys.exit("ffmpeg falhou")
+    if not preview:
+        print(f"capa: {make_cover(proj, script, out, handles)}")
     print(f"pronto: {video}")
     return video
+
+
+def make_cover(proj, script, out, handles):
+    """Capa 1080x1920 com a pergunta em letras grandes, dentro da área que o
+    TikTok mostra no grid do perfil (recorte 3:4 central)."""
+    cov = script.get("cover", {})
+    first = script["beats"][0]
+    shot = {"img": cov.get("img", first["shots"][0]["img"]), "fit": cov.get("fit", "cover")}
+    base = load_shot_image(proj, shot, (W, H), handles)
+    img = frame_from(base, (W, H), cov.get("zoom", 1.0), 0, 0)
+    # escurece a parte de baixo para o texto saltar
+    grad = Image.new("L", (1, H))
+    for y in range(H):
+        grad.putpixel((0, y), int(200 * max(0, (y / H - 0.45) / 0.55) ** 1.3))
+    img.paste(Image.new("RGB", (W, H), (0, 0, 0)), (0, 0), grad.resize((W, H)))
+    text = cov.get("text", first["say"]).replace("|", " ")
+    cap = Captioner(1.42)
+    cap.font = ImageFont.truetype(str(FONT_CAPTION), 128)
+    im = cap.render(re.sub(r"\s+", " ", text))
+    if im.width > W - 60:
+        r = (W - 60) / im.width
+        im = im.resize((int(im.width * r), int(im.height * r)), Image.LANCZOS)
+    y = int(H * cov.get("y", 0.70)) - im.height // 2
+    img.paste(im, ((W - im.width) // 2, y), im)
+    img.save(out / "cover.jpg", quality=92)
+    return out / "cover.jpg"
 
 
 def main():

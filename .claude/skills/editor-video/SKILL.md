@@ -74,7 +74,10 @@ Canal, marca d'água e redes do cartão final ficam em `channel.json`, na raiz.
 - **Nunca deixar mais de 4 s parado no mesmo visual sem animação.** Chat tem que revelar ou riscar, ícone tem que girar ou estar no celular.
 - **Boneco 3D pensativo no final sempre com algo dentro da nuvem** (o personagem na cena mais engraçada), usando `inset`.
 - **Efeitos sonoros em toda transição e nos objetos que fazem barulho** (alarme, notificação).
-- **Sem cartão final de redes.** O vídeo termina na última fala, segurando a imagem por 0,7 s.
+- **Sem cartão final de redes. O final é em loop:** a última imagem passa com whip para a primeira (o editor faz sozinho; `"loop": false` desliga). Assim o replay emenda sem quebra.
+- **Marca d'água só nos cantos de cima**, porque o TikTok e o Reels cobrem a parte de baixo.
+- **Áudio:** a voz passa por EQ, de-esser e compressor, a trilha abaixa sozinha quando a voz fala (ducking) e o mix final é normalizado em -14 LUFS, igual às referências. A sincronia das legendas usa a duração real de cada trecho falado, encaixada nas pausas.
+- **Capa:** o render final gera `out/cover.jpg`. Configure em `"cover": {"img": "10.png", "text": "...", "y": 0.66}`, usando a imagem mais expressiva do personagem e a pergunta-gancho. O vídeo termina na última fala, segurando a imagem por 0,7 s.
 - **Transições entre quase todos os shots** (chicote, zoom, punch, escurecer), com poucos cortes secos. Cada uma dura de 0,2 a 0,36 s.
 - A legenda troca a cada 0,5 a 1,2 s. A imagem troca a cada 2 a 4 legendas, e nunca fica mais de 4 s parada.
 - O personagem aparece no primeiro quadro, e o tema (evento, app) no segundo shot.
