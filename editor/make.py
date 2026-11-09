@@ -209,7 +209,7 @@ def load_shot_image(proj, shot, size, handles):
     bw, bh = int(w * 1.18), int(h * 1.18)
     if shot.get("fit") == "contain":
         canvas = Image.new("RGB", (bw, bh), shot.get("bg", "white"))
-        c = ImageOps.contain(im, (int(bw * 0.92), int(bh * 0.92)), Image.LANCZOS)
+        c = ImageOps.contain(im, (int(bw / 1.18), int(bh / 1.18)), Image.LANCZOS)  # inteira no zoom 1.0
         canvas.paste(c, ((bw - c.width) // 2, (bh - c.height) // 2))
         return canvas
     return ImageOps.fit(im, (bw, bh), Image.LANCZOS)

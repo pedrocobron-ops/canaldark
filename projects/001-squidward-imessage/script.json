@@ -1,7 +1,7 @@
 {
   "title": "Why is Squidward refusing to work on iMessage 2?",
   "format": "B",
-  "voice": "am_onyx",
+  "voice": "am_adam",
   "speed": 0.9,
   "post": "Squidward said NO to iMessage 2 and honestly... 🎷📵 #squidward #imessage #familygroupchat #funny #fyp",
   "style_suffix": "2D cartoon illustration, bold black outlines, vibrant saturated colors, vertical 9:16 composition",
@@ -25,7 +25,7 @@
     {
       "say": "He is also | the man {r:responsible} | for inventing | the {r:car alarm}.",
       "shots": [
-        {"img": "04.png", "n": 2, "fx": "zoom_in", "overlay": {"circle": [0.5, 0.42, 0.2], "arrow": true},
+        {"img": "04.png", "n": 2, "fx": "zoom_in", "overlay": {"circle": [0.29, 0.19, 0.13], "arrow": true},
          "prompt": "Old black and white 1950s photograph of Squidward Tentacles from SpongeBob SquarePants in a white lab coat proudly standing next to a vintage car in a workshop, film grain, scratches, historical archive photo look"},
         {"img": "05.png", "n": 2, "fx": "shake",
          "prompt": "Realistic photo at night of a parked car with flashing orange headlights and car alarm going off on a suburban American street, angry neighbors in pajamas looking out of windows"}
@@ -51,8 +51,8 @@
     {
       "say": "And it will | {r:automatically delete} | every {y:voice message} | longer than {r:one minute} | sent in the | {y:family group chat}.",
       "shots": [
-        {"img": "@chat:family", "n": 2, "fx": "zoom_in"},
-        {"img": "@chat:family", "n": 4, "fx": "zoom_in", "overlay": {"x": true}}
+        {"img": "@chat:family", "n": 2, "fx": "zoom_in", "fit": "contain", "bg": "#F2F2F7"},
+        {"img": "@chat:family", "n": 4, "fx": "zoom_in", "fit": "contain", "bg": "#F2F2F7", "overlay": {"x": true}}
       ]
     },
     {
@@ -73,7 +73,7 @@
          "prompt": "Realistic photo of a vintage red twin bell alarm clock showing exactly 6:00, on a nightstand, early morning blue light"},
         {"img": "12.png", "n": 3, "fx": "zoom_out",
          "prompt": "Squidward Tentacles from SpongeBob SquarePants in pajamas and a nightcap at dawn, playing the clarinet badly into a smartphone propped on a table, recording a voice message, musical notes in the air"},
-        {"img": "@chat:squidward", "n": 2, "fx": "zoom_in"}
+        {"img": "@chat:squidward", "n": 2, "fx": "zoom_in", "fit": "contain", "bg": "#F2F2F7"}
       ]
     },
     {

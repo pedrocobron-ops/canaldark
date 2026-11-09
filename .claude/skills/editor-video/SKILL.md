@@ -32,7 +32,7 @@ Saídas em `out/`: `video.mp4`, `narration.wav`, `music.wav`, `mix.wav`, `timeli
 ```json
 {
   "title": "Why is X refusing to ...?",
-  "voice": "am_onyx",          // am_onyx (grave), am_michael, am_fenrir, am_adam
+  "voice": "am_adam",          // padrão do canal (escolhida pelo Pedro). Outras: am_onyx, am_michael, am_fenrir
   "speed": 0.9,                // 0.9 dá cerca de 2,6 palavras/s
   "music_volume": 0.16,
   "post": "legenda do post + hashtags",
@@ -79,4 +79,10 @@ Canal, marca d'água e redes do cartão final ficam em `channel.json`, na raiz.
 3. Renderizar o final e entregar o `video.mp4` com `SendUserFile`, mais o texto do post.
 
 ## Imagens vindas do Google Drive
-O Pedro gera as imagens com os prompts do `PROMPTS.md` e sobe numa pasta do Drive com o nome do slug. Busque a pasta com `mcp__Google_Drive__search_files`, liste os arquivos, baixe cada um com `mcp__Google_Drive__download_file_content` e salve em `projects/<slug>/images/` com o nome exato (`01.png`, `02.png`...).
+O Pedro gera as imagens com os prompts do `PROMPTS.md` e sobe numa pasta do Drive. Normalmente ele manda o link da pasta. Os arquivos podem vir com nomes descritivos, e não `01.png`.
+
+1. Liste a pasta com `mcp__Google_Drive__search_files`, usando a query `parentId = '<id da pasta>'` e `excludeContentSnippets: true`. Pagine até acabar.
+2. Relacione cada arquivo ao shot pelo título e pelo prompt, e salve o mapa em `projects/<slug>/drive_map.json` no formato `{"<fileId>": "01.png"}`.
+3. Chame `mcp__Google_Drive__download_file_content` para cada fileId (pode ser em paralelo). O resultado é grande demais e é salvo automaticamente em `tool-results/`. Não leia esse arquivo.
+4. Converta tudo de uma vez com `python tools/drive_import.py projects/<slug> projects/<slug>/drive_map.json /root/.claude/projects`.
+5. Monte uma folha de contato das imagens e confira se cada uma bate com a cena. Ajuste as coordenadas de `circle` olhando a imagem real.
