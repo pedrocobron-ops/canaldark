@@ -1143,6 +1143,108 @@ def report(name, stage=1):
     return bg
 
 
+DEPARTURES = {
+    "suez": {"title": "SUEZ CANAL · NORTHBOUND", "rows": [("EVER GIVEN", "STUCK"), ("OCEAN QUEEN", "WAITING"),
+             ("CAPE HOPE", "WAITING"), ("BLUE WHALE II", "WAITING"), ("PACIFIC STAR", "WAITING"),
+             ("SEA BISCUIT", "WAITING"), ("NORDIC ROSE", "WAITING")],
+             "count_label": "SHIPS IN LINE", "count": 369, "days": "DAY 6"},
+}
+
+
+def departures(name, val=None):
+    """Painel de chegadas estilo aeroporto (letras amarelas em placas pretas)."""
+    c = DEPARTURES[name]
+    bg = Image.new("RGB", (W, H), (40, 44, 52))
+    d = ImageDraw.Draw(bg)
+    x0, y0, x1, y1 = 50, 200, W - 50, 1240
+    d.rounded_rectangle((x0, y0, x1, y1), 18, fill=(18, 18, 20), outline=(90, 90, 96), width=6)
+    d.rectangle((x0 + 6, y0 + 6, x1 - 6, y0 + 110), fill=(250, 200, 30))
+    d.text((W / 2, y0 + 58), c["title"], font=font(FONT_UI_BOLD, 50), fill=(20, 20, 20), anchor="mm")
+    d.text((x0 + 50, y0 + 150), "SHIP", font=font(FONT_UI_BOLD, 30), fill=(150, 150, 150), anchor="lm")
+    d.text((x1 - 50, y0 + 150), "STATUS", font=font(FONT_UI_BOLD, 30), fill=(150, 150, 150), anchor="rm")
+    y = y0 + 200
+    f = font(FONT_UI_BOLD, 44)
+    for ship, st in c["rows"]:
+        cx = x0 + 40
+        for ch in ship:
+            d.rounded_rectangle((cx, y, cx + 38, y + 60), 5, fill=(34, 34, 38))
+            d.line((cx, y + 30, cx + 38, y + 30), fill=(10, 10, 12), width=2)
+            d.text((cx + 19, y + 31), ch, font=f, fill=(255, 214, 60), anchor="mm")
+            cx += 42
+        col = (255, 60, 60) if st == "STUCK" else (255, 214, 60)
+        d.text((x1 - 50, y + 31), st, font=font(FONT_UI_BOLD, 40), fill=col, anchor="rm")
+        y += 78
+    d.line((x0 + 30, y + 10, x1 - 30, y + 10), fill=(70, 70, 76), width=3)
+    v = str(c["count"] if val is None else val)
+    d.text((x0 + 50, y + 85), c["count_label"], font=font(FONT_UI_BOLD, 44), fill=(200, 200, 200), anchor="lm")
+    d.text((x1 - 50, y + 85), v, font=font(FONT_CAPTION, 110), fill=(255, 70, 60), anchor="rm")
+    d.text((W / 2, y1 - 40), c["days"], font=font(FONT_UI_BOLD, 34), fill=(150, 150, 150), anchor="mm")
+    return bg
+
+
+SIGNS = {
+    "rock": {"lines": ["UNDER-A-ROCK", "CHAMPIONSHIP"], "sub": ["DAY 1  ·  48 COMPETITORS", "NO SNACKS. NO PEEKING."]},
+}
+
+
+def woodsign(name):
+    """Placa de madeira pintada à mão, pendurada por cordas."""
+    import random
+    c = SIGNS[name]
+    bg = Image.new("RGB", (W, H), (20, 60, 80))
+    d = ImageDraw.Draw(bg)
+    x0, y0, x1, y1 = 90, 420, W - 90, 1120
+    d.line((x0 + 120, 0, x0 + 150, y0 + 20), fill=(190, 160, 110), width=12)
+    d.line((x1 - 120, 0, x1 - 150, y0 + 20), fill=(190, 160, 110), width=12)
+    rnd = random.Random(3)
+    for k, (a, b) in enumerate([(y0, y0 + 230), (y0 + 236, y0 + 466), (y0 + 472, y1)]):
+        base = (150 + rnd.randint(-10, 10), 98 + rnd.randint(-8, 8), 52)
+        d.rounded_rectangle((x0, a, x1, b), 14, fill=base, outline=(90, 55, 25), width=6)
+        for g in range(6):
+            gy = rnd.randint(a + 20, b - 20)
+            d.line((x0 + 20, gy, x1 - 20, gy + rnd.randint(-6, 6)), fill=(125, 80, 40), width=3)
+        for nx in (x0 + 30, x1 - 30):
+            d.ellipse((nx - 9, (a + b) / 2 - 9, nx + 9, (a + b) / 2 + 9), fill=(80, 80, 85))
+    d.text((W / 2, y0 + 120), c["lines"][0], font=font(FONT_CAPTION, 112), fill=(255, 245, 225), anchor="mm",
+           stroke_width=8, stroke_fill=(70, 35, 15))
+    d.text((W / 2, y0 + 350), c["lines"][1], font=font(FONT_CAPTION, 112), fill=(255, 215, 80), anchor="mm",
+           stroke_width=8, stroke_fill=(70, 35, 15))
+    for i, ln in enumerate(c["sub"]):
+        d.text((W / 2, y0 + 545 + i * 62), ln, font=font(FONT_UI_BOLD, 42), fill=(255, 245, 225), anchor="mm")
+    d.ellipse((x1 - 190, y0 - 60, x1 - 40, y0 + 40), fill=(120, 110, 100), outline=(70, 60, 55), width=6)
+    return bg
+
+
+PODIUMS = {
+    "rock": {"title": "FINAL RESULTS", "sub": "Time spent under a rock",
+             "places": [("PATRICK", "6 DAYS"), ("A CLAM", "2 DAYS"), ("A SNAIL", "1 DAY")]},
+}
+
+
+def podium(name):
+    """Pódio com 1º, 2º e 3º lugar e medalhas."""
+    c = PODIUMS[name]
+    bg = Image.new("RGB", (W, H), (16, 24, 48))
+    d = ImageDraw.Draw(bg)
+    d.text((W / 2, 300), c["title"], font=font(FONT_CAPTION, 110), fill=(255, 214, 0), anchor="mm",
+           stroke_width=8, stroke_fill="black")
+    d.text((W / 2, 400), c["sub"], font=font(FONT_UI_BOLD, 44), fill="white", anchor="mm")
+    base = 1180
+    spec = [(1, W / 2, 470, (245, 196, 40)), (2, W / 2 - 320, 330, (200, 205, 215)), (3, W / 2 + 320, 230, (205, 130, 70))]
+    for rank, cx, hgt, col in spec:
+        who, val = c["places"][rank - 1]
+        top = base - hgt
+        d.rectangle((cx - 150, top, cx + 150, base), fill=col, outline=(0, 0, 0), width=6)
+        d.text((cx, top + 90), str(rank), font=font(FONT_CAPTION, 150), fill="white", anchor="mm",
+               stroke_width=8, stroke_fill=(0, 0, 0))
+        d.ellipse((cx - 55, top - 250, cx + 55, top - 140), fill=col, outline=(0, 0, 0), width=5)
+        d.text((cx, top - 195), str(rank), font=font(FONT_CAPTION, 70), fill="white", anchor="mm")
+        d.text((cx, top - 95), who, font=font(FONT_CAPTION, 56 if rank == 1 else 46), fill="white", anchor="mm",
+               stroke_width=5, stroke_fill="black")
+        d.text((cx, top - 40), val, font=font(FONT_UI_BOLD, 40 if rank == 1 else 34), fill=(255, 230, 120), anchor="mm")
+    return bg
+
+
 BOARDS = {
     "armwrestle": {"title": "ARM WRESTLING", "sub": "Backstage · Radio City Music Hall",
                    "left": "JOHNNY", "right": "ROCKETTES", "l": "0", "r": "35"},
@@ -1233,6 +1335,12 @@ def make(ref, handles=None):
         return badge(rest)
     if kind == "report":
         return report(rest)
+    if kind == "departures":
+        return departures(rest)
+    if kind == "sign":
+        return woodsign(rest)
+    if kind == "podium":
+        return podium(rest)
     if kind == "site":
         return site(rest)
     if kind == "coupon":

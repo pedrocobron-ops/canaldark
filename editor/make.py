@@ -257,6 +257,8 @@ def raw_image(proj, shot, handles, state=None):
         return assets.tipscreen(ref[5:], bg)
     if ref.startswith("@report:") and state is not None:
         return assets.report(ref[8:], state[1])
+    if ref.startswith("@departures:") and state is not None:
+        return assets.departures(ref[12:], state[1])
     if ref.startswith("@board:") and state is not None:
         return assets.board(ref[7:], state[1])
     if ref.startswith("@chat:") and state is not None:

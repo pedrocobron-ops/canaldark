@@ -119,13 +119,14 @@
           "prompt": "Realistic aerial photo of dozens of huge cargo ships and tankers anchored in a long line at sea waiting at the entrance of the Suez Canal, hazy desert coast, traffic jam at sea"
         },
         {
-          "img": "@board:suez",
+          "img": "@departures:suez",
           "n": 2,
           "anim": "count",
           "count_to": 369,
           "fx": "zoom_in",
           "tr": "punch",
-          "bg_img": "02.jpg"
+          "bg_img": "02.jpg",
+          "tilt": 0
         },
         {
           "img": "@stat:suez96",
@@ -219,14 +220,15 @@
           "prompt": "Underwater at the sandy bottom of a canal, many different cartoon sea creatures (a crab, a clam, a fish, a sea snail) each hiding under their own rock, a big banner floating above them that says UNDER-A-ROCK CHAMPIONSHIP 2021, a referee fish holding a stopwatch, bubbles"
         },
         {
-          "img": "@board:rock",
+          "img": "@sign:rock",
           "n": 1,
           "fx": "pop",
           "tr": "punch",
           "sfx": [
             "ding"
           ],
-          "bg_img": "13.jpg"
+          "bg_img": "13.jpg",
+          "tilt": -2
         }
       ]
     },
@@ -320,7 +322,7 @@
           "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) bursting out from under a big rock with both arms raised in victory, sand flying, confetti and bubbles, a crowd of cartoon sea creatures cheering"
         },
         {
-          "img": "@board:rockfinal",
+          "img": "@podium:rock",
           "n": 2,
           "fx": "pop",
           "tr": "punch",
