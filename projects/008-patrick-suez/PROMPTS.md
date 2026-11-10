@@ -71,12 +71,6 @@ Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple
 Underwater at the sandy bottom of a canal, many different cartoon sea creatures (a crab, a clam, a fish, a sea snail) each hiding under their own rock, a big banner floating above them that says UNDER-A-ROCK CHAMPIONSHIP 2021, a referee fish holding a stopwatch, bubbles, 2D cartoon illustration in the classic SpongeBob SquarePants Nickelodeon style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
-## 13.jpg
-
-```
-Realistic underwater photo of the sandy seabed with several large rocks, murky green water, light rays from above. A 2D cartoon Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers) inserted into the real photo, completely hidden under the biggest rock, only his two pink feet sticking out from under it, vertical 9:16
-```
-
 ## 14.jpg
 
 ```
@@ -87,6 +81,12 @@ Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple
 
 ```
 Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) at the bottom of the canal happily crawling under a gigantic rock, and far above him at the surface we can see the huge dark hull of a giant container ship resting right on top of that same rock, underwater cross-section view, 2D cartoon illustration in the classic SpongeBob SquarePants Nickelodeon style, bold outlines, vibrant colors, vertical 9:16 composition
+```
+
+## 13.jpg
+
+```
+Realistic underwater photo of the sandy seabed with several large rocks, murky green water, light rays from above. A 2D cartoon Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers) inserted into the real photo, completely hidden under the biggest rock, only his two pink feet sticking out from under it, vertical 9:16
 ```
 
 ## 16.jpg

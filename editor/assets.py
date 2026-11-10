@@ -923,7 +923,8 @@ def badge(name):
 
 
 QUOTES = {
-    "patrick": {"text": ["\"The wind", "did it.\""], "who": "Patrick Star · official statement · March 2021"},
+    "patrick": {"text": ["\"I waved.", "It didn't", "wave back.\""], "who": "Patrick Star · official statement · March 2021"},
+    "call": {"text": ["\"Hello, is this", "the ship guide?\""], "who": "Suez Canal Authority · phone call · March 23, 2021"},
     "kanye": {"text": ["\"Yo Taylor, I'm really", "happy for you,", "I'mma let you finish,", "but Beyoncé had one", "of the best videos", "of all time!\""],
               "who": "MTV Video Music Awards · Sept 13, 2009"},
 }
@@ -1066,6 +1067,31 @@ def coupon(name):
     return bg
 
 
+SITES = {
+    "stuck": {"url": "istheshipstillstuck.com", "q": "Is the ship still stuck?", "a": "YES.", "foot": "Day 4 · updated 2 minutes ago"},
+}
+
+
+def site(name):
+    """Print de site meme de uma pergunta só, numa janela de navegador."""
+    c = SITES[name]
+    bg = Image.new("RGB", (W, H), (30, 32, 38))
+    d = ImageDraw.Draw(bg)
+    x0, y0, x1, y1 = 60, 260, W - 60, 1180
+    d.rounded_rectangle((x0 + 10, y0 + 14, x1 + 10, y1 + 14), 28, fill=(10, 10, 14))
+    d.rounded_rectangle((x0, y0, x1, y1), 28, fill="white")
+    d.rounded_rectangle((x0, y0, x1, y0 + 130), 28, fill=(225, 228, 234))
+    d.rectangle((x0, y0 + 100, x1, y0 + 130), fill=(225, 228, 234))
+    for i, col in enumerate([(255, 95, 86), (255, 189, 46), (39, 201, 63)]):
+        d.ellipse((x0 + 34 + i * 46, y0 + 30, x0 + 64 + i * 46, y0 + 60), fill=col)
+    d.rounded_rectangle((x0 + 40, y0 + 76, x1 - 40, y0 + 120), 20, fill="white")
+    d.text((x0 + 70, y0 + 98), "\U0001F512 " if False else c["url"], font=font(FONT_UI, 30), fill=(70, 70, 80), anchor="lm")
+    d.text((W / 2, y0 + 300), c["q"], font=font(FONT_UI_BOLD, 56), fill=(30, 30, 36), anchor="mm")
+    d.text((W / 2, y0 + 560), c["a"], font=font(FONT_CAPTION, 330), fill=(220, 30, 40), anchor="mm")
+    d.text((W / 2, y1 - 70), c["foot"], font=font(FONT_UI, 30), fill=(140, 140, 150), anchor="mm")
+    return bg
+
+
 REPORTS = {
     "job": {"title": "JOB DESCRIPTION", "sub": "Suez Canal Authority · Position #0002",
             "rows": [("Position", "Official ship guide"), ("Duty 1", "Wave flag (left)"), ("Duty 2", "Wave flag (right)"),
@@ -1145,7 +1171,7 @@ def board(name, r_val=None):
     for i, (lab, val, col) in enumerate([(c["left"], c["l"], (90, 170, 255)), (c["right"], c["r"], (255, 70, 70))]):
         cx = W / 2 + (-1 if i == 0 else 1) * 225
         d.text((cx, y0 + 290), lab, font=font(FONT_CAPTION, 60), fill=col, anchor="mm")
-        d.rounded_rectangle((cx - 170, y0 + 350, cx + 170, y0 + 640), 20, fill=(5, 5, 8))
+        d.rounded_rectangle((cx - 170, y0 + 350, cx + 170, y0 + 640), 20, fill=(0, 0, 0))
         d.text((cx, y0 + 495), val, font=font(FONT_CAPTION, 230 if len(val) <= 2 else 160), fill=(255, 120, 40), anchor="mm")
     d.text((W / 2, y0 + 495), ":", font=font(FONT_CAPTION, 160), fill="white", anchor="mm")
     return bg
@@ -1207,6 +1233,8 @@ def make(ref, handles=None):
         return badge(rest)
     if kind == "report":
         return report(rest)
+    if kind == "site":
+        return site(rest)
     if kind == "coupon":
         return coupon(rest)
     if kind == "award":

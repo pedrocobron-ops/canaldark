@@ -271,9 +271,37 @@ def raw_image(proj, shot, handles, state=None):
     return im
 
 
+def scene_backdrop(proj, im, shot):
+    """Põe a tela desenhada sobre a cena do vídeo: o fundo liso vira transparente e,
+    atrás, entra uma imagem do projeto desfocada e escurecida. Com "tilt", o cartão
+    inclina e ganha sombra, como um objeto de verdade."""
+    import numpy as np
+    rgb = np.asarray(im.convert("RGB")).astype(int)
+    key = rgb[rgb.shape[0] // 2, 3]
+    diff = np.abs(rgb - key).sum(-1)
+    tol = shot.get("key_tol", 20)
+    alpha = np.clip((diff - tol) * 12, 0, 255).astype("uint8")
+    fg = im.convert("RGBA")
+    fg.putalpha(Image.fromarray(alpha))
+    back = ImageOps.fit(open_image(proj, shot["bg_img"]), im.size, Image.LANCZOS)
+    back = back.filter(ImageFilter.GaussianBlur(shot.get("bg_blur", 22)))
+    back = Image.blend(back, Image.new("RGB", im.size, (0, 0, 0)), shot.get("bg_dark", 0.5)).convert("RGBA")
+    tilt = shot.get("tilt", 0)
+    if tilt:
+        fg = fg.rotate(tilt, resample=Image.BICUBIC, expand=False)
+    sh = Image.new("RGBA", im.size, (0, 0, 0, 0))
+    sh.putalpha(fg.split()[3].point(lambda v: int(v * 0.6)))
+    sh = sh.filter(ImageFilter.GaussianBlur(26))
+    back.alpha_composite(sh, (18, 30))
+    back.alpha_composite(fg)
+    return back.convert("RGB")
+
+
 def load_shot_image(proj, shot, size, handles, state=None):
     w, h = size
     im = raw_image(proj, shot, handles, state)
+    if shot["img"].startswith("@") and shot.get("bg_img"):
+        im = scene_backdrop(proj, im, shot)
     # base com folga de 18% para zoom e tremida
     bw, bh = int(w * 1.18), int(h * 1.18)
     fit = shot.get("fit")
@@ -286,7 +314,8 @@ def load_shot_image(proj, shot, size, handles, state=None):
         canvas = ImageOps.fit(im, (bw, bh), Image.LANCZOS).filter(ImageFilter.GaussianBlur(40))
         canvas = Image.blend(canvas, Image.new("RGB", (bw, bh), (0, 0, 0)), 0.25)
         c = ImageOps.contain(im, (int(bw / 1.18 * 1.02), int(bh / 1.18)), Image.LANCZOS)
-        canvas.paste(c, ((bw - c.width) // 2 + int(bw * shot.get("shift_x", 0)), (bh - c.height) // 2))
+        canvas.paste(c, ((bw - c.width) // 2 + int(bw * shot.get("shift_x", 0)),
+                         (bh - c.height) // 2 + int(bh * shot.get("shift_y", 0))))
         return canvas
     if fit == "contain":
         bgc = shot.get("bg") or (im.getpixel((2, H // 2 if im.height > H // 2 else 2)) if shot["img"].startswith("@") else "white")
@@ -656,7 +685,7 @@ def make_cover(proj, script, out, handles):
     first = script["beats"][0]
     shot = {"img": cov.get("img", first["shots"][0]["img"]), "fit": cov.get("fit", "cover")}
     base = load_shot_image(proj, shot, (W, H), handles)
-    img = frame_from(base, (W, H), cov.get("zoom", 1.0), 0, 0)
+    img = frame_from(base, (W, H), cov.get("zoom", 1.0), 0, int(H * cov.get("dy", 0)))
     # escurece a parte de baixo para o texto saltar
     grad = Image.new("L", (1, H))
     for y in range(H):

@@ -5,7 +5,7 @@
   "speed": 0.95,
   "music_volume": 0.24,
   "hook_full": true,
-  "post": "The Ever Given blocked the Suez Canal for 6 days in 2021... so why didn't Patrick Star stop it? Would you trade 9.6 billion dollars a day for one free scoop of ice cream? 👇 #patrickstar #spongebob #suezcanal #evergiven #nickelodeon #memes",
+  "post": "The Ever Given blocked the Suez Canal for 6 days in 2021... so why didn't Patrick Star stop it? Would you trade 9.6 billion dollars a day for one free scoop of ice cream? 👇 #patrickstar #spongebob #suezcanal #evergiven #didyouknow #funnyfacts",
   "style_suffix": "2D cartoon illustration in the classic SpongeBob SquarePants Nickelodeon style, bold outlines, vibrant colors, vertical 9:16 composition",
   "wardrobe": {
     "Patrick Star": "pink starfish, green shorts with purple flowers, no shirt (the same in every image, no hats or vests)"
@@ -13,7 +13,8 @@
   "cover": {
     "img": "21.jpg",
     "text": "Why didn't {y:Patrick} stop the {r:Ever Given}?",
-    "y": 0.72
+    "y": 0.72,
+    "dy": -0.05
   },
   "beats": [
     {
@@ -43,7 +44,8 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "punch",
-          "cap_y": 0.8
+          "cap_y": 0.8,
+          "bg_img": "03.jpg"
         },
         {
           "img": "04.jpg",
@@ -62,7 +64,9 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "whip",
-          "cap_y": 0.8
+          "cap_y": 0.8,
+          "bg_img": "05.jpg",
+          "tilt": -3
         },
         {
           "img": "05.jpg",
@@ -79,22 +83,15 @@
           "img": "@cal:suez",
           "n": 1,
           "fx": "pop",
-          "tr": "whip"
-        },
-        {
-          "img": "@stat:evergiven",
-          "n": 2,
-          "fx": "pop",
-          "tr": "punch",
-          "sfx": [
-            "impact"
-          ]
+          "tr": "whip",
+          "bg_img": "06.jpg",
+          "tilt": 4
         },
         {
           "img": "06.jpg",
-          "n": 1,
+          "n": 3,
           "fx": "zoom_in",
-          "tr": "punch",
+          "tr": "zoom",
           "prompt": "Realistic satellite image of the Suez Canal seen from space, a giant container ship wedged diagonally from bank to bank, blocking the whole canal, sandy desert on both sides",
           "sfx": [
             "impact"
@@ -106,8 +103,18 @@
       "say": "For {r:six days}, | more than {r:360 ships} | waited in line, | and {r:9.6 billion dollars} | of trade a day | stood still.",
       "shots": [
         {
+          "img": "@site:stuck",
+          "n": 1,
+          "fx": "pop",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ],
+          "bg_img": "07.jpg"
+        },
+        {
           "img": "07.jpg",
-          "n": 2,
+          "n": 1,
           "fx": "pan_left",
           "prompt": "Realistic aerial photo of dozens of huge cargo ships and tankers anchored in a long line at sea waiting at the entrance of the Suez Canal, hazy desert coast, traffic jam at sea"
         },
@@ -117,7 +124,8 @@
           "anim": "count",
           "count_to": 369,
           "fx": "zoom_in",
-          "tr": "punch"
+          "tr": "punch",
+          "bg_img": "02.jpg"
         },
         {
           "img": "@stat:suez96",
@@ -126,12 +134,14 @@
           "tr": "punch",
           "sfx": [
             "ding"
-          ]
+          ],
+          "bg_img": "07.jpg",
+          "bg_dark": 0.62
         }
       ]
     },
     {
-      "say": "Patrick claims | the {o:wind} turned | his flags | {r:upside down}.",
+      "say": "Patrick claims | he waved the flags, | but the ship | didn't {r:wave back}.",
       "shots": [
         {
           "img": "08.jpg",
@@ -145,7 +155,9 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "punch",
-          "cap_y": 0.8
+          "cap_y": 0.8,
+          "bg_img": "08.jpg",
+          "bg_dark": 0.62
         }
       ]
     },
@@ -162,7 +174,7 @@
       ]
     },
     {
-      "say": "When the Canal Authority | called his post | to ask about the ship, | someone answered: | {p:No, this is Patrick}.",
+      "say": "When the Canal Authority | called his post | and asked: | {y:Is this the ship guide?} | Someone answered: | {p:No, this is Patrick}.",
       "shots": [
         {
           "img": "10.jpg",
@@ -172,12 +184,24 @@
           "prompt": "Realistic top-down satellite style photo of the sandy bank of the Suez Canal next to the stuck giant ship, an empty folding beach chair, two orange flags stuck in the sand and a small cardboard sign that says BACK IN 5 MINUTES, timestamp MAR 23 2021 in the corner"
         },
         {
-          "img": "25.jpg",
+          "img": "@quote:call",
           "n": 3,
           "fx": "zoom_in",
           "tr": "punch",
           "sfx": [
             "ding"
+          ],
+          "cap_y": 0.8,
+          "bg_img": "10.jpg",
+          "bg_dark": 0.62
+        },
+        {
+          "img": "25.jpg",
+          "n": 1,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "sfx": [
+            "impact"
           ],
           "cap_y": 0.45,
           "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) lying under a rock at the bottom of the canal, lazily answering an old rotary telephone, with a big speech bubble that says NO, THIS IS PATRICK!, bubbles, sandy floor"
@@ -201,7 +225,8 @@
           "tr": "punch",
           "sfx": [
             "ding"
-          ]
+          ],
+          "bg_img": "13.jpg"
         }
       ]
     },
@@ -213,13 +238,15 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "whip",
-          "cap_y": 0.8
+          "cap_y": 0.8,
+          "bg_img": "11.jpg",
+          "tilt": 2
         },
         {
-          "img": "13.jpg",
+          "img": "extra_12_juiz.jpg",
           "n": 2,
           "fx": "zoom_in",
-          "prompt": "Realistic underwater photo of the sandy seabed with several large rocks, murky green water, light rays from above. A 2D cartoon Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers) inserted into the real photo, completely hidden under the biggest rock, only his two pink feet sticking out from under it, vertical 9:16"
+          "cap_y": 0.24
         }
       ]
     },
@@ -240,25 +267,41 @@
           "tr": "punch",
           "sfx": [
             "ding"
-          ]
+          ],
+          "bg_img": "14.jpg",
+          "tilt": -3,
+          "key_tol": 90
         },
         {
           "img": "@stat:rockodds",
           "n": 2,
           "fx": "pop",
-          "tr": "punch"
+          "tr": "punch",
+          "bg_img": "11.jpg",
+          "bg_dark": 0.62
         }
       ]
     },
     {
-      "say": "He picked | the {y:biggest rock} | he could find.",
+      "say": "He picked | the biggest rock | in the canal. | The one right under | the {r:Ever Given}.",
       "shots": [
         {
           "img": "15.jpg",
           "n": 3,
           "fx": "zoom_out",
           "tr": "zoom",
-          "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) at the bottom of the canal happily crawling under a gigantic rock, and far above him at the surface we can see the huge dark hull of a giant container ship resting right on top of that same rock, underwater cross-section view"
+          "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) at the bottom of the canal happily crawling under a gigantic rock, and far above him at the surface we can see the huge dark hull of a giant container ship resting right on top of that same rock, underwater cross-section view",
+          "mirror": true
+        },
+        {
+          "img": "13.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "prompt": "Realistic underwater photo of the sandy seabed with several large rocks, murky green water, light rays from above. A 2D cartoon Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers) inserted into the real photo, completely hidden under the biggest rock, only his two pink feet sticking out from under it, vertical 9:16",
+          "tr": "punch",
+          "sfx": [
+            "impact"
+          ]
         }
       ]
     },
@@ -283,7 +326,8 @@
           "tr": "punch",
           "sfx": [
             "ding"
-          ]
+          ],
+          "bg_img": "16.jpg"
         }
       ]
     },
@@ -297,7 +341,9 @@
           "tr": "punch",
           "sfx": [
             "ding"
-          ]
+          ],
+          "bg_img": "18.jpg",
+          "tilt": -4
         },
         {
           "img": "18.jpg",
@@ -338,12 +384,16 @@
             "impact"
           ],
           "cap_y": 0.24,
-          "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) standing up at the bottom of the canal lifting a gigantic rock above his head with both arms, and the giant container ship on top of the rock rising and floating free at the surface above him, underwater cross-section view, he has no idea"
+          "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) standing up at the bottom of the canal lifting a gigantic rock above his head with both arms, and the giant container ship on top of the rock rising and floating free at the surface above him, underwater cross-section view, he has no idea",
+          "fit": "contain",
+          "scale": 0.9,
+          "shift_y": -0.05,
+          "bg": "#262c38"
         }
       ]
     },
     {
-      "say": "He still hasn't used | the coupon. | It {r:expired} in 2021.",
+      "say": "He still hasn't used | the coupon. | It expired {r:two days later}.",
       "shots": [
         {
           "img": "22.jpg",
@@ -360,7 +410,9 @@
           "tr": "punch",
           "sfx": [
             "thud"
-          ]
+          ],
+          "bg_img": "22.jpg",
+          "tilt": 3
         }
       ]
     },
@@ -372,7 +424,8 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "punch",
-          "prompt": "Realistic photo recreating the famous meme: a tiny yellow excavator digging the sand next to the gigantic bow of a stuck container ship, the ship towering over it. A 2D cartoon Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers) inserted into the real photo, sitting inside the excavator cabin, small and easy to miss, vertical 9:16"
+          "prompt": "Realistic photo recreating the famous meme: a tiny yellow excavator digging the sand next to the gigantic bow of a stuck container ship, the ship towering over it. A 2D cartoon Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers) inserted into the real photo, sitting inside the excavator cabin, small and easy to miss, vertical 9:16",
+          "mirror": true
         },
         {
           "img": "24.jpg",
