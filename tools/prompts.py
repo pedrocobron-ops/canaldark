@@ -21,7 +21,8 @@ for b in d["beats"]:
         low = p.lower()
         if sh.get("style") == "photo" or low.startswith("realistic") or "photograph" in low.split(" of ")[0]:
             p += ", vertical 9:16" if "photograph" in low else ", photorealistic, vertical 9:16"
-        elif "painting" in low.split(" of ")[0] or "3d" in low:
+        elif any(k in low.split(" of ")[0] for k in ("painting", "engraving", "woodcut", "print")) \
+                or "inserted into" in low or "3d powerpoint" in low or "3d stick" in low:
             p += ", vertical 9:16"     # pintura ou boneco 3D: nunca recebe o estilo cartoon
         else:
             p += ", " + suffix

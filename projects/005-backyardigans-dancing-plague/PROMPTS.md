@@ -14,7 +14,7 @@ The five Backyardigans (Pablo the blue penguin, Tyrone the orange moose, Uniqua 
 ## 02.jpg
 
 ```
-Old 16th century black and white engraving of a crowd of medieval peasants dancing wildly and uncontrollably in a town square, people collapsing, in the style of the famous dancing mania engravings after Pieter Bruegel. Hidden in the bottom corner of the crowd, Austin the shy purple kangaroo from The Backyardigans is peeking out, drawn as a small 2D cartoon character inserted into the old engraving, vertical 9:16, 3D CGI cartoon in the style of The Backyardigans animated show, soft colors, cute rounded characters, vertical 9:16 composition
+Old 16th century black and white engraving of a crowd of medieval peasants dancing wildly and uncontrollably in a town square, people collapsing, in the style of the famous dancing mania engravings after Pieter Bruegel. Hidden in the bottom corner of the crowd, Austin the shy purple kangaroo from The Backyardigans is peeking out, drawn as a small 2D cartoon character inserted into the old engraving, vertical 9:16, vertical 9:16
 ```
 
 ## 03.jpg
@@ -32,13 +32,13 @@ The Backyardigans' suburban backyard magically transforming into a medieval Euro
 ## 05.jpg
 
 ```
-Old 16th century woodcut print of a medieval woman in a long dress dancing alone in a narrow cobblestone street while townspeople stare at her from doorways. In one of the upper windows, Pablo the blue penguin from The Backyardigans is peeking out, small 2D cartoon character inserted into the old woodcut, aged paper texture, vertical 9:16, 3D CGI cartoon in the style of The Backyardigans animated show, soft colors, cute rounded characters, vertical 9:16 composition
+Old 16th century woodcut print of a medieval woman in a long dress dancing alone in a narrow cobblestone street while townspeople stare at her from doorways. In one of the upper windows, Pablo the blue penguin from The Backyardigans is peeking out, small 2D cartoon character inserted into the old woodcut, aged paper texture, vertical 9:16, vertical 9:16
 ```
 
 ## 06.jpg
 
 ```
-Old 16th century engraving of hundreds of medieval people dancing in the streets of Strasbourg day and night, some exhausted and collapsing, torches and moonlight, chaotic crowd. Among the dancers, Tyrone the orange moose from The Backyardigans is dancing too, small 2D cartoon character inserted into the old engraving, aged paper texture, vertical 9:16, 3D CGI cartoon in the style of The Backyardigans animated show, soft colors, cute rounded characters, vertical 9:16 composition
+Old 16th century engraving of hundreds of medieval people dancing in the streets of Strasbourg day and night, some exhausted and collapsing, torches and moonlight, chaotic crowd. Among the dancers, Tyrone the orange moose from The Backyardigans is dancing too, small 2D cartoon character inserted into the old engraving, aged paper texture, vertical 9:16, vertical 9:16
 ```
 
 ## 07.jpg
@@ -50,7 +50,7 @@ The five Backyardigans playing instruments on a medieval wooden stage in a town 
 ## 08.jpg
 
 ```
-Old 16th century engraving of a wooden stage built in a medieval town square with musicians playing drums, pipes and fiddles for a crowd of dancing people. Among the musicians on the stage, Tasha the yellow hippo from The Backyardigans is playing a tambourine, small 2D cartoon character inserted into the old engraving, aged paper texture, vertical 9:16, 3D CGI cartoon in the style of The Backyardigans animated show, soft colors, cute rounded characters, vertical 9:16 composition
+Old 16th century engraving of a wooden stage built in a medieval town square with musicians playing drums, pipes and fiddles for a crowd of dancing people. Among the musicians on the stage, Tasha the yellow hippo from The Backyardigans is playing a tambourine, small 2D cartoon character inserted into the old engraving, aged paper texture, vertical 9:16, vertical 9:16
 ```
 
 ## 09.jpg
