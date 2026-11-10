@@ -965,7 +965,7 @@ def award(name):
 
 SONGS = {
     "innocent": {"title": "Innocent", "artist": "Taylor Swift", "album": "Speak Now · 2010",
-                 "pos": "2:41", "len": "5:02", "colors": [(120, 40, 140), (230, 120, 170)]},
+                 "pos": "2:41", "len": "2:21", "colors": [(120, 40, 140), (230, 120, 170)]},
 }
 
 
