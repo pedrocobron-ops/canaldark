@@ -1,0 +1,265 @@
+{
+  "title": "Why didn't Barney warn the dinosaurs about the asteroid?",
+  "format": "A",
+  "voice": "am_adam",
+  "speed": 0.9,
+  "music_volume": 0.24,
+  "post": "Why didn't Barney warn the dinosaurs? 🦖☄️ #barney #dinosaurs #history #funny #fyp",
+  "style_suffix": "cartoon illustration in the style of Barney and Friends, purple T. rex character with green belly, bright friendly colors, vertical 9:16 composition",
+  "cover": {
+    "img": "06.jpg",
+    "text": "Why didn't {v:Barney} warn the {g:dinosaurs}?",
+    "y": 0.72
+  },
+  "beats": [
+    {
+      "say": "Why didn't {v:Barney} | warn the dinosaurs | about the {r:asteroid}?",
+      "shots": [
+        {
+          "img": "01.jpg",
+          "n": 2,
+          "fit": "contain",
+          "fx": "zoom_in",
+          "cap_y": 0.24,
+          "prompt": "Barney the purple dinosaur from Barney and Friends standing with a big friendly smile and open arms, full body, plain pure white background"
+        },
+        {
+          "img": "02.jpg",
+          "n": 1,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "prompt": "Dramatic realistic scientific illustration of a giant asteroid on fire entering Earth's atmosphere above a prehistoric jungle, dinosaurs silhouettes looking up, orange sky",
+          "style": "photo"
+        }
+      ]
+    },
+    {
+      "say": "It's no {y:secret} | that Barney was | the official {y:astronomer} | of the dinosaurs.",
+      "shots": [
+        {
+          "img": "../../002-fred-pompeii/images/03.png",
+          "n": 1,
+          "fit": "contain",
+          "fx": "zoom_in"
+        },
+        {
+          "img": "03.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "cap_y": 0.24,
+          "prompt": "Barney the purple dinosaur from Barney and Friends looking through a big brass telescope on top of a prehistoric cliff at night, starry sky, volcanoes in the distance"
+        }
+      ]
+    },
+    {
+      "say": "{y:66 million years ago}, | he was the first to see it: | a rock {r:six miles wide}, | heading straight for {y:Mexico}.",
+      "shots": [
+        {
+          "img": "03.jpg",
+          "n": 2,
+          "fx": "zoom_out",
+          "cap_y": 0.24
+        },
+        {
+          "img": "04.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "zoom",
+          "prompt": "Realistic view from space of a huge asteroid approaching Earth, aiming at the Gulf of Mexico and the Yucatan peninsula, cinematic lighting"
+        }
+      ]
+    },
+    {
+      "say": "When it hit, | it wiped out about | {r:75%} of all life | on Earth.",
+      "shots": [
+        {
+          "img": "05.jpg",
+          "n": 4,
+          "fx": "shake",
+          "tr": "punch",
+          "sfx": [
+            "impact"
+          ],
+          "prompt": "Dramatic realistic painting of a massive asteroid impact explosion on the horizon of a prehistoric landscape, a giant fireball and shockwave, dinosaurs running in panic, museum painting texture"
+        }
+      ]
+    },
+    {
+      "say": "Barney swears | he {y:warned} everyone.",
+      "shots": [
+        {
+          "img": "01.jpg",
+          "n": 2,
+          "fit": "contain",
+          "fx": "pop",
+          "tr": "punch",
+          "cap_y": 0.24
+        }
+      ]
+    },
+    {
+      "say": "But many say | {r:that's a lie}.",
+      "shots": [
+        {
+          "img": "../../001-squidward-imessage/images/06.png",
+          "n": 2,
+          "fit": "contain",
+          "fx": "zoom_in",
+          "tr": "punch"
+        }
+      ]
+    },
+    {
+      "say": "{y:Records} show | he did warn them. | Just not the way | you'd expect.",
+      "shots": [
+        {
+          "img": "06.jpg",
+          "n": 4,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "cap_y": 0.24,
+          "prompt": "Barney the purple dinosaur from Barney and Friends singing happily into a microphone on a big rock stage in a prehistoric jungle, a crowd of dinosaurs watching, while a giant flaming asteroid is clearly visible in the sky behind him"
+        }
+      ]
+    },
+    {
+      "say": "Barney never says | anything {r:sad}. | So he turned the warning | into a {y:happy song}.",
+      "shots": [
+        {
+          "img": "06.jpg",
+          "n": 2,
+          "fx": "zoom_out",
+          "cap_y": 0.24
+        },
+        {
+          "img": "@stone:song",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ]
+        }
+      ]
+    },
+    {
+      "say": "There's a {r:big rock} | in the sky, | it's coming | to say {y:hi}!",
+      "shots": [
+        {
+          "img": "@stone:song",
+          "n": 4,
+          "fx": "zoom_in"
+        }
+      ]
+    },
+    {
+      "say": "The dinosaurs {y:danced}. | {v:Baby Bop} and {g:BJ} | asked for an {y:encore}.",
+      "shots": [
+        {
+          "img": "07.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "cap_y": 0.24,
+          "prompt": "A group of cartoon dinosaurs dancing happily in a prehistoric jungle, Baby Bop the green dinosaur and BJ the yellow dinosaur from Barney and Friends cheering in front, a huge flaming asteroid in the sky behind them that nobody notices"
+        }
+      ]
+    },
+    {
+      "say": "The {r:T. rex} tried to clap, | but his arms | were too {y:short}.",
+      "shots": [
+        {
+          "img": "08.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "prompt": "Realistic photo-style image of a Tyrannosaurus rex in a prehistoric jungle trying to clap its tiny short arms with a frustrated face. Hidden in the bushes behind it, Barney the purple dinosaur is peeking out, small cartoon character inserted into the realistic scene, vertical 9:16"
+        }
+      ]
+    },
+    {
+      "say": "And this part is {y:real}: | the T. rex lived | {y:closer} to us | than to the {g:Stegosaurus}.",
+      "shots": [
+        {
+          "img": "@timeline:trex",
+          "n": 4,
+          "fx": "zoom_in",
+          "tr": "fade",
+          "sfx": [
+            "impact"
+          ]
+        }
+      ]
+    },
+    {
+      "say": "Scientists even found | that the asteroid | hit in {y:spring}. | Barney says | that's why the song | was so {y:cheerful}.",
+      "shots": [
+        {
+          "img": "09.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "prompt": "Realistic museum photo of a fossilized prehistoric fish in a slab of rock under a spotlight, with a small handwritten museum label, dark background, vertical 9:16"
+        },
+        {
+          "img": "06.jpg",
+          "n": 3,
+          "fx": "pan_left",
+          "tr": "punch",
+          "cap_y": 0.24
+        }
+      ]
+    },
+    {
+      "say": "{r:Unlike} the other dinosaurs, | Barney {y:survived}. | He hid inside | a child's {y:imagination}, | and came back in {y:1992} | with his own {b:TV show}.",
+      "shots": [
+        {
+          "img": "05.jpg",
+          "n": 2,
+          "fx": "zoom_out",
+          "tr": "zoom"
+        },
+        {
+          "img": "10.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "fade",
+          "prompt": "Realistic 1990s family photo of a little kid in a bedroom hugging a purple plush dinosaur toy that is glowing with magical sparkles, warm lamp light, slight film grain, vertical 9:16"
+        },
+        {
+          "img": "11.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "prompt": "Realistic grainy 1992 VHS television still of a kids TV show set with a person in a big purple dinosaur costume surrounded by smiling children sitting on the floor, colorful set, VHS scan lines, date stamp in the corner, vertical 9:16"
+        }
+      ]
+    },
+    {
+      "say": "Would you have taken | {v:Barney} {r:seriously}?",
+      "shots": [
+        {
+          "img": "../../001-squidward-imessage/images/19.png",
+          "n": 2,
+          "fit": "contain",
+          "fx": "zoom_in",
+          "inset": {
+            "img": "06.jpg",
+            "box": [
+              0.17,
+              0.06,
+              0.87,
+              0.28
+            ],
+            "center": [
+              0.5,
+              0.4
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "outro": {}
+}

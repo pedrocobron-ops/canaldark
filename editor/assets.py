@@ -714,6 +714,86 @@ def old_map(name):
     return bg
 
 
+STONES = {
+    "song": {"title": "Barney's Song", "lines": ["There's a big rock", "in the sky,", "it's coming", "to say hi!", "", "la la la ♪"]},
+}
+
+
+def stone(name):
+    """Tábua de pedra com texto entalhado (pré-histórico)."""
+    c = STONES[name]
+    rnd = random.Random(11)
+    bg = Image.new("RGB", (W, H), (70, 110, 60))
+    d0 = ImageDraw.Draw(bg)
+    for y in range(H):   # céu pré-histórico em degradê
+        k = y / H
+        d0.line((0, y, W, y), fill=(int(240 - 120 * k), int(150 - 60 * k), int(90 - 30 * k)))
+    PW, PH = 820, 960
+    tab = Image.new("RGBA", (PW, PH), (0, 0, 0, 0))
+    td = ImageDraw.Draw(tab)
+    td.rounded_rectangle((0, 0, PW - 1, PH - 1), 120, fill=(140, 132, 120, 255))
+    tex = Image.new("RGBA", (PW, PH), (0, 0, 0, 0))
+    xd = ImageDraw.Draw(tex)
+    for _ in range(900):
+        x, y, r = rnd.randint(0, PW), rnd.randint(0, PH), rnd.randint(2, 9)
+        v = rnd.randint(-35, 35)
+        xd.ellipse((x - r, y - r, x + r, y + r), fill=(140 + v, 132 + v, 120 + v, 120))
+    tex = tex.filter(ImageFilter.GaussianBlur(2))
+    tab = Image.alpha_composite(tab, Image.composite(tex, Image.new("RGBA", (PW, PH)), tab.getchannel("A")))
+    td = ImageDraw.Draw(tab)
+    td.rounded_rectangle((24, 24, PW - 25, PH - 25), 100, outline=(95, 88, 78, 255), width=8)
+    def carve(xy, text, f):
+        x, y = xy
+        td.text((x + 3, y + 3), text, font=f, fill=(210, 205, 195), anchor="mm")
+        td.text((x, y), text, font=f, fill=(70, 62, 55), anchor="mm")
+    carve((PW / 2, 130), c["title"], font(FONT_CAPTION, 74))
+    td.line((140, 190, PW - 140, 190), fill=(95, 88, 78), width=5)
+    y = 290
+    for line in c["lines"]:
+        if line:
+            carve((PW / 2, y), line, font(FONT_CAPTION, 76 if "♪" not in line else 60))
+        y += 105
+    # notas musicais coloridas
+    for nx, ny in [(110, 330), (PW - 110, 480), (120, 700)]:
+        e = emoji("🎵", 80)
+        tab.paste(e, (nx - 40, ny - 40), e)
+    sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ox, oy = (W - PW) // 2, 190
+    ImageDraw.Draw(sh).rounded_rectangle((ox + 30, oy + 40, ox + PW + 30, oy + PH + 30), 120, fill=(0, 0, 0, 150))
+    sh = sh.filter(ImageFilter.GaussianBlur(28))
+    bg.paste(sh, (0, 0), sh)
+    bg.paste(tab, (ox, oy), tab)
+    return bg
+
+
+def timeline(name):
+    """Linha do tempo: Estegossauro -> T. rex -> você (o fato real em forma visual)."""
+    bg = Image.new("RGB", (W, H), (14, 18, 30))
+    d = ImageDraw.Draw(bg)
+    d.text((W / 2, 240), "MILLIONS OF YEARS AGO", font=font(FONT_CAPTION, 62), fill=(255, 214, 0), anchor="mm")
+    x0, x1, y = 220, W - 190, 640
+    d.line((x0, y, x1, y), fill="white", width=10)
+    pts = [(150, "Stegosaurus", "🦕", (90, 200, 120)), (67, "T. rex", "🦖", (255, 80, 80)), (0, "You", "🧍", (90, 170, 255))]
+    def X(m): return x1 - (x1 - x0) * m / 150
+    for m, lab, em, col in pts:
+        x = X(m)
+        d.ellipse((x - 18, y - 18, x + 18, y + 18), fill=col)
+        e = emoji(em, 130)
+        bg.paste(e, (int(x - e.width / 2), y - 70 - e.height), e)
+        d.text((x, y + 60), lab, font=font(FONT_UI_BOLD, 40), fill="white", anchor="mm")
+        d.text((x, y + 110), f"{m}M" if m else "today", font=font(FONT_UI, 34), fill=(170, 175, 190), anchor="mm")
+    # chaves com as distâncias
+    def brace(a, b, txt, col, yy):
+        xa, xb = X(a), X(b)
+        d.line((xa, yy, xb, yy), fill=col, width=6)
+        d.line((xa, yy - 18, xa, yy + 18), fill=col, width=6)
+        d.line((xb, yy - 18, xb, yy + 18), fill=col, width=6)
+        d.text(((xa + xb) / 2, yy + 50), txt, font=font(FONT_CAPTION, 48), fill=col, anchor="mm")
+    brace(150, 67, "83 million years", (90, 200, 120), 860)
+    brace(67, 0, "67 million years", (90, 170, 255), 990)
+    return bg
+
+
 def anim_count(ref):
     """Quantos itens um asset animado revela (mensagens ou notificações)."""
     kind, _, name = ref[1:].partition(":")
@@ -766,6 +846,10 @@ def make(ref, handles=None):
         return chat(rest)
     if kind == "lock":
         return lock(rest)
+    if kind == "stone":
+        return stone(rest)
+    if kind == "timeline":
+        return timeline(rest)
     if kind == "map":
         return old_map(rest)
     if kind == "doc":

@@ -15,3 +15,4 @@
 | Why didn't Garfield warn Pompeii? | A | Garfield | Vesúvio | dormiu a erupção inteira | continuação do 003 |
 | Why didn't Wile E. Coyote win the Great Emu War in 1932? | A | Coiote | Guerra dos Emus | entrega da ACME atrasou | ideia |
 | Why didn't Scooby-Doo stop the Great Molasses Flood of 1919? | A | Scooby-Doo | Inundação de Melaço de Boston | estava lambendo o tanque | ideia |
+| Why didn't Barney warn the dinosaurs about the asteroid? | A | Barney | extinção dos dinossauros | só fala coisa feliz, avisou cantando | em produção (006) |
