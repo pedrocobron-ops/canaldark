@@ -255,6 +255,8 @@ def raw_image(proj, shot, handles, state=None):
     if ref.startswith("@tip:"):
         bg = open_image(proj, shot["bg_img"]) if shot.get("bg_img") else None
         return assets.tipscreen(ref[5:], bg)
+    if ref.startswith("@board:") and state is not None:
+        return assets.board(ref[7:], state[1])
     if ref.startswith("@chat:") and state is not None:
         return assets.chat(ref[6:], *state)
     if ref.startswith("@lock:") and state is not None:
@@ -397,6 +399,9 @@ def anim_state(sh, t):
             return (c, d, 1.0)
         sx = round(abs(math.cos(math.pi * u)), 1)
         return (a, b, sx) if u < 0.5 else (c, d, sx)
+    if sh.get("anim") == "count":
+        u = min(1.0, max(0.0, (t - sh["start"]) / max(0.1, (sh["end"] - sh["start"]) * 0.55)))
+        return ("count", int(round(sh.get("count_to", 35) * (u ** 0.7))))
     if sh.get("anim") in ("reveal", "reveal_strike"):
         vis = sum(1 for x in sh["reveal_t"] if x <= t)
         st = sum(1 for x in sh.get("strike_t", []) if x <= t)
@@ -525,7 +530,9 @@ def render(proj, preview=False, keep_audio=False):
         f"loudnorm=I=-14:TP=-1.5:LRA=9,aresample=44100[a]",
         "-map", "[a]", "-t", f"{full:.3f}", str(mix)], check=True)
 
-    caps = [c for tl in timeline for c in tl["captions"]]
+    caps = [dict(c) for tl in timeline for c in tl["captions"]]
+    if caps:
+        caps[0]["start"] = 0.0   # legenda já no primeiro quadro (gancho)
     capper = Captioner(scale)
     wm_font = ImageFont.truetype(str(FONT_UI_BOLD), int(34 * scale))
     handle = channel.get("watermark", "")

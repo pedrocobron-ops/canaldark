@@ -912,7 +912,7 @@ def badge(name):
 
 
 QUOTES = {
-    "kanye": {"text": ["\"Yo Taylor, I'm really", "happy for you,", "I'mma let you finish...\""],
+    "kanye": {"text": ["\"Yo Taylor, I'm really", "happy for you,", "I'mma let you finish,", "but Beyoncé had one", "of the best videos", "of all time!\""],
               "who": "MTV Video Music Awards · Sept 13, 2009"},
 }
 
@@ -922,8 +922,8 @@ def quote(name):
     c = QUOTES[name]
     bg = Image.new("RGB", (W, H), (12, 12, 16))
     d = ImageDraw.Draw(bg)
-    d.text((140, 330), "\u201c", font=font(FONT_CAPTION, 300), fill=(255, 214, 0), anchor="lm")
-    y = 520
+    d.text((140, 430), "\u201c", font=font(FONT_CAPTION, 300), fill=(255, 214, 0), anchor="lm")
+    y = 620
     for line in c["text"]:
         d.text((W / 2, y), line, font=font(FONT_CAPTION, 76), fill="white", anchor="mm")
         y += 105
@@ -932,6 +932,8 @@ def quote(name):
 
 
 AWARDS = {
+    "beyonce": {"cat": "VIDEO OF THE YEAR", "winner": "BEYONCÉ", "work": "\"Single Ladies\"",
+                "event": "MTV VIDEO MUSIC AWARDS 2009"},
     "taylor": {"cat": "BEST FEMALE VIDEO", "winner": "TAYLOR SWIFT", "work": "\"You Belong With Me\"",
                "event": "MTV VIDEO MUSIC AWARDS 2009"},
 }
@@ -1002,15 +1004,55 @@ def song(name):
     return bg
 
 
+REPORTS = {
+    "vma": {"title": "INCIDENT REPORT", "sub": "MTV VMAs · Radio City · Sept 13, 2009",
+            "rows": [("Incident", "Man on stage"), ("Hair", "Very tall, blonde"), ("Said", "\"Whoa, mama\""),
+                     ("Called", "Head of Security"), ("Responded", "Johnny Bravo"), ("Suspect", "Johnny Bravo")],
+            "stamp": "CASE CLOSED"},
+}
+
+
+def report(name):
+    """Relatório de ocorrência da segurança numa prancheta."""
+    c = REPORTS[name]
+    bg = Image.new("RGB", (W, H), (30, 34, 44))
+    d = ImageDraw.Draw(bg)
+    x0, y0, x1, y1 = 90, 200, W - 90, 1300
+    d.rounded_rectangle((x0 + 12, y0 + 16, x1 + 12, y1 + 16), 30, fill=(12, 14, 20))
+    d.rounded_rectangle((x0, y0, x1, y1), 30, fill=(150, 105, 60))
+    d.rectangle((x0 + 40, y0 + 70, x1 - 40, y1 - 40), fill=(252, 251, 246))
+    d.rounded_rectangle((W / 2 - 150, y0 - 20, W / 2 + 150, y0 + 80), 18, fill=(170, 172, 180), outline=(90, 90, 100), width=4)
+    d.text((W / 2, y0 + 150), c["title"], font=font(FONT_CAPTION, 80), fill=(20, 20, 28), anchor="mm")
+    d.text((W / 2, y0 + 220), c["sub"], font=font(FONT_UI, 32), fill=(110, 110, 120), anchor="mm")
+    y = y0 + 300
+    for k, v in c["rows"]:
+        if k:
+            d.line((x0 + 80, y - 18, x1 - 80, y - 18), fill=(220, 220, 225), width=2)
+        d.text((x0 + 90, y), (k + ":") if k else "", font=font(FONT_UI_BOLD, 38), fill=(90, 90, 100), anchor="la")
+        last = k == "Suspect"
+        d.text((x0 + 370, y), v, font=font(FONT_UI_BOLD if last else FONT_UI, 44),
+               fill=(200, 30, 45) if last else (25, 25, 35), anchor="la")
+        y += 82
+    st = Image.new("RGBA", (560, 150), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(st)
+    sd.rounded_rectangle((6, 6, 554, 144), 16, outline=(205, 30, 45, 230), width=10)
+    sd.text((280, 75), c["stamp"], font=font(FONT_CAPTION, 76), fill=(205, 30, 45, 230), anchor="mm")
+    st = st.rotate(12, resample=Image.BICUBIC, expand=True)
+    bg.paste(st, (int(W / 2 - st.width / 2 + 40), y1 - 260), st)
+    return bg
+
+
 BOARDS = {
     "armwrestle": {"title": "ARM WRESTLING", "sub": "Backstage · Radio City Music Hall",
                    "left": "JOHNNY", "right": "ROCKETTES", "l": "0", "r": "35"},
 }
 
 
-def board(name):
-    """Placar esportivo."""
-    c = BOARDS[name]
+def board(name, r_val=None):
+    """Placar esportivo. r_val anima o placar da direita (anim: count)."""
+    c = dict(BOARDS[name])
+    if r_val is not None:
+        c["r"] = str(r_val)
     bg = Image.new("RGB", (W, H), (10, 10, 14))
     d = ImageDraw.Draw(bg)
     x0, y0, x1, y1 = 90, 300, W - 90, 1100
@@ -1080,6 +1122,8 @@ def make(ref, handles=None):
         return lock(rest)
     if kind == "badge":
         return badge(rest)
+    if kind == "report":
+        return report(rest)
     if kind == "award":
         return award(rest)
     if kind == "song":

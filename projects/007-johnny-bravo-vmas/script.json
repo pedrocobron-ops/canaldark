@@ -4,10 +4,10 @@
   "voice": "am_adam",
   "speed": 0.92,
   "music_volume": 0.24,
-  "post": "Why didn't Johnny Bravo stop Kanye at the 2009 VMAs? 💇‍♂️🎤 #johnnybravo #taylorswift #vmas #funny #fyp",
+  "post": "Why didn't Johnny Bravo stop Kanye at the 2009 VMAs? Would you trade the moment of the decade for a travel-size hairspray? 👇 #johnnybravo #taylorswift #swifties #kanyewest #cartoonnetwork #vmas",
   "style_suffix": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition",
   "cover": {
-    "img": "09.jpg",
+    "img": "10.jpg",
     "text": "Why didn't {y:Johnny Bravo} stop {r:Kanye}?",
     "y": 0.72
   },
@@ -20,7 +20,7 @@
           "n": 2,
           "fit": "contain",
           "fx": "zoom_in",
-          "cap_y": 0.24,
+          "cap_y": 0.56,
           "prompt": "Johnny Bravo from the Cartoon Network show Johnny Bravo flexing his huge muscles, tall blonde yellow pompadour, black sunglasses, black t-shirt, full body, plain pure white background"
         },
         {
@@ -36,14 +36,8 @@
       "say": "It's no {y:secret} | that Johnny was | the head of {y:security} | at the {y:2009 VMAs}.",
       "shots": [
         {
-          "img": "../../002-fred-pompeii/images/03.png",
-          "n": 1,
-          "fit": "contain",
-          "fx": "zoom_in"
-        },
-        {
           "img": "@badge:johnny",
-          "n": 2,
+          "n": 3,
           "fx": "zoom_in",
           "tr": "punch",
           "cap_y": 0.8
@@ -89,7 +83,7 @@
           "sfx": [
             "impact"
           ],
-          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: a funny caricature of Kanye West in 2009 wearing a black leather jacket and dark shutter shades sunglasses, grabbing the microphone from a caricature of young Taylor Swift with long curly blonde hair, red lipstick and a silver sparkly dress holding an astronaut-shaped trophy, shocked expression, on a huge awards show stage, cartoon crowd booing"
+          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: a funny caricature of Kanye West in 2009 wearing a black leather jacket and plain dark rectangular sunglasses (NOT shutter shades), grabbing the microphone from a caricature of young Taylor Swift with long curly blonde hair, red lipstick and a silver sparkly dress holding an astronaut-shaped trophy, shocked expression, on a huge awards show stage, cartoon crowd booing"
         },
         {
           "img": "14.jpg",
@@ -112,7 +106,8 @@
           "img": "@quote:kanye",
           "n": 1,
           "fx": "pop",
-          "tr": "punch"
+          "tr": "punch",
+          "cap_y": 0.82
         }
       ]
     },
@@ -210,7 +205,8 @@
           "tr": "punch",
           "sfx": [
             "impact"
-          ]
+          ],
+          "anim": "count"
         }
       ]
     },
@@ -246,10 +242,12 @@
       "say": "{y:Witnesses} say | that while Kanye | was on stage, | Johnny was backstage | {r:kissing the hairspray}.",
       "shots": [
         {
-          "img": "../../001-squidward-imessage/images/14.png",
+          "img": "22.jpg",
           "n": 2,
           "fx": "zoom_in",
-          "tr": "whip"
+          "tr": "whip",
+          "cap_y": 0.24,
+          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: backstage dressing room with mirror light bulbs, two dancers in red sparkly showgirl costumes and feathered headpieces whispering gossip to each other with hands next to their mouths, shocked wide eyes, in the background through an open door Johnny Bravo is sitting alone kissing a small travel-size hairspray can with pink hearts, vertical 9:16"
         },
         {
           "img": "10.jpg",
@@ -265,10 +263,13 @@
       "say": "And this part is {y:real}: | that night, | {y:Beyoncé} invited Taylor | back on stage | to finish her speech.",
       "shots": [
         {
-          "img": "20.jpg",
+          "img": "@award:beyonce",
           "n": 2,
-          "fx": "zoom_in",
-          "tr": "fade"
+          "fx": "pop",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ]
         },
         {
           "img": "13.jpg",
@@ -280,7 +281,7 @@
       ]
     },
     {
-      "say": "Johnny thought | the invitation | was for {r:him}.",
+      "say": "Johnny thought | the invitation | was for {r:him}. | He walked up to {y:Beyoncé} | and said: | {p:Whoa, mama}.",
       "shots": [
         {
           "img": "11.jpg",
@@ -289,6 +290,29 @@
           "tr": "punch",
           "cap_y": 0.24,
           "prompt": "Johnny Bravo from the Cartoon Network show proudly walking onto a big awards show stage under a spotlight holding up a tiny travel-size hairspray can like a trophy, confused audience"
+        },
+        {
+          "img": "23.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "cap_y": 0.24,
+          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage with a microphone stand, Johnny Bravo with his single tall blonde yellow pompadour, rectangular black sunglasses, black t-shirt and blue jeans leaning in with a flirty smile and eyebrows raised, saying Whoa mama, toward a caricature of Beyoncé with long wavy honey-blonde hair in an elegant black gown who holds her hand up in his face with an unimpressed look, the caricature of Taylor Swift in a silver sparkly dress behind them confused, vertical 9:16"
+        }
+      ]
+    },
+    {
+      "say": "{r:Security} was called. | The head of security | was {y:Johnny}.",
+      "shots": [
+        {
+          "img": "@report:vma",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "sfx": [
+            "alarm"
+          ],
+          "cap_y": 0.8
         }
       ]
     },
@@ -315,33 +339,13 @@
       ]
     },
     {
-      "say": "Would you trade | the moment of the decade | for a {y:travel-size hairspray}?",
+      "say": "He says | it was {y:worth it}.",
       "shots": [
         {
           "img": "21.jpg",
-          "n": 1,
-          "fx": "zoom_in",
-          "tr": "whip",
-          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: Johnny Bravo with his tall blonde yellow pompadour, black sunglasses, black t-shirt and blue jeans standing next to a giant golden balance scale, on one plate a shiny astronaut-shaped music award trophy and a microphone, on the other plate a tiny travel-size hairspray, Johnny happily hugging the hairspray side, plain bright yellow background, vertical 9:16"
-        },
-        {
-          "img": "../../001-squidward-imessage/images/19.png",
           "n": 2,
-          "fit": "contain",
           "fx": "zoom_in",
-          "inset": {
-            "img": "10.jpg",
-            "box": [
-              0.17,
-              0.06,
-              0.87,
-              0.28
-            ],
-            "center": [
-              0.5,
-              0.4
-            ]
-          }
+          "tr": "punch"
         }
       ]
     }

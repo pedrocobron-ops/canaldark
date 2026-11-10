@@ -76,7 +76,8 @@ Canal, marca d'água e redes do cartão final ficam em `channel.json`, na raiz.
 - **Nunca deixar mais de 4 s parado no mesmo visual sem animação.** Chat tem que revelar ou riscar, ícone tem que girar ou estar no celular.
 - **Fotos realistas sempre com o personagem escondido** (atrás de algo, no reflexo, na sombra, só a mão ou a garra), **sem círculo nem seta** (o Pedro prefere que o público ache sozinho). Foto realista "pura" deixa o meio do vídeo chato. Nos prompts, peça "2D cartoon character inserted into the real photo" e anexe no Gemini a imagem de corpo inteiro do personagem como referência.
 - **Foto de fantasia do personagem em festa infantil** (como nos vídeos de referência) é ótima para quebrar repetição no meio do vídeo. Se for horizontal, use `fit: blurfill`.
-- **Boneco 3D pensativo no final sempre com algo dentro da nuvem** (o personagem na cena mais engraçada), usando `inset`.
+- **Boneco 3D branco: no máximo um por vídeo, e nunca no final** (o painel de espectadores achou que ele quebra o clima de desenho). Nada de foto de banco de imagem genérica (gente de escritório) para "witnesses": use testemunhas no estilo do vídeo.
+- **Final = punchline + loop.** O vídeo termina na última piada, com o personagem na tela; a pergunta para o público vai no texto do post, não na narração. Se o personagem tem bordão famoso, use pelo menos um.
 - **Efeitos sonoros em toda transição e nos objetos que fazem barulho** (alarme, notificação).
 - **Sem cartão final de redes. O final é em loop:** a última imagem passa com whip para a primeira (o editor faz sozinho; `"loop": false` desliga). Assim o replay emenda sem quebra.
 - **Marca d'água = mascote (`assets/brand/logo.png`) + @didyouknew, a 80% de opacidade, só nos cantos de cima** (configurada em `channel.json`), porque o TikTok e o Reels cobrem a parte de baixo.
@@ -84,7 +85,8 @@ Canal, marca d'água e redes do cartão final ficam em `channel.json`, na raiz.
 - **Capa:** o render final gera `out/cover.jpg`. Configure em `"cover": {"img": "10.png", "text": "...", "y": 0.66}`, usando a imagem mais expressiva do personagem e a pergunta-gancho. O vídeo termina na última fala, segurando a imagem por 0,7 s.
 - **Transições entre quase todos os shots** (chicote, zoom, punch, escurecer), com poucos cortes secos. Cada uma dura de 0,2 a 0,36 s.
 - A legenda troca a cada 0,5 a 1,2 s. A imagem troca a cada 2 a 4 legendas, e nunca fica mais de 4 s parada.
-- O personagem aparece no primeiro quadro, e o tema (evento, app) no segundo shot.
+- O personagem aparece no primeiro quadro, já com a primeira legenda (o editor mostra a legenda desde 0 s), e o tema (evento, app) no segundo shot.
+- **Antes de entregar, rode a skill `analise-tiktok`** (painel de espectadores).
 - Alternar as fontes de imagem: cartoon do personagem, foto realista, banco de imagem, boneco 3D branco, print de celular, ícone.
 - Nunca usar trecho real do desenho (Content ID). Só imagem gerada.
 - A legenda fica a 63% da altura, em Luckiest Guy branca com contorno preto.

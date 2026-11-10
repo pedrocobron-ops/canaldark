@@ -26,7 +26,7 @@ Realistic night photo of the Radio City Music Hall marquee in New York City with
 ## 04.jpg
 
 ```
-2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: a funny caricature of Kanye West in 2009 wearing a black leather jacket and dark shutter shades sunglasses, grabbing the microphone from a caricature of young Taylor Swift with long curly blonde hair, red lipstick and a silver sparkly dress holding an astronaut-shaped trophy, shocked expression, on a huge awards show stage, cartoon crowd booing, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: a funny caricature of Kanye West in 2009 wearing a black leather jacket and plain dark rectangular sunglasses (NOT shutter shades), grabbing the microphone from a caricature of young Taylor Swift with long curly blonde hair, red lipstick and a silver sparkly dress holding an astronaut-shaped trophy, shocked expression, on a huge awards show stage, cartoon crowd booing, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 14.jpg
@@ -89,6 +89,12 @@ Johnny Bravo from the Cartoon Network show arm wrestling a dancer in a red spark
 Realistic product photo of a tiny travel-size can of hairspray standing on a velvet pedestal like a trophy, dramatic spotlight, golden sparkles, dark background, photorealistic, vertical 9:16
 ```
 
+## 22.jpg
+
+```
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: backstage dressing room with mirror light bulbs, two dancers in red sparkly showgirl costumes and feathered headpieces whispering gossip to each other with hands next to their mouths, shocked wide eyes, in the background through an open door Johnny Bravo is sitting alone kissing a small travel-size hairspray can with pink hearts, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+```
+
 ## 10.jpg
 
 ```
@@ -107,14 +113,14 @@ Johnny Bravo from the Cartoon Network show sitting backstage in front of a dress
 Johnny Bravo from the Cartoon Network show proudly walking onto a big awards show stage under a spotlight holding up a tiny travel-size hairspray can like a trophy, confused audience, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
+## 23.jpg
+
+```
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage with a microphone stand, Johnny Bravo with his single tall blonde yellow pompadour, rectangular black sunglasses, black t-shirt and blue jeans leaning in with a flirty smile and eyebrows raised, saying Whoa mama, toward a caricature of Beyoncé with long wavy honey-blonde hair in an elegant black gown who holds her hand up in his face with an unimpressed look, the caricature of Taylor Swift in a silver sparkly dress behind them confused, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+```
+
 ## 19.jpg
 
 ```
 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: Johnny Bravo with his tall blonde yellow pompadour, black sunglasses, black t-shirt and blue jeans today in his messy apartment, kneeling with love in front of a small glass display case on a shelf that holds a travel-size hairspray lit like a precious museum relic, candles around it, pink hearts, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
-```
-
-## 21.jpg
-
-```
-2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: Johnny Bravo with his tall blonde yellow pompadour, black sunglasses, black t-shirt and blue jeans standing next to a giant golden balance scale, on one plate a shiny astronaut-shaped music award trophy and a microphone, on the other plate a tiny travel-size hairspray, Johnny happily hugging the hairspray side, plain bright yellow background, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
