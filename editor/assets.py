@@ -722,6 +722,7 @@ def old_map(name):
 STONES = {
     "records": {"title": "Official Records", "lines": ["66,000,000 B.C.", "", "Barney warned", "everyone.", "", "(in a song)"]},
     "rules": {"title": "Barney's Rules", "lines": ["Rule #1:", "Never say", "anything sad.", "", "Rule #2:", "Hug everyone."]},
+    "rockrules": {"title": "Official Rules", "flat": True, "lines": ["Rule 1:", "Get under a rock.", "Rule 2:", "Stay there.", "Rule 3:", "No snacks."]},
     "song": {"title": "Barney's Song", "lines": ["There's a big rock", "in the sky,", "it's coming", "to say hi!", "", "la la la ♪"]},
 }
 
@@ -730,9 +731,9 @@ def stone(name):
     """Tábua de pedra com texto entalhado (pré-histórico)."""
     c = STONES[name]
     rnd = random.Random(11)
-    bg = Image.new("RGB", (W, H), (70, 110, 60))
+    bg = Image.new("RGB", (W, H), (20, 50, 60) if c.get("flat") else (70, 110, 60))
     d0 = ImageDraw.Draw(bg)
-    for y in range(H):   # céu pré-histórico em degradê
+    for y in range(0 if not c.get("flat") else H, H):   # céu pré-histórico em degradê
         k = y / H
         d0.line((0, y, W, y), fill=(int(240 - 120 * k), int(150 - 60 * k), int(90 - 30 * k)))
     PW, PH = 820, 960
@@ -1245,6 +1246,99 @@ def podium(name):
     return bg
 
 
+CALLS = {
+    "suez": {"caller": "Suez Canal Authority", "sub": "Egypt · mobile", "note": "Is this the ship guide?"},
+}
+
+
+def call(name):
+    """Celular recebendo uma ligação (tela de chamada)."""
+    c = CALLS[name]
+    bg = Image.new("RGB", (W, H), (25, 25, 30))
+    d = ImageDraw.Draw(bg)
+    x0, y0, x1, y1 = 230, 130, W - 230, 1250
+    d.rounded_rectangle((x0 - 18, y0 - 18, x1 + 18, y1 + 18), 90, fill=(15, 15, 18), outline=(120, 120, 128), width=6)
+    scr = Image.new("RGB", (x1 - x0, y1 - y0))
+    sd = ImageDraw.Draw(scr)
+    for y in range(scr.height):
+        t = y / scr.height
+        sd.line((0, y, scr.width, y), fill=(int(20 + 40 * t), int(60 + 50 * t), int(90 + 40 * t)))
+    m = Image.new("L", scr.size, 0)
+    ImageDraw.Draw(m).rounded_rectangle((0, 0, scr.width, scr.height), 74, fill=255)
+    bg.paste(scr, (x0, y0), m)
+    d = ImageDraw.Draw(bg)
+    cx = W / 2
+    d.rounded_rectangle((cx - 90, y0 + 22, cx + 90, y0 + 58), 18, fill=(0, 0, 0))
+    d.text((cx, y0 + 150), "incoming call", font=font(FONT_UI, 34), fill=(210, 225, 235), anchor="mm")
+    d.ellipse((cx - 110, y0 + 220, cx + 110, y0 + 440), fill=(230, 160, 40))
+    d.polygon([(cx - 60, y0 + 380), (cx + 60, y0 + 380), (cx, y0 + 270)], fill=(255, 245, 220))
+    d.text((cx, y0 + 520), c["caller"], font=font(FONT_UI_BOLD, 46), fill="white", anchor="mm")
+    d.text((cx, y0 + 575), c["sub"], font=font(FONT_UI, 32), fill=(190, 205, 215), anchor="mm")
+    d.rounded_rectangle((x0 + 40, y0 + 650, x1 - 40, y0 + 790), 26, fill=(255, 255, 255))
+    d.text((x0 + 70, y0 + 690), "Message", font=font(FONT_UI_BOLD, 26), fill=(120, 120, 130), anchor="lm")
+    d.text((x0 + 70, y0 + 745), c["note"], font=font(FONT_UI_BOLD, 34), fill=(25, 25, 30), anchor="lm")
+    for bx, col, lab in [(cx - 170, (235, 60, 60), "Decline"), (cx + 170, (50, 200, 90), "Accept")]:
+        d.ellipse((bx - 70, y1 - 260, bx + 70, y1 - 120), fill=col)
+        d.text((bx, y1 - 80), lab, font=font(FONT_UI, 30), fill="white", anchor="mm")
+    for k in range(3):   # tremida de vibração
+        r = 40 + k * 26
+        d.arc((x0 - 120 - r, (y0 + y1) / 2 - r, x0 - 120 + r, (y0 + y1) / 2 + r), 140, 220, fill=(200, 200, 210), width=6)
+        d.arc((x1 + 120 - r, (y0 + y1) / 2 - r, x1 + 120 + r, (y0 + y1) / 2 + r), -40, 40, fill=(200, 200, 210), width=6)
+    return bg
+
+
+BETS = {
+    "rock": {"book": "BIKINI BOTTOM SPORTSBOOK", "event": "Under-A-Rock Championship 2021",
+             "rows": [("Patrick Star", "1.01"), ("A Clam", "50.00"), ("A Snail", "99.00")],
+             "note": "99% of all bets placed on Patrick", "stamp": "FAVORITE"},
+}
+
+
+def bet(name):
+    """Bilhete de aposta de papel térmico com odds e carimbo."""
+    c = BETS[name]
+    bg = Image.new("RGB", (W, H), (35, 40, 50))
+    d = ImageDraw.Draw(bg)
+    x0, y0, x1, y1 = 170, 220, W - 170, 1180
+    zig = [(x0, y0)]
+    for i, x in enumerate(range(x0, x1 + 1, 30)):
+        zig.append((x, y0 + (0 if i % 2 else 16)))
+    pts = zig + [(x1, y1)] + [(x, y1 - (0 if i % 2 else 16)) for i, x in enumerate(range(x1, x0 - 1, -30))]
+    d.polygon(pts, fill=(250, 248, 240))
+    mono = font(FONT_UI_BOLD, 36)
+    d.text((W / 2, y0 + 90), c["book"], font=font(FONT_UI_BOLD, 40), fill=(20, 20, 20), anchor="mm")
+    d.text((W / 2, y0 + 150), c["event"], font=font(FONT_UI, 32), fill=(80, 80, 80), anchor="mm")
+    for xx in range(x0 + 40, x1 - 40, 22):
+        d.line((xx, y0 + 200, xx + 10, y0 + 200), fill=(120, 120, 120), width=3)
+    y = y0 + 270
+    d.text((x0 + 60, y), "PICK", font=font(FONT_UI, 28), fill=(110, 110, 110), anchor="lm")
+    d.text((x1 - 60, y), "ODDS", font=font(FONT_UI, 28), fill=(110, 110, 110), anchor="rm")
+    y += 70
+    for i, (who, odd) in enumerate(c["rows"]):
+        if i == 0:
+            d.rectangle((x0 + 40, y - 34, x1 - 40, y + 34), fill=(255, 230, 120))
+        d.text((x0 + 60, y), who, font=mono, fill=(20, 20, 20), anchor="lm")
+        d.text((x1 - 60, y), odd, font=mono, fill=(20, 20, 20), anchor="rm")
+        y += 85
+    for xx in range(x0 + 40, x1 - 40, 22):
+        d.line((xx, y, xx + 10, y), fill=(120, 120, 120), width=3)
+    d.text((W / 2, y + 70), c["note"], font=font(FONT_UI_BOLD, 32), fill=(20, 20, 20), anchor="mm")
+    import random
+    rnd = random.Random(5)
+    bx = x0 + 110
+    while bx < x1 - 110:
+        wv = rnd.choice([3, 4, 6, 8])
+        d.rectangle((bx, y1 - 170, bx + wv, y1 - 90), fill=(20, 20, 20))
+        bx += wv + rnd.choice([3, 5, 7])
+    st = Image.new("RGBA", (520, 150), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(st)
+    sd.rounded_rectangle((6, 6, 514, 144), 16, outline=(30, 120, 60, 230), width=10)
+    sd.text((260, 75), c["stamp"], font=font(FONT_CAPTION, 80), fill=(30, 120, 60, 230), anchor="mm")
+    st = st.rotate(14, resample=Image.BICUBIC, expand=True)
+    bg.paste(st, (x1 - st.width + 40, y1 - 250), st)
+    return bg
+
+
 BOARDS = {
     "armwrestle": {"title": "ARM WRESTLING", "sub": "Backstage · Radio City Music Hall",
                    "left": "JOHNNY", "right": "ROCKETTES", "l": "0", "r": "35"},
@@ -1335,6 +1429,10 @@ def make(ref, handles=None):
         return badge(rest)
     if kind == "report":
         return report(rest)
+    if kind == "call":
+        return call(rest)
+    if kind == "bet":
+        return bet(rest)
     if kind == "departures":
         return departures(rest)
     if kind == "sign":

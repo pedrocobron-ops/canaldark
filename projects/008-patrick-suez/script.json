@@ -126,7 +126,8 @@
           "fx": "zoom_in",
           "tr": "punch",
           "bg_img": "02.jpg",
-          "tilt": 0
+          "tilt": 0,
+          "cap_y": 0.8
         },
         {
           "img": "@stat:suez96",
@@ -185,16 +186,15 @@
           "prompt": "Realistic top-down satellite style photo of the sandy bank of the Suez Canal next to the stuck giant ship, an empty folding beach chair, two orange flags stuck in the sand and a small cardboard sign that says BACK IN 5 MINUTES, timestamp MAR 23 2021 in the corner"
         },
         {
-          "img": "@quote:call",
+          "img": "@call:suez",
           "n": 3,
-          "fx": "zoom_in",
+          "fx": "shake",
           "tr": "punch",
           "sfx": [
             "ding"
           ],
-          "cap_y": 0.8,
-          "bg_img": "10.jpg",
-          "bg_dark": 0.62
+          "cap_y": 0.86,
+          "bg_img": "10.jpg"
         },
         {
           "img": "25.jpg",
@@ -228,7 +228,8 @@
             "ding"
           ],
           "bg_img": "13.jpg",
-          "tilt": -2
+          "tilt": -2,
+          "cap_y": 0.8
         }
       ]
     },
@@ -236,13 +237,14 @@
       "say": "Whoever stays | under a rock | the longest | {y:wins}.",
       "shots": [
         {
-          "img": "@report:rules",
+          "img": "@stone:rockrules",
           "n": 2,
           "fx": "zoom_in",
           "tr": "whip",
           "cap_y": 0.8,
           "bg_img": "11.jpg",
-          "tilt": 2
+          "tilt": -2,
+          "key_tol": 12
         },
         {
           "img": "extra_12_juiz.jpg",
@@ -275,12 +277,12 @@
           "key_tol": 90
         },
         {
-          "img": "@stat:rockodds",
+          "img": "@bet:rock",
           "n": 2,
           "fx": "pop",
           "tr": "punch",
           "bg_img": "11.jpg",
-          "bg_dark": 0.62
+          "tilt": 3
         }
       ]
     },
@@ -329,7 +331,8 @@
           "sfx": [
             "ding"
           ],
-          "bg_img": "16.jpg"
+          "bg_img": "16.jpg",
+          "cap_y": 0.8
         }
       ]
     },
