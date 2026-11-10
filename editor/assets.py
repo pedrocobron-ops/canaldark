@@ -247,6 +247,7 @@ def lock(name, visible=None, struck=0):
 CALS = {
     "sunday": {"month": "APRIL 1912", "num": "14", "day": "SUNDAY", "time": "11:40 PM", "color": (200, 30, 40)},
     "monday": {"month": "APRIL 1912", "num": "15", "day": "MONDAY", "time": "12:00 AM", "color": (200, 30, 40)},
+    "suez": {"month": "MARCH 2021", "num": "23", "day": "TUESDAY", "time": "7:40 AM", "color": (20, 90, 160)},
     "monday_sink": {"month": "APRIL 1912", "num": "15", "day": "MONDAY", "time": "2:20 AM", "color": (200, 30, 40)},
 }
 
@@ -509,6 +510,9 @@ def receipt(name):
 
 
 STATS = {
+    "evergiven": {"num": "400 m", "text": ["longer than the Eiffel", "Tower is tall"], "src": "Ever Given · 1,312 ft"},
+    "suez96": {"num": "$9.6B", "text": ["of trade blocked", "every single day"], "src": "Source: Lloyd's List, March 2021"},
+    "rockodds": {"num": "99%", "text": ["of the fish bet", "on Patrick"], "src": "Under-A-Rock Championship 2021"},
     "extinct75": {"num": "75%", "text": ["of all species on Earth", "went extinct"], "src": "Chicxulub impact, 66 million years ago"},
     "pew72": {"num": "72%", "text": ["of Americans say tipping", "is expected in more places", "than 5 years ago"],
               "src": "Source: Pew Research Center, 2023"},
@@ -520,7 +524,7 @@ def stat(name):
     c = STATS[name]
     bg = Image.new("RGB", (W, H), (14, 18, 30))
     d = ImageDraw.Draw(bg)
-    d.text((W / 2, 520), c["num"], font=font(FONT_CAPTION, 380), fill=(255, 214, 0), anchor="mm",
+    d.text((W / 2, 520), c["num"], font=font(FONT_CAPTION, 380 if len(c["num"]) <= 3 else 280), fill=(255, 214, 0), anchor="mm",
            stroke_width=10, stroke_fill="black")
     y = 800
     for line in c["text"]:
@@ -820,6 +824,10 @@ BADGES = {
     "johnny": {"photo": "projects/007-johnny-bravo-vmas/images/01.jpg", "crop": [0.28, 0.15, 0.72],
                "event": "VMA 2009", "sub": "MTV VIDEO MUSIC AWARDS", "name": "JOHNNY BRAVO",
                "role": "HEAD OF SECURITY", "id": "SEC-0001", "date": "SEPT 13, 2009 · RADIO CITY"},
+    "patrick": {"photo": "projects/008-patrick-suez/images/01.jpg", "crop": [0.22, 0.10, 0.78],
+                "event": "SUEZ CANAL", "sub": "SUEZ CANAL AUTHORITY · EGYPT", "name": "PATRICK STAR",
+                "role": "OFFICIAL SHIP GUIDE", "id": "FLAG-0002", "date": "MARCH 2021 · KM 151",
+                "access": ["FLAG", "DUTY"], "top": (10, 60, 110)},
 }
 
 
@@ -841,7 +849,8 @@ def badge(name):
     top = Image.new("RGB", (bw, 230))
     for y in range(230):
         t = y / 230
-        ImageDraw.Draw(top).line((0, y, bw, y), fill=(int(20 + 10 * t), int(10 + 5 * t), int(40 + 30 * t)))
+        r0, g0, b0 = c.get("top", (20, 10, 40))
+        ImageDraw.Draw(top).line((0, y, bw, y), fill=(int(r0 + 10 * t), int(g0 + 5 * t), int(b0 + 30 * t)))
     m = Image.new("L", (bw, 230), 0)
     ImageDraw.Draw(m).rounded_rectangle((0, 0, bw, 290), 34, fill=255)
     card.paste(top, (ox, oy), m)
@@ -849,7 +858,8 @@ def badge(name):
     cd.text((ox + bw / 2, oy + 125), c["event"], font=font(FONT_CAPTION, 100), fill=(255, 214, 0), anchor="mm")
     cd.text((ox + bw / 2, oy + 195), c["sub"], font=font(FONT_UI_BOLD, 30), fill=(200, 200, 225), anchor="mm")
     # foto
-    im = Image.open(ROOT / c["photo"]).convert("RGB")
+    ph_path = ROOT / c["photo"]
+    im = Image.open(ph_path).convert("RGB") if ph_path.exists() else Image.new("RGB", (800, 1400), (200, 200, 210))
     w, h = im.size
     x0f, y0f, x1f = c["crop"]
     side = int((x1f - x0f) * w)
@@ -868,8 +878,9 @@ def badge(name):
     card.paste(face, (px, py))
     # dados ao lado da foto
     tx = px + pw + 40
-    cd.text((tx, py + 10), "ALL", font=font(FONT_CAPTION, 92), fill=(220, 30, 45), anchor="la")
-    cd.text((tx, py + 105), "ACCESS", font=font(FONT_CAPTION, 70), fill=(220, 30, 45), anchor="la")
+    a1, a2 = c.get("access", ["ALL", "ACCESS"])
+    cd.text((tx, py + 10), a1, font=font(FONT_CAPTION, 92), fill=(220, 30, 45), anchor="la")
+    cd.text((tx, py + 105), a2, font=font(FONT_CAPTION, 70), fill=(220, 30, 45), anchor="la")
     cd.text((tx, py + 215), "ID", font=font(FONT_UI, 28), fill=(120, 120, 135), anchor="la")
     cd.text((tx, py + 248), c["id"], font=font(FONT_UI_BOLD, 38), fill=(30, 30, 40), anchor="la")
     # holograma
@@ -912,6 +923,7 @@ def badge(name):
 
 
 QUOTES = {
+    "patrick": {"text": ["\"The wind", "did it.\""], "who": "Patrick Star · official statement · March 2021"},
     "kanye": {"text": ["\"Yo Taylor, I'm really", "happy for you,", "I'mma let you finish,", "but Beyoncé had one", "of the best videos", "of all time!\""],
               "who": "MTV Video Music Awards · Sept 13, 2009"},
 }
@@ -1004,6 +1016,54 @@ def song(name):
     return bg
 
 
+COUPONS = {
+    "icecream": {"title": "FREE SCOOP", "sub": "Good for ONE scoop of ice cream", "small": "1 per customer · No cash value",
+                 "exp": "EXPIRES 03/31/2021"},
+    "icecream_expired": {"title": "FREE SCOOP", "sub": "Good for ONE scoop of ice cream", "small": "1 per customer · No cash value",
+                         "exp": "EXPIRES 03/31/2021", "stamp": "EXPIRED"},
+}
+
+
+def coupon(name):
+    """Cupom de papel recortável com sorvete desenhado."""
+    c = COUPONS[name]
+    bg = Image.new("RGB", (W, H), (255, 200, 225))
+    d = ImageDraw.Draw(bg)
+    for i in range(-H, W, 70):
+        d.line((i, 0, i + H, H), fill=(255, 210, 232), width=24)
+    x0, y0, x1, y1 = 100, 330, W - 100, 1090
+    d.rounded_rectangle((x0 + 14, y0 + 18, x1 + 14, y1 + 18), 24, fill=(200, 120, 160))
+    d.rounded_rectangle((x0, y0, x1, y1), 24, fill=(255, 251, 238))
+    for x in range(x0 + 20, x1 - 20, 34):
+        d.line((x, y0 + 22, x + 18, y0 + 22), fill=(230, 80, 130), width=5)
+        d.line((x, y1 - 22, x + 18, y1 - 22), fill=(230, 80, 130), width=5)
+    for y in range(y0 + 20, y1 - 20, 34):
+        d.line((x0 + 22, y, x0 + 22, y + 18), fill=(230, 80, 130), width=5)
+        d.line((x1 - 22, y, x1 - 22, y + 18), fill=(230, 80, 130), width=5)
+    cx, cy = x0 + 190, y0 + 380
+    d.polygon([(cx - 70, cy), (cx + 70, cy), (cx, cy + 230)], fill=(222, 170, 90), outline=(150, 100, 40))
+    for k in range(-60, 70, 28):
+        d.line((cx + k, cy, cx + k / 2, cy + 110), fill=(170, 120, 50), width=3)
+    d.ellipse((cx - 95, cy - 150, cx + 95, cy + 30), fill=(255, 150, 190), outline=(210, 90, 140), width=4)
+    d.ellipse((cx - 25, cy - 200, cx + 15, cy - 160), fill=(220, 30, 50))
+    tx = x0 + 520
+    d.text((tx, y0 + 230), c["title"], font=font(FONT_CAPTION, 104), fill=(230, 60, 120), anchor="mm")
+    lines = ["Good for ONE scoop", "of ice cream"]
+    for i, ln in enumerate(lines):
+        d.text((tx, y0 + 340 + i * 56), ln, font=font(FONT_UI_BOLD, 42), fill=(60, 50, 60), anchor="mm")
+    d.text((tx, y0 + 480), c["small"], font=font(FONT_UI, 30), fill=(130, 120, 130), anchor="mm")
+    d.rounded_rectangle((tx - 230, y0 + 540, tx + 230, y0 + 620), 14, fill=(230, 60, 120))
+    d.text((tx, y0 + 580), c["exp"], font=font(FONT_UI_BOLD, 38), fill="white", anchor="mm")
+    if c.get("stamp"):
+        st = Image.new("RGBA", (720, 200), (0, 0, 0, 0))
+        sd = ImageDraw.Draw(st)
+        sd.rounded_rectangle((8, 8, 712, 192), 20, outline=(210, 20, 40, 235), width=14)
+        sd.text((360, 100), c["stamp"], font=font(FONT_CAPTION, 130), fill=(210, 20, 40, 235), anchor="mm")
+        st = st.rotate(-14, resample=Image.BICUBIC, expand=True)
+        bg.paste(st, (W // 2 - st.width // 2, (y0 + y1) // 2 - st.height // 2), st)
+    return bg
+
+
 REPORTS = {
     "vma": {"title": "INCIDENT REPORT", "sub": "MTV VMAs · Radio City · Sept 13, 2009",
             "rows": [("Incident", "Man on stage"), ("Hair", "Very tall, blonde"), ("Said", "\"Whoa, mama\""),
@@ -1050,6 +1110,10 @@ def report(name, stage=1):
 BOARDS = {
     "armwrestle": {"title": "ARM WRESTLING", "sub": "Backstage · Radio City Music Hall",
                    "left": "JOHNNY", "right": "ROCKETTES", "l": "0", "r": "35"},
+    "rock": {"title": "UNDER-A-ROCK", "sub": "Championship 2021 · Bottom of the Suez Canal",
+             "left": "DAY", "right": "PLAYERS", "l": "1", "r": "48"},
+    "suez": {"title": "SUEZ CANAL", "sub": "Traffic report · March 2021",
+             "left": "DAYS", "right": "SHIPS", "l": "6", "r": "369"},
     "armwrestle_win": {"title": "FINAL SCORE", "sub": "Backstage · Radio City Music Hall",
                        "left": "JOHNNY", "right": "ROCKETTES", "l": "1", "r": "35"},
 }
@@ -1070,7 +1134,7 @@ def board(name, r_val=None):
         cx = W / 2 + (-1 if i == 0 else 1) * 225
         d.text((cx, y0 + 290), lab, font=font(FONT_CAPTION, 60), fill=col, anchor="mm")
         d.rounded_rectangle((cx - 170, y0 + 350, cx + 170, y0 + 640), 20, fill=(5, 5, 8))
-        d.text((cx, y0 + 495), val, font=font(FONT_CAPTION, 230), fill=(255, 120, 40), anchor="mm")
+        d.text((cx, y0 + 495), val, font=font(FONT_CAPTION, 230 if len(val) <= 2 else 160), fill=(255, 120, 40), anchor="mm")
     d.text((W / 2, y0 + 495), ":", font=font(FONT_CAPTION, 160), fill="white", anchor="mm")
     return bg
 
@@ -1131,6 +1195,8 @@ def make(ref, handles=None):
         return badge(rest)
     if kind == "report":
         return report(rest)
+    if kind == "coupon":
+        return coupon(rest)
     if kind == "award":
         return award(rest)
     if kind == "song":
