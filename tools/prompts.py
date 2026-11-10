@@ -19,7 +19,9 @@ for b in d["beats"]:
         seen.add(sh["img"])
         p = sh["prompt"]
         low = p.lower()
-        if sh.get("style") == "photo" or low.startswith("realistic") or "photograph" in low.split(" of ")[0]:
+        if "vertical 9:16" in low:
+            pass                       # o prompt já traz o formato
+        elif sh.get("style") == "photo" or low.startswith("realistic") or "photograph" in low.split(" of ")[0]:
             p += ", vertical 9:16" if "photograph" in low else ", photorealistic, vertical 9:16"
         elif any(k in low.split(" of ")[0] for k in ("painting", "engraving", "woodcut", "print")) \
                 or "inserted into" in low or "3d powerpoint" in low or "3d stick" in low:

@@ -32,7 +32,7 @@ Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple
 ## 05.jpg
 
 ```
-Realistic photo of the Suez Canal seen from the sandy bank, a huge container ship gliding past, desert landscape. A 2D cartoon Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers) inserted into the real photo, small and partially hidden behind a sand dune in the foreground, only his head and two orange flags visible, vertical 9:16, photorealistic, vertical 9:16
+Realistic photo of the Suez Canal seen from the sandy bank, a huge container ship gliding past, desert landscape. A 2D cartoon Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers) inserted into the real photo, small and partially hidden behind a sand dune in the foreground, only his head and two orange flags visible, vertical 9:16
 ```
 
 ## 06.jpg
@@ -80,7 +80,7 @@ Close-up of a referee fish in a black and white striped shirt holding a giant st
 ## 13.jpg
 
 ```
-Realistic underwater photo of the sandy seabed with several large rocks, murky green water, light rays from above. A 2D cartoon Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers) inserted into the real photo, completely hidden under the biggest rock, only his two pink feet sticking out from under it, vertical 9:16, photorealistic, vertical 9:16
+Realistic underwater photo of the sandy seabed with several large rocks, murky green water, light rays from above. A 2D cartoon Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers) inserted into the real photo, completely hidden under the biggest rock, only his two pink feet sticking out from under it, vertical 9:16
 ```
 
 ## 14.jpg
@@ -116,7 +116,7 @@ Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple
 ## 19.jpg
 
 ```
-Realistic photo at night of a huge bright full moon rising over the Suez Canal, the giant container ship silhouetted in the canal, moonlight on the water. A 2D cartoon Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers) inserted into the real photo, hidden as a faint pink starfish shape in the craters of the moon, subtle, vertical 9:16, photorealistic, vertical 9:16
+Realistic photo at night of a huge bright full moon rising over the Suez Canal, the giant container ship silhouetted in the canal, moonlight on the water. A 2D cartoon Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers) inserted into the real photo, hidden as a faint pink starfish shape in the craters of the moon, subtle, vertical 9:16
 ```
 
 ## 20.jpg
@@ -140,7 +140,7 @@ Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple
 ## 23.jpg
 
 ```
-Realistic photo recreating the famous meme: a tiny yellow excavator digging the sand next to the gigantic bow of a stuck container ship, the ship towering over it. A 2D cartoon Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers) inserted into the real photo, sitting inside the excavator cabin, small and easy to miss, vertical 9:16, photorealistic, vertical 9:16
+Realistic photo recreating the famous meme: a tiny yellow excavator digging the sand next to the gigantic bow of a stuck container ship, the ship towering over it. A 2D cartoon Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers) inserted into the real photo, sitting inside the excavator cabin, small and easy to miss, vertical 9:16
 ```
 
 ## 24.jpg
