@@ -559,7 +559,7 @@ def render(proj, preview=False, keep_audio=False):
                 if k != 1.0:
                     cim = cim.resize((max(1, int(cim.width * k)), max(1, int(cim.height * k))), Image.BILINEAR)
                 cx = (size[0] - cim.width) // 2
-                cy = int(size[1] * 0.63) - cim.height // 2
+                cy = int(size[1] * sh.get("cap_y", script.get("cap_y", 0.63))) - cim.height // 2
                 img.paste(cim, (cx, cy), cim)
             if wm is not None:
                 corner = corners[0 if sh.get("loop") else si % 2]

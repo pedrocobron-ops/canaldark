@@ -20,7 +20,8 @@
           "n": 2,
           "fit": "contain",
           "fx": "zoom_in",
-          "prompt": "The five Backyardigans (Pablo the blue penguin, Tyrone the orange moose, Uniqua the pink spotted creature, Tasha the yellow hippo and Austin the purple kangaroo) standing together and smiling, full body, plain pure white background"
+          "prompt": "The five Backyardigans (Pablo the blue penguin, Tyrone the orange moose, Uniqua the pink spotted creature, Tasha the yellow hippo and Austin the purple kangaroo) standing together and smiling, full body, plain pure white background",
+          "cap_y": 0.24
         },
         {
           "img": "02.jpg",
@@ -45,7 +46,8 @@
           "n": 3,
           "fx": "zoom_in",
           "tr": "whip",
-          "prompt": "The five Backyardigans dressed as medieval minstrels playing a lute, drums, a flute and a tambourine in a cobblestone town square of 16th century Strasbourg with half-timbered houses and the cathedral in the background"
+          "prompt": "The five Backyardigans dressed as medieval minstrels playing a lute, drums, a flute and a tambourine in a cobblestone town square of 16th century Strasbourg with half-timbered houses and the cathedral in the background",
+          "cap_y": 0.24
         }
       ]
     },
@@ -57,7 +59,8 @@
           "n": 4,
           "fx": "zoom_in",
           "tr": "zoom",
-          "prompt": "The Backyardigans' suburban backyard magically transforming into a medieval European town, the wooden fence turning into stone walls and half-timbered houses, swirling magical sparkles, the five Backyardigans amazed in the middle"
+          "prompt": "The Backyardigans' suburban backyard magically transforming into a medieval European town, the wooden fence turning into stone walls and half-timbered houses, swirling magical sparkles, the five Backyardigans amazed in the middle",
+          "cap_y": 0.24
         }
       ]
     },
@@ -112,12 +115,14 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "whip",
-          "prompt": "The five Backyardigans playing instruments on a medieval wooden stage in a town square at night, torches, an exhausted crowd of medieval peasants dancing in front of the stage"
+          "prompt": "The five Backyardigans playing instruments on a medieval wooden stage in a town square at night, torches, an exhausted crowd of medieval peasants dancing in front of the stage",
+          "cap_y": 0.24
         },
         {
           "img": "07.jpg",
           "n": 2,
-          "fx": "zoom_out"
+          "fx": "zoom_out",
+          "cap_y": 0.24
         }
       ]
     },
@@ -129,7 +134,8 @@
           "n": 2,
           "fit": "contain",
           "fx": "pop",
-          "tr": "punch"
+          "tr": "punch",
+          "cap_y": 0.24
         }
       ]
     },
@@ -162,7 +168,8 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "whip",
-          "prompt": "Old 16th century engraving of a wooden stage built in a medieval town square with musicians playing drums, pipes and fiddles for a crowd of dancing people. Among the musicians on the stage, Tasha the yellow hippo from The Backyardigans is playing a tambourine, small 2D cartoon character inserted into the old engraving, aged paper texture, vertical 9:16"
+          "prompt": "Old 16th century engraving of a wooden stage built in a medieval town square with musicians playing drums, pipes and fiddles for a crowd of dancing people. Among the musicians on the stage, Tasha the yellow hippo from The Backyardigans is playing a tambourine, small 2D cartoon character inserted into the old engraving, aged paper texture, vertical 9:16",
+          "cap_y": 0.24
         }
       ]
     },
@@ -177,7 +184,8 @@
           "sfx": [
             "ding"
           ],
-          "prompt": "A medieval mayor in a fur robe handing a huge overflowing basket of golden pretzels to the five Backyardigans on a wooden stage, Pablo the blue penguin hugging the basket with sparkling eyes"
+          "prompt": "A medieval mayor in a fur robe handing a huge overflowing basket of golden pretzels to the five Backyardigans on a wooden stage, Pablo the blue penguin hugging the basket with sparkling eyes",
+          "cap_y": 0.24
         }
       ]
     },
@@ -206,7 +214,8 @@
           "n": 2,
           "fx": "shake",
           "tr": "punch",
-          "prompt": "Medieval peasants in 1518 Strasbourg dancing disco moves under a giant glowing disco ball hanging over the town square, colorful disco lights on the half-timbered houses. Uniqua from The Backyardigans is in the middle doing a disco pose, cartoon"
+          "prompt": "Medieval peasants in 1518 Strasbourg dancing disco moves under a giant glowing disco ball hanging over the town square, colorful disco lights on the half-timbered houses. Uniqua from The Backyardigans is in the middle doing a disco pose, cartoon",
+          "cap_y": 0.24
         }
       ]
     },
@@ -218,7 +227,8 @@
           "n": 5,
           "fx": "zoom_in",
           "tr": "whip",
-          "prompt": "Pablo the blue penguin from The Backyardigans panicking and running in circles on a medieval wooden stage with his flippers in the air, while the whole medieval crowd below copies him running in circles, Tyrone the orange moose facepalming"
+          "prompt": "Pablo the blue penguin from The Backyardigans panicking and running in circles on a medieval wooden stage with his flippers in the air, while the whole medieval crowd below copies him running in circles, Tyrone the orange moose facepalming",
+          "cap_y": 0.24
         }
       ]
     },
@@ -237,9 +247,9 @@
       "say": "Officially, | the plague ended | at a {y:mountain shrine}. | Unofficially, | it ended the day | Strasbourg ran out | of {r:pretzels}.",
       "shots": [
         {
-          "img": "06.jpg",
+          "img": "@map:shrine",
           "n": 3,
-          "fx": "pan_left",
+          "fx": "zoom_in",
           "tr": "zoom"
         },
         {
@@ -250,7 +260,8 @@
           "sfx": [
             "impact"
           ],
-          "prompt": "The five Backyardigans sadly staring into a completely empty pretzel basket on a medieval wooden stage at dawn, instruments dropped, the exhausted medieval crowd finally lying on the ground asleep"
+          "prompt": "The five Backyardigans sadly staring into a completely empty pretzel basket on a medieval wooden stage at dawn, instruments dropped, the exhausted medieval crowd finally lying on the ground asleep",
+          "cap_y": 0.24
         }
       ]
     },

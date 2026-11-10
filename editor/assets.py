@@ -625,6 +625,95 @@ def parchment(name):
     return bg
 
 
+def old_map(name):
+    """Mapa antigo: Estrasburgo -> Santuário de São Vito (Saverne), com trilha de dança."""
+    from .common import ROOT
+    goth = lambda sz: ImageFont.truetype(str(ROOT / "assets/fonts/UnifrakturMaguntia-Book.ttf"), sz)
+    fell = lambda sz: ImageFont.truetype(str(ROOT / "assets/fonts/IMFeENrm28P.ttf"), sz)
+    fell_i = lambda sz: ImageFont.truetype(str(ROOT / "assets/fonts/IMFeENit28P.ttf"), sz)
+    rnd = random.Random(7)
+    bg = Image.new("RGB", (W, H), (32, 24, 18))
+    d0 = ImageDraw.Draw(bg)
+    for y in range(0, H, 3):
+        v = 30 + int(8 * math.sin(y / 37.0)) + rnd.randint(-3, 3)
+        d0.line((0, y, W, y), fill=(v + 8, v, v - 8))
+    PW, PH = 960, 960
+    pap = Image.new("RGBA", (PW, PH), (0, 0, 0, 0))
+    pts = [(i, rnd.randint(0, 14)) for i in range(0, PW, 20)] + [(PW - rnd.randint(0, 14), i) for i in range(0, PH, 20)] \
+        + [(i, PH - rnd.randint(0, 14)) for i in range(PW, 0, -20)] + [(rnd.randint(0, 14), i) for i in range(PH, 0, -20)]
+    ImageDraw.Draw(pap).polygon(pts, fill=(228, 208, 165, 255))
+    st = Image.new("RGBA", (PW, PH), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(st)
+    for _ in range(45):
+        x, y, r = rnd.randint(0, PW), rnd.randint(0, PH), rnd.randint(20, 130)
+        sd.ellipse((x - r, y - r, x + r, y + r), fill=(140, 100, 55, rnd.randint(8, 24)))
+    st = st.filter(ImageFilter.GaussianBlur(28))
+    pap = Image.alpha_composite(pap, Image.composite(st, Image.new("RGBA", (PW, PH)), pap.getchannel("A")))
+    d = ImageDraw.Draw(pap)
+    ink, red = (60, 38, 20), (150, 25, 25)
+    d.text((PW / 2, 85), "The Road to the Shrine", font=goth(78), fill=ink, anchor="mm")
+    d.text((PW / 2, 150), "Anno Domini 1518", font=fell_i(34), fill=(100, 70, 40), anchor="mm")
+    # rio Reno (direita)
+    rv = [(PW - 120 + 30 * math.sin(y / 70.0), y) for y in range(200, PH - 40, 10)]
+    d.line(rv, fill=(90, 120, 150), width=10, joint="curve")
+    d.text((PW - 175, 600), "Rhine", font=fell_i(32), fill=(70, 95, 125), anchor="mm")
+    # montanhas (Vosges, esquerda/cima)
+    for mx, my, ms in [(150, 330, 70), (240, 300, 85), (330, 340, 65), (110, 430, 55), (200, 420, 75), (420, 290, 55)]:
+        d.polygon([(mx - ms, my + ms * 0.6), (mx, my - ms * 0.7), (mx + ms, my + ms * 0.6)], fill=(205, 180, 135), outline=ink)
+        d.line([(mx, my - ms * 0.7), (mx + ms * 0.35, my - ms * 0.2)], fill=ink, width=2)
+    d.text((270, 500), "Vosges Mountains", font=fell_i(30), fill=(100, 70, 40), anchor="mm")
+    # santuário (capela) no alto à esquerda
+    cx, cy = 230, 235
+    d.rectangle((cx - 35, cy - 10, cx + 35, cy + 40), fill=(240, 230, 205), outline=ink, width=3)
+    d.polygon([(cx - 45, cy - 10), (cx, cy - 55), (cx + 45, cy - 10)], fill=(170, 60, 50), outline=ink)
+    d.line([(cx, cy - 90), (cx, cy - 55)], fill=ink, width=4)
+    d.line([(cx - 14, cy - 76), (cx + 14, cy - 76)], fill=ink, width=4)
+    d.text((cx + 140, cy - 30), "Shrine of", font=fell(34), fill=ink, anchor="mm")
+    d.text((cx + 140, cy + 10), "Saint Vitus", font=fell(40), fill=red, anchor="mm")
+    # Estrasburgo (embaixo à direita): casinhas + catedral
+    sx, sy = 640, 760
+    for k, (hx, hh) in enumerate([(-90, 40), (-45, 55), (45, 50), (90, 38)]):
+        d.rectangle((sx + hx - 20, sy - hh, sx + hx + 20, sy), fill=(240, 228, 200), outline=ink, width=2)
+        d.polygon([(sx + hx - 24, sy - hh), (sx + hx, sy - hh - 22), (sx + hx + 24, sy - hh)], fill=(150, 70, 50), outline=ink)
+    d.rectangle((sx - 14, sy - 120, sx + 14, sy), fill=(215, 150, 140), outline=ink, width=2)
+    d.polygon([(sx - 14, sy - 120), (sx, sy - 175), (sx + 14, sy - 120)], fill=(200, 130, 120), outline=ink)
+    d.text((sx, sy + 40), "Strasbourg", font=fell(46), fill=ink, anchor="mm")
+    # pretzel desenhado ao lado da cidade
+    px, py = sx + 150, sy - 70
+    for a0 in (0, 1):
+        d.arc((px - 40 + a0 * 30, py - 30, px + 10 + a0 * 30, py + 20), 0, 360, fill=(150, 90, 40), width=8)
+    d.arc((px - 30, py - 5, px + 40, py + 45), 180, 360, fill=(150, 90, 40), width=8)
+    d.text((px + 5, py + 60), "pretzels", font=fell_i(26), fill=(120, 70, 30), anchor="mm")
+    # trilha pontilhada da cidade ao santuário
+    path = []
+    for i in range(0, 101):
+        t = i / 100
+        x = sx - 60 + (cx + 40 - (sx - 60)) * t + 70 * math.sin(t * math.pi * 2.2)
+        y = sy - 30 + (cy + 60 - (sy - 30)) * t
+        path.append((x, y))
+    for i in range(0, len(path) - 1, 4):
+        d.line([path[i], path[i + 2]], fill=red, width=6)
+    # pegadas de dança ao longo da trilha
+    for i in range(8, 95, 14):
+        x, y = path[i]
+        side = 14 if (i // 14) % 2 else -14
+        d.ellipse((x + side - 7, y - 11, x + side + 7, y + 11), fill=ink)
+    d.text((path[50][0] + 120, path[50][1]), "the dancers", font=fell_i(30), fill=red, anchor="mm")
+    # rosa dos ventos
+    rx, ry = 110, PH - 120
+    d.polygon([(rx, ry - 60), (rx + 12, ry), (rx, ry + 60), (rx - 12, ry)], fill=ink)
+    d.polygon([(rx - 60, ry), (rx, ry - 12), (rx + 60, ry), (rx, ry + 12)], fill=(150, 120, 80))
+    d.text((rx, ry - 80), "N", font=fell(30), fill=ink, anchor="mm")
+    pap = pap.rotate(-2, resample=Image.BICUBIC, expand=True)
+    sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ox, oy = (W - pap.width) // 2, 200
+    ImageDraw.Draw(sh).rectangle((ox + 30, oy + 40, ox + pap.width + 30, oy + pap.height + 30), fill=(0, 0, 0, 160))
+    sh = sh.filter(ImageFilter.GaussianBlur(28))
+    bg.paste(sh, (0, 0), sh)
+    bg.paste(pap, (ox, oy), pap)
+    return bg
+
+
 def anim_count(ref):
     """Quantos itens um asset animado revela (mensagens ou notificações)."""
     kind, _, name = ref[1:].partition(":")
@@ -677,6 +766,8 @@ def make(ref, handles=None):
         return chat(rest)
     if kind == "lock":
         return lock(rest)
+    if kind == "map":
+        return old_map(rest)
     if kind == "doc":
         return parchment(rest)
     if kind == "stat":
