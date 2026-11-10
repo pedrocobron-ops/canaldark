@@ -824,7 +824,7 @@ BADGES = {
     "johnny": {"photo": "projects/007-johnny-bravo-vmas/images/01.jpg", "crop": [0.28, 0.15, 0.72],
                "event": "VMA 2009", "sub": "MTV VIDEO MUSIC AWARDS", "name": "JOHNNY BRAVO",
                "role": "HEAD OF SECURITY", "id": "SEC-0001", "date": "SEPT 13, 2009 · RADIO CITY"},
-    "patrick": {"photo": "projects/008-patrick-suez/images/01.jpg", "crop": [0.22, 0.10, 0.78],
+    "patrick": {"photo": "projects/008-patrick-suez/images/03.jpg", "crop": [0.22, 0.45, 0.78],
                 "event": "SUEZ CANAL", "sub": "SUEZ CANAL AUTHORITY · EGYPT", "name": "PATRICK STAR",
                 "role": "OFFICIAL SHIP GUIDE", "id": "FLAG-0002", "date": "MARCH 2021 · KM 151",
                 "access": ["FLAG", "DUTY"], "top": (10, 60, 110)},
@@ -1067,6 +1067,10 @@ def coupon(name):
 
 
 REPORTS = {
+    "job": {"title": "JOB DESCRIPTION", "sub": "Suez Canal Authority · Position #0002",
+            "rows": [("Position", "Official ship guide"), ("Duty 1", "Wave flag (left)"), ("Duty 2", "Wave flag (right)"),
+                     ("Other duties", "None"), ("Hours", "When awake"), ("Hired", "Patrick Star")],
+            "stamp": "HIRED"},
     "rules": {"title": "OFFICIAL RULES", "sub": "Under-A-Rock Championship 2021",
               "rows": [("Rule 1", "Get under a rock"), ("Rule 2", "Stay there"), ("Rule 3", "Last one out wins"),
                        ("Snacks", "Not allowed"), ("Time limit", "None"), ("Judge", "A fish")],

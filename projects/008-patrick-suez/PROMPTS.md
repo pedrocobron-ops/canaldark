@@ -5,22 +5,16 @@ Suba todas numa pasta do Google Drive chamada `008-patrick-suez`.
 
 Dica: Gemini (Nano Banana) e ChatGPT costumam aceitar personagens reais. Se um recusar, tente o outro.
 
-## 01.jpg
+## 03.jpg
 
 ```
-Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) standing proudly with hands on his hips, big goofy smile, full body, plain pure white background, 2D cartoon illustration in the classic SpongeBob SquarePants Nickelodeon style, bold outlines, vibrant colors, vertical 9:16 composition
+Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) standing on the sandy bank of the Suez Canal holding two orange signal flags, proud serious face, a huge container ship passing behind him, desert and blue sky, 2D cartoon illustration in the classic SpongeBob SquarePants Nickelodeon style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 02.jpg
 
 ```
 Realistic aerial drone photo of the giant container ship Ever Given stuck sideways across the narrow Suez Canal in Egypt in March 2021, stacked colorful containers, desert sand on both banks, tiny excavators near the bow, bright daylight, photorealistic, vertical 9:16
-```
-
-## 03.jpg
-
-```
-Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) standing on the sandy bank of the Suez Canal holding two orange signal flags, proud serious face, a huge container ship passing behind him, desert and blue sky, 2D cartoon illustration in the classic SpongeBob SquarePants Nickelodeon style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 04.jpg

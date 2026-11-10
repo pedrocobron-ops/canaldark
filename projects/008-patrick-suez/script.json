@@ -20,12 +20,11 @@
       "say": "Why didn't {y:Patrick Star} | stop the {r:Ever Given} | from blocking | the {y:Suez Canal}?",
       "shots": [
         {
-          "img": "01.jpg",
+          "img": "03.jpg",
           "n": 2,
-          "fit": "contain",
           "fx": "zoom_in",
-          "cap_y": 0.56,
-          "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) standing proudly with hands on his hips, big goofy smile, full body, plain pure white background"
+          "cap_y": 0.28,
+          "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) standing on the sandy bank of the Suez Canal holding two orange signal flags, proud serious face, a huge container ship passing behind him, desert and blue sky"
         },
         {
           "img": "02.jpg",
@@ -47,11 +46,11 @@
           "cap_y": 0.8
         },
         {
-          "img": "03.jpg",
+          "img": "04.jpg",
           "n": 2,
           "fx": "zoom_in",
           "cap_y": 0.24,
-          "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) standing on the sandy bank of the Suez Canal holding two orange signal flags, proud serious face, a huge container ship passing behind him, desert and blue sky"
+          "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) enthusiastically waving two orange signal flags over his head at a giant container ship, tongue out with concentration, motion lines, Suez Canal desert bank"
         }
       ]
     },
@@ -59,11 +58,11 @@
       "say": "His only job | was to wave | two {o:orange flags} | at every ship.",
       "shots": [
         {
-          "img": "04.jpg",
+          "img": "@report:job",
           "n": 2,
           "fx": "zoom_in",
-          "cap_y": 0.24,
-          "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) enthusiastically waving two orange signal flags over his head at a giant container ship, tongue out with concentration, motion lines, Suez Canal desert bank"
+          "tr": "whip",
+          "cap_y": 0.8
         },
         {
           "img": "05.jpg",
@@ -180,7 +179,7 @@
           "sfx": [
             "ding"
           ],
-          "cap_y": 0.78,
+          "cap_y": 0.45,
           "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) lying under a rock at the bottom of the canal, lazily answering an old rotary telephone, with a big speech bubble that says NO, THIS IS PATRICK!, bubbles, sandy floor"
         }
       ]
@@ -213,7 +212,8 @@
           "img": "@report:rules",
           "n": 2,
           "fx": "zoom_in",
-          "tr": "whip"
+          "tr": "whip",
+          "cap_y": 0.8
         },
         {
           "img": "13.jpg",
