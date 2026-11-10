@@ -8,7 +8,7 @@ Dica: Gemini (Nano Banana) e ChatGPT costumam aceitar personagens reais. Se um r
 ## 01.jpg
 
 ```
-Johnny Bravo from the Cartoon Network show Johnny Bravo flexing his huge muscles, tall black pompadour, black sunglasses, black t-shirt, full body, plain pure white background, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+Johnny Bravo from the Cartoon Network show Johnny Bravo flexing his huge muscles, tall blonde yellow pompadour, black sunglasses, black t-shirt, full body, plain pure white background, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 02.jpg
@@ -38,7 +38,7 @@ Johnny Bravo from the Cartoon Network show wearing a black suit with a SECURITY 
 ## 05.jpg
 
 ```
-2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage, Johnny Bravo with his tall black pompadour, black t-shirt and blue jeans stands nose to nose with a funny caricature of Kanye West in a black leather jacket and big shiny dark sunglasses holding a microphone. Johnny is leaning in, staring at his own tiny reflection in Kanye's sunglasses lenses, both lenses clearly show a mini Johnny Bravo flexing, Johnny has hypnotized spiral eyes and pink hearts floating around his head, Kanye looks annoyed, stage lights behind them, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage, Johnny Bravo with his tall blonde yellow pompadour, black t-shirt and blue jeans stands nose to nose with a funny caricature of Kanye West in a black leather jacket and big shiny dark sunglasses holding a microphone. Johnny is leaning in, staring at his own tiny reflection in Kanye's sunglasses lenses, both lenses clearly show a mini Johnny Bravo flexing, Johnny has hypnotized spiral eyes and pink hearts floating around his head, Kanye looks annoyed, stage lights behind them, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 12.jpg
@@ -56,7 +56,7 @@ Johnny Bravo from the Cartoon Network show arm wrestling a dancer in a red spark
 ## 08.jpg
 
 ```
-2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: backstage dressing room with mirror light bulbs, Johnny Bravo with his tall black pompadour screaming in victory with one arm raised after winning an arm wrestling match at a small table, his opponent across the table is ONE slim female dancer in a red sparkly showgirl leotard and feathered headpiece, her hand pinned on the table, she rolls her eyes unimpressed. Behind them a long line of identical red showgirl dancers, and on the wall a chalkboard with 35 tally marks under the word LOSSES and 1 tally mark under WINS, confetti, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: backstage dressing room with mirror light bulbs. Johnny Bravo with his tall BLONDE yellow pompadour, black sunglasses, black t-shirt and blue jeans is SEATED at a small wooden table in the middle of an arm wrestling match, his right hand is gripping the hand of ONE slim female dancer in a red sparkly showgirl leotard and feathered headpiece seated across from him, both elbows on the table, he is slamming the back of her hand down onto the table with an impact burst, Johnny screams in victory with his other fist in the air. The dancer looks bored and rolls her eyes, clearly letting him win. A long line of identical red showgirl dancers watches from behind, confetti falling, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 09.jpg
