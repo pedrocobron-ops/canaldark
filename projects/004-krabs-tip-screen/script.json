@@ -1,5 +1,5 @@
 {
-  "title": "Why is Mr. Krabs refusing to work on the new tip screen?",
+  "title": "Why is Mr. Krabs refusing to work on Tip Screen 2?",
   "format": "B",
   "voice": "am_adam",
   "speed": 0.9,
@@ -8,12 +8,12 @@
   "style_suffix": "2D cartoon illustration in the classic SpongeBob SquarePants style, bold black outlines, vibrant saturated colors, vertical 9:16 composition",
   "cover": {
     "img": "02.png",
-    "text": "Why is {r:Mr. Krabs} refusing the new {y:tip screen}?",
+    "text": "Why is {r:Mr. Krabs} refusing {y:Tip Screen 2}?",
     "y": 0.7
   },
   "beats": [
     {
-      "say": "Why is {r:Mr. Krabs} | refusing to work | on the new | {y:tip screen}?",
+      "say": "Why is {r:Mr. Krabs} | refusing to work | on {y:Tip Screen 2}?",
       "shots": [
         {
           "img": "01.png",
@@ -24,7 +24,7 @@
         },
         {
           "img": "@tip:classic",
-          "n": 2,
+          "n": 1,
           "fx": "zoom_in",
           "tr": "whip",
           "bg_img": "05.png"
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "say": "Recently, | several {y:rumors} say | the company behind | the {b:iPad tip screen} | has been trying | to hire him.",
+      "say": "Recently, | several {y:rumors} say | the company behind | the {b:iPad tip screen} | has been trying | to hire him | for {y:Tip Screen 2}.",
       "shots": [
         {
           "img": "../../001-squidward-imessage/images/06.png",
@@ -67,7 +67,7 @@
         },
         {
           "img": "04.png",
-          "n": 4,
+          "n": 5,
           "fx": "zoom_in",
           "tr": "whip",
           "prompt": "Mr. Krabs from SpongeBob SquarePants in a modern tech company boardroom, businessmen in suits sliding a contract across the table to him, a big screen behind showing a tablet with tip percentage buttons"
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "say": "For {y:Tip Screen 2}. | It looks exactly the same, | but it's {y:gold}.",
+      "say": "It looks | exactly the same, | but it's {y:gold}.",
       "shots": [
         {
           "img": "@tip:classic",
@@ -183,7 +183,7 @@
       ]
     },
     {
-      "say": "{y:Records} show | that in 25 years, | {b:SpongeBob} received | a total of {r:62 cents} | in tips.",
+      "say": "{y:Records} show | that since {y:1999}, | {b:SpongeBob} received | a total of {r:62 cents} | in tips.",
       "shots": [
         {
           "img": "11.png",
@@ -204,11 +204,11 @@
       ]
     },
     {
-      "say": "Mr. Krabs called it | an {r:attack} | on {y:small business owners} | like him.",
+      "say": "Mr. Krabs called it | an {r:attack} | on {y:small business owners}, | while sitting | on a pile | of {r:SpongeBob's tips}.",
       "shots": [
         {
           "img": "12.png",
-          "n": 4,
+          "n": 6,
           "fx": "zoom_in",
           "tr": "whip",
           "prompt": "Mr. Krabs from SpongeBob SquarePants shouting furiously at a press conference podium full of microphones, standing on a pile of money bags, dramatic red background"

@@ -466,7 +466,7 @@ def tipscreen(name, bg=None):
 
 RECEIPTS = {
     "spongebob": [("KRUSTY KRAB", "big"), ("EMPLOYEE TIP REPORT", "bold"), ("", ""),
-                  ("Employee:", "SpongeBob S."), ("Years worked:", "25"), ("Shifts:", "9,125"),
+                  ("Employee:", "SpongeBob S."), ("Since:", "1999"), ("Shifts:", "9,862"),
                   ("Guests tipped:", "$48,912.40"), ("Mr. Krabs kept:", "$48,911.78"), ("", ""),
                   ("TOTAL TIPS RECEIVED", "$0.62")],
 }
