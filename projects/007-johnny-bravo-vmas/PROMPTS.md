@@ -38,7 +38,7 @@ Johnny Bravo from the Cartoon Network show wearing a black suit with a SECURITY 
 ## 05.jpg
 
 ```
-Extreme close-up of a pair of dark shiny sunglasses, and reflected in the lenses is a 2D cartoon Johnny Bravo with his perfect black pompadour, staring at himself with hypnotized heart eyes, sparkles around the reflection, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage, Johnny Bravo with his tall black pompadour, black t-shirt and blue jeans stands nose to nose with a funny caricature of Kanye West in a black leather jacket and big shiny dark sunglasses holding a microphone. Johnny is leaning in, staring at his own tiny reflection in Kanye's sunglasses lenses, both lenses clearly show a mini Johnny Bravo flexing, Johnny has hypnotized spiral eyes and pink hearts floating around his head, Kanye looks annoyed, stage lights behind them, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 12.jpg
@@ -56,7 +56,7 @@ Johnny Bravo from the Cartoon Network show arm wrestling a dancer in a red spark
 ## 08.jpg
 
 ```
-Johnny Bravo from the Cartoon Network show screaming in victory with both arms up after winning an arm wrestling match backstage, the showgirl dancers in red sparkly costumes shocked, confetti, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: backstage dressing room with mirror light bulbs, Johnny Bravo with his tall black pompadour screaming in victory with one arm raised after winning an arm wrestling match at a small table, his opponent across the table is ONE slim female dancer in a red sparkly showgirl leotard and feathered headpiece, her hand pinned on the table, she rolls her eyes unimpressed. Behind them a long line of identical red showgirl dancers, and on the wall a chalkboard with 35 tally marks under the word LOSSES and 1 tally mark under WINS, confetti, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 09.jpg
