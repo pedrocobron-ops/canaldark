@@ -320,56 +320,148 @@ def facebook(name):
 
 
 TIPS = {
-    "classic": {"frame": (235, 235, 240), "bezel": (30, 30, 34), "top": "Bottle of water  $2.50",
-                "ask": "Add a tip?", "opts": ["20%", "25%", "30%"], "btn": (20, 20, 22),
-                "no": "No tip", "no_size": 26, "label": None},
-    "gold": {"frame": (232, 190, 70), "bezel": (150, 110, 20), "top": "Bottle of water  $2.50",
-             "ask": "Thank you!", "opts": [], "btn": (20, 20, 22), "no": "No tip needed :)", "no_size": 54,
-             "label": "TIP SCREEN 2"},
-    "krabs": {"frame": (235, 235, 240), "bezel": (30, 30, 34), "top": "Krabby Patty  $3.99",
-              "ask": "Add a tip?", "opts": ["45%", "60%", "75%"], "btn": (200, 30, 40),
-              "no": "no tip (SpongeBob will cry)", "no_size": 22, "label": None},
-    "three": {"frame": (210, 25, 35), "bezel": (120, 10, 15), "top": "You walked past the Krusty Krab",
-              "ask": "Add a tip?", "opts": ["30%", "40%", "50%"], "btn": (200, 30, 40),
-              "no": "", "no_size": 22, "label": "TIP SCREEN 3"},
+    "classic": {
+        "bezel": (22, 22, 24), "merchant": "Self-Checkout  ·  no staff on duty",
+        "lines": [("Dasani Water 16.9 oz", "$2.49")], "total": "$2.49",
+        "ask": "Would you like to add a tip?",
+        "tiles": [("20%", "$0.50"), ("25%", "$0.62"), ("30%", "$0.75")],
+        "custom": "Custom amount", "no": "No tip", "no_size": 24, "label": None, "label_color": None},
+    "gold": {
+        "bezel": (205, 160, 40), "merchant": "Self-Checkout",
+        "lines": [("Dasani Water 16.9 oz", "$2.49")], "total": "$2.49",
+        "ask": "No tip screen.", "sub": "Just pay and go.", "tiles": [],
+        "custom": None, "no": None, "label": "TIP SCREEN 2", "label_color": (255, 205, 60)},
+    "krabs": {
+        "bezel": (22, 22, 24), "merchant": "THE KRUSTY KRAB",
+        "lines": [("Krabby Patty", "$3.99"), ("Service fee (18%)", "$0.72"),
+                  ("Kitchen appreciation fee", "$0.50"), ("Breathing fee", "$0.25")], "total": "$5.46",
+        "ask": "Add a tip for SpongeBob?",
+        "tiles": [("45%", "$2.46"), ("60%", "$3.28"), ("75%", "$4.10")],
+        "custom": "Custom: your soul", "no": "No tip (SpongeBob will be fired)", "no_size": 20,
+        "label": None, "label_color": None},
+    "three_order": {
+        "bezel": (190, 20, 30), "merchant": "THE KRUSTY KRAB",
+        "lines": [("Your order", "not started")], "total": "$0.00",
+        "ask": "Tip first. Order later.",
+        "tiles": [("25%", "of ?"), ("35%", "of ?"), ("50%", "of ?")],
+        "custom": None, "no": None, "label": "TIP SCREEN 3", "label_color": (255, 70, 70)},
+    "three_walk": {
+        "bezel": (190, 20, 30), "merchant": "📍 You walked past the Krusty Krab",
+        "lines": [("Distance", "30 ft"), ("Time near entrance", "4 sec")], "total": None,
+        "ask": "Add a tip for walking by?",
+        "tiles": [("$5", ""), ("$10", ""), ("$20", "")],
+        "custom": None, "no": None, "label": "TIP SCREEN 3", "label_color": (255, 70, 70)},
 }
 
 
-def tipscreen(name):
-    """iPad de balcão com a tela de gorjeta (acima da área da legenda)."""
+def _txt(d, im, xy, text, fnt, fill, anchor="la", esize=None):
+    """Texto com emoji colorido no começo (ex.: 📍)."""
+    if text and ord(text[0]) > 0x2600:
+        ch, rest = text.split(" ", 1)
+        e = emoji(ch, esize or int(fnt.size * 1.1))
+        x, y = xy
+        if anchor[0] == "m":
+            tw = d.textlength(rest, font=fnt) + e.width + 12
+            x = x - tw / 2
+        im.paste(e, (int(x), int(y - e.height / 2)), e)
+        d.text((x + e.width + 12, y), rest, font=fnt, fill=fill, anchor="lm")
+    else:
+        d.text(xy, text, font=fnt, fill=fill, anchor=anchor)
+
+
+def tipscreen(name, bg=None):
+    """Terminal de pagamento de balcão (estilo iPad/Square, modo escuro), levemente
+    inclinado, sobre o fundo desfocado de uma foto do projeto."""
     c = TIPS[name]
-    bg = Image.new("RGB", (W, H))
-    for y in range(H):
-        k = y / H
-        ImageDraw.Draw(bg).line((0, y, W, y), fill=(int(40 + 30 * k), int(32 + 20 * k), int(28 + 10 * k)))
-    d = ImageDraw.Draw(bg)
-    # suporte do iPad
-    d.polygon([(W / 2 - 60, 1080), (W / 2 + 60, 1080), (W / 2 + 120, 1230), (W / 2 - 120, 1230)], fill=(60, 60, 66))
-    d.rounded_rectangle((W / 2 - 220, 1215, W / 2 + 220, 1250), 14, fill=(50, 50, 56))
-    x0, y0, x1, y1 = 150, 150, W - 150, 1100
-    d.rounded_rectangle((x0, y0, x1, y1), 60, fill=c["bezel"])
-    d.rounded_rectangle((x0 + 18, y0 + 18, x1 - 18, y1 - 18), 50, fill=c["frame"])
-    sx0, sy0, sx1, sy1 = x0 + 48, y0 + 48, x1 - 48, y1 - 48
-    d.rounded_rectangle((sx0, sy0, sx1, sy1), 30, fill=(255, 255, 255))
-    cx = W / 2
-    d.text((cx, sy0 + 70), c["top"], font=font(FONT_UI, 40), fill=(90, 90, 96), anchor="mm")
-    d.text((cx, sy0 + 190), c["ask"], font=font(FONT_UI_BOLD, 84), fill=(15, 15, 18), anchor="mm")
-    y = sy0 + 300
-    for o in c["opts"]:
-        d.rounded_rectangle((sx0 + 60, y, sx1 - 60, y + 120), 26, fill=c["btn"])
-        d.text((cx, y + 60), o, font=font(FONT_UI_BOLD, 64), fill="white", anchor="mm")
-        y += 145
-    if not c["opts"]:
-        e = emoji("😊", 200)
-        bg.paste(e, (int(cx - e.width / 2), sy0 + 330), e)
-        y = sy0 + 600
-    if c["no"]:
-        d.text((cx, y + 40), c["no"], font=font(FONT_UI, c["no_size"]), fill=(185, 185, 190), anchor="mm")
-    if c["label"]:
-        lf = font(FONT_CAPTION, 76)
-        d.text((cx, y0 - 70 if y0 > 120 else y1 + 60), c["label"], font=lf, fill=c["frame"],
-               anchor="mm", stroke_width=6, stroke_fill="black")
-    return bg
+    if bg is not None:
+        base = ImageOps.fit(bg, (W, H), Image.LANCZOS).filter(ImageFilter.GaussianBlur(22))
+        base = Image.blend(base, Image.new("RGB", (W, H), (0, 0, 0)), 0.35)
+    else:
+        base = Image.new("RGB", (W, H), (40, 34, 30))
+    # conteúdo da tela desenhado numa camada alta; depois a moldura é feita no tamanho exato
+    DW = 860
+    SW = DW - 88
+    scr = Image.new("RGBA", (SW, 1400), (14, 14, 16, 255))
+    d = ImageDraw.Draw(scr)
+    sx0, sy0, sx1 = 0, 0, SW
+    cx = SW / 2
+    # barra de status
+    fs = font(FONT_UI_BOLD, 24)
+    d.text((sx0 + 34, sy0 + 26), "9:41", font=fs, fill=(200, 200, 205))
+    d.rounded_rectangle((sx1 - 80, sy0 + 28, sx1 - 36, sy0 + 46), 5, outline=(200, 200, 205), width=2)
+    d.rectangle((sx1 - 76, sy0 + 32, sx1 - 50, sy0 + 42), fill=(200, 200, 205))
+    y = sy0 + 90
+    _txt(d, scr, (cx, y), c["merchant"], font(FONT_UI_BOLD, 34), (235, 235, 240), anchor="mm")
+    y += 50
+    d.line((sx0 + 40, y, sx1 - 40, y), fill=(50, 50, 56), width=2)
+    y += 26
+    fl = font(FONT_UI, 30)
+    for a, b in c["lines"]:
+        d.text((sx0 + 50, y), a, font=fl, fill=(170, 170, 178))
+        d.text((sx1 - 50, y), b, font=fl, fill=(170, 170, 178), anchor="ra")
+        y += 44
+    if c.get("total"):
+        d.text((sx0 + 50, y + 6), "Total", font=font(FONT_UI_BOLD, 34), fill="white")
+        d.text((sx1 - 50, y + 6), c["total"], font=font(FONT_UI_BOLD, 34), fill="white", anchor="ra")
+        y += 60
+    y += 20
+    d.text((cx, y + 30), c["ask"], font=font(FONT_UI_BOLD, 50), fill="white", anchor="mm")
+    y += 90
+    if c.get("sub"):
+        d.text((cx, y + 10), c["sub"], font=font(FONT_UI, 40), fill=(170, 170, 178), anchor="mm")
+        ck = Image.new("RGBA", (220, 220), (0, 0, 0, 0))
+        ImageDraw.Draw(ck).ellipse((0, 0, 219, 219), fill=(52, 199, 89))
+        ImageDraw.Draw(ck).line([(60, 115), (98, 152), (165, 75)], fill="white", width=22, joint="curve")
+        scr.paste(ck, (int(cx - 110), int(y + 90)), ck)
+        y += 330
+    tiles = c["tiles"]
+    if tiles:
+        n = len(tiles)
+        gap = 22
+        tw = (sx1 - sx0 - 80 - gap * (n - 1)) / n
+        th = 210
+        for i, (big, small) in enumerate(tiles):
+            x = sx0 + 40 + i * (tw + gap)
+            d.rounded_rectangle((x, y, x + tw, y + th), 26, fill=(245, 245, 247))
+            d.text((x + tw / 2, y + (78 if small else th / 2)), big, font=font(FONT_UI_BOLD, 64),
+                   fill=(14, 14, 16), anchor="mm")
+            if small:
+                d.text((x + tw / 2, y + 150), small, font=font(FONT_UI, 34), fill=(90, 90, 96), anchor="mm")
+        y += th + 24
+    if c.get("custom"):
+        d.rounded_rectangle((sx0 + 40, y, sx1 - 40, y + 90), 22, fill=(38, 38, 42))
+        d.text((cx, y + 45), c["custom"], font=font(FONT_UI_BOLD, 36), fill="white", anchor="mm")
+        y += 110
+    if c.get("no"):
+        d.text((cx, y + 22), c["no"], font=font(FONT_UI, c.get("no_size", 24)), fill=(95, 95, 100), anchor="mm")
+    y_end = int(y + 60)
+    scr = scr.crop((0, 0, SW, y_end))
+    mask = Image.new("L", scr.size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, scr.width - 1, scr.height - 1), 36, fill=255)
+    DH = y_end + 104
+    dev = Image.new("RGBA", (DW, DH), (0, 0, 0, 0))
+    dd = ImageDraw.Draw(dev)
+    dd.rounded_rectangle((0, 0, DW - 1, DH - 1), 70, fill=c["bezel"] + (255,))
+    dd.rounded_rectangle((8, 8, DW - 9, DH - 9), 64, outline=tuple(min(255, v + 40) for v in c["bezel"]) + (255,), width=4)
+    dd.ellipse((DW / 2 - 9, 22, DW / 2 + 9, 40), fill=(10, 10, 12))
+    dev.paste(scr, (44, 60), mask)
+    # inclinação leve (perspectiva) e sombra
+    k = 0.035
+    quad = (DW * k, 0, 0, DH, DW, DH, DW * (1 - k), 0)
+    dev = dev.transform((DW, DH), Image.QUAD, quad, Image.BICUBIC)
+    sc = min(1.2, 980 / DH, 1000 / DW)          # o maior possível acima da legenda
+    dev = dev.resize((int(DW * sc), int(DH * sc)), Image.LANCZOS)
+    DW, DH = dev.size
+    sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ox, oy = (W - DW) // 2, max(140, (1150 - DH) // 2 + 40)
+    ImageDraw.Draw(sh).rounded_rectangle((ox + 30, oy + 50, ox + DW + 30, oy + DH + 50), 70, fill=(0, 0, 0, 170))
+    sh = sh.filter(ImageFilter.GaussianBlur(30))
+    base.paste(sh, (0, 0), sh)
+    base.paste(dev, (ox, oy), dev)
+    if c.get("label"):
+        ImageDraw.Draw(base).text((W / 2, oy - 2), c["label"], font=font(FONT_CAPTION, 70), fill=c["label_color"],
+                                  anchor="mb", stroke_width=6, stroke_fill="black")
+    return base
 
 
 RECEIPTS = {

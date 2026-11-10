@@ -252,6 +252,9 @@ def raw_image(proj, shot, handles, state=None):
         label, color, sx = state if state else (*ref[7:].partition(":")[::2], 1.0)
         bg = open_image(proj, shot["phone_bg"]) if shot.get("phone_bg") else None
         return assets.phone(label, color or "#34C759", bg, sx)
+    if ref.startswith("@tip:"):
+        bg = open_image(proj, shot["bg_img"]) if shot.get("bg_img") else None
+        return assets.tipscreen(ref[5:], bg)
     if ref.startswith("@chat:") and state is not None:
         return assets.chat(ref[6:], *state)
     if ref.startswith("@lock:") and state is not None:
