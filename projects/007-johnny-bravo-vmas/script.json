@@ -45,7 +45,8 @@
           "img": "@badge:johnny",
           "n": 2,
           "fx": "zoom_in",
-          "tr": "punch"
+          "tr": "punch",
+          "cap_y": 0.8
         },
         {
           "img": "03.jpg",
@@ -67,10 +68,13 @@
           "prompt": "Realistic night photo of the Radio City Music Hall marquee in New York City with bright red neon lights, crowds and yellow taxis in the street"
         },
         {
-          "img": "02.jpg",
+          "img": "@award:taylor",
           "n": 2,
-          "fx": "pan_right",
-          "tr": "zoom"
+          "fx": "pop",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ]
         }
       ]
     },
@@ -88,10 +92,14 @@
           "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: a funny caricature of Kanye West in 2009 wearing a black leather jacket and dark shutter shades sunglasses, grabbing the microphone from a caricature of young Taylor Swift with long curly blonde hair, red lipstick and a silver sparkly dress holding an astronaut-shaped trophy, shocked expression, on a huge awards show stage, cartoon crowd booing"
         },
         {
-          "img": "02.jpg",
+          "img": "14.jpg",
           "n": 2,
           "fx": "zoom_in",
-          "tr": "punch"
+          "tr": "whip",
+          "sfx": [
+            "swish"
+          ],
+          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: extreme close-up of a man's hand in a black leather jacket sleeve snatching a silver microphone out of a delicate female hand with a sparkly silver sleeve, motion lines, dramatic stage lights, sparkles flying, vertical 9:16"
         }
       ]
     },
@@ -110,12 +118,10 @@
       "say": "Johnny claims | he was right there, | but he saw his {y:reflection} | in Kanye's {y:sunglasses}, | and got {r:hypnotized} | by his own hair.",
       "shots": [
         {
-          "img": "03.jpg",
+          "img": "15.jpg",
           "n": 2,
           "fx": "zoom_in",
-          "tr": "whip",
-          "cap_y": 0.24,
-          "prompt": "Johnny Bravo from the Cartoon Network show wearing a black suit with a SECURITY earpiece, standing next to a music awards stage, posing confidently with his sunglasses"
+          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: Johnny Bravo with his tall blonde yellow pompadour, black sunglasses, black t-shirt and blue jeans at a press conference surrounded by many reporters' microphones and camera flashes, pointing at himself with an innocent face and a big sweat drop, vertical 9:16"
         },
         {
           "img": "05.jpg",
@@ -128,12 +134,11 @@
           "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage, Johnny Bravo with his tall blonde yellow pompadour, black t-shirt and blue jeans stands nose to nose with a funny caricature of Kanye West in a black leather jacket and big shiny dark sunglasses holding a microphone. Johnny is leaning in, staring at his own tiny reflection in Kanye's sunglasses lenses, both lenses clearly show a mini Johnny Bravo flexing, Johnny has hypnotized spiral eyes and pink hearts floating around his head, Kanye looks annoyed, stage lights behind them"
         },
         {
-          "img": "01.jpg",
+          "img": "16.jpg",
           "n": 2,
-          "fit": "contain",
-          "fx": "pop",
+          "fx": "shake",
           "tr": "punch",
-          "cap_y": 0.24
+          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: Johnny Bravo with his tall blonde yellow pompadour, black sunglasses, black t-shirt and blue jeans frozen like a statue on a stage, hypnotized spiral eyes behind his sunglasses pushed down, drooling, slowly combing his blonde pompadour, floating pink hearts and sparkles around his hair, chaos and booing crowd blurred behind him, vertical 9:16"
         }
       ]
     },
@@ -165,10 +170,11 @@
       "say": "Radio City | is the home | of the {r:Rockettes}.",
       "shots": [
         {
-          "img": "06.jpg",
+          "img": "17.jpg",
           "n": 3,
-          "fx": "zoom_in",
-          "tr": "zoom"
+          "fx": "pan_right",
+          "tr": "whip",
+          "prompt": "Realistic photo of the Rockettes doing their famous kickline on the Radio City Music Hall stage, long line of dancers in red sparkly costumes, bright stage lights. A 2D cartoon Johnny Bravo is inserted into the real photo, hidden at the far end of the kickline wearing a red feathered headpiece, kicking his leg up with them, vertical 9:16"
         }
       ]
     },
@@ -176,11 +182,11 @@
       "say": "To impress them, | Johnny challenged | all of them | to an {y:arm-wrestling tournament} | backstage.",
       "shots": [
         {
-          "img": "03.jpg",
+          "img": "18.jpg",
           "n": 3,
-          "fx": "pan_left",
-          "tr": "punch",
-          "cap_y": 0.24
+          "fx": "zoom_in",
+          "cap_y": 0.24,
+          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: backstage dressing room, Johnny Bravo with his tall blonde yellow pompadour, black sunglasses, black t-shirt and blue jeans flexing his huge biceps in front of a long line of dancers in red sparkly showgirl costumes who look unimpressed with crossed arms, he points at a small table with a hand-written sign that says ARM WRESTLING, vertical 9:16"
         },
         {
           "img": "07.jpg",
@@ -257,9 +263,9 @@
       "say": "And this part is {y:real}: | that night, | {y:Beyoncé} invited Taylor | back on stage | to finish her speech.",
       "shots": [
         {
-          "img": "02.jpg",
+          "img": "20.jpg",
           "n": 2,
-          "fx": "zoom_out",
+          "fx": "zoom_in",
           "tr": "fade"
         },
         {
@@ -288,15 +294,20 @@
       "say": "Taylor later wrote | a {y:song} about that night. | Johnny still has | the {y:hairspray}.",
       "shots": [
         {
-          "img": "13.jpg",
+          "img": "@song:innocent",
           "n": 2,
-          "fx": "zoom_out"
+          "fx": "zoom_in",
+          "tr": "whip",
+          "sfx": [
+            "ding"
+          ]
         },
         {
-          "img": "09.jpg",
+          "img": "19.jpg",
           "n": 2,
-          "fx": "zoom_out",
-          "tr": "punch"
+          "fx": "zoom_in",
+          "tr": "punch",
+          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: Johnny Bravo with his tall blonde yellow pompadour, black sunglasses, black t-shirt and blue jeans today in his messy apartment, kneeling with love in front of a small glass display case on a shelf that holds a travel-size hairspray lit like a precious museum relic, candles around it, pink hearts, vertical 9:16"
         }
       ]
     },
@@ -304,15 +315,8 @@
       "say": "Would you trade | the moment of the decade | for a {y:travel-size hairspray}?",
       "shots": [
         {
-          "img": "11.jpg",
-          "n": 1,
-          "fx": "zoom_in",
-          "tr": "whip",
-          "cap_y": 0.24
-        },
-        {
           "img": "../../001-squidward-imessage/images/19.png",
-          "n": 2,
+          "n": 3,
           "fit": "contain",
           "fx": "zoom_in",
           "inset": {

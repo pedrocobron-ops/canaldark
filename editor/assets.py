@@ -816,27 +816,98 @@ def tvguide(name):
     return bg
 
 
+BADGES = {
+    "johnny": {"photo": "projects/007-johnny-bravo-vmas/images/01.jpg", "crop": [0.28, 0.15, 0.72],
+               "event": "VMA 2009", "sub": "MTV VIDEO MUSIC AWARDS", "name": "JOHNNY BRAVO",
+               "role": "HEAD OF SECURITY", "id": "SEC-0001", "date": "SEPT 13, 2009 · RADIO CITY"},
+}
+
+
 def badge(name):
-    """Credencial de segurança com cordão."""
-    bg = Image.new("RGB", (W, H), (20, 18, 28))
+    """Credencial de segurança realista com a foto do personagem, cordão e plástico."""
+    from .common import ROOT
+    import random
+    c = BADGES[name]
+    bg = Image.new("RGB", (W, H), (18, 16, 24))
     d = ImageDraw.Draw(bg)
     for i in range(0, H, 4):
-        d.line((0, i, W, i), fill=(24 + (i // 4) % 3, 22, 32))
-    d.polygon([(W / 2 - 40, 0), (W / 2 + 40, 0), (W / 2 + 30, 300), (W / 2 - 30, 300)], fill=(200, 30, 40))
-    x0, y0, x1, y1 = 200, 290, W - 200, 1120
-    d.rounded_rectangle((x0, y0, x1, y1), 40, fill=(248, 248, 250), outline=(190, 190, 200), width=4)
-    d.rounded_rectangle((W / 2 - 70, y0 + 25, W / 2 + 70, y0 + 55), 15, fill=(60, 60, 70))
-    d.rectangle((x0, y0 + 90, x1, y0 + 230), fill=(15, 15, 18))
-    d.text((W / 2, y0 + 160), "VMA 2009", font=font(FONT_CAPTION, 96), fill=(255, 214, 0), anchor="mm")
-    d.rounded_rectangle((W / 2 - 150, y0 + 270, W / 2 + 150, y0 + 570), 20, fill=(225, 228, 235))
-    d.ellipse((W / 2 - 60, y0 + 300, W / 2 + 60, y0 + 420), fill=(240, 200, 160))
-    d.ellipse((W / 2 - 75, y0 + 255, W / 2 + 55, y0 + 345), fill=(25, 25, 30))     # topete
-    d.ellipse((W / 2 - 20, y0 + 230, W / 2 + 95, y0 + 320), fill=(25, 25, 30))
-    d.rectangle((W / 2 - 55, y0 + 345, W / 2 + 55, y0 + 375), fill=(15, 15, 18))
-    d.pieslice((W / 2 - 130, y0 + 430, W / 2 + 130, y0 + 700), 180, 360, fill=(15, 15, 18))
-    d.text((W / 2, y0 + 640), "JOHNNY BRAVO", font=font(FONT_CAPTION, 78), fill=(15, 15, 18), anchor="mm")
-    d.rounded_rectangle((x0 + 60, y0 + 700, x1 - 60, y0 + 790), 20, fill=(200, 30, 40))
-    d.text((W / 2, y0 + 745), "HEAD OF SECURITY", font=font(FONT_UI_BOLD, 52), fill="white", anchor="mm")
+        d.line((0, i, W, i), fill=(22 + (i // 4) % 3, 20, 30))
+    bw, bh = 700, 1080
+    card = Image.new("RGBA", (bw + 60, bh + 60), (0, 0, 0, 0))
+    cd = ImageDraw.Draw(card)
+    ox, oy = 30, 30
+    cd.rounded_rectangle((ox, oy, ox + bw, oy + bh), 34, fill=(250, 250, 252))
+    # faixa do topo com degradê
+    top = Image.new("RGB", (bw, 230))
+    for y in range(230):
+        t = y / 230
+        ImageDraw.Draw(top).line((0, y, bw, y), fill=(int(20 + 10 * t), int(10 + 5 * t), int(40 + 30 * t)))
+    m = Image.new("L", (bw, 230), 0)
+    ImageDraw.Draw(m).rounded_rectangle((0, 0, bw, 290), 34, fill=255)
+    card.paste(top, (ox, oy), m)
+    cd.rounded_rectangle((ox + bw / 2 - 70, oy + 26, ox + bw / 2 + 70, oy + 56), 15, fill=(250, 250, 252))
+    cd.text((ox + bw / 2, oy + 125), c["event"], font=font(FONT_CAPTION, 100), fill=(255, 214, 0), anchor="mm")
+    cd.text((ox + bw / 2, oy + 195), c["sub"], font=font(FONT_UI_BOLD, 30), fill=(200, 200, 225), anchor="mm")
+    # foto
+    im = Image.open(ROOT / c["photo"]).convert("RGB")
+    w, h = im.size
+    x0f, y0f, x1f = c["crop"]
+    side = int((x1f - x0f) * w)
+    face = im.crop((int(x0f * w), int(y0f * h), int(x0f * w) + side, int(y0f * h) + int(side * 1.2)))
+    pw, ph = 330, 396
+    face = face.resize((pw, ph), Image.LANCZOS)
+    back = Image.new("RGB", (pw, ph))
+    for y in range(ph):
+        ImageDraw.Draw(back).line((0, y, pw, y), fill=(int(120 + 60 * y / ph), int(170 + 40 * y / ph), 235))
+    import numpy as np
+    arr = np.asarray(face).astype(int)
+    white = ((arr[..., 0] > 235) & (arr[..., 1] > 235) & (arr[..., 2] > 235)).astype("uint8") * 255
+    face = Image.composite(back, face, Image.fromarray(white).convert("L"))
+    px, py = ox + 50, oy + 280
+    cd.rectangle((px - 6, py - 6, px + pw + 6, py + ph + 6), fill=(30, 30, 40))
+    card.paste(face, (px, py))
+    # dados ao lado da foto
+    tx = px + pw + 40
+    cd.text((tx, py + 10), "ALL", font=font(FONT_CAPTION, 92), fill=(220, 30, 45), anchor="la")
+    cd.text((tx, py + 105), "ACCESS", font=font(FONT_CAPTION, 70), fill=(220, 30, 45), anchor="la")
+    cd.text((tx, py + 215), "ID", font=font(FONT_UI, 28), fill=(120, 120, 135), anchor="la")
+    cd.text((tx, py + 248), c["id"], font=font(FONT_UI_BOLD, 38), fill=(30, 30, 40), anchor="la")
+    # holograma
+    for i in range(70):
+        hue = [(255, 120, 200), (120, 220, 255), (255, 240, 120), (160, 255, 170)][i // 18 % 4]
+        cd.line((tx + i * 3, py + 320, tx + i * 3 + 40, py + 390), fill=hue + (150,), width=3)
+    cd.text((ox + bw / 2, py + ph + 85), c["name"], font=font(FONT_CAPTION, 84), fill=(20, 20, 28), anchor="mm")
+    ry = py + ph + 145
+    cd.rounded_rectangle((ox + 50, ry, ox + bw - 50, ry + 92), 18, fill=(215, 30, 45))
+    cd.text((ox + bw / 2, ry + 46), c["role"], font=font(FONT_UI_BOLD, 52), fill="white", anchor="mm")
+    cd.text((ox + bw / 2, ry + 130), c["date"], font=font(FONT_UI_BOLD, 28), fill=(110, 110, 125), anchor="mm")
+    rnd = random.Random(7)
+    bx, by = ox + 120, ry + 165
+    x = bx
+    while x < ox + bw - 120:
+        wbar = rnd.choice([2, 3, 5, 7])
+        cd.rectangle((x, by, x + wbar, by + 50), fill=(20, 20, 25))
+        x += wbar + rnd.choice([3, 4, 6])
+    # brilho do plástico
+    gl = Image.new("RGBA", card.size, (0, 0, 0, 0))
+    ImageDraw.Draw(gl).polygon([(ox + 80, oy), (ox + 330, oy), (ox + 80, oy + 520), (ox, oy + 520), (ox, oy + 160)],
+                                fill=(255, 255, 255, 38))
+    card = Image.alpha_composite(card, gl)
+    card = card.rotate(-4, resample=Image.BICUBIC, expand=True)
+    sh = Image.new("RGBA", card.size, (0, 0, 0, 0))
+    sh.putalpha(card.split()[3].point(lambda v: v * 0.55))
+    from PIL import ImageFilter
+    sh = sh.filter(ImageFilter.GaussianBlur(22))
+    cx, cy = (W - card.width) // 2, 220
+    # cordão
+    d.polygon([(W / 2 - 150, 0), (W / 2 - 80, 0), (cx + card.width / 2 - 20, cy + 70), (cx + card.width / 2 - 60, cy + 70)],
+              fill=(215, 30, 45))
+    d.polygon([(W / 2 + 80, 0), (W / 2 + 150, 0), (cx + card.width / 2 + 40, cy + 70), (cx + card.width / 2, cy + 70)],
+              fill=(190, 25, 38))
+    bg.paste(sh, (cx + 18, cy + 30), sh)
+    bg.paste(card, (cx, cy), card)
+    d = ImageDraw.Draw(bg)
+    d.rounded_rectangle((W / 2 - 22, cy + 10, W / 2 + 22, cy + 80), 10, fill=(170, 170, 180), outline=(90, 90, 100), width=3)
     return bg
 
 
@@ -857,6 +928,77 @@ def quote(name):
         d.text((W / 2, y), line, font=font(FONT_CAPTION, 76), fill="white", anchor="mm")
         y += 105
     d.text((W / 2, y + 40), c["who"], font=font(FONT_UI, 34), fill=(150, 155, 170), anchor="mm")
+    return bg
+
+
+AWARDS = {
+    "taylor": {"cat": "BEST FEMALE VIDEO", "winner": "TAYLOR SWIFT", "work": "\"You Belong With Me\"",
+               "event": "MTV VIDEO MUSIC AWARDS 2009"},
+}
+
+
+def award(name):
+    """Cartão de vencedor da premiação (envelope dourado)."""
+    c = AWARDS[name]
+    bg = Image.new("RGB", (W, H), (12, 8, 20))
+    d = ImageDraw.Draw(bg)
+    for r in range(900, 0, -12):
+        k = r / 900
+        d.ellipse((W / 2 - r, 650 - r, W / 2 + r, 650 + r), fill=(int(12 + 70 * (1 - k)), int(8 + 50 * (1 - k)), int(20 + 20 * (1 - k))))
+    x0, y0, x1, y1 = 110, 280, W - 110, 1020
+    d.rounded_rectangle((x0 + 14, y0 + 18, x1 + 14, y1 + 18), 26, fill=(5, 3, 8))
+    d.rounded_rectangle((x0, y0, x1, y1), 26, fill=(212, 175, 55))
+    d.rounded_rectangle((x0 + 26, y0 + 26, x1 - 26, y1 - 26), 18, fill=(250, 244, 225), outline=(170, 135, 40), width=5)
+    d.text((W / 2, y0 + 110), "AND THE WINNER IS...", font=font(FONT_UI_BOLD, 44), fill=(150, 115, 30), anchor="mm")
+    d.line((x0 + 120, y0 + 170, x1 - 120, y0 + 170), fill=(212, 175, 55), width=4)
+    d.text((W / 2, y0 + 250), c["cat"], font=font(FONT_CAPTION, 64), fill=(40, 30, 20), anchor="mm")
+    d.text((W / 2, y0 + 400), c["winner"], font=font(FONT_CAPTION, 112), fill=(200, 30, 60), anchor="mm")
+    d.text((W / 2, y0 + 520), c["work"], font=font(FONT_UI_BOLD, 50), fill=(60, 50, 40), anchor="mm")
+    d.text((W / 2, y0 + 640), c["event"], font=font(FONT_UI, 32), fill=(150, 115, 30), anchor="mm")
+    for (sx, sy, sr) in [(180, 200, 14), (900, 170, 18), (960, 1080, 12), (140, 1100, 16), (540, 1150, 10)]:
+        d.polygon([(sx, sy - sr * 2), (sx + sr / 2, sy - sr / 2), (sx + sr * 2, sy), (sx + sr / 2, sy + sr / 2),
+                   (sx, sy + sr * 2), (sx - sr / 2, sy + sr / 2), (sx - sr * 2, sy), (sx - sr / 2, sy - sr / 2)], fill=(255, 225, 120))
+    return bg
+
+
+SONGS = {
+    "innocent": {"title": "Innocent", "artist": "Taylor Swift", "album": "Speak Now · 2010",
+                 "pos": "2:41", "len": "5:02", "colors": [(120, 40, 140), (230, 120, 170)]},
+}
+
+
+def song(name):
+    """Tela de player de música tocando a faixa."""
+    c = SONGS[name]
+    a, b = c["colors"]
+    bg = Image.new("RGB", (W, H))
+    d = ImageDraw.Draw(bg)
+    for y in range(H):
+        t = y / H
+        d.line((0, y, W, y), fill=tuple(int(a[i] * (1 - t) * 0.6 + 10) for i in range(3)))
+    cs = 720
+    cx0, cy0 = (W - cs) // 2, 190
+    d.rounded_rectangle((cx0 + 10, cy0 + 20, cx0 + cs + 10, cy0 + cs + 20), 30, fill=(10, 5, 15))
+    art = Image.new("RGB", (cs, cs))
+    ad = ImageDraw.Draw(art)
+    for y in range(cs):
+        t = y / cs
+        ad.line((0, y, cs, y), fill=tuple(int(a[i] * (1 - t) + b[i] * t) for i in range(3)))
+    ad.text((cs / 2, cs / 2 - 40), c["title"].upper(), font=font(FONT_CAPTION, 120), fill=(255, 245, 250), anchor="mm")
+    ad.text((cs / 2, cs / 2 + 70), c["artist"].upper(), font=font(FONT_UI_BOLD, 40), fill=(255, 230, 240), anchor="mm")
+    m = Image.new("L", (cs, cs), 0)
+    ImageDraw.Draw(m).rounded_rectangle((0, 0, cs, cs), 30, fill=255)
+    bg.paste(art, (cx0, cy0), m)
+    y = cy0 + cs + 70
+    d.text((cx0, y), c["title"], font=font(FONT_UI_BOLD, 62), fill="white", anchor="la")
+    d.text((cx0, y + 80), c["artist"] + " · " + c["album"], font=font(FONT_UI, 38), fill=(220, 210, 225), anchor="la")
+    d.text((cx0 + cs, y + 20), "\u2665", font=font(FONT_UI_BOLD, 60), fill=(255, 80, 120), anchor="ra")
+    by = y + 170
+    d.rounded_rectangle((cx0, by, cx0 + cs, by + 10), 5, fill=(255, 255, 255, 80))
+    d.rounded_rectangle((cx0, by, cx0 + int(cs * 0.53), by + 10), 5, fill="white")
+    d.ellipse((cx0 + int(cs * 0.53) - 14, by - 9, cx0 + int(cs * 0.53) + 14, by + 19), fill="white")
+    d.text((cx0, by + 30), c["pos"], font=font(FONT_UI, 30), fill=(210, 200, 215), anchor="la")
+    d.text((cx0 + cs, by + 30), "-" + c["len"], font=font(FONT_UI, 30), fill=(210, 200, 215), anchor="ra")
     return bg
 
 
@@ -938,6 +1080,10 @@ def make(ref, handles=None):
         return lock(rest)
     if kind == "badge":
         return badge(rest)
+    if kind == "award":
+        return award(rest)
+    if kind == "song":
+        return song(rest)
     if kind == "quote":
         return quote(rest)
     if kind == "board":

@@ -29,10 +29,16 @@ Realistic night photo of the Radio City Music Hall marquee in New York City with
 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: a funny caricature of Kanye West in 2009 wearing a black leather jacket and dark shutter shades sunglasses, grabbing the microphone from a caricature of young Taylor Swift with long curly blonde hair, red lipstick and a silver sparkly dress holding an astronaut-shaped trophy, shocked expression, on a huge awards show stage, cartoon crowd booing, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
-## 03.jpg
+## 14.jpg
 
 ```
-Johnny Bravo from the Cartoon Network show wearing a black suit with a SECURITY earpiece, standing next to a music awards stage, posing confidently with his sunglasses, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: extreme close-up of a man's hand in a black leather jacket sleeve snatching a silver microphone out of a delicate female hand with a sparkly silver sleeve, motion lines, dramatic stage lights, sparkles flying, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+```
+
+## 15.jpg
+
+```
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: Johnny Bravo with his tall blonde yellow pompadour, black sunglasses, black t-shirt and blue jeans at a press conference surrounded by many reporters' microphones and camera flashes, pointing at himself with an innocent face and a big sweat drop, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 05.jpg
@@ -41,10 +47,28 @@ Johnny Bravo from the Cartoon Network show wearing a black suit with a SECURITY 
 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage, Johnny Bravo with his tall blonde yellow pompadour, black t-shirt and blue jeans stands nose to nose with a funny caricature of Kanye West in a black leather jacket and big shiny dark sunglasses holding a microphone. Johnny is leaning in, staring at his own tiny reflection in Kanye's sunglasses lenses, both lenses clearly show a mini Johnny Bravo flexing, Johnny has hypnotized spiral eyes and pink hearts floating around his head, Kanye looks annoyed, stage lights behind them, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
+## 16.jpg
+
+```
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: Johnny Bravo with his tall blonde yellow pompadour, black sunglasses, black t-shirt and blue jeans frozen like a statue on a stage, hypnotized spiral eyes behind his sunglasses pushed down, drooling, slowly combing his blonde pompadour, floating pink hearts and sparkles around his hair, chaos and booing crowd blurred behind him, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+```
+
 ## 12.jpg
 
 ```
 Realistic photo of an empty backstage security post at a concert hall, a lonely stool with a black comb on it and a handwritten sign taped to the wall that says BACK IN 5 MINUTES, dim lighting, photorealistic, vertical 9:16
+```
+
+## 17.jpg
+
+```
+Realistic photo of the Rockettes doing their famous kickline on the Radio City Music Hall stage, long line of dancers in red sparkly costumes, bright stage lights. A 2D cartoon Johnny Bravo is inserted into the real photo, hidden at the far end of the kickline wearing a red feathered headpiece, kicking his leg up with them, vertical 9:16, photorealistic, vertical 9:16
+```
+
+## 18.jpg
+
+```
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: backstage dressing room, Johnny Bravo with his tall blonde yellow pompadour, black sunglasses, black t-shirt and blue jeans flexing his huge biceps in front of a long line of dancers in red sparkly showgirl costumes who look unimpressed with crossed arms, he points at a small table with a hand-written sign that says ARM WRESTLING, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 07.jpg
@@ -81,4 +105,10 @@ Johnny Bravo from the Cartoon Network show sitting backstage in front of a dress
 
 ```
 Johnny Bravo from the Cartoon Network show proudly walking onto a big awards show stage under a spotlight holding up a tiny travel-size hairspray can like a trophy, confused audience, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+```
+
+## 19.jpg
+
+```
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: Johnny Bravo with his tall blonde yellow pompadour, black sunglasses, black t-shirt and blue jeans today in his messy apartment, kneeling with love in front of a small glass display case on a shelf that holds a travel-size hairspray lit like a precious museum relic, candles around it, pink hearts, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
