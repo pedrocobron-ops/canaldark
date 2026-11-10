@@ -43,12 +43,12 @@
           "fx": "zoom_in"
         },
         {
-          "img": "02.jpg",
+          "img": "03.jpg",
           "n": 3,
           "fx": "zoom_in",
           "tr": "whip",
           "prompt": "Barney the purple dinosaur from Barney and Friends looking through a big brass telescope on top of a prehistoric cliff at night, starry sky, volcanoes in the distance",
-          "img_final": "03.jpg"
+          "cap_y": 0.74
         }
       ]
     },
@@ -56,10 +56,10 @@
       "say": "{y:66 million years ago}, | he was the first to see it: | a rock {r:six miles wide}, | heading straight for {y:Mexico}.",
       "shots": [
         {
-          "img": "02.jpg",
+          "img": "03.jpg",
           "n": 2,
           "fx": "zoom_out",
-          "img_final": "03.jpg"
+          "cap_y": 0.74
         },
         {
           "img": "04.jpg",
@@ -234,7 +234,7 @@
           "fx": "zoom_in",
           "tr": "punch",
           "prompt": "Realistic grainy 1992 VHS television still of a kids TV show set with a person in a big purple dinosaur costume surrounded by smiling children sitting on the floor, colorful set, VHS scan lines, date stamp in the corner, vertical 9:16",
-          "cap_y": 0.24
+          "cap_y": 0.15
         }
       ]
     },
