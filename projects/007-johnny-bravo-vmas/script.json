@@ -2,9 +2,9 @@
   "title": "Why didn't Johnny Bravo stop Kanye from interrupting Taylor Swift?",
   "format": "A",
   "voice": "am_adam",
-  "speed": 0.92,
+  "speed": 0.95,
   "music_volume": 0.24,
-  "post": "Why didn't Johnny Bravo stop Kanye at the 2009 VMAs? Would you trade the moment of the decade for a travel-size hairspray? 👇 #johnnybravo #taylorswift #swifties #kanyewest #cartoonnetwork #vmas",
+  "post": "Kanye interrupts Taylor Swift at the 2009 VMAs... so why didn't Johnny Bravo stop him? Would you trade the moment of the decade for a travel-size hairspray? 👇 #johnnybravo #taylorswift #swifties #kanyewest #cartoonnetwork #vmas",
   "style_suffix": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition",
   "cover": {
     "img": "10.jpg",
@@ -47,7 +47,8 @@
           "n": 1,
           "fx": "zoom_in",
           "tr": "whip",
-          "cap_y": 0.24
+          "cap_y": 0.24,
+          "fit": "contain"
         }
       ]
     },
@@ -128,7 +129,8 @@
           "sfx": [
             "swish"
           ],
-          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage, Johnny Bravo with his tall blonde yellow pompadour, black t-shirt and blue jeans stands nose to nose with a funny caricature of Kanye West in a black leather jacket and big shiny dark sunglasses holding a microphone. Johnny is leaning in, staring at his own tiny reflection in Kanye's sunglasses lenses, both lenses clearly show a mini Johnny Bravo flexing, Johnny has hypnotized spiral eyes and pink hearts floating around his head, Kanye looks annoyed, stage lights behind them"
+          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage, Johnny Bravo with his single tall blonde yellow pompadour shaped like one solid block, opaque black rectangular sunglasses that always cover his eyes, black t-shirt and blue jeans stands nose to nose with a funny caricature of Kanye West in a black leather jacket and big shiny dark sunglasses holding a microphone. Johnny leans in, admiring his own reflection in Kanye's sunglasses: both lenses clearly show a tiny Johnny Bravo flexing. Johnny looks hypnotized: mouth open, drooling, little spinning spirals and pink hearts floating around his head (his own sunglasses stay dark and opaque, eyes never visible). Kanye looks annoyed, stage lights behind them, vertical 9:16",
+          "cap_y": 0.8
         },
         {
           "img": "16.jpg",
@@ -143,11 +145,11 @@
       "say": "But many say | {r:that's a lie}.",
       "shots": [
         {
-          "img": "../../001-squidward-imessage/images/06.png",
+          "img": "24.jpg",
           "n": 2,
-          "fit": "contain",
           "fx": "zoom_in",
-          "tr": "punch"
+          "tr": "punch",
+          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: backstage hallway at an awards show, two big security guards in black t-shirts with the word SECURITY, earpieces and walkie-talkies, leaning close and whispering to each other with suspicious side-eye looks, one covering his mouth with his hand, behind them a poster of Johnny Bravo with his single tall blonde yellow pompadour shaped like one solid block, opaque black rectangular sunglasses that always cover his eyes, black t-shirt and blue jeans with the word EMPLOYEE OF THE MONTH, vertical 9:16"
         }
       ]
     },
@@ -171,7 +173,8 @@
           "n": 3,
           "fx": "pan_right",
           "tr": "whip",
-          "prompt": "Realistic photo of the Rockettes doing their famous kickline on the Radio City Music Hall stage, long line of dancers in red sparkly costumes, bright stage lights. A 2D cartoon Johnny Bravo is inserted into the real photo, hidden at the far end of the kickline wearing a red feathered headpiece, kicking his leg up with them, vertical 9:16"
+          "prompt": "Realistic photo of the Rockettes doing their famous kickline on the Radio City Music Hall stage, long line of dancers in red sparkly costumes, bright stage lights. A 2D cartoon Johnny Bravo is inserted into the real photo, hidden at the far end of the kickline wearing a red feathered headpiece, kicking his leg up with them, vertical 9:16",
+          "mirror": true
         }
       ]
     },
@@ -196,11 +199,11 @@
       ]
     },
     {
-      "say": "He lost | {r:35 times} in a row.",
+      "say": "There are {y:36 Rockettes}. | He lost | to the first {r:35}.",
       "shots": [
         {
           "img": "@board:armwrestle",
-          "n": 2,
+          "n": 3,
           "fx": "shake",
           "tr": "punch",
           "sfx": [
@@ -211,7 +214,7 @@
       ]
     },
     {
-      "say": "But in match {y:36}, | he finally {y:won}.",
+      "say": "But against number {y:36}, | he finally {y:won}.",
       "shots": [
         {
           "img": "08.jpg",
@@ -254,8 +257,9 @@
           "n": 3,
           "fx": "zoom_in",
           "tr": "punch",
-          "cap_y": 0.24,
-          "prompt": "Johnny Bravo from the Cartoon Network show sitting backstage in front of a dressing room mirror lovingly hugging and kissing a tiny travel-size can of hairspray, floating hearts"
+          "cap_y": 0.76,
+          "prompt": "Johnny Bravo from the Cartoon Network show sitting backstage in front of a dressing room mirror lovingly hugging and kissing a tiny travel-size can of hairspray, floating hearts",
+          "fit": "contain"
         }
       ]
     },
@@ -276,7 +280,7 @@
           "n": 3,
           "fx": "zoom_in",
           "tr": "whip",
-          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: a caricature of Beyoncé with long wavy honey-blonde hair in an elegant black gown, smiling and gesturing to welcome a caricature of young Taylor Swift with long curly blonde hair, red lipstick and a silver sparkly dress back to the microphone, warm golden stage lights, cartoon audience giving a standing ovation"
+          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage with a microphone stand, a caricature of Beyoncé with long wavy honey-blonde hair in an elegant black gown smiling and gesturing to welcome a caricature of young Taylor Swift with long curly blonde hair, red lipstick and a short sparkly RED dress back to the microphone, the audience giving a standing ovation, vertical 9:16"
         }
       ]
     },
@@ -345,10 +349,12 @@
           "img": "21.jpg",
           "n": 2,
           "fx": "zoom_in",
-          "tr": "punch"
+          "tr": "punch",
+          "mirror": true
         }
       ]
     }
   ],
-  "outro": {}
+  "outro": {},
+  "hook_full": true
 }

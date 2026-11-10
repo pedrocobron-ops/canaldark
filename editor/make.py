@@ -277,6 +277,8 @@ def load_shot_image(proj, shot, size, handles, state=None):
     fit = shot.get("fit")
     if fit is None and shot["img"].startswith("@"):
         fit = "contain"   # assets desenhados entram no tamanho em que foram desenhados
+    if shot.get("mirror"):
+        im = ImageOps.mirror(im)
     if fit == "blurfill":
         # foto horizontal em vídeo vertical: foto inteira no centro, ela mesma desfocada no fundo
         canvas = ImageOps.fit(im, (bw, bh), Image.LANCZOS).filter(ImageFilter.GaussianBlur(40))
@@ -533,6 +535,11 @@ def render(proj, preview=False, keep_audio=False):
     caps = [dict(c) for tl in timeline for c in tl["captions"]]
     if caps:
         caps[0]["start"] = 0.0   # legenda já no primeiro quadro (gancho)
+    if script.get("hook_full") and timeline:
+        # a pergunta do gancho inteira na tela desde 0 s (o espectador decide em 1 s)
+        n0 = len(timeline[0]["captions"])
+        merged = {"text": " ".join(c["text"] for c in caps[:n0]), "start": 0.0, "end": caps[n0 - 1]["end"]}
+        caps = [merged] + caps[n0:]
     capper = Captioner(scale)
     wm_font = ImageFont.truetype(str(FONT_UI_BOLD), int(34 * scale))
     handle = channel.get("watermark", "")

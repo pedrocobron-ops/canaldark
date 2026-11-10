@@ -44,13 +44,19 @@ Realistic photo, cinematic close-up at a live awards show: exactly two hands, bo
 ## 05.jpg
 
 ```
-2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage, Johnny Bravo with his tall blonde yellow pompadour, black t-shirt and blue jeans stands nose to nose with a funny caricature of Kanye West in a black leather jacket and big shiny dark sunglasses holding a microphone. Johnny is leaning in, staring at his own tiny reflection in Kanye's sunglasses lenses, both lenses clearly show a mini Johnny Bravo flexing, Johnny has hypnotized spiral eyes and pink hearts floating around his head, Kanye looks annoyed, stage lights behind them, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage, Johnny Bravo with his single tall blonde yellow pompadour shaped like one solid block, opaque black rectangular sunglasses that always cover his eyes, black t-shirt and blue jeans stands nose to nose with a funny caricature of Kanye West in a black leather jacket and big shiny dark sunglasses holding a microphone. Johnny leans in, admiring his own reflection in Kanye's sunglasses: both lenses clearly show a tiny Johnny Bravo flexing. Johnny looks hypnotized: mouth open, drooling, little spinning spirals and pink hearts floating around his head (his own sunglasses stay dark and opaque, eyes never visible). Kanye looks annoyed, stage lights behind them, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 16.jpg
 
 ```
 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: Johnny Bravo with his tall blonde yellow pompadour, black sunglasses, black t-shirt and blue jeans frozen like a statue on a stage, hypnotized spiral eyes behind his sunglasses pushed down, drooling, slowly combing his blonde pompadour, floating pink hearts and sparkles around his hair, chaos and booing crowd blurred behind him, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+```
+
+## 24.jpg
+
+```
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: backstage hallway at an awards show, two big security guards in black t-shirts with the word SECURITY, earpieces and walkie-talkies, leaning close and whispering to each other with suspicious side-eye looks, one covering his mouth with his hand, behind them a poster of Johnny Bravo with his single tall blonde yellow pompadour shaped like one solid block, opaque black rectangular sunglasses that always cover his eyes, black t-shirt and blue jeans with the word EMPLOYEE OF THE MONTH, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 12.jpg
@@ -104,7 +110,7 @@ Johnny Bravo from the Cartoon Network show sitting backstage in front of a dress
 ## 13.jpg
 
 ```
-2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: a caricature of Beyoncé with long wavy honey-blonde hair in an elegant black gown, smiling and gesturing to welcome a caricature of young Taylor Swift with long curly blonde hair, red lipstick and a silver sparkly dress back to the microphone, warm golden stage lights, cartoon audience giving a standing ovation, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage with a microphone stand, a caricature of Beyoncé with long wavy honey-blonde hair in an elegant black gown smiling and gesturing to welcome a caricature of young Taylor Swift with long curly blonde hair, red lipstick and a short sparkly RED dress back to the microphone, the audience giving a standing ovation, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 11.jpg
