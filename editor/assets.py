@@ -319,6 +319,124 @@ def facebook(name):
     return bg
 
 
+TIPS = {
+    "classic": {"frame": (235, 235, 240), "bezel": (30, 30, 34), "top": "Bottle of water  $2.50",
+                "ask": "Add a tip?", "opts": ["20%", "25%", "30%"], "btn": (20, 20, 22),
+                "no": "No tip", "no_size": 26, "label": None},
+    "gold": {"frame": (232, 190, 70), "bezel": (150, 110, 20), "top": "Bottle of water  $2.50",
+             "ask": "Thank you!", "opts": [], "btn": (20, 20, 22), "no": "No tip needed :)", "no_size": 54,
+             "label": "TIP SCREEN 2"},
+    "krabs": {"frame": (235, 235, 240), "bezel": (30, 30, 34), "top": "Krabby Patty  $3.99",
+              "ask": "Add a tip?", "opts": ["45%", "60%", "75%"], "btn": (200, 30, 40),
+              "no": "no tip (SpongeBob will cry)", "no_size": 22, "label": None},
+    "three": {"frame": (210, 25, 35), "bezel": (120, 10, 15), "top": "You walked past the Krusty Krab",
+              "ask": "Add a tip?", "opts": ["30%", "40%", "50%"], "btn": (200, 30, 40),
+              "no": "", "no_size": 22, "label": "TIP SCREEN 3"},
+}
+
+
+def tipscreen(name):
+    """iPad de balcão com a tela de gorjeta (acima da área da legenda)."""
+    c = TIPS[name]
+    bg = Image.new("RGB", (W, H))
+    for y in range(H):
+        k = y / H
+        ImageDraw.Draw(bg).line((0, y, W, y), fill=(int(40 + 30 * k), int(32 + 20 * k), int(28 + 10 * k)))
+    d = ImageDraw.Draw(bg)
+    # suporte do iPad
+    d.polygon([(W / 2 - 60, 1080), (W / 2 + 60, 1080), (W / 2 + 120, 1230), (W / 2 - 120, 1230)], fill=(60, 60, 66))
+    d.rounded_rectangle((W / 2 - 220, 1215, W / 2 + 220, 1250), 14, fill=(50, 50, 56))
+    x0, y0, x1, y1 = 150, 150, W - 150, 1100
+    d.rounded_rectangle((x0, y0, x1, y1), 60, fill=c["bezel"])
+    d.rounded_rectangle((x0 + 18, y0 + 18, x1 - 18, y1 - 18), 50, fill=c["frame"])
+    sx0, sy0, sx1, sy1 = x0 + 48, y0 + 48, x1 - 48, y1 - 48
+    d.rounded_rectangle((sx0, sy0, sx1, sy1), 30, fill=(255, 255, 255))
+    cx = W / 2
+    d.text((cx, sy0 + 70), c["top"], font=font(FONT_UI, 40), fill=(90, 90, 96), anchor="mm")
+    d.text((cx, sy0 + 190), c["ask"], font=font(FONT_UI_BOLD, 84), fill=(15, 15, 18), anchor="mm")
+    y = sy0 + 300
+    for o in c["opts"]:
+        d.rounded_rectangle((sx0 + 60, y, sx1 - 60, y + 120), 26, fill=c["btn"])
+        d.text((cx, y + 60), o, font=font(FONT_UI_BOLD, 64), fill="white", anchor="mm")
+        y += 145
+    if not c["opts"]:
+        e = emoji("😊", 200)
+        bg.paste(e, (int(cx - e.width / 2), sy0 + 330), e)
+        y = sy0 + 600
+    if c["no"]:
+        d.text((cx, y + 40), c["no"], font=font(FONT_UI, c["no_size"]), fill=(185, 185, 190), anchor="mm")
+    if c["label"]:
+        lf = font(FONT_CAPTION, 76)
+        d.text((cx, y0 - 70 if y0 > 120 else y1 + 60), c["label"], font=lf, fill=c["frame"],
+               anchor="mm", stroke_width=6, stroke_fill="black")
+    return bg
+
+
+RECEIPTS = {
+    "spongebob": [("KRUSTY KRAB", "big"), ("EMPLOYEE TIP REPORT", "bold"), ("", ""),
+                  ("Employee:", "SpongeBob S."), ("Years worked:", "25"), ("Shifts:", "9,125"),
+                  ("Tips paid by guests:", "$48,912.40"), ("Kept by Mr. Krabs:", "$48,911.78"), ("", ""),
+                  ("TOTAL TIPS RECEIVED", "$0.62")],
+}
+
+
+def receipt(name):
+    """Recibo térmico (acima da área da legenda)."""
+    rows = RECEIPTS[name]
+    bg = Image.new("RGB", (W, H), (28, 30, 34))
+    d = ImageDraw.Draw(bg)
+    x0, y0, x1, y1 = 200, 250, W - 200, 1150
+    paper = Image.new("RGBA", (x1 - x0, y1 - y0), (250, 248, 240, 255))
+    pd = ImageDraw.Draw(paper)
+    # serrilha embaixo
+    for i in range(0, paper.width, 30):
+        pd.polygon([(i, paper.height), (i + 15, paper.height - 18), (i + 30, paper.height)], fill=(28, 30, 34, 255))
+    mono_b = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf", 40)
+    mono = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf", 36)
+    big = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf", 72)
+    y = 60
+    for a, b in rows:
+        if b == "big":
+            pd.text((paper.width / 2, y + 30), a, font=big, fill=(20, 20, 20), anchor="mm"); y += 100
+        elif b == "bold":
+            pd.text((paper.width / 2, y + 20), a, font=mono_b, fill=(20, 20, 20), anchor="mm"); y += 70
+        elif not a:
+            pd.text((40, y), "-" * 30, font=mono, fill=(120, 120, 120)); y += 60
+        elif a.startswith("TOTAL"):
+            pd.text((40, y), a, font=mono_b, fill=(20, 20, 20))
+            pd.text((paper.width - 40, y + 60), b, font=big, fill=(200, 20, 30), anchor="ra"); y += 160
+        else:
+            pd.text((40, y), a, font=mono, fill=(40, 40, 40))
+            pd.text((paper.width - 40, y), b, font=mono, fill=(40, 40, 40), anchor="ra"); y += 60
+    for i in range(40):
+        w = 4 if i % 3 else 8
+        pd.rectangle((80 + i * 16, y + 10, 80 + i * 16 + w, y + 70), fill=(20, 20, 20))
+    paper = paper.rotate(-2.5, resample=Image.BICUBIC, expand=True, fillcolor=(0, 0, 0, 0))
+    bg.paste(paper, (x0 - 20, y0), paper)
+    return bg
+
+
+STATS = {
+    "pew72": {"num": "72%", "text": ["of Americans say tipping", "is expected in more places", "than 5 years ago"],
+              "src": "Source: Pew Research Center, 2023"},
+}
+
+
+def stat(name):
+    """Cartão de estatística com a fonte (o fato verdadeiro do vídeo)."""
+    c = STATS[name]
+    bg = Image.new("RGB", (W, H), (14, 18, 30))
+    d = ImageDraw.Draw(bg)
+    d.text((W / 2, 520), c["num"], font=font(FONT_CAPTION, 380), fill=(255, 214, 0), anchor="mm",
+           stroke_width=10, stroke_fill="black")
+    y = 800
+    for line in c["text"]:
+        d.text((W / 2, y), line, font=font(FONT_UI_BOLD, 60), fill="white", anchor="mm")
+        y += 80
+    d.text((W / 2, y + 40), c["src"], font=font(FONT_UI, 36), fill=(150, 160, 180), anchor="mm")
+    return bg
+
+
 def anim_count(ref):
     """Quantos itens um asset animado revela (mensagens ou notificações)."""
     kind, _, name = ref[1:].partition(":")
@@ -371,6 +489,12 @@ def make(ref, handles=None):
         return chat(rest)
     if kind == "lock":
         return lock(rest)
+    if kind == "stat":
+        return stat(rest)
+    if kind == "tip":
+        return tipscreen(rest)
+    if kind == "receipt":
+        return receipt(rest)
     if kind == "cal":
         return calendar(rest)
     if kind == "fb":

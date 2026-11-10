@@ -1,0 +1,79 @@
+{
+  "title": "Why is Mr. Krabs refusing to work on the new tip screen?",
+  "format": "B",
+  "voice": "am_adam",
+  "speed": 0.9,
+  "music_volume": 0.24,
+  "post": "Mr. Krabs said NO to Tip Screen 2 🦀💸 What's the worst place you've been asked for a tip? #mrkrabs #tipping #spongebob #funny #fyp",
+  "style_suffix": "2D cartoon illustration in the classic SpongeBob SquarePants style, bold black outlines, vibrant saturated colors, vertical 9:16 composition",
+  "cover": {"img": "02.png", "text": "Why is {r:Mr. Krabs} refusing the new {y:tip screen}?", "y": 0.7},
+  "beats": [
+    {"say": "Why is {r:Mr. Krabs} | refusing to work | on the new | {y:tip screen}?",
+     "shots": [
+      {"img": "01.png", "n": 2, "fit": "contain", "fx": "zoom_in",
+       "prompt": "Mr. Krabs (Eugene Krabs) the red crab from SpongeBob SquarePants standing with claws crossed, greedy smug smile, full body, plain pure white background"},
+      {"img": "@tip:classic", "n": 2, "fx": "zoom_in", "tr": "whip"}]},
+    {"say": "Mr. Krabs is one of | the greatest {y:businessmen} | of our time.",
+     "shots": [
+      {"img": "02.png", "n": 3, "fx": "zoom_out", "tr": "punch",
+       "prompt": "Mr. Krabs from SpongeBob SquarePants sitting on top of a giant mountain of dollar bills and gold coins inside his office, hugging money, eyes shaped like dollar signs, golden sparkles"}]},
+    {"say": "He once sold | an employee's {r:soul} | for {r:62 cents}.",
+     "shots": [
+      {"img": "03.png", "n": 3, "fx": "zoom_in", "tr": "zoom",
+       "prompt": "Mr. Krabs from SpongeBob SquarePants handing a glass jar containing a glowing ghostly little SpongeBob soul across a counter in exchange for a few small coins, sneaky greedy grin, dark spooky lighting"}]},
+    {"say": "Recently, | several {y:rumors} say | the company behind | the {b:iPad tip screen} | has been trying | to hire him.",
+     "shots": [
+      {"img": "../../001-squidward-imessage/images/06.png", "n": 2, "fit": "contain", "fx": "zoom_in", "tr": "punch"},
+      {"img": "04.png", "n": 4, "fx": "zoom_in", "tr": "whip",
+       "prompt": "Mr. Krabs from SpongeBob SquarePants in a modern tech company boardroom, businessmen in suits sliding a contract across the table to him, a big screen behind showing a tablet with tip percentage buttons"}]},
+    {"say": "For {y:Tip Screen 2}. | It looks exactly the same, | but it's {y:gold}.",
+     "shots": [
+      {"img": "@tip:classic", "n": 2, "fx": "zoom_in", "tr": "punch"},
+      {"img": "@tip:gold", "n": 1, "fx": "pop", "tr": "punch", "sfx": ["ding"]}]},
+    {"say": "And it will {r:no longer} ask for a tip | at {y:self-checkout}, | for a {y:bottle of water}, | or when you | {y:pick up} your own food.",
+     "shots": [
+      {"img": "05.png", "n": 2, "fx": "zoom_in", "tr": "whip",
+       "prompt": "Realistic photo of a self-checkout kiosk in an American grocery store with a screen asking Add a tip with 15% 20% 25% buttons, fluorescent lighting, slightly blurry background"},
+      {"img": "06.png", "n": 1, "fx": "zoom_in", "tr": "punch",
+       "prompt": "Realistic photo of a single bottle of water on a coffee shop counter next to an iPad payment screen showing tip percentage buttons"},
+      {"img": "07.png", "n": 2, "fx": "zoom_in", "tr": "punch",
+       "prompt": "Realistic photo of a person grabbing their own takeout bag from a pickup shelf in a fast food restaurant while an iPad next to it asks for a tip"}]},
+    {"say": "And the iPad | will finally stop | {y:turning around} | to {r:stare} at you.",
+     "shots": [
+      {"img": "08.png", "n": 4, "fx": "zoom_in", "tr": "whip",
+       "prompt": "Realistic photo from the customer's point of view of a cashier at a coffee shop turning an iPad payment screen toward the camera with an awkward forced smile, tip options visible on the screen, shallow depth of field"}]},
+    {"say": "And this part | is {y:real}: | {y:72%} of Americans | say tipping is expected | in {r:more places} | than five years ago.",
+     "shots": [
+      {"img": "09.png", "n": 2, "fx": "zoom_in", "tr": "fade",
+       "prompt": "Realistic photo of an annoyed American customer staring at a tablet payment screen asking for a tip, raised eyebrow, coffee shop background"},
+      {"img": "@stat:pew72", "n": 4, "fx": "zoom_in", "tr": "punch", "sfx": ["impact"]}]},
+    {"say": "Mr. Krabs said {r:no}, | because the tip screen | was {y:his invention}.",
+     "shots": [
+      {"img": "10.png", "n": 3, "fx": "zoom_in", "tr": "punch",
+       "prompt": "Close-up of Mr. Krabs from SpongeBob SquarePants furious, pointing a claw at the camera saying no, red angry face, plain light blue background"}]},
+    {"say": "Today, it makes him | {y:more money} | than the {y:Krabby Patty}.",
+     "shots": [
+      {"img": "@tip:krabs", "n": 3, "fx": "zoom_in", "tr": "whip", "sfx": ["ding"]}]},
+    {"say": "{y:Records} show | that in 25 years, | {b:SpongeBob} received | a total of {r:62 cents} | in tips.",
+     "shots": [
+      {"img": "11.png", "n": 2, "fx": "zoom_in", "tr": "fade",
+       "prompt": "SpongeBob SquarePants from SpongeBob SquarePants in his Krusty Krab uniform sadly looking at a single tiny coin in his hand, big watery eyes, Krusty Krab kitchen background"},
+      {"img": "@receipt:spongebob", "n": 3, "fx": "zoom_in", "tr": "punch", "sfx": ["impact"]}]},
+    {"say": "Mr. Krabs called it | an {r:attack} | on {y:small business owners} | like him.",
+     "shots": [
+      {"img": "12.png", "n": 4, "fx": "zoom_in", "tr": "whip",
+       "prompt": "Mr. Krabs from SpongeBob SquarePants shouting furiously at a press conference podium full of microphones, standing on a pile of money bags, dramatic red background"}]},
+    {"say": "Now, he is building | {r:Tip Screen 3}. | It asks for a tip | {y:before you order}, | and charges you | just for {r:walking past} | the Krusty Krab.",
+     "shots": [
+      {"img": "13.png", "n": 2, "fx": "zoom_in", "tr": "zoom",
+       "prompt": "Mr. Krabs from SpongeBob SquarePants in a messy workshop building a glowing red tablet device with a screwdriver, evil grin, sparks flying"},
+      {"img": "@tip:three", "n": 3, "fx": "pop", "tr": "punch", "sfx": ["impact"]},
+      {"img": "14.png", "n": 2, "fx": "zoom_in", "tr": "whip",
+       "prompt": "A shocked cartoon fish walking on the sidewalk past the Krusty Krab restaurant from SpongeBob SquarePants, looking at his phone which shows a red notification TIP CHARGED, Bikini Bottom street"}]},
+    {"say": "What's the {y:worst place} | you've ever been asked | for a {y:tip}?",
+     "shots": [
+      {"img": "../../001-squidward-imessage/images/19.png", "n": 3, "fit": "contain", "fx": "zoom_in",
+       "inset": {"img": "02.png", "box": [0.17, 0.06, 0.87, 0.28], "center": [0.5, 0.3]}}]}
+  ],
+  "outro": {}
+}
