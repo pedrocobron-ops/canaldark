@@ -68,7 +68,7 @@ Close-up of Mr. Krabs from SpongeBob SquarePants furious, pointing a claw at the
 ## 11.png
 
 ```
-SpongeBob SquarePants from SpongeBob SquarePants in his Krusty Krab uniform sadly looking at a single tiny coin in his hand, big watery eyes, Krusty Krab kitchen background, 2D cartoon illustration in the classic SpongeBob SquarePants style, bold black outlines, vibrant saturated colors, vertical 9:16 composition
+SpongeBob SquarePants in his Krusty Krab uniform sadly looking at a single tiny coin in his hand, big watery eyes, Krusty Krab kitchen background, 2D cartoon illustration in the classic SpongeBob SquarePants style, bold black outlines, vibrant saturated colors, vertical 9:16 composition
 ```
 
 ## 12.png

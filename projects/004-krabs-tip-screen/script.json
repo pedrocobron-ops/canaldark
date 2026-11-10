@@ -57,7 +57,7 @@
     {"say": "{y:Records} show | that in 25 years, | {b:SpongeBob} received | a total of {r:62 cents} | in tips.",
      "shots": [
       {"img": "11.png", "n": 2, "fx": "zoom_in", "tr": "fade",
-       "prompt": "SpongeBob SquarePants from SpongeBob SquarePants in his Krusty Krab uniform sadly looking at a single tiny coin in his hand, big watery eyes, Krusty Krab kitchen background"},
+       "prompt": "SpongeBob SquarePants in his Krusty Krab uniform sadly looking at a single tiny coin in his hand, big watery eyes, Krusty Krab kitchen background"},
       {"img": "@receipt:spongebob", "n": 3, "fx": "zoom_in", "tr": "punch", "sfx": ["impact"]}]},
     {"say": "Mr. Krabs called it | an {r:attack} | on {y:small business owners} | like him.",
      "shots": [
