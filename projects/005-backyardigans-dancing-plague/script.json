@@ -1,0 +1,283 @@
+{
+  "title": "Why didn't the Backyardigans stop the Dancing Plague of 1518?",
+  "format": "A",
+  "voice": "am_adam",
+  "speed": 0.95,
+  "music_volume": 0.24,
+  "post": "Why didn't the Backyardigans stop the Dancing Plague of 1518? 🥨💃 #backyardigans #history #dancingplague #funny #fyp",
+  "style_suffix": "3D CGI cartoon in the style of The Backyardigans animated show, soft colors, cute rounded characters, vertical 9:16 composition",
+  "cover": {
+    "img": "07.jpg",
+    "text": "Why didn't the {y:Backyardigans} stop the {r:Dancing Plague}?",
+    "y": 0.7
+  },
+  "beats": [
+    {
+      "say": "Why didn't the {y:Backyardigans} | stop the {r:Dancing Plague} | of {y:1518}?",
+      "shots": [
+        {
+          "img": "01.jpg",
+          "n": 2,
+          "fit": "contain",
+          "fx": "zoom_in",
+          "prompt": "The five Backyardigans (Pablo the blue penguin, Tyrone the orange moose, Uniqua the pink spotted creature, Tasha the yellow hippo and Austin the purple kangaroo) standing together and smiling, full body, plain pure white background"
+        },
+        {
+          "img": "02.jpg",
+          "n": 1,
+          "fx": "zoom_out",
+          "tr": "whip",
+          "prompt": "Old 16th century black and white engraving of a crowd of medieval peasants dancing wildly and uncontrollably in a town square, people collapsing, in the style of the famous dancing mania engravings after Pieter Bruegel. Hidden in the bottom corner of the crowd, Austin the shy purple kangaroo from The Backyardigans is peeking out, drawn as a small 2D cartoon character inserted into the old engraving, vertical 9:16"
+        }
+      ]
+    },
+    {
+      "say": "It's no {y:secret} | the Backyardigans were | Strasbourg's | official {y:musicians}.",
+      "shots": [
+        {
+          "img": "../../002-fred-pompeii/images/03.png",
+          "n": 1,
+          "fit": "contain",
+          "fx": "zoom_in"
+        },
+        {
+          "img": "03.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "prompt": "The five Backyardigans dressed as medieval minstrels playing a lute, drums, a flute and a tambourine in a cobblestone town square of 16th century Strasbourg with half-timbered houses and the cathedral in the background"
+        }
+      ]
+    },
+    {
+      "say": "Every afternoon, | their {y:backyard} | turned into | a new adventure.",
+      "shots": [
+        {
+          "img": "04.jpg",
+          "n": 4,
+          "fx": "zoom_in",
+          "tr": "zoom",
+          "prompt": "The Backyardigans' suburban backyard magically transforming into a medieval European town, the wooden fence turning into stone walls and half-timbered houses, swirling magical sparkles, the five Backyardigans amazed in the middle"
+        }
+      ]
+    },
+    {
+      "say": "And in {y:July 1518}, | it turned into | a {r:medieval dance party}.",
+      "shots": [
+        {
+          "img": "02.jpg",
+          "n": 3,
+          "fx": "pan_right",
+          "tr": "punch",
+          "sfx": [
+            "impact"
+          ]
+        }
+      ]
+    },
+    {
+      "say": "a woman named | {y:Frau Troffea} | started dancing | in the street, | and didn't stop | for {r:six days}.",
+      "shots": [
+        {
+          "img": "05.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "fade",
+          "prompt": "Old 16th century woodcut print of a medieval woman in a long dress dancing alone in a narrow cobblestone street while townspeople stare at her from doorways. In one of the upper windows, Pablo the blue penguin from The Backyardigans is peeking out, small 2D cartoon character inserted into the old woodcut, aged paper texture, vertical 9:16"
+        },
+        {
+          "img": "05.jpg",
+          "n": 3,
+          "fx": "pan_left"
+        }
+      ]
+    },
+    {
+      "say": "Within weeks, | {r:hundreds} were dancing | day and night, | until they {r:collapsed}.",
+      "shots": [
+        {
+          "img": "06.jpg",
+          "n": 4,
+          "fx": "zoom_out",
+          "tr": "zoom",
+          "prompt": "Old 16th century engraving of hundreds of medieval people dancing in the streets of Strasbourg day and night, some exhausted and collapsing, torches and moonlight, chaotic crowd. Among the dancers, Tyrone the orange moose from The Backyardigans is dancing too, small 2D cartoon character inserted into the old engraving, aged paper texture, vertical 9:16"
+        }
+      ]
+    },
+    {
+      "say": "They could have ended it | {y:anytime}. | All they had to do | was {r:stop the music}.",
+      "shots": [
+        {
+          "img": "07.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "prompt": "The five Backyardigans playing instruments on a medieval wooden stage in a town square at night, torches, an exhausted crowd of medieval peasants dancing in front of the stage"
+        },
+        {
+          "img": "07.jpg",
+          "n": 2,
+          "fx": "zoom_out"
+        }
+      ]
+    },
+    {
+      "say": "They claim | {r:nobody asked} them to.",
+      "shots": [
+        {
+          "img": "01.jpg",
+          "n": 2,
+          "fit": "contain",
+          "fx": "pop",
+          "tr": "punch"
+        }
+      ]
+    },
+    {
+      "say": "But many say | {r:that's a lie}.",
+      "shots": [
+        {
+          "img": "../../001-squidward-imessage/images/06.png",
+          "n": 2,
+          "fit": "contain",
+          "fx": "zoom_in",
+          "tr": "punch"
+        }
+      ]
+    },
+    {
+      "say": "And this part is {y:real}: | the city tried to cure it | with {r:more music}, | and a {y:wooden stage}.",
+      "shots": [
+        {
+          "img": "@doc:decree",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "fade",
+          "sfx": [
+            "impact"
+          ]
+        },
+        {
+          "img": "08.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "prompt": "Old 16th century engraving of a wooden stage built in a medieval town square with musicians playing drums, pipes and fiddles for a crowd of dancing people. Among the musicians on the stage, Tasha the yellow hippo from The Backyardigans is playing a tambourine, small 2D cartoon character inserted into the old engraving, aged paper texture, vertical 9:16"
+        }
+      ]
+    },
+    {
+      "say": "They were paid in {y:snacks}: | one basket of {y:pretzels} | per song.",
+      "shots": [
+        {
+          "img": "09.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ],
+          "prompt": "A medieval mayor in a fur robe handing a huge overflowing basket of golden pretzels to the five Backyardigans on a wooden stage, Pablo the blue penguin hugging the basket with sparkling eyes"
+        }
+      ]
+    },
+    {
+      "say": "{y:Tasha} signed the contract. | {r:Two months}. | {y:Unlimited pretzels}.",
+      "shots": [
+        {
+          "img": "@doc:contract",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "punch"
+        }
+      ]
+    },
+    {
+      "say": "Every week, | the music changed. | {y:Tango}. | {y:Disco}. | {y:Bollywood}. | Historians are still {r:confused}. | Fans are not.",
+      "shots": [
+        {
+          "img": "@doc:program",
+          "n": 5,
+          "fx": "zoom_in",
+          "tr": "whip"
+        },
+        {
+          "img": "10.jpg",
+          "n": 2,
+          "fx": "shake",
+          "tr": "punch",
+          "prompt": "Medieval peasants in 1518 Strasbourg dancing disco moves under a giant glowing disco ball hanging over the town square, colorful disco lights on the half-timbered houses. Uniqua from The Backyardigans is in the middle doing a disco pose, cartoon"
+        }
+      ]
+    },
+    {
+      "say": "Tyrone suggested they stop. | {b:Pablo} {r:panicked} | and ran in circles, | and the crowd | {y:copied him}.",
+      "shots": [
+        {
+          "img": "11.jpg",
+          "n": 5,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "prompt": "Pablo the blue penguin from The Backyardigans panicking and running in circles on a medieval wooden stage with his flippers in the air, while the whole medieval crowd below copies him running in circles, Tyrone the orange moose facepalming"
+        }
+      ]
+    },
+    {
+      "say": "The doctor {y:Paracelsus} | later wrote | that Frau Troffea | only danced | to {r:annoy her husband}.",
+      "shots": [
+        {
+          "img": "@doc:paracelsus",
+          "n": 5,
+          "fx": "zoom_in",
+          "tr": "fade"
+        }
+      ]
+    },
+    {
+      "say": "Officially, | the plague ended | at a {y:mountain shrine}. | Unofficially, | it ended the day | Strasbourg ran out | of {r:pretzels}.",
+      "shots": [
+        {
+          "img": "06.jpg",
+          "n": 3,
+          "fx": "pan_left",
+          "tr": "zoom"
+        },
+        {
+          "img": "12.jpg",
+          "n": 4,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "sfx": [
+            "impact"
+          ],
+          "prompt": "The five Backyardigans sadly staring into a completely empty pretzel basket on a medieval wooden stage at dawn, instruments dropped, the exhausted medieval crowd finally lying on the ground asleep"
+        }
+      ]
+    },
+    {
+      "say": "Would you have | {r:stopped the music}, | or kept the {y:pretzels} coming?",
+      "shots": [
+        {
+          "img": "../../001-squidward-imessage/images/19.png",
+          "n": 3,
+          "fit": "contain",
+          "fx": "zoom_in",
+          "inset": {
+            "img": "09.jpg",
+            "box": [
+              0.17,
+              0.06,
+              0.87,
+              0.28
+            ],
+            "center": [
+              0.5,
+              0.45
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "outro": {}
+}

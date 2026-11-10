@@ -6,7 +6,8 @@
 | Why didn't Fred Flintstone stop Pompeii? | A | Fred Flintstone | erupção do Vesúvio | noite de boliche | feito (002) |
 | Why didn't Garfield stop the Titanic? | A | Garfield | naufrágio do Titanic | lasanha e segunda-feira | feito (003) |
 | Why is Mr. Krabs refusing to work on the new tip screen? | B | Mr. Krabs | tela de gorjeta | a gorjeta é invenção dele | feito (004) |
-| Why didn't the Backyardigans find the Lost Colony of Roanoke in 1590? | A | Backyardigans (a turma) | colônia perdida de Roanoke | pararam para o lanche | ideia do Pedro |
+| Why didn't the Backyardigans stop the Dancing Plague of 1518? | A | Backyardigans | Peste da Dança de Estrasburgo | pagos em pretzels por música | em produção (005) |
+| Why didn't the Backyardigans find the Lost Colony of Roanoke in 1590? | A | Backyardigans (a turma) | colônia perdida de Roanoke | pararam para o lanche | descartada (Pedro não gostou do fato) |
 | Why is Garfield refusing to work on Google Calendar 2? | B | Garfield | calendário sem segunda-feira | sem segunda ele não tem do que reclamar | ideia |
 | Why is Patrick Star refusing to test the new iPhone alarm? | B | Patrick | despertador sem soneca | ama apertar soneca | ideia |
 | Why didn't Popeye stop the Titanic? | A | Popeye | Titanic | espinafre | descartada (Garfield ficou com o Titanic) |

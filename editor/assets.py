@@ -529,6 +529,102 @@ def stat(name):
     return bg
 
 
+DOCS = {
+    "decree": {"title": "Decree", "sub": "City Council of Strasbourg · July 1518",
+               "lines": ["The dancing sickness shall be", "cured with MORE MUSIC.", "",
+                         "Musicians shall be hired.", "A wooden stage shall be built."],
+               "sign": "By order of the Council", "seal": (150, 20, 25)},
+    "contract": {"title": "Contract", "sub": "Strasbourg · Anno Domini 1518",
+                 "lines": ["The Backyardigans shall play", "for the dancers of the city.", "",
+                           "Duration: TWO MONTHS", "Payment: one basket of", "pretzels per song.",
+                           "UNLIMITED PRETZELS."],
+                 "sign": "Tasha", "seal": (150, 20, 25), "signature": True},
+    "program": {"title": "Program", "sub": "Weekly music of the Dancing Plague",
+                "lines": ["Week I ......... Tango", "Week II ......... Disco", "Week III ...... Bollywood",
+                          "Week IV ........ Opera", "Week V ...... Hip-Hop"],
+                "sign": "The Backyardigans", "seal": (40, 70, 140)},
+    "paracelsus": {"title": "Paracelsus", "sub": "On the dancing of Frau Troffea",
+                   "lines": ["She began to dance only", "to annoy her husband,", "and would not stop,",
+                             "so that he would", "look like a fool."],
+                   "sign": "Theophrastus Paracelsus", "seal": None},
+}
+
+
+def parchment(name):
+    """Documento de 1518 em pergaminho (acima da área da legenda)."""
+    from .common import ROOT
+    c = DOCS[name]
+    goth = lambda sz: ImageFont.truetype(str(ROOT / "assets/fonts/UnifrakturMaguntia-Book.ttf"), sz)
+    fell = lambda sz: ImageFont.truetype(str(ROOT / "assets/fonts/IMFeENrm28P.ttf"), sz)
+    fell_i = lambda sz: ImageFont.truetype(str(ROOT / "assets/fonts/IMFeENit28P.ttf"), sz)
+    bg = Image.new("RGB", (W, H), (32, 24, 18))
+    rnd = random.Random(hash(name) % 1000)
+    # mesa de madeira escura
+    d0 = ImageDraw.Draw(bg)
+    for y in range(0, H, 3):
+        v = 30 + int(8 * math.sin(y / 37.0)) + rnd.randint(-3, 3)
+        d0.line((0, y, W, y), fill=(v + 8, v, v - 8))
+    PW, PH = 860, 960
+    pap = Image.new("RGBA", (PW, PH), (0, 0, 0, 0))
+    pd = ImageDraw.Draw(pap)
+    # borda irregular
+    pts = []
+    for i in range(0, PW, 20):
+        pts.append((i, rnd.randint(0, 14)))
+    for i in range(0, PH, 20):
+        pts.append((PW - rnd.randint(0, 14), i))
+    for i in range(PW, 0, -20):
+        pts.append((i, PH - rnd.randint(0, 14)))
+    for i in range(PH, 0, -20):
+        pts.append((rnd.randint(0, 14), i))
+    pd.polygon(pts, fill=(232, 214, 172, 255))
+    # manchas de idade
+    stains = Image.new("RGBA", (PW, PH), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(stains)
+    for _ in range(40):
+        x, y, r = rnd.randint(0, PW), rnd.randint(0, PH), rnd.randint(20, 120)
+        sd.ellipse((x - r, y - r, x + r, y + r), fill=(150, 110, 60, rnd.randint(8, 22)))
+    stains = stains.filter(ImageFilter.GaussianBlur(25))
+    mask = pap.getchannel("A")
+    pap = Image.alpha_composite(pap, Image.composite(stains, Image.new("RGBA", (PW, PH)), mask))
+    pd = ImageDraw.Draw(pap)
+    ink = (52, 32, 18)
+    pd.text((PW / 2, 120), c["title"], font=goth(118), fill=ink, anchor="mm")
+    pd.text((PW / 2, 215), c["sub"], font=fell_i(36), fill=(95, 65, 40), anchor="mm")
+    pd.line((120, 260, PW - 120, 260), fill=(120, 85, 50), width=3)
+    y = 320
+    for line in c["lines"]:
+        if line:
+            big = line.isupper() or "MORE MUSIC" in line or "TWO MONTHS" in line
+            f = fell(54 if big else 46)
+            pd.text((PW / 2, y), line, font=f, fill=(140, 20, 20) if big else ink, anchor="mm")
+        y += 66
+    y += 20
+    if c.get("signature"):
+        pd.text((PW / 2 - 60, y + 30), c["sign"], font=fell_i(76), fill=(30, 40, 110), anchor="mm")
+        pd.line((PW / 2 - 230, y + 75, PW / 2 + 110, y + 75), fill=ink, width=2)
+    else:
+        pd.text((PW / 2 - 60, y + 30), c["sign"], font=fell_i(42), fill=ink, anchor="mm")
+    if c.get("seal"):
+        sx, sy = PW - 150, PH - 95
+        col = c["seal"]
+        for k in range(10):
+            ang = k * 36 * math.pi / 180
+            rx, ry = sx + 58 * math.cos(ang), sy + 58 * math.sin(ang)
+            pd.ellipse((rx - 22, ry - 22, rx + 22, ry + 22), fill=col)
+        pd.ellipse((sx - 62, sy - 62, sx + 62, sy + 62), fill=col)
+        pd.ellipse((sx - 44, sy - 44, sx + 44, sy + 44), outline=tuple(min(255, v + 50) for v in col), width=5)
+        pd.text((sx, sy + 4), "S", font=goth(70), fill=tuple(min(255, v + 60) for v in col), anchor="mm")
+    pap = pap.rotate(rnd.uniform(-3, 3), resample=Image.BICUBIC, expand=True)
+    sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ox, oy = (W - pap.width) // 2, 200
+    ImageDraw.Draw(sh).rectangle((ox + 30, oy + 40, ox + pap.width + 30, oy + pap.height + 30), fill=(0, 0, 0, 160))
+    sh = sh.filter(ImageFilter.GaussianBlur(28))
+    bg.paste(sh, (0, 0), sh)
+    bg.paste(pap, (ox, oy), pap)
+    return bg
+
+
 def anim_count(ref):
     """Quantos itens um asset animado revela (mensagens ou notificações)."""
     kind, _, name = ref[1:].partition(":")
@@ -581,6 +677,8 @@ def make(ref, handles=None):
         return chat(rest)
     if kind == "lock":
         return lock(rest)
+    if kind == "doc":
+        return parchment(rest)
     if kind == "stat":
         return stat(rest)
     if kind == "tip":
