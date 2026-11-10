@@ -816,6 +816,74 @@ def tvguide(name):
     return bg
 
 
+def badge(name):
+    """Credencial de segurança com cordão."""
+    bg = Image.new("RGB", (W, H), (20, 18, 28))
+    d = ImageDraw.Draw(bg)
+    for i in range(0, H, 4):
+        d.line((0, i, W, i), fill=(24 + (i // 4) % 3, 22, 32))
+    d.polygon([(W / 2 - 40, 0), (W / 2 + 40, 0), (W / 2 + 30, 300), (W / 2 - 30, 300)], fill=(200, 30, 40))
+    x0, y0, x1, y1 = 200, 290, W - 200, 1120
+    d.rounded_rectangle((x0, y0, x1, y1), 40, fill=(248, 248, 250), outline=(190, 190, 200), width=4)
+    d.rounded_rectangle((W / 2 - 70, y0 + 25, W / 2 + 70, y0 + 55), 15, fill=(60, 60, 70))
+    d.rectangle((x0, y0 + 90, x1, y0 + 230), fill=(15, 15, 18))
+    d.text((W / 2, y0 + 160), "VMA 2009", font=font(FONT_CAPTION, 96), fill=(255, 214, 0), anchor="mm")
+    d.rounded_rectangle((W / 2 - 150, y0 + 270, W / 2 + 150, y0 + 570), 20, fill=(225, 228, 235))
+    d.ellipse((W / 2 - 60, y0 + 300, W / 2 + 60, y0 + 420), fill=(240, 200, 160))
+    d.ellipse((W / 2 - 75, y0 + 255, W / 2 + 55, y0 + 345), fill=(25, 25, 30))     # topete
+    d.ellipse((W / 2 - 20, y0 + 230, W / 2 + 95, y0 + 320), fill=(25, 25, 30))
+    d.rectangle((W / 2 - 55, y0 + 345, W / 2 + 55, y0 + 375), fill=(15, 15, 18))
+    d.pieslice((W / 2 - 130, y0 + 430, W / 2 + 130, y0 + 700), 180, 360, fill=(15, 15, 18))
+    d.text((W / 2, y0 + 640), "JOHNNY BRAVO", font=font(FONT_CAPTION, 78), fill=(15, 15, 18), anchor="mm")
+    d.rounded_rectangle((x0 + 60, y0 + 700, x1 - 60, y0 + 790), 20, fill=(200, 30, 40))
+    d.text((W / 2, y0 + 745), "HEAD OF SECURITY", font=font(FONT_UI_BOLD, 52), fill="white", anchor="mm")
+    return bg
+
+
+QUOTES = {
+    "kanye": {"text": ["\"Yo Taylor, I'm really", "happy for you,", "I'mma let you finish...\""],
+              "who": "MTV Video Music Awards · Sept 13, 2009"},
+}
+
+
+def quote(name):
+    """Cartão com uma frase real e famosa."""
+    c = QUOTES[name]
+    bg = Image.new("RGB", (W, H), (12, 12, 16))
+    d = ImageDraw.Draw(bg)
+    d.text((140, 330), "\u201c", font=font(FONT_CAPTION, 300), fill=(255, 214, 0), anchor="lm")
+    y = 520
+    for line in c["text"]:
+        d.text((W / 2, y), line, font=font(FONT_CAPTION, 76), fill="white", anchor="mm")
+        y += 105
+    d.text((W / 2, y + 40), c["who"], font=font(FONT_UI, 34), fill=(150, 155, 170), anchor="mm")
+    return bg
+
+
+BOARDS = {
+    "armwrestle": {"title": "ARM WRESTLING", "sub": "Backstage · Radio City Music Hall",
+                   "left": "JOHNNY", "right": "ROCKETTES", "l": "0", "r": "35"},
+}
+
+
+def board(name):
+    """Placar esportivo."""
+    c = BOARDS[name]
+    bg = Image.new("RGB", (W, H), (10, 10, 14))
+    d = ImageDraw.Draw(bg)
+    x0, y0, x1, y1 = 90, 300, W - 90, 1100
+    d.rounded_rectangle((x0, y0, x1, y1), 30, fill=(25, 25, 32), outline=(255, 214, 0), width=8)
+    d.text((W / 2, y0 + 90), c["title"], font=font(FONT_CAPTION, 84), fill=(255, 214, 0), anchor="mm")
+    d.text((W / 2, y0 + 170), c["sub"], font=font(FONT_UI, 34), fill=(170, 175, 190), anchor="mm")
+    for i, (lab, val, col) in enumerate([(c["left"], c["l"], (90, 170, 255)), (c["right"], c["r"], (255, 70, 70))]):
+        cx = W / 2 + (-1 if i == 0 else 1) * 225
+        d.text((cx, y0 + 290), lab, font=font(FONT_CAPTION, 60), fill=col, anchor="mm")
+        d.rounded_rectangle((cx - 170, y0 + 350, cx + 170, y0 + 640), 20, fill=(5, 5, 8))
+        d.text((cx, y0 + 495), val, font=font(FONT_CAPTION, 230), fill=(255, 120, 40), anchor="mm")
+    d.text((W / 2, y0 + 495), ":", font=font(FONT_CAPTION, 160), fill="white", anchor="mm")
+    return bg
+
+
 def anim_count(ref):
     """Quantos itens um asset animado revela (mensagens ou notificações)."""
     kind, _, name = ref[1:].partition(":")
@@ -868,6 +936,12 @@ def make(ref, handles=None):
         return chat(rest)
     if kind == "lock":
         return lock(rest)
+    if kind == "badge":
+        return badge(rest)
+    if kind == "quote":
+        return quote(rest)
+    if kind == "board":
+        return board(rest)
     if kind == "tv":
         return tvguide(rest)
     if kind == "stone":

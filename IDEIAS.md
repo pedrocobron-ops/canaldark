@@ -16,3 +16,4 @@
 | Why didn't Wile E. Coyote win the Great Emu War in 1932? | A | Coiote | Guerra dos Emus | entrega da ACME atrasou | ideia |
 | Why didn't Scooby-Doo stop the Great Molasses Flood of 1919? | A | Scooby-Doo | Inundação de Melaço de Boston | estava lambendo o tanque | ideia |
 | Why didn't Barney warn the dinosaurs about the asteroid? | A | Barney | extinção dos dinossauros | só fala coisa feliz, avisou cantando | em produção (006) |
+| Why didn't Johnny Bravo stop Kanye from interrupting Taylor Swift? | A | Johnny Bravo | VMA 2009 | campeonato de queda de braço com as Rockettes, prêmio: spray de cabelo de viagem | em produção (007) |
