@@ -449,11 +449,11 @@ def tipscreen(name, bg=None):
     k = 0.035
     quad = (DW * k, 0, 0, DH, DW, DH, DW * (1 - k), 0)
     dev = dev.transform((DW, DH), Image.QUAD, quad, Image.BICUBIC)
-    sc = min(1.2, 980 / DH, 1000 / DW)          # o maior possível acima da legenda
+    sc = min(1.15, 860 / DH, 940 / DW)          # o maior possível acima da legenda
     dev = dev.resize((int(DW * sc), int(DH * sc)), Image.LANCZOS)
     DW, DH = dev.size
     sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    ox, oy = (W - DW) // 2, max(140, (1150 - DH) // 2 + 40)
+    ox, oy = (W - DW) // 2, max(270, 1130 - DH)
     ImageDraw.Draw(sh).rounded_rectangle((ox + 30, oy + 50, ox + DW + 30, oy + DH + 50), 70, fill=(0, 0, 0, 170))
     sh = sh.filter(ImageFilter.GaussianBlur(30))
     base.paste(sh, (0, 0), sh)
