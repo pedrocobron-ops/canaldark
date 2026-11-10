@@ -1012,9 +1012,12 @@ REPORTS = {
 }
 
 
-def report(name):
-    """Relatório de ocorrência da segurança numa prancheta."""
-    c = REPORTS[name]
+def report(name, stage=1):
+    """Relatório de ocorrência. stage=0 esconde as 2 últimas linhas e o carimbo (revela com a fala)."""
+    c = dict(REPORTS[name])
+    if stage == 0:
+        c["rows"] = c["rows"][:-2]
+        c["stamp"] = None
     bg = Image.new("RGB", (W, H), (30, 34, 44))
     d = ImageDraw.Draw(bg)
     x0, y0, x1, y1 = 90, 200, W - 90, 1300
@@ -1033,6 +1036,8 @@ def report(name):
         d.text((x0 + 370, y), v, font=font(FONT_UI_BOLD if last else FONT_UI, 44),
                fill=(200, 30, 45) if last else (25, 25, 35), anchor="la")
         y += 82
+    if not c["stamp"]:
+        return bg
     st = Image.new("RGBA", (560, 150), (0, 0, 0, 0))
     sd = ImageDraw.Draw(st)
     sd.rounded_rectangle((6, 6, 554, 144), 16, outline=(205, 30, 45, 230), width=10)

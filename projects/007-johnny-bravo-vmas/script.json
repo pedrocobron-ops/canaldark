@@ -150,7 +150,8 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "punch",
-          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: backstage hallway at an awards show, two big security guards in black t-shirts with the word SECURITY, earpieces and walkie-talkies, leaning close and whispering to each other with suspicious side-eye looks, one covering his mouth with his hand, behind them a poster of Johnny Bravo with his single tall blonde yellow pompadour shaped like one solid block, opaque black rectangular sunglasses that always cover his eyes, black t-shirt and blue jeans with the word EMPLOYEE OF THE MONTH, vertical 9:16"
+          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: backstage hallway at an awards show, two big security guards in black t-shirts with the word SECURITY, earpieces and walkie-talkies, leaning close and whispering to each other with suspicious side-eye looks, one covering his mouth with his hand, behind them a poster of Johnny Bravo with his single tall blonde yellow pompadour shaped like one solid block, opaque black rectangular sunglasses that always cover his eyes, black t-shirt and blue jeans with the word EMPLOYEE OF THE MONTH, vertical 9:16",
+          "cap_y": 0.42
         }
       ]
     },
@@ -317,7 +318,8 @@
           "sfx": [
             "alarm"
           ],
-          "cap_y": 0.8
+          "cap_y": 0.8,
+          "stage_cap": 2
         }
       ]
     },
@@ -349,9 +351,12 @@
         {
           "img": "21.jpg",
           "n": 2,
-          "fx": "zoom_in",
+          "fx": "static",
           "tr": "punch",
-          "mirror": true
+          "fit": "contain",
+          "scale": 0.74,
+          "bg": "#F8E205",
+          "shift_x": -0.06
         }
       ]
     }

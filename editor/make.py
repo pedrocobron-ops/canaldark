@@ -255,6 +255,8 @@ def raw_image(proj, shot, handles, state=None):
     if ref.startswith("@tip:"):
         bg = open_image(proj, shot["bg_img"]) if shot.get("bg_img") else None
         return assets.tipscreen(ref[5:], bg)
+    if ref.startswith("@report:") and state is not None:
+        return assets.report(ref[8:], state[1])
     if ref.startswith("@board:") and state is not None:
         return assets.board(ref[7:], state[1])
     if ref.startswith("@chat:") and state is not None:
@@ -284,12 +286,13 @@ def load_shot_image(proj, shot, size, handles, state=None):
         canvas = ImageOps.fit(im, (bw, bh), Image.LANCZOS).filter(ImageFilter.GaussianBlur(40))
         canvas = Image.blend(canvas, Image.new("RGB", (bw, bh), (0, 0, 0)), 0.25)
         c = ImageOps.contain(im, (int(bw / 1.18 * 1.02), int(bh / 1.18)), Image.LANCZOS)
-        canvas.paste(c, ((bw - c.width) // 2, (bh - c.height) // 2))
+        canvas.paste(c, ((bw - c.width) // 2 + int(bw * shot.get("shift_x", 0)), (bh - c.height) // 2))
         return canvas
     if fit == "contain":
         bgc = shot.get("bg") or (im.getpixel((2, H // 2 if im.height > H // 2 else 2)) if shot["img"].startswith("@") else "white")
         canvas = Image.new("RGB", (bw, bh), bgc)
-        c = ImageOps.contain(im, (int(bw / 1.18), int(bh / 1.18)), Image.LANCZOS)  # inteira no zoom 1.0
+        k = shot.get("scale", 1.0)   # < 1 encolhe a imagem (tirar algo da zona dos botões)
+        c = ImageOps.contain(im, (int(bw / 1.18 * k), int(bh / 1.18 * k)), Image.LANCZOS)  # inteira no zoom 1.0
         canvas.paste(c, ((bw - c.width) // 2, (bh - c.height) // 2))
         return canvas
     return ImageOps.fit(im, (bw, bh), Image.LANCZOS)
@@ -365,6 +368,8 @@ def build_shots(script, timeline, total):
             item = dict(sh, start=start)
             if "flip_cap" in sh:
                 item["flip_t"] = caps[min(i + sh["flip_cap"], len(caps) - 1)]["start"]
+            if "stage_cap" in sh:   # revela a 2ª parte do asset nesta legenda (ex.: relatório)
+                item["stage_t"] = caps[min(i + sh["stage_cap"], len(caps) - 1)]["start"]
             shots.append(item)
             i += n
     shots[0]["start"] = 0
@@ -401,6 +406,8 @@ def anim_state(sh, t):
             return (c, d, 1.0)
         sx = round(abs(math.cos(math.pi * u)), 1)
         return (a, b, sx) if u < 0.5 else (c, d, sx)
+    if sh.get("stage_t") is not None:
+        return ("stage", 1 if t >= sh["stage_t"] else 0)
     if sh.get("anim") == "count":
         u = min(1.0, max(0.0, (t - sh["start"]) / max(0.1, (sh["end"] - sh["start"]) * 0.55)))
         return ("count", int(round(sh.get("count_to", 35) * (u ** 0.7))))
