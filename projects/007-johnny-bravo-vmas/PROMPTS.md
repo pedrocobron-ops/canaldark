@@ -26,7 +26,7 @@ Realistic night photo of the Radio City Music Hall marquee in New York City with
 ## 04.jpg
 
 ```
-Realistic photo of a music awards stage, a man in a black leather jacket and dark sunglasses seen from behind grabbing the microphone from a young woman in a silver dress, shocked booing crowd in the foreground, dramatic stage lights, no faces visible, photorealistic, vertical 9:16
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: a funny caricature of Kanye West in 2009 wearing a black leather jacket and dark shutter shades sunglasses, grabbing the microphone from a caricature of young Taylor Swift with long curly blonde hair, red lipstick and a silver sparkly dress holding an astronaut-shaped trophy, shocked expression, on a huge awards show stage, cartoon crowd booing, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 03.jpg
@@ -74,7 +74,7 @@ Johnny Bravo from the Cartoon Network show sitting backstage in front of a dress
 ## 13.jpg
 
 ```
-Realistic photo of a music awards stage, a woman in an elegant dark dress seen from behind welcoming a young woman in a silver dress to the microphone, audience giving a standing ovation, warm stage lights, no faces visible, photorealistic, vertical 9:16
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: a caricature of Beyoncé with long wavy honey-blonde hair in an elegant black gown, smiling and gesturing to welcome a caricature of young Taylor Swift with long curly blonde hair, red lipstick and a silver sparkly dress back to the microphone, warm golden stage lights, cartoon audience giving a standing ovation, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 11.jpg
