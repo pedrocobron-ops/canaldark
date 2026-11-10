@@ -58,7 +58,7 @@ Saídas em `out/`: `video.mp4`, `narration.wav`, `music.wav`, `mix.wav`, `timeli
   - `NN.png` fica em `projects/<slug>/images/`. Aceita qualquer extensão com o mesmo nome. Se faltar, o editor põe um placeholder com o prompt.
   - `@icon:<rótulo>:<#cor>` desenha o ícone de app com o número em neon (`@icon::#34C759` sai sem número).
   - `@chat:family` e `@chat:squidward` desenham prints falsos de grupo da família. Para criar outros, adicione em `CHATS`, no arquivo `editor/assets.py`.
-- **fit:** `cover` (padrão, preenche a tela) ou `contain` (imagem inteira sobre fundo branco, para personagem recortado e boneco 3D).
+- **fit:** `cover` (padrão, preenche a tela), `contain` (imagem inteira sobre fundo branco, para personagem recortado e boneco 3D) ou `blurfill` (foto horizontal inteira no centro, com ela mesma desfocada no fundo; use `cap_y: 0.24`).
 - **fx:** `zoom_in` (padrão), `zoom_out`, `pop` (impacto), `shake` (tremida, para alarme, susto e raiva), `pan_left`, `pan_right`, `static`.
 - **tr:** transição de entrada do shot: `whip` (chicote lateral com desfoque), `zoom` (zoom através), `punch` (entra grande e assenta), `fade` (passa pelo escuro), `cut` (seco). Sem `tr`, o editor alterna sozinho seguindo `CYCLE` em `editor/transitions.py`. Use `punch` para impacto e revelação, e `whip` para mudança de assunto.
 - **sfx:** efeitos sonoros extras no início do shot: `alarm`, `ding`, `pop`, `impact`, `thud`, `whoosh`, `swish`. Os whooshes das transições e o impacto do punch entram sozinhos. Volume geral em `sfx_volume` (padrão 0.8).
@@ -74,6 +74,7 @@ Canal, marca d'água e redes do cartão final ficam em `channel.json`, na raiz.
 - **Todo vídeo passa de 1 minuto: mínimo de 61 s, ideal entre 62 e 75 s.** O editor avisa e desacelera a voz se ficar curto, mas o certo é acrescentar uma frase ao roteiro (de 175 a 190 palavras em speed 0.9).
 - **Nunca deixar mais de 4 s parado no mesmo visual sem animação.** Chat tem que revelar ou riscar, ícone tem que girar ou estar no celular.
 - **Fotos realistas sempre com o personagem escondido** (atrás de algo, no reflexo, na sombra, só a mão ou a garra), **sem círculo nem seta** (o Pedro prefere que o público ache sozinho). Foto realista "pura" deixa o meio do vídeo chato. Nos prompts, peça "2D cartoon character inserted into the real photo" e anexe no Gemini a imagem de corpo inteiro do personagem como referência.
+- **Foto de fantasia do personagem em festa infantil** (como nos vídeos de referência) é ótima para quebrar repetição no meio do vídeo. Se for horizontal, use `fit: blurfill`.
 - **Boneco 3D pensativo no final sempre com algo dentro da nuvem** (o personagem na cena mais engraçada), usando `inset`.
 - **Efeitos sonoros em toda transição e nos objetos que fazem barulho** (alarme, notificação).
 - **Sem cartão final de redes. O final é em loop:** a última imagem passa com whip para a primeira (o editor faz sozinho; `"loop": false` desliga). Assim o replay emenda sem quebra.

@@ -130,10 +130,10 @@
       "say": "They claim | {r:nobody asked} them to.",
       "shots": [
         {
-          "img": "01.jpg",
+          "img": "13.jpg",
           "n": 2,
-          "fit": "contain",
-          "fx": "pop",
+          "fit": "blurfill",
+          "fx": "zoom_in",
           "tr": "punch",
           "cap_y": 0.24
         }

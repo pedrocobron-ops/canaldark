@@ -275,6 +275,13 @@ def load_shot_image(proj, shot, size, handles, state=None):
     fit = shot.get("fit")
     if fit is None and shot["img"].startswith("@"):
         fit = "contain"   # assets desenhados entram no tamanho em que foram desenhados
+    if fit == "blurfill":
+        # foto horizontal em vídeo vertical: foto inteira no centro, ela mesma desfocada no fundo
+        canvas = ImageOps.fit(im, (bw, bh), Image.LANCZOS).filter(ImageFilter.GaussianBlur(40))
+        canvas = Image.blend(canvas, Image.new("RGB", (bw, bh), (0, 0, 0)), 0.25)
+        c = ImageOps.contain(im, (int(bw / 1.18 * 1.02), int(bh / 1.18)), Image.LANCZOS)
+        canvas.paste(c, ((bw - c.width) // 2, (bh - c.height) // 2))
+        return canvas
     if fit == "contain":
         bgc = shot.get("bg") or (im.getpixel((2, H // 2 if im.height > H // 2 else 2)) if shot["img"].startswith("@") else "white")
         canvas = Image.new("RGB", (bw, bh), bgc)
