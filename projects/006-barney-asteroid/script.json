@@ -43,12 +43,12 @@
           "fx": "zoom_in"
         },
         {
-          "img": "03.jpg",
+          "img": "02.jpg",
           "n": 3,
           "fx": "zoom_in",
           "tr": "whip",
-          "cap_y": 0.24,
-          "prompt": "Barney the purple dinosaur from Barney and Friends looking through a big brass telescope on top of a prehistoric cliff at night, starry sky, volcanoes in the distance"
+          "prompt": "Barney the purple dinosaur from Barney and Friends looking through a big brass telescope on top of a prehistoric cliff at night, starry sky, volcanoes in the distance",
+          "img_final": "03.jpg"
         }
       ]
     },
@@ -56,10 +56,10 @@
       "say": "{y:66 million years ago}, | he was the first to see it: | a rock {r:six miles wide}, | heading straight for {y:Mexico}.",
       "shots": [
         {
-          "img": "03.jpg",
+          "img": "02.jpg",
           "n": 2,
           "fx": "zoom_out",
-          "cap_y": 0.24
+          "img_final": "03.jpg"
         },
         {
           "img": "04.jpg",
@@ -225,14 +225,16 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "fade",
-          "prompt": "Realistic 1990s family photo of a little kid in a bedroom hugging a purple plush dinosaur toy that is glowing with magical sparkles, warm lamp light, slight film grain, vertical 9:16"
+          "prompt": "Realistic 1990s family photo of a little kid in a bedroom hugging a purple plush dinosaur toy that is glowing with magical sparkles, warm lamp light, slight film grain, vertical 9:16",
+          "cap_y": 0.24
         },
         {
           "img": "11.jpg",
           "n": 2,
           "fx": "zoom_in",
           "tr": "punch",
-          "prompt": "Realistic grainy 1992 VHS television still of a kids TV show set with a person in a big purple dinosaur costume surrounded by smiling children sitting on the floor, colorful set, VHS scan lines, date stamp in the corner, vertical 9:16"
+          "prompt": "Realistic grainy 1992 VHS television still of a kids TV show set with a person in a big purple dinosaur costume surrounded by smiling children sitting on the floor, colorful set, VHS scan lines, date stamp in the corner, vertical 9:16",
+          "cap_y": 0.24
         }
       ]
     },
