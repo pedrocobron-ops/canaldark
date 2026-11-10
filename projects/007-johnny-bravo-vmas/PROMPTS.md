@@ -130,3 +130,9 @@ Johnny Bravo from the Cartoon Network show proudly walking onto a big awards sho
 ```
 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: Johnny Bravo with his tall blonde yellow pompadour, black sunglasses, black t-shirt and blue jeans today in his messy apartment, kneeling with love in front of a small glass display case on a shelf that holds a travel-size hairspray lit like a precious museum relic, candles around it, pink hearts, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
+
+## 25.jpg
+
+```
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: close-up of Johnny Bravo with his single tall blonde yellow pompadour shaped like one solid block, opaque black rectangular sunglasses that always cover his eyes, black t-shirt, holding up a small shiny silver travel-size hairspray can with a blue cap and admiring his own reflection in the metal can, flexing his other bicep, proud smirk, sparkles, a speech bubble that says MAN, I'M PRETTY, plain bright yellow background, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+```

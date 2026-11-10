@@ -2,7 +2,7 @@
   "title": "Why didn't Johnny Bravo stop Kanye from interrupting Taylor Swift?",
   "format": "A",
   "voice": "am_adam",
-  "speed": 0.95,
+  "speed": 0.98,
   "music_volume": 0.24,
   "post": "Kanye interrupts Taylor Swift at the 2009 VMAs... so why didn't Johnny Bravo stop him? Would you trade the moment of the decade for a travel-size hairspray? 👇 #johnnybravo #taylorswift #swifties #kanyewest #cartoonnetwork #vmas",
   "style_suffix": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition",
@@ -216,15 +216,24 @@
       ]
     },
     {
-      "say": "But against number {y:36}, | he finally {y:won}.",
+      "say": "But against number {y:36}, | who just wanted | to go home, | he finally {y:won}.",
       "shots": [
         {
           "img": "08.jpg",
-          "n": 2,
+          "n": 3,
           "fx": "pop",
           "tr": "punch",
           "cap_y": 0.24,
           "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: backstage dressing room with mirror light bulbs. Johnny Bravo with his tall BLONDE yellow pompadour, black sunglasses, black t-shirt and blue jeans is SEATED at a small wooden table in the middle of an arm wrestling match, his right hand is gripping the hand of ONE slim female dancer in a red sparkly showgirl leotard and feathered headpiece seated across from him, both elbows on the table, he is slamming the back of her hand down onto the table with an impact burst, Johnny screams in victory with his other fist in the air. The dancer looks bored and rolls her eyes, clearly letting him win. A long line of identical red showgirl dancers watches from behind, confetti falling, vertical 9:16"
+        },
+        {
+          "img": "@board:armwrestle_win",
+          "n": 1,
+          "fx": "pop",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ]
         }
       ]
     },
@@ -346,17 +355,25 @@
       ]
     },
     {
-      "say": "He says | it was {y:worth it}.",
+      "say": "He says | it was {y:worth it}. | And when people ask | why he didn't stop {r:Kanye}, | he just says: | {p:Man, I'm pretty}.",
       "shots": [
         {
           "img": "21.jpg",
-          "n": 2,
+          "n": 3,
           "fx": "static",
           "tr": "punch",
           "fit": "contain",
           "scale": 0.74,
           "bg": "#F8E205",
           "shift_x": -0.06
+        },
+        {
+          "img": "25.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "cap_y": 0.78,
+          "prompt": "2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: close-up of Johnny Bravo with his single tall blonde yellow pompadour shaped like one solid block, opaque black rectangular sunglasses that always cover his eyes, black t-shirt, holding up a small shiny silver travel-size hairspray can with a blue cap and admiring his own reflection in the metal can, flexing his other bicep, proud smirk, sparkles, a speech bubble that says MAN, I'M PRETTY, plain bright yellow background, vertical 9:16"
         }
       ]
     }

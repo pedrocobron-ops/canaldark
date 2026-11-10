@@ -1050,6 +1050,8 @@ def report(name, stage=1):
 BOARDS = {
     "armwrestle": {"title": "ARM WRESTLING", "sub": "Backstage · Radio City Music Hall",
                    "left": "JOHNNY", "right": "ROCKETTES", "l": "0", "r": "35"},
+    "armwrestle_win": {"title": "FINAL SCORE", "sub": "Backstage · Radio City Music Hall",
+                       "left": "JOHNNY", "right": "ROCKETTES", "l": "1", "r": "35"},
 }
 
 
