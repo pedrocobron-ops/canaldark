@@ -65,16 +65,16 @@ Two cartoon fish from Bikini Bottom in SpongeBob SquarePants style, one whisperi
 Realistic top-down satellite style photo of the sandy bank of the Suez Canal next to the stuck giant ship, an empty folding beach chair, two orange flags stuck in the sand and a small cardboard sign that says BACK IN 5 MINUTES, timestamp MAR 23 2021 in the corner, photorealistic, vertical 9:16
 ```
 
+## 25.jpg
+
+```
+Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) lying under a rock at the bottom of the canal, lazily answering an old rotary telephone, with a big speech bubble that says NO, THIS IS PATRICK!, bubbles, sandy floor, 2D cartoon illustration in the classic SpongeBob SquarePants Nickelodeon style, bold outlines, vibrant colors, vertical 9:16 composition
+```
+
 ## 11.jpg
 
 ```
 Underwater at the sandy bottom of a canal, many different cartoon sea creatures (a crab, a clam, a fish, a sea snail) each hiding under their own rock, a big banner floating above them that says UNDER-A-ROCK CHAMPIONSHIP 2021, a referee fish holding a stopwatch, bubbles, 2D cartoon illustration in the classic SpongeBob SquarePants Nickelodeon style, bold outlines, vibrant colors, vertical 9:16 composition
-```
-
-## 12.jpg
-
-```
-Close-up of a referee fish in a black and white striped shirt holding a giant stopwatch and blowing a whistle, very serious, underwater, bubbles, rocks on the sandy floor behind, 2D cartoon illustration in the classic SpongeBob SquarePants Nickelodeon style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 13.jpg
@@ -86,7 +86,7 @@ Realistic underwater photo of the sandy seabed with several large rocks, murky g
 ## 14.jpg
 
 ```
-Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) lying happily under his famous dome-shaped brown rock house in Bikini Bottom, the rock lifted like a lid, a shelf of tiny trophies next to him, relaxed smile, 2D cartoon illustration in the classic SpongeBob SquarePants Nickelodeon style, bold outlines, vibrant colors, vertical 9:16 composition
+Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) lying happily under his famous dome-shaped brown rock house in Bikini Bottom, the rock lifted like a lid, proudly holding a big golden trophy with a plaque that says DOING NOTHING, relaxed smile, 2D cartoon illustration in the classic SpongeBob SquarePants Nickelodeon style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 15.jpg
@@ -99,12 +99,6 @@ Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple
 
 ```
 Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) bursting out from under a big rock with both arms raised in victory, sand flying, confetti and bubbles, a crowd of cartoon sea creatures cheering, 2D cartoon illustration in the classic SpongeBob SquarePants Nickelodeon style, bold outlines, vibrant colors, vertical 9:16 composition
-```
-
-## 17.jpg
-
-```
-Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) being carried on the shoulders of cheering cartoon fish and crabs underwater like a sports champion, holding a tiny medal made of a bottle cap, huge proud smile, 2D cartoon illustration in the classic SpongeBob SquarePants Nickelodeon style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 18.jpg

@@ -163,14 +163,25 @@
       ]
     },
     {
-      "say": "{y:Satellite images} | show Patrick's post | completely {r:empty}.",
+      "say": "When the Canal Authority | called his post | to ask about the ship, | someone answered: | {p:No, this is Patrick}.",
       "shots": [
         {
           "img": "10.jpg",
-          "n": 3,
+          "n": 2,
           "fx": "zoom_in",
           "tr": "zoom",
           "prompt": "Realistic top-down satellite style photo of the sandy bank of the Suez Canal next to the stuck giant ship, an empty folding beach chair, two orange flags stuck in the sand and a small cardboard sign that says BACK IN 5 MINUTES, timestamp MAR 23 2021 in the corner"
+        },
+        {
+          "img": "25.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ],
+          "cap_y": 0.78,
+          "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) lying under a rock at the bottom of the canal, lazily answering an old rotary telephone, with a big speech bubble that says NO, THIS IS PATRICK!, bubbles, sandy floor"
         }
       ]
     },
@@ -199,11 +210,10 @@
       "say": "Whoever stays | under a rock | the longest | {y:wins}.",
       "shots": [
         {
-          "img": "12.jpg",
+          "img": "@report:rules",
           "n": 2,
           "fx": "zoom_in",
-          "cap_y": 0.24,
-          "prompt": "Close-up of a referee fish in a black and white striped shirt holding a giant stopwatch and blowing a whistle, very serious, underwater, bubbles, rocks on the sandy floor behind"
+          "tr": "whip"
         },
         {
           "img": "13.jpg",
@@ -214,14 +224,23 @@
       ]
     },
     {
-      "say": "Patrick has lived | under a rock | his whole life. | He was the {y:favorite}.",
+      "say": "Patrick has lived | under a rock | his whole life. | He once won an award | for doing nothing. | He was | the {y:favorite}.",
       "shots": [
         {
           "img": "14.jpg",
-          "n": 2,
+          "n": 3,
           "fx": "zoom_in",
           "cap_y": 0.24,
-          "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) lying happily under his famous dome-shaped brown rock house in Bikini Bottom, the rock lifted like a lid, a shelf of tiny trophies next to him, relaxed smile"
+          "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) lying happily under his famous dome-shaped brown rock house in Bikini Bottom, the rock lifted like a lid, proudly holding a big golden trophy with a plaque that says DOING NOTHING, relaxed smile"
+        },
+        {
+          "img": "@award:patrick",
+          "n": 2,
+          "fx": "pop",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ]
         },
         {
           "img": "@stat:rockodds",
@@ -258,10 +277,13 @@
           "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) bursting out from under a big rock with both arms raised in victory, sand flying, confetti and bubbles, a crowd of cartoon sea creatures cheering"
         },
         {
-          "img": "17.jpg",
+          "img": "@board:rockfinal",
           "n": 2,
-          "fx": "zoom_in",
-          "prompt": "Patrick Star from SpongeBob SquarePants (pink starfish, green shorts with purple flowers, no shirt) being carried on the shoulders of cheering cartoon fish and crabs underwater like a sports champion, holding a tiny medal made of a bottle cap, huge proud smile"
+          "fx": "pop",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ]
         }
       ]
     },

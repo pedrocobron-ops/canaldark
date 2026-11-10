@@ -944,6 +944,8 @@ def quote(name):
 
 
 AWARDS = {
+    "patrick": {"cat": "DOING NOTHING", "winner": "PATRICK STAR", "work": "Longer than anyone else",
+                "event": "BIKINI BOTTOM AWARDS"},
     "beyonce": {"cat": "VIDEO OF THE YEAR", "winner": "BEYONCÉ", "work": "\"Single Ladies\"",
                 "event": "MTV VIDEO MUSIC AWARDS 2009"},
     "taylor": {"cat": "BEST FEMALE VIDEO", "winner": "TAYLOR SWIFT", "work": "\"You Belong With Me\"",
@@ -1065,6 +1067,10 @@ def coupon(name):
 
 
 REPORTS = {
+    "rules": {"title": "OFFICIAL RULES", "sub": "Under-A-Rock Championship 2021",
+              "rows": [("Rule 1", "Get under a rock"), ("Rule 2", "Stay there"), ("Rule 3", "Last one out wins"),
+                       ("Snacks", "Not allowed"), ("Time limit", "None"), ("Judge", "A fish")],
+              "stamp": "OFFICIAL"},
     "vma": {"title": "INCIDENT REPORT", "sub": "MTV VMAs · Radio City · Sept 13, 2009",
             "rows": [("Incident", "Man on stage"), ("Hair", "Very tall, blonde"), ("Said", "\"Whoa, mama\""),
                      ("Called", "Head of Security"), ("Responded", "Johnny Bravo"), ("Suspect", "Johnny Bravo")],
@@ -1112,6 +1118,8 @@ BOARDS = {
                    "left": "JOHNNY", "right": "ROCKETTES", "l": "0", "r": "35"},
     "rock": {"title": "UNDER-A-ROCK", "sub": "Championship 2021 · Bottom of the Suez Canal",
              "left": "DAY", "right": "PLAYERS", "l": "1", "r": "48"},
+    "rockfinal": {"title": "TIME UNDER A ROCK", "sub": "Final results · Under-A-Rock Championship 2021",
+                  "left": "PATRICK", "right": "2ND PLACE", "l": "6d", "r": "2d"},
     "suez": {"title": "SUEZ CANAL", "sub": "Traffic report · March 2021",
              "left": "DAYS", "right": "SHIPS", "l": "6", "r": "369"},
     "armwrestle_win": {"title": "FINAL SCORE", "sub": "Backstage · Radio City Music Hall",
