@@ -104,21 +104,45 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "whip",
-          "prompt": "Realistic photo of a self-checkout kiosk in an American grocery store with a screen asking Add a tip with 15% 20% 25% buttons, fluorescent lighting, slightly blurry background"
+          "prompt": "Realistic photo of a self-checkout kiosk in an American grocery store with a screen asking Add a tip with 15% 20% 25% buttons, fluorescent lighting, slightly blurry background",
+          "overlay": {
+            "circle": [
+              0.77,
+              0.52,
+              0.14
+            ],
+            "arrow": true
+          }
         },
         {
           "img": "06.png",
           "n": 1,
           "fx": "zoom_in",
           "tr": "punch",
-          "prompt": "Realistic photo of a single bottle of water on a coffee shop counter next to an iPad payment screen showing tip percentage buttons"
+          "prompt": "Realistic photo of a single bottle of water on a coffee shop counter next to an iPad payment screen showing tip percentage buttons",
+          "overlay": {
+            "circle": [
+              0.62,
+              0.6,
+              0.13
+            ],
+            "arrow": true
+          }
         },
         {
           "img": "07.png",
           "n": 2,
           "fx": "zoom_in",
           "tr": "punch",
-          "prompt": "Realistic photo of a person grabbing their own takeout bag from a pickup shelf in a fast food restaurant while an iPad next to it asks for a tip"
+          "prompt": "Realistic photo of a person grabbing their own takeout bag from a pickup shelf in a fast food restaurant while an iPad next to it asks for a tip",
+          "overlay": {
+            "circle": [
+              0.78,
+              0.46,
+              0.12
+            ],
+            "arrow": true
+          }
         }
       ]
     },
@@ -130,7 +154,15 @@
           "n": 4,
           "fx": "zoom_in",
           "tr": "whip",
-          "prompt": "Realistic photo from the customer's point of view of a cashier at a coffee shop turning an iPad payment screen toward the camera with an awkward forced smile, tip options visible on the screen, shallow depth of field"
+          "prompt": "Realistic photo from the customer's point of view of a cashier at a coffee shop turning an iPad payment screen toward the camera with an awkward forced smile, tip options visible on the screen, shallow depth of field",
+          "overlay": {
+            "circle": [
+              0.5,
+              0.42,
+              0.19
+            ],
+            "arrow": true
+          }
         }
       ]
     },
@@ -142,7 +174,15 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "fade",
-          "prompt": "Realistic photo of an annoyed American customer staring at a tablet payment screen asking for a tip, raised eyebrow, coffee shop background"
+          "prompt": "Realistic photo of an annoyed American customer staring at a tablet payment screen asking for a tip, raised eyebrow, coffee shop background",
+          "overlay": {
+            "circle": [
+              0.65,
+              0.25,
+              0.18
+            ],
+            "arrow": true
+          }
         },
         {
           "img": "@stat:pew72",

@@ -72,6 +72,7 @@ Canal, marca d'água e redes do cartão final ficam em `channel.json`, na raiz.
 ## Regras de edição (tiradas dos vídeos de referência do "Você Sabo?")
 - **Todo vídeo passa de 1 minuto: mínimo de 61 s, ideal entre 62 e 75 s.** O editor avisa e desacelera a voz se ficar curto, mas o certo é acrescentar uma frase ao roteiro (de 175 a 190 palavras em speed 0.9).
 - **Nunca deixar mais de 4 s parado no mesmo visual sem animação.** Chat tem que revelar ou riscar, ícone tem que girar ou estar no celular.
+- **Fotos realistas sempre com o personagem escondido** (atrás de algo, no reflexo, na sombra, só a mão ou a garra), com círculo vermelho e seta. Foto realista "pura" deixa o meio do vídeo chato. Nos prompts, peça "2D cartoon character inserted into the real photo" e anexe no Gemini a imagem de corpo inteiro do personagem como referência.
 - **Boneco 3D pensativo no final sempre com algo dentro da nuvem** (o personagem na cena mais engraçada), usando `inset`.
 - **Efeitos sonoros em toda transição e nos objetos que fazem barulho** (alarme, notificação).
 - **Sem cartão final de redes. O final é em loop:** a última imagem passa com whip para a primeira (o editor faz sozinho; `"loop": false` desliga). Assim o replay emenda sem quebra.
