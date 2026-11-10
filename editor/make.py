@@ -345,6 +345,7 @@ def draw_overlay(img, ov, s, p):
 
 
 # ---------------------------------------------------------------- montagem
+MAX_SHOT = 4.0      # regra do canal: nenhuma imagem mais de 4 s seguidos na tela
 MIN_SECONDS = 61.0   # regra do canal: todo vídeo passa de 1 minuto
 TAIL = 0.7           # segura a última imagem depois da última palavra
 
@@ -484,6 +485,17 @@ def render(proj, preview=False, keep_audio=False):
     shots = build_shots(script, timeline, total + TAIL)
     full = shots[-1]["end"]
     print(f"duração: {full:.1f}s")
+    runs = []
+    for x in shots:
+        if runs and runs[-1][0] == x["img"]:
+            runs[-1][2] = x["end"]
+        else:
+            runs.append([x["img"], x["start"], x["end"]])
+    longos = [(r[0], round(r[2] - r[1], 1), round(r[1], 1)) for r in runs if r[2] - r[1] > MAX_SHOT and not r[0].startswith("@outro")]
+    if longos:
+        print(f"  ! IMAGEM PARADA MAIS DE {MAX_SHOT:.0f}s (regra do canal):")
+        for img, dur, t0 in longos:
+            print(f"     {img} por {dur}s a partir de {t0}s")
     if full < MIN_SECONDS:
         print(f"  ! ATENÇÃO: abaixo de {MIN_SECONDS:.0f}s")
 

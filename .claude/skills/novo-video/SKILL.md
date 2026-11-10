@@ -16,6 +16,7 @@ Conversa em português, roteiro em inglês, nunca travessão.
 3. **Roteiro (`script.json`).** Seguir as batidas do formato A ou B e o formato descrito na skill `editor-video`. Use `projects/001-squidward-imessage/script.json` como modelo.
    - Narração entre 175 e 190 palavras: o vídeo tem que passar de 1 minuto (mínimo de 61 s). Sem cartão final.
    - Legendas de 1 a 4 palavras, uma palavra-chave colorida por legenda.
+   - Cada shot cobre no máximo 3 legendas (cerca de 2,5 s). Planeje de 25 a 30 trocas de imagem por vídeo, combinando imagens do Pedro com elementos desenhados.
    - Tudo que for app, print ou ícone sai como asset desenhado (`@icon`, `@chat`), para poupar imagem do Pedro.
    - De 16 a 22 imagens geradas por vídeo. Cada shot com imagem gerada tem um `prompt` em inglês. Prompt de personagem começa pelo nome completo e pela obra ("Squidward Tentacles from SpongeBob SquarePants ...").
 

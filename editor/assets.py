@@ -509,6 +509,7 @@ def receipt(name):
 
 
 STATS = {
+    "extinct75": {"num": "75%", "text": ["of all species on Earth", "went extinct"], "src": "Chicxulub impact, 66 million years ago"},
     "pew72": {"num": "72%", "text": ["of Americans say tipping", "is expected in more places", "than 5 years ago"],
               "src": "Source: Pew Research Center, 2023"},
 }
@@ -715,6 +716,8 @@ def old_map(name):
 
 
 STONES = {
+    "records": {"title": "Official Records", "lines": ["66,000,000 B.C.", "", "Barney warned", "everyone.", "", "(in a song)"]},
+    "rules": {"title": "Barney's Rules", "lines": ["Rule #1:", "Never say", "anything sad.", "", "Rule #2:", "Hug everyone."]},
     "song": {"title": "Barney's Song", "lines": ["There's a big rock", "in the sky,", "it's coming", "to say hi!", "", "la la la ♪"]},
 }
 
@@ -753,8 +756,8 @@ def stone(name):
         if line:
             carve((PW / 2, y), line, font(FONT_CAPTION, 76 if "♪" not in line else 60))
         y += 105
-    # notas musicais coloridas
-    for nx, ny in [(110, 330), (PW - 110, 480), (120, 700)]:
+    # notas musicais coloridas (só na tábua da música)
+    for nx, ny in ([(110, 330), (PW - 110, 480), (120, 700)] if name == "song" else []):
         e = emoji("🎵", 80)
         tab.paste(e, (nx - 40, ny - 40), e)
     sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -791,6 +794,25 @@ def timeline(name):
         d.text(((xa + xb) / 2, yy + 50), txt, font=font(FONT_CAPTION, 48), fill=col, anchor="mm")
     brace(150, 67, "83 million years", (90, 200, 120), 860)
     brace(67, 0, "67 million years", (90, 170, 255), 990)
+    return bg
+
+
+def tvguide(name):
+    """Anúncio de guia de TV retrô (1992)."""
+    bg = Image.new("RGB", (W, H), (25, 22, 30))
+    d = ImageDraw.Draw(bg)
+    x0, y0, x1, y1 = 140, 230, W - 140, 1120
+    d.rectangle((x0, y0, x1, y1), fill=(250, 245, 230))
+    d.rectangle((x0, y0, x1, y0 + 150), fill=(200, 30, 40))
+    d.text((W / 2, y0 + 78), "TV GUIDE", font=font(FONT_CAPTION, 110), fill="white", anchor="mm")
+    d.text((W / 2, y0 + 210), "APRIL 1992", font=font(FONT_UI_BOLD, 46), fill=(60, 60, 70), anchor="mm")
+    d.line((x0 + 50, y0 + 260, x1 - 50, y0 + 260), fill=(60, 60, 70), width=3)
+    d.text((W / 2, y0 + 350), "NEW SERIES!", font=font(FONT_CAPTION, 70), fill=(200, 30, 40), anchor="mm")
+    d.text((W / 2, y0 + 460), "Barney & Friends", font=font(FONT_CAPTION, 92), fill=(140, 60, 200), anchor="mm")
+    e = emoji("🦖", 200)
+    bg.paste(e, (int(W / 2 - e.width / 2), y0 + 530), e)
+    d.text((W / 2, y0 + 790), "A purple dinosaur who", font=font(FONT_UI, 40), fill=(60, 60, 70), anchor="mm")
+    d.text((W / 2, y0 + 840), "\"definitely warned everyone.\"", font=font(FONT_UI_BOLD, 40), fill=(60, 60, 70), anchor="mm")
     return bg
 
 
@@ -846,6 +868,8 @@ def make(ref, handles=None):
         return chat(rest)
     if kind == "lock":
         return lock(rest)
+    if kind == "tv":
+        return tvguide(rest)
     if kind == "stone":
         return stone(rest)
     if kind == "timeline":

@@ -56,17 +56,22 @@
       "say": "{y:66 million years ago}, | he was the first to see it: | a rock {r:six miles wide}, | heading straight for {y:Mexico}.",
       "shots": [
         {
+          "img": "02.jpg",
+          "n": 1,
+          "fx": "zoom_in"
+        },
+        {
           "img": "03.jpg",
-          "n": 2,
+          "n": 1,
           "fx": "zoom_out",
+          "tr": "punch",
           "cap_y": 0.74
         },
         {
           "img": "04.jpg",
           "n": 2,
           "fx": "zoom_in",
-          "tr": "zoom",
-          "prompt": "Realistic view from space of a huge asteroid approaching Earth, aiming at the Gulf of Mexico and the Yucatan peninsula, cinematic lighting"
+          "tr": "zoom"
         }
       ]
     },
@@ -75,13 +80,19 @@
       "shots": [
         {
           "img": "05.jpg",
-          "n": 4,
+          "n": 2,
           "fx": "shake",
           "tr": "punch",
           "sfx": [
             "impact"
           ],
           "prompt": "Dramatic realistic painting of a massive asteroid impact explosion on the horizon of a prehistoric landscape, a giant fireball and shockwave, dinosaurs running in panic, museum painting texture"
+        },
+        {
+          "img": "@stat:extinct75",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch"
         }
       ]
     },
@@ -89,12 +100,11 @@
       "say": "Barney swears | he {y:warned} everyone.",
       "shots": [
         {
-          "img": "01.jpg",
+          "img": "03.jpg",
           "n": 2,
-          "fit": "contain",
-          "fx": "pop",
+          "fx": "pan_right",
           "tr": "punch",
-          "cap_y": 0.24
+          "cap_y": 0.74
         }
       ]
     },
@@ -114,12 +124,20 @@
       "say": "{y:Records} show | he did warn them. | Just not the way | you'd expect.",
       "shots": [
         {
+          "img": "@stone:records",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ]
+        },
+        {
           "img": "06.jpg",
-          "n": 4,
+          "n": 2,
           "fx": "zoom_in",
           "tr": "whip",
-          "cap_y": 0.24,
-          "prompt": "Barney the purple dinosaur from Barney and Friends singing happily into a microphone on a big rock stage in a prehistoric jungle, a crowd of dinosaurs watching, while a giant flaming asteroid is clearly visible in the sky behind him"
+          "cap_y": 0.24
         }
       ]
     },
@@ -127,16 +145,16 @@
       "say": "Barney never says | anything {r:sad}. | So he turned the warning | into a {y:happy song}.",
       "shots": [
         {
-          "img": "06.jpg",
+          "img": "@stone:rules",
           "n": 2,
-          "fx": "zoom_out",
-          "cap_y": 0.24
+          "fx": "zoom_in",
+          "tr": "punch"
         },
         {
           "img": "@stone:song",
           "n": 2,
           "fx": "zoom_in",
-          "tr": "punch",
+          "tr": "whip",
           "sfx": [
             "ding"
           ]
@@ -148,8 +166,14 @@
       "shots": [
         {
           "img": "@stone:song",
-          "n": 4,
-          "fx": "zoom_in"
+          "n": 1,
+          "fx": "zoom_out"
+        },
+        {
+          "img": "02.jpg",
+          "n": 3,
+          "fx": "shake",
+          "tr": "punch"
         }
       ]
     },
@@ -158,11 +182,19 @@
       "shots": [
         {
           "img": "07.jpg",
-          "n": 3,
+          "n": 1,
           "fx": "zoom_in",
           "tr": "whip",
           "cap_y": 0.24,
           "prompt": "A group of cartoon dinosaurs dancing happily in a prehistoric jungle, Baby Bop the green dinosaur and BJ the yellow dinosaur from Barney and Friends cheering in front, a huge flaming asteroid in the sky behind them that nobody notices"
+        },
+        {
+          "img": "12.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "cap_y": 0.24,
+          "prompt": "Baby Bop the green dinosaur with a pink bow and BJ the yellow dinosaur with a red cap from Barney and Friends jumping and cheering excitedly, shouting encore with their arms up, a prehistoric jungle stage with a huge flaming asteroid in the sky behind them"
         }
       ]
     },
@@ -182,10 +214,16 @@
       "say": "And this part is {y:real}: | the T. rex lived | {y:closer} to us | than to the {g:Stegosaurus}.",
       "shots": [
         {
-          "img": "@timeline:trex",
-          "n": 4,
+          "img": "extra_trex.jpg",
+          "n": 2,
           "fx": "zoom_in",
-          "tr": "fade",
+          "tr": "whip"
+        },
+        {
+          "img": "@timeline:trex",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
           "sfx": [
             "impact"
           ]
@@ -203,7 +241,7 @@
           "prompt": "Realistic museum photo of a fossilized prehistoric fish in a slab of rock under a spotlight, with a small handwritten museum label, dark background, vertical 9:16"
         },
         {
-          "img": "06.jpg",
+          "img": "07.jpg",
           "n": 3,
           "fx": "pan_left",
           "tr": "punch",
@@ -230,11 +268,20 @@
         },
         {
           "img": "11.jpg",
-          "n": 2,
+          "n": 1,
           "fx": "zoom_in",
           "tr": "punch",
           "prompt": "Realistic grainy 1992 VHS television still of a kids TV show set with a person in a big purple dinosaur costume surrounded by smiling children sitting on the floor, colorful set, VHS scan lines, date stamp in the corner, vertical 9:16",
           "cap_y": 0.15
+        },
+        {
+          "img": "@tv:1992",
+          "n": 1,
+          "fx": "pop",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ]
         }
       ]
     },
