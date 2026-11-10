@@ -110,7 +110,7 @@ Johnny Bravo from the Cartoon Network show sitting backstage in front of a dress
 ## 13.jpg
 
 ```
-2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage with a microphone stand, a caricature of Beyoncé with long wavy honey-blonde hair in an elegant black gown smiling and gesturing to welcome a caricature of young Taylor Swift with long curly blonde hair, red lipstick and a short sparkly RED dress back to the microphone, the audience giving a standing ovation, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
+2D cartoon illustration in the classic Johnny Bravo Cartoon Network style: on a big awards show stage with a microphone stand, a caricature of Beyoncé with long wavy honey-blonde hair in an elegant black gown smiling and gesturing to welcome a caricature of young Taylor Swift with long curly blonde hair, red lipstick and a long silver sparkly sequin gown back to the microphone, the audience giving a standing ovation, vertical 9:16, 2D cartoon illustration in the classic Johnny Bravo Cartoon Network style, bold black outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 11.jpg
