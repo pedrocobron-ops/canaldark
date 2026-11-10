@@ -32,7 +32,7 @@ Realistic night photo of the Radio City Music Hall marquee in New York City with
 ## 14.jpg
 
 ```
-Realistic photo, cinematic close-up at a live awards show: exactly two hands, both holding the same black wireless handheld microphone in a tug of war. On the left, ONE man's right hand coming out of a black leather jacket sleeve, gripping the bottom of the microphone and pulling it away. On the right, ONE young woman's right hand with red nail polish and a silver sequin sleeve, still holding the top of the microphone, fingers slipping off. No faces visible, only the two arms. Blurred stage lights and audience in the background, shallow depth of field, motion blur on the microphone, vertical 9:16, photorealistic, vertical 9:16
+Realistic photo, cinematic close-up at a live awards show: exactly two hands, both holding the same black wireless handheld microphone in a tug of war. On the left, ONE Black man's right hand with dark brown skin coming out of a black leather jacket sleeve, gripping the bottom of the microphone and pulling it away. On the right, ONE young woman's right hand with red nail polish and a silver sequin sleeve, still holding the top of the microphone, fingers slipping off. No faces visible, only the two arms. Blurred stage lights and audience in the background, shallow depth of field, motion blur on the microphone, vertical 9:16, photorealistic, vertical 9:16
 ```
 
 ## 15.jpg
