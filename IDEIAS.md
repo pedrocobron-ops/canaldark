@@ -17,7 +17,8 @@
 | Why didn't Scooby-Doo stop the Great Molasses Flood of 1919? | A | Scooby-Doo | Inundação de Melaço de Boston | estava lambendo o tanque | ideia |
 | Why didn't Barney warn the dinosaurs about the asteroid? | A | Barney | extinção dos dinossauros | só fala coisa feliz, avisou cantando | em produção (006) |
 | Why didn't Johnny Bravo stop Kanye from interrupting Taylor Swift? | A | Johnny Bravo | VMA 2009 | campeonato de queda de braço com as Rockettes, prêmio: spray de cabelo de viagem | feito (007) |
-| Why didn't Patrick Star stop the Ever Given from blocking the Suez Canal? | A | Patrick | navio encalhado no Canal de Suez (2021) | campeonato de quem fica mais tempo debaixo da pedra, prêmio: cupom de uma bola de sorvete | em produção (008) |
+| Why didn't Patrick Star stop the Ever Given from blocking the Suez Canal? | A | Patrick | navio encalhado no Canal de Suez (2021) | campeonato de quem fica mais tempo debaixo da pedra, prêmio: cupom de uma bola de sorvete | feito (008) |
+| Why didn't Scooby-Doo stop the biggest mistake in Oscars history? | A | Scooby-Doo e Salsicha | envelope trocado no Oscar 2017 | campeonato de cachorro-quente, prêmio: metade do sanduíche do garçom | em produção (009) |
 
 ## Personagens com apelo nos EUA (pesquisa de 10/11/2026)
 

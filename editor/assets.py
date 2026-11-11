@@ -247,6 +247,7 @@ def lock(name, visible=None, struck=0):
 CALS = {
     "sunday": {"month": "APRIL 1912", "num": "14", "day": "SUNDAY", "time": "11:40 PM", "color": (200, 30, 40)},
     "monday": {"month": "APRIL 1912", "num": "15", "day": "MONDAY", "time": "12:00 AM", "color": (200, 30, 40)},
+    "oscars": {"month": "FEBRUARY 2017", "num": "26", "day": "SUNDAY", "time": "9:05 PM", "color": (170, 20, 30)},
     "suez": {"month": "MARCH 2021", "num": "23", "day": "TUESDAY", "time": "7:40 AM", "color": (20, 90, 160)},
     "monday_sink": {"month": "APRIL 1912", "num": "15", "day": "MONDAY", "time": "2:20 AM", "color": (200, 30, 40)},
 }
@@ -825,6 +826,10 @@ BADGES = {
     "johnny": {"photo": "projects/007-johnny-bravo-vmas/images/01.jpg", "crop": [0.28, 0.15, 0.72],
                "event": "VMA 2009", "sub": "MTV VIDEO MUSIC AWARDS", "name": "JOHNNY BRAVO",
                "role": "HEAD OF SECURITY", "id": "SEC-0001", "date": "SEPT 13, 2009 · RADIO CITY"},
+    "scooby": {"photo": "projects/009-scooby-oscars/images/03.jpg", "crop": [0.10, 0.20, 0.55],
+               "event": "OSCARS 2017", "sub": "ENVELOPE SECURITY · BACKSTAGE", "name": "SCOOBY-DOO",
+               "role": "BRIEFCASE GUARD", "id": "SNACK-01", "date": "FEB 26, 2017 · LOS ANGELES",
+               "access": ["ALL", "SNACKS"], "top": (90, 20, 20)},
     "patrick": {"photo": "projects/008-patrick-suez/images/03.jpg", "crop": [0.22, 0.45, 0.78],
                 "event": "SUEZ CANAL", "sub": "SUEZ CANAL AUTHORITY · EGYPT", "name": "PATRICK STAR",
                 "role": "OFFICIAL SHIP GUIDE", "id": "FLAG-0002", "date": "MARCH 2021 · KM 151",
@@ -924,6 +929,7 @@ def badge(name):
 
 
 QUOTES = {
+    "horowitz": {"text": ["\"Moonlight,", "you guys won.", "This is", "not a joke.\""], "who": "Jordan Horowitz · La La Land producer · Feb 26, 2017"},
     "patrick": {"text": ["\"I waved.", "It didn't", "wave back.\""], "who": "Patrick Star · official statement · March 2021"},
     "call": {"text": ["\"Hello, is this", "the ship guide?\""], "who": "Suez Canal Authority · phone call · March 23, 2021"},
     "kanye": {"text": ["\"Yo Taylor, I'm really", "happy for you,", "I'mma let you finish,", "but Beyoncé had one", "of the best videos", "of all time!\""],
@@ -1339,9 +1345,47 @@ def bet(name):
     return bg
 
 
+ENVELOPES = {
+    "actress": {"cat": "Actress in a", "cat2": "Leading Role", "name": "Emma Stone", "film": "\"La La Land\""},
+}
+
+
+def envelope(name):
+    """Envelope vermelho de premiação aberto, com o cartão do vencedor e mancha de mostarda."""
+    c = ENVELOPES[name]
+    bg = Image.new("RGB", (W, H), (25, 20, 22))
+    d = ImageDraw.Draw(bg)
+    x0, y0, x1, y1 = 120, 520, W - 120, 1220
+    d.rounded_rectangle((x0, y0, x1, y1), 16, fill=(170, 20, 35), outline=(120, 10, 20), width=6)
+    d.polygon([(x0, y0 + 8), (W / 2, y0 + 300), (x1, y0 + 8)], fill=(150, 15, 30), outline=(110, 10, 20))
+    cx0, cy0, cx1, cy1 = x0 + 70, 170, x1 - 70, y0 + 330
+    d.rounded_rectangle((cx0 + 10, cy0 + 14, cx1 + 10, cy1 + 14), 10, fill=(10, 8, 8))
+    d.rounded_rectangle((cx0, cy0, cx1, cy1), 10, fill=(250, 246, 236))
+    d.rectangle((cx0 + 24, cy0 + 24, cx1 - 24, cy1 - 24), outline=(200, 160, 60), width=4)
+    d.text((W / 2, cy0 + 120), c["cat"], font=font(FONT_UI_BOLD, 50), fill=(60, 50, 40), anchor="mm")
+    d.text((W / 2, cy0 + 185), c["cat2"], font=font(FONT_UI_BOLD, 50), fill=(60, 50, 40), anchor="mm")
+    d.line((W / 2 - 160, cy0 + 245, W / 2 + 160, cy0 + 245), fill=(200, 160, 60), width=4)
+    d.text((W / 2, cy0 + 345), c["name"], font=font(FONT_CAPTION, 104), fill=(30, 25, 25), anchor="mm")
+    d.text((W / 2, cy0 + 450), c["film"], font=font(FONT_UI_BOLD, 56), fill=(170, 20, 35), anchor="mm")
+    import random
+    rnd = random.Random(9)
+    stain = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(stain)
+    mx, my = cx1 - 170, cy1 - 120
+    for _ in range(14):
+        r = rnd.randint(18, 52)
+        ox, oy = rnd.randint(-70, 70), rnd.randint(-40, 40)
+        sd.ellipse((mx + ox - r, my + oy - r, mx + ox + r, my + oy + r), fill=(225, 175, 20, 170))
+    stain = stain.filter(ImageFilter.GaussianBlur(3))
+    bg.paste(stain, (0, 0), stain)
+    return bg
+
+
 BOARDS = {
     "armwrestle": {"title": "ARM WRESTLING", "sub": "Backstage · Radio City Music Hall",
                    "left": "JOHNNY", "right": "ROCKETTES", "l": "0", "r": "35"},
+    "hotdogs": {"title": "HOT DOG CHALLENGE", "sub": "Backstage catering · Oscars 2017",
+                "left": "SCOOBY", "right": "WAITER", "l": "84", "r": "85"},
     "rock": {"title": "UNDER-A-ROCK", "sub": "Championship 2021 · Bottom of the Suez Canal",
              "left": "DAY", "right": "PLAYERS", "l": "1", "r": "48"},
     "rockfinal": {"title": "TIME UNDER A ROCK", "sub": "Final results · Under-A-Rock Championship 2021",
@@ -1429,6 +1473,8 @@ def make(ref, handles=None):
         return badge(rest)
     if kind == "report":
         return report(rest)
+    if kind == "envelope":
+        return envelope(rest)
     if kind == "call":
         return call(rest)
     if kind == "bet":

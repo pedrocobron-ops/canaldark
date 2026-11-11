@@ -1,0 +1,321 @@
+{
+  "title": "Why didn't Scooby-Doo stop the biggest mistake in Oscars history?",
+  "format": "A",
+  "voice": "am_adam",
+  "speed": 0.95,
+  "music_volume": 0.24,
+  "hook_full": true,
+  "post": "La La Land was announced instead of Moonlight at the 2017 Oscars... so why didn't Scooby-Doo stop it? Would you trade the biggest night in Hollywood for half a sandwich? 👇 #scoobydoo #oscars #lalaland #moonlight #didyouknow #funnyfacts",
+  "style_suffix": "2D cartoon illustration in the classic Scooby-Doo Where Are You Hanna-Barbera style, bold outlines, vibrant colors, vertical 9:16 composition",
+  "wardrobe": {
+    "Scooby-Doo": "brown Great Dane with black spots, blue collar with gold SD tag, small black bow tie (same in every image)",
+    "Shaggy Rogers": "skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie (same in every image)"
+  },
+  "cover": {
+    "img": "19.jpg",
+    "text": "Why didn't {y:Scooby-Doo} stop the {r:Oscars} mistake?",
+    "y": 0.72
+  },
+  "beats": [
+    {
+      "say": "Why didn't {y:Scooby-Doo} | stop the {r:biggest mistake} | in {y:Oscars} history?",
+      "shots": [
+        {
+          "img": "01.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "cap_y": 0.26,
+          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo standing proudly on a red carpet at a glamorous awards show, each holding a silver metal briefcase, golden statues and spotlights behind them"
+        },
+        {
+          "img": "02.jpg",
+          "n": 1,
+          "fx": "zoom_out",
+          "cap_y": 0.3,
+          "prompt": "Realistic wide photo of a huge glamorous awards show stage inside a theater, giant golden statue backdrop, red curtains, audience in tuxedos and gowns seen from behind, dramatic stage lights"
+        }
+      ]
+    },
+    {
+      "say": "It's no {y:secret} | that Scooby and Shaggy | guarded the {y:envelopes} | at the 2017 Oscars.",
+      "shots": [
+        {
+          "img": "@badge:scooby",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "cap_y": 0.8,
+          "bg_img": "01.jpg"
+        },
+        {
+          "img": "03.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "cap_y": 0.24,
+          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo backstage at an awards show, each handcuffed to a silver briefcase, standing at attention like serious security guards, trying to look tough"
+        }
+      ]
+    },
+    {
+      "say": "Every winner | is locked inside | two {y:briefcases}. | Scooby carried one. | Shaggy carried the other.",
+      "shots": [
+        {
+          "img": "04.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "prompt": "Realistic close-up photo of an open silver metal briefcase full of neatly stacked red award envelopes with gold lettering, backstage lighting. A 2D cartoon Scooby-Doo (brown Great Dane with black spots, blue collar) inserted into the real photo, only his brown paw with black spots resting on the edge of the briefcase, vertical 9:16"
+        },
+        {
+          "img": "05.jpg",
+          "n": 3,
+          "fx": "pan_right",
+          "cap_y": 0.24,
+          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo walking side by side backstage, each carrying a silver briefcase, Scooby holding his briefcase handle in his mouth, both very proud"
+        }
+      ]
+    },
+    {
+      "say": "On {y:February 26th, 2017}, | the last award of the night | was {y:Best Picture}.",
+      "shots": [
+        {
+          "img": "@cal:oscars",
+          "n": 1,
+          "fx": "pop",
+          "tr": "whip",
+          "bg_img": "02.jpg",
+          "tilt": 3
+        },
+        {
+          "img": "06.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "prompt": "Realistic photo of a row of shiny golden award statuettes lined up on a table backstage, dramatic lighting. A 2D cartoon Scooby-Doo (brown Great Dane with black spots, blue collar) inserted into the real photo, tiny and hidden as a reflection on one of the golden statues, vertical 9:16"
+        }
+      ]
+    },
+    {
+      "say": "Warren Beatty | opened the envelope, | Faye Dunaway | read it, | and said: | {r:La La Land}.",
+      "shots": [
+        {
+          "img": "07.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "zoom",
+          "prompt": "Realistic close-up photo of an older man's hands in a black tuxedo opening a red award envelope on a stage, stage lights behind, no face visible"
+        },
+        {
+          "img": "08.jpg",
+          "n": 3,
+          "fx": "pop",
+          "tr": "punch",
+          "sfx": [
+            "impact"
+          ],
+          "prompt": "Cartoon crowd of happy movie cast members in tuxedos and gowns jumping and hugging on a big awards stage, golden confetti falling, generic cartoon people, no real celebrities"
+        }
+      ]
+    },
+    {
+      "say": "The cast | celebrated on stage | for over {r:two minutes}.",
+      "shots": [
+        {
+          "img": "09.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "prompt": "Cartoon movie producers in tuxedos giving happy speeches at a microphone on a big awards stage, holding golden statuettes, a clock in the corner showing 2 minutes passing, generic cartoon people"
+        }
+      ]
+    },
+    {
+      "say": "Then a producer | grabbed the mic: | {g:Moonlight}, you won. | {r:This is not a joke}.",
+      "shots": [
+        {
+          "img": "10.jpg",
+          "n": 2,
+          "fx": "shake",
+          "tr": "punch",
+          "sfx": [
+            "alarm"
+          ],
+          "prompt": "Cartoon stage manager in a headset running onto a big awards stage waving a red envelope in panic, everyone on stage frozen in shock, generic cartoon people"
+        },
+        {
+          "img": "@quote:horowitz",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "bg_img": "08.jpg",
+          "bg_dark": 0.65
+        }
+      ]
+    },
+    {
+      "say": "Scooby claims | they saw a {r:ghost} | backstage.",
+      "shots": [
+        {
+          "img": "11.jpg",
+          "n": 3,
+          "fx": "shake",
+          "tr": "whip",
+          "cap_y": 0.24,
+          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo hugging each other in terror in a dark backstage corridor, a spooky white sheet ghost floating behind them, their briefcases dropped on the floor"
+        }
+      ]
+    },
+    {
+      "say": "But many say | {r:that's a lie}.",
+      "shots": [
+        {
+          "img": "12.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "prompt": "Two cartoon ushers in red theater uniforms whispering gossip to each other, one covering her mouth with her hand, both with suspicious side-eye looks, theater hallway background"
+        }
+      ]
+    },
+    {
+      "say": "Security cameras | show their post | completely {r:empty}.",
+      "shots": [
+        {
+          "img": "13.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "zoom",
+          "prompt": "Realistic grainy black and white security camera footage of a backstage hallway, two silver briefcases abandoned on an empty chair, a trail of breadcrumbs and big dog paw prints leading away, timestamp FEB 26 2017 8:52 PM in the corner, scan lines"
+        }
+      ]
+    },
+    {
+      "say": "That night, | the catering team | held a {y:hot dog eating contest}.",
+      "shots": [
+        {
+          "img": "14.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "prompt": "Cartoon backstage catering area at an awards show, a long table piled with hundreds of hot dogs, a banner that says HOT DOG CHALLENGE, chefs and waiters cheering"
+        }
+      ]
+    },
+    {
+      "say": "Scooby and Shaggy | ate {r:84 hot dogs}. | They lost | to a waiter. | Shaggy said: | {p:Zoinks}.",
+      "shots": [
+        {
+          "img": "@board:hotdogs",
+          "n": 2,
+          "anim": "count",
+          "count_to": 85,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "bg_img": "14.jpg",
+          "cap_y": 0.8
+        },
+        {
+          "img": "15.jpg",
+          "n": 2,
+          "fx": "pop",
+          "tr": "punch",
+          "prompt": "A tiny skinny cartoon waiter with a thin mustache and a huge round belly raising both arms in victory next to a tall tower of empty plates, confetti, catering backstage"
+        },
+        {
+          "img": "16.jpg",
+          "n": 2,
+          "fx": "shake",
+          "tr": "punch",
+          "cap_y": 0.24,
+          "prompt": "Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo with a shocked face and his hands on his cheeks, mouth stuffed with hot dog, Scooby-Doo collapsed behind him with a full round belly, empty hot dog plates everywhere"
+        }
+      ]
+    },
+    {
+      "say": "Their prize? | Half of | the waiter's {y:sandwich}.",
+      "shots": [
+        {
+          "img": "17.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ],
+          "prompt": "Realistic photo of half of a sandwich with a big mustard drip, displayed on a red velvet pedestal under a single dramatic spotlight like a precious museum treasure, dark background"
+        }
+      ]
+    },
+    {
+      "say": "Shaggy saved it | for later, | wrapped in the {r:Best Actress} envelope.",
+      "shots": [
+        {
+          "img": "18.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "cap_y": 0.24,
+          "prompt": "Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo carefully wrapping half of a sandwich dripping mustard inside a red award envelope, Scooby-Doo drooling next to him, backstage"
+        }
+      ]
+    },
+    {
+      "say": "So when Beatty | asked for Best Picture, | Scooby handed him | the envelope | that smelled like {y:sandwich}.",
+      "shots": [
+        {
+          "img": "19.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "cap_y": 0.24,
+          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) from Scooby-Doo sniffing a pile of red award envelopes with his big nose, happily picking up the one with a yellow mustard stain in his mouth, smell lines coming from it"
+        },
+        {
+          "img": "20.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "prompt": "Realistic close-up photo of a red award envelope with a yellow mustard stain being handed over on a stage, in the dim light. A 2D cartoon Scooby-Doo (brown Great Dane with black spots, blue collar) inserted into the real photo, only his brown paw holding the envelope, vertical 9:16"
+        }
+      ]
+    },
+    {
+      "say": "And this part is {y:real}: | Beatty was holding | the {r:Best Actress} envelope | for {y:La La Land}.",
+      "shots": [
+        {
+          "img": "@envelope:actress",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "fade",
+          "bg_img": "07.jpg",
+          "tilt": -3
+        },
+        {
+          "img": "21.jpg",
+          "n": 2,
+          "fx": "zoom_out",
+          "prompt": "Realistic photo from the back of a theater audience of a big awards stage in chaos, many people standing on stage confused, stage lights, golden backdrop, no recognizable faces"
+        }
+      ]
+    },
+    {
+      "say": "To this day, | Scooby says | it was a {y:great sandwich}. | {y:Scooby-Dooby-Doo}!",
+      "shots": [
+        {
+          "img": "22.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "cap_y": 0.24,
+          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo sitting backstage happily sharing half of a sandwich, crumbs everywhere, the abandoned silver briefcases behind them"
+        },
+        {
+          "img": "23.jpg",
+          "n": 2,
+          "fx": "pop",
+          "tr": "punch",
+          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) from Scooby-Doo howling happily with his head up and eyes closed, a speech bubble that says SCOOBY-DOOBY-DOO!, golden confetti, awards show stage behind him"
+        }
+      ]
+    }
+  ],
+  "outro": {}
+}
