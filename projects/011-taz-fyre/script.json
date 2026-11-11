@@ -23,9 +23,11 @@
           "img": "01.jpg",
           "n": 2,
           "fit": "contain",
-          "cap_y": 0.56,
+          "cap_y": 0.2,
           "fx": "zoom_in",
-          "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes) standing with a proud toothy grin, drooling a little, full body, plain pure white background"
+          "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes) standing with a proud toothy grin, drooling a little, full body, plain pure white background",
+          "scale": 0.8,
+          "shift_y": 230
         },
         {
           "img": "02.jpg",
@@ -70,17 +72,8 @@
       ]
     },
     {
-      "say": "In {y:April 2017}, | guests paid up to | {r:12,000 dollars} per package | for a private island | in the {b:Bahamas}.",
+      "say": "Guests paid up to | {r:12,000 dollars} per package | for a private island | in the {b:Bahamas}.",
       "shots": [
-        {
-          "img": "@cal:fyre",
-          "n": 1,
-          "fx": "pop",
-          "tr": "whip",
-          "bg_img": "05.jpg",
-          "tilt": 3,
-          "cap_y": 0.74
-        },
         {
           "img": "@ticket:fyre",
           "n": 2,
@@ -224,7 +217,7 @@
       ]
     },
     {
-      "say": "And this part is {y:real}: | a photo of that sandwich | went {r:viral} | around the world.",
+      "say": "And this part {y:really happened}: | a photo of that sandwich | went {r:viral} | around the world.",
       "shots": [
         {
           "img": "extra_sandwich2.jpg",
@@ -243,11 +236,11 @@
       ]
     },
     {
-      "say": "The festival | was {r:canceled}. | Guests were stuck | on the island. | The organizer, {y:Billy McFarland}, | got {r:6 years} in prison.",
+      "say": "The festival | was {r:canceled}. | {y:Billy McFarland} | got {r:6 years} in prison. | Taz testified. | {r:Nobody understood a word}.",
       "shots": [
         {
           "img": "15.jpg",
-          "n": 4,
+          "n": 2,
           "fx": "zoom_in",
           "tr": "whip",
           "prompt": "Realistic photo of an abandoned festival site on a tropical beach at dusk, shredded tents, a fallen FYRE banner with big bite marks lying in the sand, empty and quiet"
@@ -258,6 +251,16 @@
           "fx": "zoom_in",
           "tr": "punch",
           "prompt": "Realistic close-up photo of a wooden judge's gavel on a courtroom bench, dramatic light, the gavel handle has a small bite taken out of it. A 2D cartoon Taz the Tasmanian Devil from Looney Tunes (brown furry devil) inserted into the real photo, tiny and hidden as a reflection on the shiny brass part of the gavel, vertical 9:16"
+        },
+        {
+          "img": "22.jpg",
+          "n": 2,
+          "fx": "shake",
+          "tr": "whip",
+          "sfx": [
+            "impact"
+          ],
+          "cap_y": 0.6
         }
       ]
     },
@@ -304,11 +307,11 @@
       "say": "Which translates to: | why didn't {y:you} | {r:stop it}?",
       "shots": [
         {
-          "img": "extra_blrr2.jpg",
+          "img": "21.jpg",
           "n": 3,
-          "fx": "pop",
+          "fx": "zoom_in",
           "tr": "punch",
-          "cap_y": 0.6
+          "cap_y": 0.36
         }
       ]
     }

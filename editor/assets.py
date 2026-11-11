@@ -947,7 +947,7 @@ def badge(name):
 
 
 QUOTES = {
-    "taz": {"text": ["\"Blrrbl grrr", "wubba wubba", "rrraaah!\""], "who": "Taz · official statement · April 2017 · (translation below)"},
+    "taz": {"text": ["\"RRRGH", "BLBLBLBL", "PTHBBBT!\""], "who": "Taz · official statement · April 2017 · (translation below)"},
     "apollo": {"text": ["\"Okay, Houston,", "we've had", "a problem here.\""], "who": "Apollo 13 · April 13, 1970 · 55 hours into the mission"},
     "horowitz": {"text": ["\"Moonlight,", "you guys won.", "This is", "not a joke.\""], "who": "Jordan Horowitz · La La Land producer · Feb 26, 2017"},
     "patrick": {"text": ["\"I waved.", "It didn't", "wave back.\""], "who": "Patrick Star · official statement · March 2021"},
