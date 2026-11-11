@@ -469,6 +469,10 @@ def tipscreen(name, bg=None):
 
 
 RECEIPTS = {
+    "fyre": [("FYRE CATERING", "big"), ("ORDER #0001 · VIP", "bold"), ("", ""),
+             ("Lobster:", "300"), ("Sushi:", "1,200 pcs"), ("Champagne:", "400"),
+             ("Eaten by:", "TAZ"), ("Time:", "4 seconds"), ("", ""),
+             ("LEFT FOR GUESTS", "1 sandwich")],
     "spongebob": [("KRUSTY KRAB", "big"), ("EMPLOYEE TIP REPORT", "bold"), ("", ""),
                   ("Employee:", "SpongeBob S."), ("Since:", "1999"), ("Shifts:", "9,862"),
                   ("Guests tipped:", "$48,912.40"), ("Mr. Krabs kept:", "$48,911.78"), ("", ""),
@@ -942,7 +946,7 @@ def badge(name):
 
 
 QUOTES = {
-    "shrek": {"text": ["\"Ogres are", "like onions.", "They have layers.\""], "who": "Shrek · official statement · April 2017"},
+    "taz": {"text": ["\"Blrrbl grrr", "wubba wubba", "rrraaah!\""], "who": "Taz · official statement · April 2017 · (translation below)"},
     "apollo": {"text": ["\"Okay, Houston,", "we've had", "a problem here.\""], "who": "Apollo 13 · April 13, 1970 · 55 hours into the mission"},
     "horowitz": {"text": ["\"Moonlight,", "you guys won.", "This is", "not a joke.\""], "who": "Jordan Horowitz · La La Land producer · Feb 26, 2017"},
     "patrick": {"text": ["\"I waved.", "It didn't", "wave back.\""], "who": "Patrick Star · official statement · March 2021"},
@@ -1466,7 +1470,7 @@ def ticket(name):
 
 
 NAMETAGS = {
-    "shrek": {"name": "SHREK", "role": "Luxury Villas Manager", "note": "ask me about layers", "color": (230, 40, 40)},
+    "taz": {"name": "TAZ", "role": "Luxury Villas Manager", "note": "do not feed", "color": (230, 40, 40)},
 }
 
 

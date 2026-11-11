@@ -40,4 +40,4 @@ Fonte principal: YouGov, 2018 (Bugs Bunny 11%, Tom e Jerry 6%, Scooby-Doo 5%; Sp
 
 Evitar: Simpsons, Family Guy e Futurama (hoje são da Disney), Pokémon (Nintendo), Bluey (distribuição Disney fora da Austrália).
 | Why didn't Bugs Bunny stop the Apollo 13 explosion? | A | Pernalonga | explosão do tanque de oxigênio da Apollo 13 (1970) | campeonato de comer cenoura contra o Hortelino, prêmio: caneca da NASA de 2º lugar | feito (010) |
-| Why didn't Shrek stop the Fyre Festival disaster? | A | Shrek | Fyre Festival (2017) | concurso de descascar cebola, prêmio: o famoso sanduíche de queijo | em produção (011) |
+| Why didn't Taz stop the Fyre Festival disaster? | A | Taz | Fyre Festival (2017) | comeu toda a comida gourmet, sobrou o sanduíche de queijo (bônus do mês) | em produção (011) (Shrek descartado: Gemini não gera) |
