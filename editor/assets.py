@@ -517,6 +517,7 @@ def receipt(name):
 
 
 STATS = {
+    "fyreviral": {"num": "MILLIONS", "text": ["of shares of one photo", "of a cheese sandwich"], "src": "Twitter · April 28, 2017"},
     "fyre250k": {"num": "$250K", "text": ["for ONE Instagram post", "promoting the festival"], "src": "Fyre Festival, 2017"},
     "dropped": {"num": "1968", "text": ["Oxygen tank No. 2 was", "dropped 2 inches at the factory,", "18 months before launch"],
                 "src": "Source: Apollo 13 Review Board, NASA, 1970"},
@@ -1437,7 +1438,7 @@ def thermo(name):
 
 TICKETS = {
     "fyre": {"title": "FYRE FESTIVAL", "sub": "Great Exuma · Bahamas · 2017", "tier": "LUXURY VILLA PACKAGE",
-             "price": "$12,000", "perks": ["Private island", "Gourmet meals", "Luxury villa"]},
+             "price": "$12,000", "perks": ["Private island", "Gourmet meals", "Villa managed by Taz"]},
 }
 
 

@@ -5,7 +5,7 @@
   "speed": 0.95,
   "music_volume": 0.24,
   "hook_full": true,
-  "post": "The Fyre Festival promised luxury villas... and served a cheese sandwich. So why didn't Taz stop it? Would you pay $12,000 for this? 👇 #taz #looneytunes #fyrefestival #cheesesandwich #didyouknow #memes",
+  "post": "The Fyre Festival promised luxury villas... and served a cheese sandwich. So why didn't Taz stop it? Would you pay $12,000 for this? 👇 #taz #looneytunes #fyrefestival #cheesesandwich #didyouknow #netflix",
   "style_suffix": "2D cartoon illustration in the classic Looney Tunes Warner Bros style, bold outlines, vibrant colors, vertical 9:16 composition",
   "wardrobe": {
     "Taz": "brown furry Tasmanian Devil, beige face and belly, tiny orange FYRE staff lanyard (same in every image after the opening)"
@@ -51,7 +51,7 @@
           "img": "03.jpg",
           "n": 2,
           "fx": "zoom_in",
-          "cap_y": 0.8,
+          "cap_y": 0.72,
           "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) standing proudly on a tropical beach in front of a fancy sign that says LUXURY VILLAS, chewing on the corner of the sign"
         }
       ]
@@ -64,13 +64,13 @@
           "n": 3,
           "fx": "shake",
           "tr": "whip",
-          "cap_y": 0.8,
+          "cap_y": 0.72,
           "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes) at a job interview sitting on an office chair, chewing a big bite out of the interviewer's desk, the terrified cartoon interviewer handing him a contract with a shaking hand"
         }
       ]
     },
     {
-      "say": "In {y:April 2017}, | guests paid up to | {r:12,000 dollars} per ticket | for a private island | in the {b:Bahamas}.",
+      "say": "In {y:April 2017}, | guests paid up to | {r:12,000 dollars} per package | for a private island | in the {b:Bahamas}.",
       "shots": [
         {
           "img": "@cal:fyre",
@@ -106,7 +106,7 @@
           "n": 3,
           "fx": "zoom_in",
           "tr": "whip",
-          "cap_y": 0.2,
+          "cap_y": 0.62,
           "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) welcoming shocked rich festival guests with luggage at a tiny island airport, holding a hand-painted cardboard sign that says WELCOME TO LUXURY with a big bite taken out of it, drool on the sign"
         },
         {
@@ -114,7 +114,10 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "punch",
-          "prompt": "Realistic photo of a tiny island airport arrivals area with confused rich tourists and luggage, overcast sky. A 2D cartoon Taz the Tasmanian Devil from Looney Tunes (brown furry devil) inserted into the real photo, hidden behind a luggage cart, only his wild eyes and a chewed cardboard sign visible, vertical 9:16"
+          "prompt": "Realistic photo of a tiny island airport arrivals area with confused rich tourists and luggage, overcast sky. A 2D cartoon Taz the Tasmanian Devil from Looney Tunes (brown furry devil) inserted into the real photo, hidden behind a luggage cart, only his wild eyes and a chewed cardboard sign visible, vertical 9:16",
+          "fit": "cover",
+          "shift_x": 0,
+          "mirror": true
         }
       ]
     },
@@ -150,7 +153,7 @@
           "n": 3,
           "fx": "zoom_in",
           "tr": "whip",
-          "cap_y": 0.8,
+          "cap_y": 0.72,
           "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) standing with an innocent angelic face and a fake halo, surrounded by shredded tents, scraps of tent fabric hanging from his teeth"
         }
       ]
@@ -187,7 +190,7 @@
           "n": 2,
           "fx": "shake",
           "tr": "punch",
-          "cap_y": 0.8,
+          "cap_y": 0.72,
           "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) spinning like a tornado through a fancy catering buffet, lobsters, sushi and champagne bottles flying into his huge open mouth, chefs running away"
         },
         {
@@ -218,7 +221,7 @@
           "n": 2,
           "fx": "pop",
           "tr": "punch",
-          "cap_y": 0.8,
+          "cap_y": 0.72,
           "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) spitting out a bite of a plain cheese sandwich with a disgusted face, tongue out, eyes crossed, holding the styrofoam box"
         }
       ]
@@ -234,7 +237,7 @@
           "prompt": "Realistic photo of a smartphone held by a hand showing a social media post of a sad cheese sandwich in a styrofoam box, with huge numbers of likes and shares, a beach in the background, no face visible"
         },
         {
-          "img": "@stat:fyre250k",
+          "img": "@stat:fyreviral",
           "n": 2,
           "fx": "pop",
           "tr": "punch",
@@ -244,7 +247,7 @@
       ]
     },
     {
-      "say": "The festival | was {r:canceled}. | Guests were stuck | on the island. | The organizer | went to {r:prison}.",
+      "say": "The festival | was {r:canceled}. | Guests were stuck | on the island. | The organizer, {y:Billy McFarland}, | got {r:6 years} in prison.",
       "shots": [
         {
           "img": "15.jpg",
@@ -270,35 +273,48 @@
           "n": 4,
           "fx": "zoom_in",
           "tr": "whip",
-          "cap_y": 0.8,
+          "cap_y": 0.72,
           "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) receiving the half-eaten cheese sandwich in a styrofoam box on a silver tray as an EMPLOYEE BONUS from a cartoon manager in a suit, Taz looking at it with disgust, a small banner that says THANK YOU TAZ"
         }
       ]
     },
     {
-      "say": "And when reporters ask | why Taz | didn't stop | the Fyre Festival, | he just says:",
+      "say": "And when reporters ask | why Taz | didn't stop | the Fyre Festival, | he just says: | {r:Blrrblrrbl}.",
       "shots": [
         {
           "img": "18.jpg",
           "n": 3,
           "fx": "zoom_in",
           "tr": "whip",
-          "cap_y": 0.8,
+          "cap_y": 0.72,
           "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) surrounded by a crowd of cartoon reporters pushing microphones and cameras at his face on a beach, camera flashes"
         },
         {
           "img": "19.jpg",
-          "n": 2,
+          "n": 3,
           "fx": "shake",
           "tr": "punch",
           "sfx": [
             "impact"
           ],
-          "cap_y": 0.8,
+          "cap_y": 0.72,
           "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) spinning into a wild brown tornado and blasting away through the crowd of reporters, microphones and notepads flying, a big speech bubble that says BLRRBLRRBL!"
+        }
+      ]
+    },
+    {
+      "say": "Which translates to: | why didn't {y:you} | {r:stop it}?",
+      "shots": [
+        {
+          "img": "extra_blrr2.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "cap_y": 0.6
         }
       ]
     }
   ],
-  "outro": {}
+  "outro": {},
+  "cap_y": 0.6
 }
