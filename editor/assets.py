@@ -323,6 +323,59 @@ def facebook(name):
     return bg
 
 
+TWEETS = {
+    "fyre": {"name": "festival guest", "handle": "@fyre_guest_2017", "when": "8:04 AM · Apr 27, 2017",
+             "text": "the dinner they promised us at the luxury festival", "photo": "projects/011-taz-fyre/images/extra_sandwich2.jpg",
+             "stats": [("💬", "14K"), ("🔁", "120K"), ("❤️", "200K")]},
+}
+
+
+def tweet(name):
+    """Post de rede social (estilo escuro) com foto anexada."""
+    t = TWEETS[name]
+    bg = Image.new("RGB", (W, H), (0, 0, 0))
+    d = ImageDraw.Draw(bg)
+    x0 = 60
+    y = 450
+    d.ellipse((x0, y, x0 + 120, y + 120), fill=(120, 120, 130))
+    d.text((x0 + 60, y + 60), "?", font=font(FONT_UI_BOLD, 64), fill="white", anchor="mm")
+    d.text((x0 + 150, y + 35), t["name"], font=font(FONT_UI_BOLD, 50), fill="white", anchor="lm")
+    d.text((x0 + 150, y + 92), t["handle"], font=font(FONT_UI, 40), fill=(113, 118, 123), anchor="lm")
+    y += 170
+    tf = font(FONT_UI, 56)
+    line, lines = "", []
+    for w_ in t["text"].split():
+        if d.textlength(line + " " + w_, font=tf) > W - 2 * x0:
+            lines.append(line); line = w_
+        else:
+            line = (line + " " + w_).strip()
+    lines.append(line)
+    for ln in lines:
+        d.text((x0, y), ln, font=tf, fill="white"); y += 72
+    y += 30
+    ph = Image.open(t["photo"]).convert("RGB")
+    pw, phh = W - 2 * x0, 640
+    r = max(pw / ph.width, phh / ph.height)
+    ph = ph.resize((int(ph.width * r), int(ph.height * r)))
+    ph = ph.crop(((ph.width - pw) // 2, (ph.height - phh) // 2, (ph.width - pw) // 2 + pw, (ph.height - phh) // 2 + phh))
+    m = Image.new("L", (pw, phh), 0)
+    ImageDraw.Draw(m).rounded_rectangle((0, 0, pw, phh), 36, fill=255)
+    bg.paste(ph, (x0, y), m)
+    d.rounded_rectangle((x0, y, x0 + pw, y + phh), 36, outline=(47, 51, 54), width=3)
+    y += phh + 40
+    d.text((x0, y), t["when"], font=font(FONT_UI, 40), fill=(113, 118, 123))
+    y += 80
+    d.line((x0, y, W - x0, y), fill=(47, 51, 54), width=3)
+    y += 40
+    cx = x0
+    for ic, val in t["stats"]:
+        e = emoji(ic, 54)
+        bg.paste(e, (cx, y), e)
+        d.text((cx + 70, y + 27), val, font=font(FONT_UI_BOLD, 46), fill=(231, 233, 234), anchor="lm")
+        cx += 300
+    return bg
+
+
 TIPS = {
     "classic": {
         "bezel": (22, 22, 24), "merchant": "Self-Checkout  ·  no staff on duty",
@@ -1644,6 +1697,8 @@ def make(ref, handles=None):
         return receipt(rest)
     if kind == "cal":
         return calendar(rest)
+    if kind == "tweet":
+        return tweet(rest)
     if kind == "fb":
         return facebook(rest)
     if kind == "phone":

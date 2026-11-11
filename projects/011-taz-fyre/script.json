@@ -72,7 +72,7 @@
       ]
     },
     {
-      "say": "Guests paid up to | {r:12,000 dollars} per package | for a private island | in the {b:Bahamas}.",
+      "say": "Guests paid | {r:12,000 dollars} per package | for a private island | in the {b:Bahamas}.",
       "shots": [
         {
           "img": "@ticket:fyre",
@@ -95,19 +95,22 @@
       "say": "Taz welcomed them | at the airport | with a sign. | He had already eaten | {r:half of it}.",
       "shots": [
         {
-          "img": "extra_guests2.jpg",
-          "n": 2,
-          "fx": "zoom_in",
-          "tr": "whip",
-          "cap_y": 0.6
-        },
-        {
           "img": "06.jpg",
           "n": 3,
           "fx": "zoom_in",
-          "tr": "punch",
+          "tr": "whip",
           "cap_y": 0.62,
           "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) welcoming shocked rich festival guests with luggage at a tiny island airport, holding a hand-painted cardboard sign that says WELCOME TO LUXURY with a big bite taken out of it, drool on the sign"
+        },
+        {
+          "img": "06b.jpg",
+          "n": 2,
+          "fx": "shake",
+          "tr": "punch",
+          "sfx": [
+            "impact"
+          ],
+          "cap_y": 0.77
         }
       ]
     },
@@ -173,7 +176,7 @@
       ]
     },
     {
-      "say": "And the {y:gourmet food}? | Taz ate | all of it.",
+      "say": "And the {y:gourmet food}? | Taz ate | all of it. | In {r:4 seconds}.",
       "shots": [
         {
           "img": "11.jpg",
@@ -185,7 +188,7 @@
         },
         {
           "img": "@receipt:fyre",
-          "n": 2,
+          "n": 3,
           "fx": "pop",
           "tr": "punch",
           "bg_img": "11.jpg",
@@ -220,10 +223,11 @@
       "say": "And this part {y:really happened}: | a photo of that sandwich | went {r:viral} | around the world.",
       "shots": [
         {
-          "img": "extra_sandwich2.jpg",
+          "img": "@tweet:fyre",
           "n": 2,
-          "fx": "zoom_in",
-          "tr": "fade"
+          "fx": "pop",
+          "tr": "fade",
+          "cap_y": 0.17
         },
         {
           "img": "@stat:fyreviral",
@@ -236,7 +240,7 @@
       ]
     },
     {
-      "say": "The festival | was {r:canceled}. | {y:Billy McFarland} | got {r:6 years} in prison. | Taz testified. | {r:Nobody understood a word}.",
+      "say": "The festival | was {r:canceled}. | {y:Billy McFarland} | got {r:6 years} in prison. | Taz testified. | {r:The translator quit}.",
       "shots": [
         {
           "img": "15.jpg",
