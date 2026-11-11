@@ -2,7 +2,7 @@
   "title": "Why didn't Scooby-Doo stop La La Land from winning the wrong Oscar?",
   "format": "A",
   "voice": "am_adam",
-  "speed": 0.95,
+  "speed": 0.98,
   "music_volume": 0.24,
   "hook_full": true,
   "post": "La La Land was announced instead of Moonlight at the 2017 Oscars... so why didn't Scooby-Doo stop it? Would you trade the biggest night in Hollywood for half a sandwich? 👇 #scoobydoo #oscars #lalaland #moonlight #didyouknow #oscars2017",
@@ -14,7 +14,8 @@
   "cover": {
     "img": "23.jpg",
     "text": "Why didn't {y:Scooby-Doo} stop the {r:Oscars} mix-up?",
-    "y": 0.72
+    "y": 0.72,
+    "dy": 0.07
   },
   "beats": [
     {
@@ -58,7 +59,7 @@
       ]
     },
     {
-      "say": "Every winner | is locked inside | two {y:briefcases}. | Scooby carried one. | Shaggy carried the other.",
+      "say": "Every winner | is locked inside | two {y:briefcases}.",
       "shots": [
         {
           "img": "04.jpg",
@@ -69,7 +70,7 @@
         },
         {
           "img": "05.jpg",
-          "n": 3,
+          "n": 1,
           "fx": "pan_right",
           "cap_y": 0.24,
           "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo walking side by side backstage, each carrying a silver briefcase, Scooby holding his briefcase handle in his mouth, both very proud"
@@ -119,10 +120,10 @@
       ]
     },
     {
-      "say": "The cast | celebrated on stage | for over {r:two minutes}.",
+      "say": "{y:La La Land's} team | celebrated on stage | for over {r:two minutes}.",
       "shots": [
         {
-          "img": "extra_09b.jpg",
+          "img": "26.jpg",
           "n": 3,
           "fx": "zoom_in",
           "tr": "whip",
@@ -131,7 +132,7 @@
       ]
     },
     {
-      "say": "Then {y:La La Land's own} producer | grabbed the mic: | {g:Moonlight}, you won. | {r:This is not a joke}.",
+      "say": "Then {y:La La Land's own} producer | grabbed the mic: | {g:Moonlight}, you guys won. | {r:This is not a joke}.",
       "shots": [
         {
           "img": "10.jpg",
@@ -233,6 +234,21 @@
       ]
     },
     {
+      "say": "And the ghost? | It was the {r:waiter} | in a tablecloth.",
+      "shots": [
+        {
+          "img": "27.jpg",
+          "n": 3,
+          "fx": "pop",
+          "tr": "punch",
+          "sfx": [
+            "impact"
+          ],
+          "cap_y": 0.2
+        }
+      ]
+    },
+    {
       "say": "Their prize? | Half of | the waiter's {y:sandwich}.",
       "shots": [
         {
@@ -263,7 +279,8 @@
           "fx": "zoom_in",
           "tr": "whip",
           "cap_y": 0.72,
-          "prompt": "Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo carefully wrapping half of a sandwich dripping mustard inside a red award envelope taken from an open silver briefcase, Scooby-Doo drooling next to him, backstage"
+          "prompt": "Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo carefully wrapping half of a sandwich dripping mustard inside a red award envelope taken from an open silver briefcase, Scooby-Doo drooling next to him, backstage",
+          "mirror": true
         },
         {
           "img": "extra_18b.jpg",
@@ -275,7 +292,7 @@
       ]
     },
     {
-      "say": "So when Beatty | asked for Best Picture, | Scooby handed him | the envelope | that smelled like {y:sandwich}.",
+      "say": "They made it back | just in time. | When Beatty asked for Best Picture, | Scooby picked the envelope | that smelled {y:the best}.",
       "shots": [
         {
           "img": "19.jpg",
