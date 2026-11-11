@@ -1,0 +1,328 @@
+{
+  "title": "Why didn't Shrek stop the Fyre Festival disaster in 2017?",
+  "format": "A",
+  "voice": "am_adam",
+  "speed": 0.95,
+  "music_volume": 0.24,
+  "hook_full": true,
+  "post": "The Fyre Festival promised luxury villas... and served a cheese sandwich. So why didn't Shrek stop it? Would you pay $12,000 for this? 👇 #shrek #fyrefestival #cheesesandwich #dreamworks #didyouknow #memes",
+  "style_suffix": "vertical 9:16 composition",
+  "wardrobe": {
+    "Shrek": "big green ogre, trumpet-shaped ears, beige tunic shirt, brown leather vest, brown belt (same in every image)",
+    "Donkey": "grey donkey, big teeth"
+  },
+  "cover": {
+    "img": "19.jpg",
+    "text": "Why didn't {y:Shrek} stop the {r:Fyre Festival}?",
+    "y": 0.72
+  },
+  "beats": [
+    {
+      "say": "Why didn't {y:Shrek} | stop the {r:Fyre Festival} | disaster | in 2017?",
+      "shots": [
+        {
+          "img": "01.jpg",
+          "n": 2,
+          "fit": "contain",
+          "cap_y": 0.56,
+          "fx": "zoom_in",
+          "prompt": "3D animated movie still in the style of the DreamWorks Shrek films, Shrek from the DreamWorks movie Shrek (big green ogre, trumpet-shaped ears, beige tunic shirt, brown leather vest, brown belt) standing proudly with his arms crossed, confident grin, full body, plain pure white background"
+        },
+        {
+          "img": "02.jpg",
+          "n": 2,
+          "fx": "zoom_out",
+          "cap_y": 0.3,
+          "prompt": "Realistic aerial drone photo of a tropical beach in the Bahamas covered with rows of white disaster relief tents, turquoise water, chaotic piles of luggage, overcast sky"
+        }
+      ]
+    },
+    {
+      "say": "It's no {y:secret} | that Shrek was in charge | of the {y:luxury villas} | at the Fyre Festival.",
+      "shots": [
+        {
+          "img": "@nametag:shrek",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "cap_y": 0.74,
+          "bg_img": "02.jpg",
+          "tilt": 0
+        },
+        {
+          "img": "03.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "cap_y": 0.24,
+          "prompt": "3D animated movie still in the style of the DreamWorks Shrek films, Shrek from the DreamWorks movie Shrek (big green ogre, trumpet-shaped ears, beige tunic shirt, brown leather vest, brown belt) wearing a staff lanyard and holding a clipboard, standing proudly on a tropical beach in front of a sign that says LUXURY VILLAS with an arrow"
+        }
+      ]
+    },
+    {
+      "say": "After all, | he had lived | in a {g:swamp} | his whole life. | He knew {y:luxury}.",
+      "shots": [
+        {
+          "img": "04.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "cap_y": 0.24,
+          "prompt": "3D animated movie still in the style of the DreamWorks Shrek films, Shrek from the DreamWorks movie Shrek (big green ogre, trumpet-shaped ears, beige tunic shirt, brown leather vest, brown belt) relaxing happily in a muddy swamp pond like a hot tub, wearing sunglasses, holding a coconut drink, his wooden outhouse with a KEEP OUT sign behind him"
+        },
+        {
+          "img": "@ticket:fyre",
+          "n": 2,
+          "fx": "pop",
+          "tr": "punch",
+          "bg_img": "02.jpg",
+          "tilt": -3,
+          "cap_y": 0.74
+        }
+      ]
+    },
+    {
+      "say": "In {y:April 2017}, | guests paid up to | {r:12,000 dollars} | for a private island | in the {b:Bahamas}.",
+      "shots": [
+        {
+          "img": "@cal:fyre",
+          "n": 1,
+          "fx": "pop",
+          "tr": "whip",
+          "bg_img": "05.jpg",
+          "tilt": 3,
+          "cap_y": 0.74
+        },
+        {
+          "img": "05.jpg",
+          "n": 2,
+          "fx": "pan_right",
+          "prompt": "Realistic glossy luxury promo photo of a turquoise private island in the Bahamas with white sand, yachts and models on the beach at sunset, orange tile pattern overlay, influencer advertising style"
+        },
+        {
+          "img": "06.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "cap_y": 0.24,
+          "prompt": "Realistic photo of rich young festival guests in designer clothes arriving with luggage at a beach, looking shocked and confused, holding phones, overcast sky"
+        }
+      ]
+    },
+    {
+      "say": "They found | {r:disaster relief tents} | in the rain.",
+      "shots": [
+        {
+          "img": "07.jpg",
+          "n": 3,
+          "fx": "shake",
+          "tr": "punch",
+          "sfx": [
+            "impact"
+          ],
+          "prompt": "Realistic photo of rows of soaked white disaster relief tents on a muddy beach in the rain, wet mattresses piled outside, festival guests in fancy clothes standing in the mud"
+        }
+      ]
+    },
+    {
+      "say": "Shrek claims | ogres are like {y:onions}. | He thought guests | would love {r:layers} | of tents.",
+      "shots": [
+        {
+          "img": "@quote:shrek",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "bg_img": "07.jpg",
+          "bg_dark": 0.65,
+          "cap_y": 0.74
+        },
+        {
+          "img": "08.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "cap_y": 0.24,
+          "prompt": "3D animated movie still in the style of the DreamWorks Shrek films, Shrek from the DreamWorks movie Shrek (big green ogre, trumpet-shaped ears, beige tunic shirt, brown leather vest, brown belt) proudly presenting a ridiculous tower of white tents stacked on top of each other like the layers of an onion, on a tropical beach, guests looking horrified"
+        }
+      ]
+    },
+    {
+      "say": "But many say | {r:that's a lie}.",
+      "shots": [
+        {
+          "img": "09.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "prompt": "3D animated movie still in the style of the DreamWorks Shrek films, two cartoon festival staff members in orange FYRE t-shirts whispering gossip to each other with suspicious side-eye looks, tropical beach and tents behind them, generic characters"
+        }
+      ]
+    },
+    {
+      "say": "Witnesses say | he spent the whole week | in the {y:catering tent}.",
+      "shots": [
+        {
+          "img": "10.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "zoom",
+          "prompt": "Realistic photo of a messy festival catering tent on a beach with folding tables, styrofoam boxes and crates of onions. A 2D cartoon Shrek (big green ogre, trumpet-shaped ears, beige tunic, brown vest) inserted into the real photo, hidden behind a tall stack of onion crates, only his green trumpet-shaped ears sticking out, vertical 9:16"
+        }
+      ]
+    },
+    {
+      "say": "That week, | the cooks held | an {y:onion-peeling contest}.",
+      "shots": [
+        {
+          "img": "11.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "prompt": "3D animated movie still in the style of the DreamWorks Shrek films, inside a beach catering tent, a long table covered with mountains of onions, a hand-painted banner that says ONION PEELING CONTEST, festival cooks cheering"
+        }
+      ]
+    },
+    {
+      "say": "Shrek peeled | {r:two onions}. | Then he cried so much | he couldn't see. | {y:Donkey} won.",
+      "shots": [
+        {
+          "img": "12.jpg",
+          "n": 2,
+          "fx": "shake",
+          "cap_y": 0.24,
+          "prompt": "3D animated movie still in the style of the DreamWorks Shrek films, Shrek from the DreamWorks movie Shrek (big green ogre, trumpet-shaped ears, beige tunic shirt, brown leather vest, brown belt) crying a waterfall of tears while peeling an onion, eyes squeezed shut, tears flooding the table, cooks holding umbrellas"
+        },
+        {
+          "img": "@board:onions",
+          "n": 1,
+          "fx": "pop",
+          "tr": "punch",
+          "bg_img": "11.jpg",
+          "cap_y": 0.74
+        },
+        {
+          "img": "13.jpg",
+          "n": 2,
+          "fx": "pop",
+          "tr": "punch",
+          "sfx": [
+            "impact"
+          ],
+          "prompt": "3D animated movie still in the style of the DreamWorks Shrek films, Donkey from the DreamWorks movie Shrek (grey talking donkey, big teeth, huge smile) celebrating wildly on top of a mountain of perfectly peeled onions, holding a tiny trophy, confetti"
+        }
+      ]
+    },
+    {
+      "say": "Shrek's prize | for second place? | The {y:last cheese sandwich} | on the island.",
+      "shots": [
+        {
+          "img": "14.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ],
+          "prompt": "Realistic close-up photo of an open white styrofoam takeout box containing two slices of plain white bread with two slices of American cheese and a small side salad, on a table, harsh daylight"
+        },
+        {
+          "img": "21.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "cap_y": 0.24,
+          "prompt": "3D animated movie still in the style of the DreamWorks Shrek films, Donkey from the DreamWorks movie Shrek (grey talking donkey, big teeth, huge smile) proudly handing a small styrofoam takeout box to Shrek from the DreamWorks movie Shrek (big green ogre, trumpet-shaped ears, beige tunic shirt, brown leather vest, brown belt), who looks down at it deeply disappointed, beach catering tent background"
+        }
+      ]
+    },
+    {
+      "say": "He took a photo | to show {y:Donkey}, | because nobody | would believe it.",
+      "shots": [
+        {
+          "img": "15.jpg",
+          "n": 4,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "cap_y": 0.24,
+          "prompt": "3D animated movie still in the style of the DreamWorks Shrek films, Shrek from the DreamWorks movie Shrek (big green ogre, trumpet-shaped ears, beige tunic shirt, brown leather vest, brown belt) proudly taking a photo of a sad cheese sandwich in a styrofoam box with an old smartphone, tongue out with concentration, beach tent background"
+        }
+      ]
+    },
+    {
+      "say": "And this part is {y:real}: | a photo of that exact sandwich | went {r:viral} | around the world.",
+      "shots": [
+        {
+          "img": "16.jpg",
+          "n": 2,
+          "fx": "zoom_out",
+          "tr": "fade",
+          "prompt": "Realistic photo of a smartphone held by a hand showing a social media post of a sad cheese sandwich in a styrofoam box, with huge numbers of likes and shares, a beach in the background, no face visible"
+        },
+        {
+          "img": "@stat:fyre250k",
+          "n": 2,
+          "fx": "pop",
+          "tr": "punch",
+          "bg_img": "05.jpg",
+          "cap_y": 0.74
+        }
+      ]
+    },
+    {
+      "say": "The festival | was {r:canceled}. | The organizer | went to {r:prison}.",
+      "shots": [
+        {
+          "img": "17.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "prompt": "Realistic photo of an abandoned festival site on a tropical beach at dusk, collapsed tents, a fallen FYRE banner in the sand, empty and quiet"
+        },
+        {
+          "img": "18.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "prompt": "Realistic close-up photo of a wooden judge's gavel striking a sound block on a courtroom bench, dramatic light. A 2D cartoon Shrek (big green ogre, trumpet-shaped ears, beige tunic, brown vest) inserted into the real photo, tiny and hidden as a reflection on the shiny brass part of the gavel, vertical 9:16"
+        }
+      ]
+    },
+    {
+      "say": "Shrek kept | the sandwich. | It's still in his {g:swamp}.",
+      "shots": [
+        {
+          "img": "19.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "cap_y": 0.24,
+          "prompt": "3D animated movie still in the style of the DreamWorks Shrek films, Shrek from the DreamWorks movie Shrek (big green ogre, trumpet-shaped ears, beige tunic shirt, brown leather vest, brown belt) in his cozy swamp house, proudly displaying a dried old cheese sandwich inside a glass frame hanging on the wall like a precious trophy, candles around it"
+        }
+      ]
+    },
+    {
+      "say": "And when reporters ask | why he didn't stop it, | he just says: | {r:What are you doing} | {r:in my swamp?}",
+      "shots": [
+        {
+          "img": "22.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "cap_y": 0.24,
+          "prompt": "3D animated movie still in the style of the DreamWorks Shrek films, Shrek from the DreamWorks movie Shrek (big green ogre, trumpet-shaped ears, beige tunic shirt, brown leather vest, brown belt) standing at the door of his wooden swamp outhouse surrounded by a crowd of cartoon reporters pushing microphones and cameras at his face, camera flashes"
+        },
+        {
+          "img": "20.jpg",
+          "n": 3,
+          "fx": "pop",
+          "tr": "punch",
+          "sfx": [
+            "impact"
+          ],
+          "cap_y": 0.8,
+          "prompt": "3D animated movie still in the style of the DreamWorks Shrek films, Shrek from the DreamWorks movie Shrek (big green ogre, trumpet-shaped ears, beige tunic shirt, brown leather vest, brown belt) shouting angrily with his mouth wide open in front of his swamp outhouse, pointing at the camera, a big speech bubble that says WHAT ARE YOU DOING IN MY SWAMP?!"
+        }
+      ]
+    }
+  ],
+  "outro": {}
+}

@@ -247,6 +247,7 @@ def lock(name, visible=None, struck=0):
 CALS = {
     "sunday": {"month": "APRIL 1912", "num": "14", "day": "SUNDAY", "time": "11:40 PM", "color": (200, 30, 40)},
     "monday": {"month": "APRIL 1912", "num": "15", "day": "MONDAY", "time": "12:00 AM", "color": (200, 30, 40)},
+    "fyre": {"month": "APRIL 2017", "num": "27", "day": "THURSDAY", "time": "ARRIVAL DAY", "color": (230, 90, 20)},
     "apollo": {"month": "APRIL 1970", "num": "13", "day": "MONDAY", "time": "9:08 PM CST", "color": (20, 60, 140)},
     "oscars": {"month": "FEBRUARY 2017", "num": "26", "day": "SUNDAY", "time": "9:05 PM", "color": (170, 20, 30)},
     "suez": {"month": "MARCH 2021", "num": "23", "day": "TUESDAY", "time": "7:40 AM", "color": (20, 90, 160)},
@@ -512,6 +513,7 @@ def receipt(name):
 
 
 STATS = {
+    "fyre250k": {"num": "$250K", "text": ["for ONE Instagram post", "promoting the festival"], "src": "Fyre Festival, 2017"},
     "dropped": {"num": "1968", "text": ["Oxygen tank No. 2 was", "dropped 2 inches at the factory,", "18 months before launch"],
                 "src": "Source: Apollo 13 Review Board, NASA, 1970"},
     "evergiven": {"num": "400 m", "text": ["longer than the Eiffel", "Tower is tall"], "src": "Ever Given · 1,312 ft"},
@@ -829,6 +831,10 @@ BADGES = {
     "johnny": {"photo": "projects/007-johnny-bravo-vmas/images/01.jpg", "crop": [0.28, 0.15, 0.72],
                "event": "VMA 2009", "sub": "MTV VIDEO MUSIC AWARDS", "name": "JOHNNY BRAVO",
                "role": "HEAD OF SECURITY", "id": "SEC-0001", "date": "SEPT 13, 2009 · RADIO CITY"},
+    "shrek": {"photo": "projects/011-shrek-fyre/images/01.jpg", "crop": [0.22, 0.06, 0.78],
+              "event": "FYRE FESTIVAL", "sub": "GREAT EXUMA · BAHAMAS", "name": "SHREK",
+              "role": "LUXURY VILLAS", "id": "OGRE-001", "date": "APRIL 2017 · VIP AREA",
+              "access": ["VIP", "SWAMP"], "top": (230, 90, 20)},
     "bugs": {"photo": "projects/010-bugs-apollo13/images/01.jpg", "crop": [0.25, 0.08, 0.75],
              "event": "APOLLO 13", "sub": "NASA · MANNED SPACECRAFT CENTER", "name": "BUGS BUNNY",
              "role": "TANK INSPECTOR", "id": "O2-0002", "date": "APRIL 1970 · TANK No. 2",
@@ -936,6 +942,7 @@ def badge(name):
 
 
 QUOTES = {
+    "shrek": {"text": ["\"Ogres are", "like onions.", "They have layers.\""], "who": "Shrek · official statement · April 2017"},
     "apollo": {"text": ["\"Okay, Houston,", "we've had", "a problem here.\""], "who": "Apollo 13 · April 13, 1970 · 55 hours into the mission"},
     "horowitz": {"text": ["\"Moonlight,", "you guys won.", "This is", "not a joke.\""], "who": "Jordan Horowitz · La La Land producer · Feb 26, 2017"},
     "patrick": {"text": ["\"I waved.", "It didn't", "wave back.\""], "who": "Patrick Star · official statement · March 2021"},
@@ -1424,9 +1431,75 @@ def thermo(name):
     return bg
 
 
+TICKETS = {
+    "fyre": {"title": "FYRE FESTIVAL", "sub": "Great Exuma · Bahamas · 2017", "tier": "LUXURY VILLA PACKAGE",
+             "price": "$12,000", "perks": ["Private island", "Gourmet meals", "Luxury villa"]},
+}
+
+
+def ticket(name):
+    """Pulseira/ingresso VIP de festival."""
+    c = TICKETS[name]
+    bg = Image.new("RGB", (W, H), (20, 40, 60))
+    d = ImageDraw.Draw(bg)
+    x0, y0, x1, y1 = 110, 330, W - 110, 1130
+    d.rounded_rectangle((x0 + 14, y0 + 18, x1 + 14, y1 + 18), 34, fill=(8, 14, 22))
+    grad = Image.new("RGB", (x1 - x0, y1 - y0))
+    gd = ImageDraw.Draw(grad)
+    for y in range(y1 - y0):
+        t = y / (y1 - y0)
+        gd.line((0, y, x1 - x0, y), fill=(int(255 - 40 * t), int(120 + 60 * t), int(40 + 120 * t)))
+    m = Image.new("L", grad.size, 0)
+    ImageDraw.Draw(m).rounded_rectangle((0, 0, grad.width, grad.height), 34, fill=255)
+    bg.paste(grad, (x0, y0), m)
+    d = ImageDraw.Draw(bg)
+    d.text((W / 2, y0 + 110), c["title"], font=font(FONT_CAPTION, 110), fill="white", anchor="mm", stroke_width=6, stroke_fill=(120, 40, 10))
+    d.text((W / 2, y0 + 195), c["sub"], font=font(FONT_UI_BOLD, 36), fill=(255, 245, 230), anchor="mm")
+    d.line((x0 + 50, y0 + 260, x1 - 50, y0 + 260), fill=(255, 255, 255), width=4)
+    d.text((W / 2, y0 + 330), c["tier"], font=font(FONT_UI_BOLD, 44), fill="white", anchor="mm")
+    d.text((W / 2, y0 + 460), c["price"], font=font(FONT_CAPTION, 170), fill=(255, 240, 120), anchor="mm", stroke_width=8, stroke_fill=(90, 30, 10))
+    for i, p in enumerate(c["perks"]):
+        d.text((W / 2, y0 + 600 + i * 56), "\u2713  " + p, font=font(FONT_UI_BOLD, 40), fill="white", anchor="mm")
+    for x in range(x0 + 30, x1 - 30, 36):
+        d.ellipse((x, y0 + 252, x + 14, y0 + 266), fill=(20, 40, 60))
+    return bg
+
+
+NAMETAGS = {
+    "shrek": {"name": "SHREK", "role": "Luxury Villas Manager", "note": "ask me about layers", "color": (230, 40, 40)},
+}
+
+
+def nametag(name):
+    """Adesivo de crachá "HELLO my name is" escrito à mão com canetão."""
+    import random
+    c = NAMETAGS[name]
+    bg = Image.new("RGB", (W, H), (30, 30, 34))
+    st = Image.new("RGBA", (900, 640), (0, 0, 0, 0))
+    d = ImageDraw.Draw(st)
+    d.rounded_rectangle((0, 0, 899, 639), 46, fill=c["color"] + (255,))
+    d.text((450, 95), "HELLO", font=font(FONT_CAPTION, 120), fill="white", anchor="mm")
+    d.text((450, 175), "my name is", font=font(FONT_UI_BOLD, 46), fill="white", anchor="mm")
+    d.rectangle((26, 230, 873, 570), fill=(255, 255, 255, 255))
+    marker = font(FONT_CAPTION, 150)
+    d.text((450, 345), c["name"], font=marker, fill=(25, 25, 35), anchor="mm")
+    d.text((450, 460), c["role"], font=font(FONT_UI_BOLD, 42), fill=(25, 25, 35), anchor="mm")
+    d.text((450, 525), "(" + c["note"] + ")", font=font(FONT_UI, 34), fill=(90, 90, 100), anchor="mm")
+    rnd = random.Random(2)
+    for cx, cy in ((800, 270), (90, 545)):   # duas marcas de dedo de lama
+        for _ in range(6):
+            x, y, r = cx + rnd.randint(-22, 22), cy + rnd.randint(-16, 16), rnd.randint(14, 26)
+            d.ellipse((x - r, y - r, x + r, y + r), fill=(95, 120, 50, 90))
+    st = st.rotate(-6, resample=Image.BICUBIC, expand=True)
+    bg.paste(st, ((W - st.width) // 2, 330), st)
+    return bg
+
+
 BOARDS = {
     "armwrestle": {"title": "ARM WRESTLING", "sub": "Backstage · Radio City Music Hall",
                    "left": "JOHNNY", "right": "ROCKETTES", "l": "0", "r": "35"},
+    "onions": {"title": "ONION PEELING", "sub": "Catering tent · Fyre Festival · 2017",
+               "left": "SHREK", "right": "DONKEY", "l": "2", "r": "100"},
     "carrots": {"title": "JUDGE'S SCORE", "sub": "Carrot Cake Bake-Off · NASA cafeteria · 1968",
                 "left": "WABBIT", "right": "EVERYONE ELSE", "l": "0", "r": "10"},
     "hotdogs": {"title": "HOT DOG CHALLENGE", "sub": "Backstage catering · Oscars 2017",
@@ -1518,6 +1591,10 @@ def make(ref, handles=None):
         return badge(rest)
     if kind == "report":
         return report(rest)
+    if kind == "nametag":
+        return nametag(rest)
+    if kind == "ticket":
+        return ticket(rest)
     if kind == "thermo":
         return thermo(rest)
     if kind == "envelope":
