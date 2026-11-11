@@ -40,4 +40,7 @@ Fonte principal: YouGov, 2018 (Bugs Bunny 11%, Tom e Jerry 6%, Scooby-Doo 5%; Sp
 
 Evitar: Simpsons, Family Guy e Futurama (hoje são da Disney), Pokémon (Nintendo), Bluey (distribuição Disney fora da Austrália).
 | Why didn't Bugs Bunny stop the Apollo 13 explosion? | A | Pernalonga | explosão do tanque de oxigênio da Apollo 13 (1970) | campeonato de comer cenoura contra o Hortelino, prêmio: caneca da NASA de 2º lugar | feito (010) |
-| Why didn't Taz stop the Fyre Festival disaster? | A | Taz | Fyre Festival (2017) | comeu toda a comida gourmet, sobrou o sanduíche de queijo (bônus do mês) | em produção (011) (Shrek descartado: Gemini não gera) |
+| Why didn't Taz stop the Fyre Festival disaster? | A | Taz | Fyre Festival (2017) | comeu toda a comida gourmet, sobrou o sanduíche de queijo (bônus do mês) | feito (011) (Shrek descartado: Gemini não gera) |
+| Why didn't Tom stop the Mona Lisa theft in 1911? | A | Tom (Tom e Jerry) | roubo da Mona Lisa do Louvre (1911) | vigia noturno, passou a noite caçando o Jerry na sala do queijo dos guardas | ideia |
+| Why didn't Wile E. Coyote win the Great Emu War in 1932? | A | Coiote | Guerra dos Emus (Austrália) | a entrega da ACME atrasou | ideia |
+| Why didn't Courage stop the War of the Worlds panic in 1938? | A | Coragem, o Cão Covarde | pânico da transmissão de rádio de Orson Welles | escondido debaixo da cama a noite inteira | ideia |
