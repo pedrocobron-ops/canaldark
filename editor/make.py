@@ -42,7 +42,7 @@ def parse_chunk(chunk):
 
 
 def plain(s):
-    return TOKEN.sub(r"\2", s).replace("|", " ")
+    return TOKEN.sub(r"\2", s).replace("|", " ").replace("\u00a0", " ")
 
 
 def chunks_of(beat):
@@ -174,7 +174,7 @@ class Captioner:
         # palavras = listas de segmentos (texto, cor); pontuação colada fica na mesma palavra
         words, glue = [], False
         for txt, col in parts:
-            for tok in re.findall(r"\S+|\s+", txt):
+            for tok in re.findall(r"[^ \t\n]+|[ \t\n]+", txt):   # espaço fixo (\u00a0) não quebra linha
                 if tok.isspace():
                     glue = False
                     continue
@@ -184,7 +184,7 @@ class Captioner:
                     words.append([(tok, col)])
                 glue = True
         d = ImageDraw.Draw(Image.new("RGBA", (1, 1)))
-        maxw = int(940 * self.s)
+        maxw = int(860 * self.s)
         lines, cur, curw = [], [], 0
         space = d.textlength(" ", font=self.font)
         for segs in words:

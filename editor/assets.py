@@ -1385,7 +1385,7 @@ BOARDS = {
     "armwrestle": {"title": "ARM WRESTLING", "sub": "Backstage · Radio City Music Hall",
                    "left": "JOHNNY", "right": "ROCKETTES", "l": "0", "r": "35"},
     "hotdogs": {"title": "HOT DOG CHALLENGE", "sub": "Backstage catering · Oscars 2017",
-                "left": "SCOOBY", "right": "WAITER", "l": "84", "r": "85"},
+                "left": "SCOOBY & SHAGGY", "right": "WAITER", "l": "84", "r": "85"},
     "rock": {"title": "UNDER-A-ROCK", "sub": "Championship 2021 · Bottom of the Suez Canal",
              "left": "DAY", "right": "PLAYERS", "l": "1", "r": "48"},
     "rockfinal": {"title": "TIME UNDER A ROCK", "sub": "Final results · Under-A-Rock Championship 2021",
@@ -1410,7 +1410,7 @@ def board(name, r_val=None):
     d.text((W / 2, y0 + 170), c["sub"], font=font(FONT_UI, 34), fill=(170, 175, 190), anchor="mm")
     for i, (lab, val, col) in enumerate([(c["left"], c["l"], (90, 170, 255)), (c["right"], c["r"], (255, 70, 70))]):
         cx = W / 2 + (-1 if i == 0 else 1) * 225
-        d.text((cx, y0 + 290), lab, font=font(FONT_CAPTION, 60), fill=col, anchor="mm")
+        d.text((cx, y0 + 290), lab, font=font(FONT_CAPTION, 60 if len(lab) <= 10 else 38), fill=col, anchor="mm")
         d.rounded_rectangle((cx - 170, y0 + 350, cx + 170, y0 + 640), 20, fill=(0, 0, 0))
         d.text((cx, y0 + 495), val, font=font(FONT_CAPTION, 230 if len(val) <= 2 else 160), fill=(255, 120, 40), anchor="mm")
     d.text((W / 2, y0 + 495), ":", font=font(FONT_CAPTION, 160), fill="white", anchor="mm")

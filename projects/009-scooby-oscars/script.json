@@ -5,20 +5,20 @@
   "speed": 0.95,
   "music_volume": 0.24,
   "hook_full": true,
-  "post": "La La Land was announced instead of Moonlight at the 2017 Oscars... so why didn't Scooby-Doo stop it? Would you trade the biggest night in Hollywood for half a sandwich? 👇 #scoobydoo #oscars #lalaland #moonlight #didyouknow #funnyfacts",
+  "post": "La La Land was announced instead of Moonlight at the 2017 Oscars... so why didn't Scooby-Doo stop it? Would you trade the biggest night in Hollywood for half a sandwich? 👇 #scoobydoo #oscars #lalaland #moonlight #didyouknow #oscars2017",
   "style_suffix": "2D cartoon illustration in the classic Scooby-Doo Where Are You Hanna-Barbera style, bold outlines, vibrant colors, vertical 9:16 composition",
   "wardrobe": {
     "Scooby-Doo": "brown Great Dane with black spots, blue collar with gold SD tag, small black bow tie (same in every image)",
     "Shaggy Rogers": "skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie (same in every image)"
   },
   "cover": {
-    "img": "19.jpg",
+    "img": "23.jpg",
     "text": "Why didn't {y:Scooby-Doo} stop the {r:Oscars} mix-up?",
     "y": 0.72
   },
   "beats": [
     {
-      "say": "Why didn't {y:Scooby-Doo} | stop {r:La La Land} | from winning | the wrong {y:Oscar}?",
+      "say": "Why didn't {y:Scooby-Doo} | stop {r:La La Land} | from winning | the wrong {y:Oscar}?",
       "shots": [
         {
           "img": "01.jpg",
@@ -45,14 +45,14 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "punch",
-          "cap_y": 0.8,
+          "cap_y": 0.78,
           "bg_img": "02.jpg"
         },
         {
           "img": "03.jpg",
           "n": 2,
           "fx": "zoom_in",
-          "cap_y": 0.8,
+          "cap_y": 0.72,
           "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo backstage at an awards show, each handcuffed to a silver briefcase, standing at attention like serious security guards, trying to look tough"
         }
       ]
@@ -84,19 +84,20 @@
           "n": 1,
           "fx": "pop",
           "tr": "whip",
-          "bg_img": "02.jpg",
+          "bg_img": "06.jpg",
           "tilt": 3
         },
         {
-          "img": "06.jpg",
+          "img": "09.jpg",
           "n": 2,
           "fx": "zoom_in",
-          "prompt": "Realistic photo of a row of shiny golden award statuettes lined up on a table backstage, dramatic lighting. A 2D cartoon Scooby-Doo (brown Great Dane with black spots, blue collar) inserted into the real photo, tiny and hidden as a reflection on one of the golden statues, vertical 9:16"
+          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo in the dark backstage wings of an awards show with their mouths full of food, happily eating and watching the celebration on stage without noticing anything wrong, silver briefcases at their feet",
+          "cap_y": 0.7
         }
       ]
     },
     {
-      "say": "Warren Beatty | opened the envelope, | Faye Dunaway | read it, | and said: | {r:La La Land}.",
+      "say": "Warren Beatty | opened the envelope, | Faye Dunaway | read it, | and said: | {r:La La Land}.",
       "shots": [
         {
           "img": "07.jpg",
@@ -121,16 +122,16 @@
       "say": "The cast | celebrated on stage | for over {r:two minutes}.",
       "shots": [
         {
-          "img": "09.jpg",
+          "img": "extra_09b.jpg",
           "n": 3,
           "fx": "zoom_in",
-          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo in the dark backstage wings of an awards show with their mouths full of food, happily eating and watching the celebration on stage without noticing anything wrong, silver briefcases at their feet",
-          "cap_y": 0.8
+          "tr": "whip",
+          "cap_y": 0.24
         }
       ]
     },
     {
-      "say": "Then a producer | grabbed the mic: | {g:Moonlight}, you won. | {r:This is not a joke}.",
+      "say": "Then {y:La La Land's own} producer | grabbed the mic: | {g:Moonlight}, you won. | {r:This is not a joke}.",
       "shots": [
         {
           "img": "10.jpg",
@@ -212,7 +213,7 @@
           "fx": "zoom_in",
           "tr": "punch",
           "bg_img": "14.jpg",
-          "cap_y": 0.8
+          "cap_y": 0.72
         },
         {
           "img": "15.jpg",
@@ -226,7 +227,7 @@
           "n": 2,
           "fx": "shake",
           "tr": "punch",
-          "cap_y": 0.8,
+          "cap_y": 0.72,
           "prompt": "Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo with a shocked face and his hands on his cheeks, mouth stuffed with hot dog, Scooby-Doo collapsed behind him with a full round belly, empty hot dog plates everywhere"
         }
       ]
@@ -247,7 +248,7 @@
       ]
     },
     {
-      "say": "Best Actress | was already announced, | so Shaggy wrapped it | in the {r:spare envelope}.",
+      "say": "Every award | has a {y:spare copy}. | Best Actress was over, | so Shaggy used the spare | as a {r:sandwich bag}.",
       "shots": [
         {
           "img": "25.jpg",
@@ -261,8 +262,15 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "whip",
-          "cap_y": 0.8,
+          "cap_y": 0.72,
           "prompt": "Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo carefully wrapping half of a sandwich dripping mustard inside a red award envelope taken from an open silver briefcase, Scooby-Doo drooling next to him, backstage"
+        },
+        {
+          "img": "extra_18b.jpg",
+          "n": 1,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "cap_y": 0.72
         }
       ]
     },
@@ -287,7 +295,7 @@
       ]
     },
     {
-      "say": "And this part is {y:real}: | the man in charge | of the envelopes | was backstage | {r:tweeting a photo} | of Emma Stone.",
+      "say": "And this part is {y:real}: | their {r:boss} | was backstage | {r:tweeting a photo} | of Emma Stone.",
       "shots": [
         {
           "img": "21.jpg",
@@ -297,23 +305,34 @@
         },
         {
           "img": "24.jpg",
-          "n": 2,
+          "n": 3,
           "fx": "zoom_in",
           "tr": "punch",
           "prompt": "Realistic close-up photo of a man's hand in a suit holding a smartphone backstage at an awards show, the phone screen showing a social media app posting a photo, two silver briefcases left open on a table behind him, dim backstage light, no face visible"
-        },
-        {
-          "img": "@envelope:actress",
-          "n": 2,
-          "fx": "zoom_in",
-          "tr": "punch",
-          "bg_img": "07.jpg",
-          "tilt": -3
         }
       ]
     },
     {
-      "say": "To this day, | when people ask | why he didn't stop it, | Scooby just says: | {r:Ruh-roh}.",
+      "say": "The card | in Beatty's hand | said: | {y:Emma Stone}, | {r:La La Land}.",
+      "shots": [
+        {
+          "img": "@envelope:actress",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "bg_img": "07.jpg",
+          "tilt": -3
+        },
+        {
+          "img": "extra_20b.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch"
+        }
+      ]
+    },
+    {
+      "say": "To this day, | when people ask | why he didn't stop it, | Scooby just says: | {y:Ruh-roh}.",
       "shots": [
         {
           "img": "22.jpg",
@@ -328,7 +347,8 @@
           "n": 2,
           "fx": "pop",
           "tr": "punch",
-          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) from Scooby-Doo with a guilty sheepish smile, ears down, a little mustard on his mouth, holding an empty red award envelope, a speech bubble that says RUH-ROH!, awards show stage behind him"
+          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) from Scooby-Doo with a guilty sheepish smile, ears down, a little mustard on his mouth, holding an empty red award envelope, a speech bubble that says RUH-ROH!, awards show stage behind him",
+          "cap_y": 0.72
         }
       ]
     }
