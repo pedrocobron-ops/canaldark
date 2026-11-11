@@ -517,7 +517,7 @@ def receipt(name):
 
 
 STATS = {
-    "fyreviral": {"num": "MILLIONS", "text": ["of shares of one photo", "of a cheese sandwich"], "src": "Twitter · April 28, 2017"},
+    "fyreviral": {"num": "VIRAL", "text": ["worldwide, in hours:", "one photo of a", "cheese sandwich"], "src": "Twitter · April 27, 2017"},
     "fyre250k": {"num": "$250K", "text": ["for ONE Instagram post", "promoting the festival"], "src": "Fyre Festival, 2017"},
     "dropped": {"num": "1968", "text": ["Oxygen tank No. 2 was", "dropped 2 inches at the factory,", "18 months before launch"],
                 "src": "Source: Apollo 13 Review Board, NASA, 1970"},

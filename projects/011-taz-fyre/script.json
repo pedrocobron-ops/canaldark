@@ -5,7 +5,7 @@
   "speed": 0.95,
   "music_volume": 0.24,
   "hook_full": true,
-  "post": "The Fyre Festival promised luxury villas... and served a cheese sandwich. So why didn't Taz stop it? Would you pay $12,000 for this? 👇 #taz #looneytunes #fyrefestival #cheesesandwich #didyouknow #netflix",
+  "post": "The Fyre Festival promised luxury villas... and served a cheese sandwich. So why didn't Taz stop it? Would you pay $12,000 for this? 👇 #taz #looneytunes #fyrefestival #cheesesandwich #didyouknow #fyre",
   "style_suffix": "2D cartoon illustration in the classic Looney Tunes Warner Bros style, bold outlines, vibrant colors, vertical 9:16 composition",
   "wardrobe": {
     "Taz": "brown furry Tasmanian Devil, beige face and belly, tiny orange FYRE staff lanyard (same in every image after the opening)"
@@ -110,14 +110,11 @@
           "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) welcoming shocked rich festival guests with luggage at a tiny island airport, holding a hand-painted cardboard sign that says WELCOME TO LUXURY with a big bite taken out of it, drool on the sign"
         },
         {
-          "img": "20.jpg",
+          "img": "extra_guests2.jpg",
           "n": 2,
           "fx": "zoom_in",
           "tr": "punch",
-          "prompt": "Realistic photo of a tiny island airport arrivals area with confused rich tourists and luggage, overcast sky. A 2D cartoon Taz the Tasmanian Devil from Looney Tunes (brown furry devil) inserted into the real photo, hidden behind a luggage cart, only his wild eyes and a chewed cardboard sign visible, vertical 9:16",
-          "fit": "cover",
-          "shift_x": 0,
-          "mirror": true
+          "cap_y": 0.6
         }
       ]
     },
@@ -187,7 +184,7 @@
       "shots": [
         {
           "img": "11.jpg",
-          "n": 2,
+          "n": 1,
           "fx": "shake",
           "tr": "punch",
           "cap_y": 0.72,
@@ -195,7 +192,7 @@
         },
         {
           "img": "@receipt:fyre",
-          "n": 1,
+          "n": 2,
           "fx": "pop",
           "tr": "punch",
           "bg_img": "11.jpg",
@@ -230,11 +227,10 @@
       "say": "And this part is {y:real}: | a photo of that sandwich | went {r:viral} | around the world.",
       "shots": [
         {
-          "img": "14.jpg",
+          "img": "extra_sandwich2.jpg",
           "n": 2,
-          "fx": "zoom_out",
-          "tr": "fade",
-          "prompt": "Realistic photo of a smartphone held by a hand showing a social media post of a sad cheese sandwich in a styrofoam box, with huge numbers of likes and shares, a beach in the background, no face visible"
+          "fx": "zoom_in",
+          "tr": "fade"
         },
         {
           "img": "@stat:fyreviral",
@@ -274,7 +270,8 @@
           "fx": "zoom_in",
           "tr": "whip",
           "cap_y": 0.72,
-          "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) receiving the half-eaten cheese sandwich in a styrofoam box on a silver tray as an EMPLOYEE BONUS from a cartoon manager in a suit, Taz looking at it with disgust, a small banner that says THANK YOU TAZ"
+          "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) receiving the half-eaten cheese sandwich in a styrofoam box on a silver tray as an EMPLOYEE BONUS from a cartoon manager in a suit, Taz looking at it with disgust, a small banner that says THANK YOU TAZ",
+          "shift_y": 90
         }
       ]
     },
@@ -308,7 +305,7 @@
         {
           "img": "extra_blrr2.jpg",
           "n": 3,
-          "fx": "zoom_in",
+          "fx": "pop",
           "tr": "punch",
           "cap_y": 0.6
         }
