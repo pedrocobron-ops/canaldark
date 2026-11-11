@@ -226,11 +226,11 @@
       ]
     },
     {
-      "say": "Bugs blamed | the carrot. | It wasn't {y:fresh enough}.",
+      "say": "Bugs blamed | the {r:judge}. | And the carrot: | it wasn't {y:fresh enough}.",
       "shots": [
         {
           "img": "13.jpg",
-          "n": 3,
+          "n": 4,
           "fx": "zoom_in",
           "tr": "whip",
           "cap_y": 0.24,
@@ -269,7 +269,7 @@
       ]
     },
     {
-      "say": "And this part is {y:real}: | that same year, | that tank | was {r:dropped} | at the factory.",
+      "say": "And this part is {y:real}: | that same year, | that tank | was {r:dropped} | at the factory. | {r:With the carrot inside}.",
       "shots": [
         {
           "img": "16.jpg",
@@ -280,7 +280,7 @@
         },
         {
           "img": "@stat:dropped",
-          "n": 2,
+          "n": 3,
           "fx": "pop",
           "tr": "punch",
           "bg_img": "16.jpg"
