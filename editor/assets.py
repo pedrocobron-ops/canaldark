@@ -512,7 +512,7 @@ def receipt(name):
 
 
 STATS = {
-    "dropped": {"num": "2 in.", "text": ["Oxygen tank No. 2 was", "dropped at the factory", "two years before launch"],
+    "dropped": {"num": "1968", "text": ["Oxygen tank No. 2 was", "dropped 2 inches at the factory,", "18 months before launch"],
                 "src": "Source: Apollo 13 Review Board, NASA, 1970"},
     "evergiven": {"num": "400 m", "text": ["longer than the Eiffel", "Tower is tall"], "src": "Ever Given · 1,312 ft"},
     "suez96": {"num": "$9.6B", "text": ["of trade blocked", "every single day"], "src": "Source: Lloyd's List, March 2021"},
@@ -1427,7 +1427,7 @@ def thermo(name):
 BOARDS = {
     "armwrestle": {"title": "ARM WRESTLING", "sub": "Backstage · Radio City Music Hall",
                    "left": "JOHNNY", "right": "ROCKETTES", "l": "0", "r": "35"},
-    "carrots": {"title": "JUDGE'S SCORE", "sub": "Carrot Cake Bake-Off · NASA cafeteria · 1970",
+    "carrots": {"title": "JUDGE'S SCORE", "sub": "Carrot Cake Bake-Off · NASA cafeteria · 1968",
                 "left": "WABBIT", "right": "EVERYONE ELSE", "l": "0", "r": "10"},
     "hotdogs": {"title": "HOT DOG CHALLENGE", "sub": "Backstage catering · Oscars 2017",
                 "left": "SCOOBY & SHAGGY", "right": "WAITER", "l": "84", "r": "85"},

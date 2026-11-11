@@ -88,7 +88,8 @@
           "fx": "pop",
           "tr": "whip",
           "bg_img": "02.jpg",
-          "tilt": 3
+          "tilt": 3,
+          "cap_y": 0.74
         },
         {
           "img": "24.jpg",
@@ -125,16 +126,16 @@
           "tr": "punch",
           "bg_img": "06.jpg",
           "bg_dark": 0.65,
-          "cap_y": 0.74
+          "cap_y": 0.66
         }
       ]
     },
     {
-      "say": "Bugs claims | he took a wrong turn | at {y:Albuquerque}.",
+      "say": "Bugs claims | he should've taken | that {y:left turn} | at {y:Albuquerque}.",
       "shots": [
         {
           "img": "07.jpg",
-          "n": 3,
+          "n": 4,
           "fx": "zoom_in",
           "tr": "whip",
           "cap_y": 0.24,
@@ -365,7 +366,7 @@
           "scale": 0.86,
           "shift_x": -0.05,
           "bg": "#c8231d",
-          "cap_y": 0.84
+          "cap_y": 0.66
         }
       ]
     }

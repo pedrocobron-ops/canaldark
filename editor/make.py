@@ -696,7 +696,7 @@ def make_cover(proj, script, out, handles):
     text = cov.get("text", first["say"]).replace("|", " ")
     cap = Captioner(1.42)
     cap.font = ImageFont.truetype(str(FONT_CAPTION), 128)
-    im = cap.render(re.sub(r"\s+", " ", text))
+    im = cap.render(re.sub(r"[ \t\n]+", " ", text))
     if im.width > W - 60:
         r = (W - 60) / im.width
         im = im.resize((int(im.width * r), int(im.height * r)), Image.LANCZOS)
