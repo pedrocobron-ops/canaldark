@@ -20,6 +20,7 @@ Conversa em português, roteiro em inglês, nunca travessão.
    - Tudo que for app, print ou ícone sai como asset desenhado (`@icon`, `@chat`), para poupar imagem do Pedro.
    - De 16 a 22 imagens geradas por vídeo. Cada shot com imagem gerada tem um `prompt` em inglês. Prompt de personagem começa pelo nome completo e pela obra ("Squidward Tentacles from SpongeBob SquarePants ...").
 
+   - **Abertura padrão:** o shot 01 é o personagem de corpo inteiro em fundo branco puro, com a pergunta inteira na tela (`"hook_full": true`). Nunca abrir com cena.
    - **Figurino fixo.** Antes dos prompts, defina no `script.json` um bloco `"wardrobe"` com a roupa de cada personagem (cabelo, roupa, acessórios) e copie a MESMA descrição em todo prompt em que ele aparece. A roupa só muda se a história explicar a troca na narração. Ao receber as imagens, compare a roupa de cada personagem entre todas elas antes de aceitar.
 
 4. **Prompts para o Pedro.** Gerar o `PROMPTS.md` a partir do JSON (o script em `tools/prompts.py` faz isso) e mandar com `SendUserFile`. Pedir que ele suba tudo numa pasta do Drive com o nome do slug.

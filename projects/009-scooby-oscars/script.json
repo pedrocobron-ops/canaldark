@@ -24,12 +24,13 @@
           "img": "01.jpg",
           "n": 2,
           "fx": "zoom_in",
-          "cap_y": 0.26,
-          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo standing proudly on a red carpet at a glamorous awards show, each holding a silver metal briefcase, golden statues and spotlights behind them"
+          "cap_y": 0.56,
+          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo standing side by side, proud goofy smiles, each holding a silver metal briefcase, full body, plain pure white background",
+          "fit": "contain"
         },
         {
           "img": "02.jpg",
-          "n": 1,
+          "n": 2,
           "fx": "zoom_out",
           "cap_y": 0.3,
           "prompt": "Realistic wide photo of a huge glamorous awards show stage inside a theater, giant golden statue backdrop, red curtains, audience in tuxedos and gowns seen from behind, dramatic stage lights"
@@ -45,7 +46,7 @@
           "fx": "zoom_in",
           "tr": "punch",
           "cap_y": 0.8,
-          "bg_img": "01.jpg"
+          "bg_img": "02.jpg"
         },
         {
           "img": "03.jpg",

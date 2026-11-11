@@ -8,7 +8,7 @@ Dica: Gemini (Nano Banana) e ChatGPT costumam aceitar personagens reais. Se um r
 ## 01.jpg
 
 ```
-Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo standing proudly on a red carpet at a glamorous awards show, each holding a silver metal briefcase, golden statues and spotlights behind them, 2D cartoon illustration in the classic Scooby-Doo Where Are You Hanna-Barbera style, bold outlines, vibrant colors, vertical 9:16 composition
+Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo standing side by side, proud goofy smiles, each holding a silver metal briefcase, full body, plain pure white background, 2D cartoon illustration in the classic Scooby-Doo Where Are You Hanna-Barbera style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 02.jpg

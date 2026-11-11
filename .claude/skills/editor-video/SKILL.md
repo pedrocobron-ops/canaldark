@@ -86,6 +86,7 @@ Canal, marca d'água e redes do cartão final ficam em `channel.json`, na raiz.
 - **Capa:** o render final gera `out/cover.jpg`. Configure em `"cover": {"img": "10.png", "text": "...", "y": 0.66}`, usando a imagem mais expressiva do personagem e a pergunta-gancho. O vídeo termina na última fala, segurando a imagem por 0,7 s.
 - **Transições entre quase todos os shots** (chicote, zoom, punch, escurecer), com poucos cortes secos. Cada uma dura de 0,2 a 0,36 s.
 - A legenda troca a cada 0,5 a 1,2 s. A imagem troca a cada 2 a 4 legendas, e nunca fica mais de 4 s parada.
+- **Abertura padrão (regra do Pedro):** o primeiro shot é SEMPRE o personagem de corpo inteiro em fundo branco puro (`fit: contain`, `cap_y` em torno de 0.56, prompt terminando em "full body, plain pure white background"), com a pergunta inteira na tela (`"hook_full": true`), como no vídeo do Johnny Bravo. O tema (evento, lugar) entra no segundo shot.
 - O personagem aparece no primeiro quadro, já com a primeira legenda (o editor mostra a legenda desde 0 s), e o tema (evento, app) no segundo shot.
 - **Antes de entregar, rode a skill `analise-tiktok`** (painel de espectadores).
 - Alternar as fontes de imagem: cartoon do personagem, foto realista, banco de imagem, boneco 3D branco, print de celular, ícone.
