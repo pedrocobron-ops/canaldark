@@ -102,19 +102,19 @@
       "say": "Taz welcomed them | at the airport | with a sign. | He had already eaten | {r:half of it}.",
       "shots": [
         {
-          "img": "06.jpg",
-          "n": 3,
-          "fx": "zoom_in",
-          "tr": "whip",
-          "cap_y": 0.62,
-          "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) welcoming shocked rich festival guests with luggage at a tiny island airport, holding a hand-painted cardboard sign that says WELCOME TO LUXURY with a big bite taken out of it, drool on the sign"
-        },
-        {
           "img": "extra_guests2.jpg",
           "n": 2,
           "fx": "zoom_in",
-          "tr": "punch",
+          "tr": "whip",
           "cap_y": 0.6
+        },
+        {
+          "img": "06.jpg",
+          "n": 3,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "cap_y": 0.62,
+          "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) welcoming shocked rich festival guests with luggage at a tiny island airport, holding a hand-painted cardboard sign that says WELCOME TO LUXURY with a big bite taken out of it, drool on the sign"
         }
       ]
     },
@@ -295,7 +295,8 @@
             "impact"
           ],
           "cap_y": 0.72,
-          "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) spinning into a wild brown tornado and blasting away through the crowd of reporters, microphones and notepads flying, a big speech bubble that says BLRRBLRRBL!"
+          "prompt": "the Tasmanian Devil Taz from Looney Tunes (brown furry tornado devil, beige face and belly, huge mouth full of teeth, wild eyes, wearing a tiny orange FYRE staff lanyard) spinning into a wild brown tornado and blasting away through the crowd of reporters, microphones and notepads flying, a big speech bubble that says BLRRBLRRBL!",
+          "shift_y": 140
         }
       ]
     },
