@@ -1394,11 +1394,41 @@ def envelope(name):
     return bg
 
 
+THERMOS = {
+    "lox": {"value": "-297°F", "label": "OXYGEN TANK No. 2", "sub": "Liquid oxygen", "level": 0.06},
+}
+
+
+def thermo(name):
+    """Termômetro gigante de laboratório, congelado, marcando a temperatura."""
+    c = THERMOS[name]
+    bg = Image.new("RGB", (W, H), (14, 30, 48))
+    d = ImageDraw.Draw(bg)
+    cx, top, bot = W / 2 - 170, 230, 1150
+    d.rounded_rectangle((cx - 70, top, cx + 70, bot), 70, fill=(235, 245, 255), outline=(150, 190, 220), width=8)
+    d.ellipse((cx - 120, bot - 130, cx + 120, bot + 110), fill=(60, 140, 230), outline=(150, 190, 220), width=8)
+    lv = bot - 40 - (bot - top - 120) * c["level"]
+    d.rectangle((cx - 32, lv, cx + 32, bot), fill=(60, 140, 230))
+    for k in range(11):
+        y = top + 60 + k * (bot - top - 160) / 10
+        d.line((cx + 70, y, cx + 120, y), fill=(200, 220, 240), width=5)
+    import random
+    rnd = random.Random(4)
+    for _ in range(60):   # gelo
+        x, y, r = rnd.randint(int(cx - 140), int(cx + 140)), rnd.randint(top, bot + 80), rnd.randint(4, 14)
+        d.ellipse((x - r, y - r, x + r, y + r), fill=(220, 240, 255))
+    tx = W / 2 + 190
+    d.text((tx, 560), c["value"], font=font(FONT_CAPTION, 150), fill=(120, 200, 255), anchor="mm", stroke_width=8, stroke_fill=(10, 20, 40))
+    d.text((tx, 700), c["label"], font=font(FONT_UI_BOLD, 40), fill="white", anchor="mm")
+    d.text((tx, 760), c["sub"], font=font(FONT_UI, 30), fill=(170, 200, 230), anchor="mm")
+    return bg
+
+
 BOARDS = {
     "armwrestle": {"title": "ARM WRESTLING", "sub": "Backstage · Radio City Music Hall",
                    "left": "JOHNNY", "right": "ROCKETTES", "l": "0", "r": "35"},
-    "carrots": {"title": "CARROT CHALLENGE", "sub": "NASA cafeteria · Houston · April 1970",
-                "left": "BUGS", "right": "ELMER", "l": "99", "r": "100"},
+    "carrots": {"title": "JUDGE'S SCORE", "sub": "Carrot Cake Bake-Off · NASA cafeteria · 1970",
+                "left": "BUGS", "right": "EVERYONE ELSE", "l": "0", "r": "10"},
     "hotdogs": {"title": "HOT DOG CHALLENGE", "sub": "Backstage catering · Oscars 2017",
                 "left": "SCOOBY & SHAGGY", "right": "WAITER", "l": "84", "r": "85"},
     "rock": {"title": "UNDER-A-ROCK", "sub": "Championship 2021 · Bottom of the Suez Canal",
@@ -1488,6 +1518,8 @@ def make(ref, handles=None):
         return badge(rest)
     if kind == "report":
         return report(rest)
+    if kind == "thermo":
+        return thermo(rest)
     if kind == "envelope":
         return envelope(rest)
     if kind == "call":

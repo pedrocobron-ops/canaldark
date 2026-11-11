@@ -5,7 +5,7 @@
   "speed": 0.95,
   "music_volume": 0.24,
   "hook_full": true,
-  "post": "\"Houston, we've had a problem.\" Apollo 13's oxygen tank exploded in 1970... so why didn't Bugs Bunny stop it? Would you trade a moon landing for a coffee mug? 👇 #bugsbunny #looneytunes #apollo13 #nasa #didyouknow #space",
+  "post": "\"Houston, we've had a problem.\" Apollo 13's oxygen tank exploded in 1970... so why didn't Bugs Bunny stop it? Would you trade a moon landing for a mug that says Thanks for Participating? 👇 #bugsbunny #looneytunes #apollo13 #nasa #didyouknow #space",
   "style_suffix": "2D cartoon illustration in the classic Looney Tunes Warner Bros style, bold outlines, vibrant colors, vertical 9:16 composition",
   "wardrobe": {
     "Bugs Bunny": "grey and white rabbit, white gloves, white lab coat with a round blue NASA-style patch (same in every image)",
@@ -167,59 +167,57 @@
       ]
     },
     {
-      "say": "That day, | the cafeteria held | a {y:carrot-eating contest}.",
+      "say": "That day, | the cafeteria held | a {y:carrot cake bake-off}.",
       "shots": [
         {
           "img": "10.jpg",
           "n": 3,
           "fx": "zoom_in",
           "tr": "whip",
-          "prompt": "Cartoon 1970 NASA cafeteria with a long table piled with hundreds of orange carrots, a banner that says CARROT CHALLENGE, cartoon NASA engineers in white shirts cheering"
+          "prompt": "Cartoon 1970 NASA cafeteria with a long table full of homemade carrot cakes, a banner that says CARROT CAKE BAKE-OFF, cartoon NASA engineers in white shirts proudly showing their cakes"
         }
       ]
     },
     {
-      "say": "Bugs ate {r:99 carrots}. | He lost | to {y:Elmer Fudd}.",
+      "say": "The judge | was {r:Elmer Fudd}. | Bugs came in {r:last}.",
       "shots": [
         {
-          "img": "@board:carrots",
-          "n": 2,
-          "anim": "count",
-          "count_to": 100,
-          "fx": "zoom_in",
-          "tr": "punch",
-          "bg_img": "10.jpg",
-          "cap_y": 0.78
-        },
-        {
           "img": "11.jpg",
-          "n": 1,
+          "n": 2,
           "fx": "pop",
           "tr": "punch",
           "sfx": [
             "impact"
           ],
-          "prompt": "Elmer Fudd from Looney Tunes (bald, brown hunting jacket and hat) with a huge round belly raising both arms in victory next to a tall pile of carrot tops, wearing a tiny visitor badge, confetti, cartoon NASA cafeteria"
+          "prompt": "Elmer Fudd from Looney Tunes (bald, brown hunting jacket and hat) sitting at a judge's table wearing a JUDGE badge, tasting a lopsided carrot cake with a disgusted face and giving a big thumbs down, a scorecard showing 0, cartoon NASA cafeteria"
+        },
+        {
+          "img": "@board:carrots",
+          "n": 1,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "bg_img": "10.jpg",
+          "cap_y": 0.78
         }
       ]
     },
     {
-      "say": "His prize | for second place? | A {y:NASA coffee mug}.",
+      "say": "His prize? | A mug | that says | {y:Thanks for participating}.",
       "shots": [
         {
           "img": "12.jpg",
-          "n": 3,
+          "n": 4,
           "fx": "zoom_in",
           "tr": "punch",
           "sfx": [
             "ding"
           ],
-          "prompt": "Realistic photo of a plain white coffee mug with a small blue NASA-style round logo and the words 2ND PLACE handwritten in black marker, standing alone on a 1970 metal office desk under a desk lamp, dramatic lighting"
+          "prompt": "Realistic photo of a plain white coffee mug with a small blue NASA-style round logo and the words THANKS FOR PARTICIPATING printed on it, standing alone on a 1970 metal office desk under a desk lamp, dramatic lighting"
         }
       ]
     },
     {
-      "say": "But Bugs | had saved {y:one carrot} | for later.",
+      "say": "Bugs blamed | the carrot. | It wasn't {y:fresh enough}.",
       "shots": [
         {
           "img": "13.jpg",
@@ -227,16 +225,16 @@
           "fx": "zoom_in",
           "tr": "whip",
           "cap_y": 0.24,
-          "prompt": "Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) with a sneaky smile hiding one big carrot behind his back, looking left and right, 1970 NASA hallway"
+          "prompt": "Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) holding up a limp, sad carrot and inspecting it with a magnifying glass and a suspicious frown, 1970 NASA kitchen"
         }
       ]
     },
     {
-      "say": "He hid it | in the safest place | he could find: | {r:oxygen tank number two}.",
+      "say": "So he kept | one carrot | in the coldest place | at NASA: | {r:oxygen tank number two}, | at {b:minus 297 degrees}.",
       "shots": [
         {
           "img": "14.jpg",
-          "n": 2,
+          "n": 3,
           "fx": "zoom_in",
           "cap_y": 0.24,
           "prompt": "Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) carefully sliding a big carrot into the small open hatch of a huge silver oxygen tank labeled O2 TANK 2, whistling innocently, 1970 NASA factory"
@@ -247,6 +245,17 @@
           "fx": "zoom_in",
           "tr": "punch",
           "prompt": "Realistic vintage photo of a large round silver oxygen tank inside a 1960s factory, with the green leafy top of a carrot sticking out of a small valve on its side, subtle, film grain"
+        },
+        {
+          "img": "@thermo:lox",
+          "n": 1,
+          "fx": "pop",
+          "tr": "punch",
+          "sfx": [
+            "ding"
+          ],
+          "bg_img": "15.jpg",
+          "cap_y": 0.8
         }
       ]
     },
@@ -258,7 +267,7 @@
           "n": 2,
           "fx": "zoom_out",
           "tr": "fade",
-          "prompt": "Realistic vintage 1968 photo of factory workers in white coveralls carefully lifting a large silver tank with a crane in a NASA contractor clean room, film grain, faces not visible"
+          "prompt": "Cartoon scene in a 1968 NASA factory: two factory workers in white coveralls staring in shock at a big silver tank with a small dent lying on the floor, while Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) walks away in the background whistling innocently with his hands behind his back"
         },
         {
           "img": "@stat:dropped",
@@ -329,7 +338,7 @@
           "fx": "zoom_in",
           "tr": "whip",
           "cap_y": 0.24,
-          "prompt": "Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) sipping from a white coffee mug that says 2ND PLACE, eyes half closed, satisfied, sitting on top of a floating space capsule in the ocean"
+          "prompt": "Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) sipping from a white coffee mug that says THANKS FOR PARTICIPATING, eyes half closed, satisfied, sitting on top of a floating space capsule in the ocean"
         },
         {
           "img": "22.jpg",

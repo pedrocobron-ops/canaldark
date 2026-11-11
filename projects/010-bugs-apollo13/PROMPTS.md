@@ -68,25 +68,25 @@ Realistic vintage 1970 photo of a NASA cafeteria with long tables, trays and a s
 ## 10.jpg
 
 ```
-Cartoon 1970 NASA cafeteria with a long table piled with hundreds of orange carrots, a banner that says CARROT CHALLENGE, cartoon NASA engineers in white shirts cheering, 2D cartoon illustration in the classic Looney Tunes Warner Bros style, bold outlines, vibrant colors, vertical 9:16 composition
+Cartoon 1970 NASA cafeteria with a long table full of homemade carrot cakes, a banner that says CARROT CAKE BAKE-OFF, cartoon NASA engineers in white shirts proudly showing their cakes, 2D cartoon illustration in the classic Looney Tunes Warner Bros style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 11.jpg
 
 ```
-Elmer Fudd from Looney Tunes (bald, brown hunting jacket and hat) with a huge round belly raising both arms in victory next to a tall pile of carrot tops, wearing a tiny visitor badge, confetti, cartoon NASA cafeteria, 2D cartoon illustration in the classic Looney Tunes Warner Bros style, bold outlines, vibrant colors, vertical 9:16 composition
+Elmer Fudd from Looney Tunes (bald, brown hunting jacket and hat) sitting at a judge's table wearing a JUDGE badge, tasting a lopsided carrot cake with a disgusted face and giving a big thumbs down, a scorecard showing 0, cartoon NASA cafeteria, 2D cartoon illustration in the classic Looney Tunes Warner Bros style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 12.jpg
 
 ```
-Realistic photo of a plain white coffee mug with a small blue NASA-style round logo and the words 2ND PLACE handwritten in black marker, standing alone on a 1970 metal office desk under a desk lamp, dramatic lighting, photorealistic, vertical 9:16
+Realistic photo of a plain white coffee mug with a small blue NASA-style round logo and the words THANKS FOR PARTICIPATING printed on it, standing alone on a 1970 metal office desk under a desk lamp, dramatic lighting, photorealistic, vertical 9:16
 ```
 
 ## 13.jpg
 
 ```
-Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) with a sneaky smile hiding one big carrot behind his back, looking left and right, 1970 NASA hallway, 2D cartoon illustration in the classic Looney Tunes Warner Bros style, bold outlines, vibrant colors, vertical 9:16 composition
+Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) holding up a limp, sad carrot and inspecting it with a magnifying glass and a suspicious frown, 1970 NASA kitchen, 2D cartoon illustration in the classic Looney Tunes Warner Bros style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 14.jpg
@@ -104,7 +104,7 @@ Realistic vintage photo of a large round silver oxygen tank inside a 1960s facto
 ## 16.jpg
 
 ```
-Realistic vintage 1968 photo of factory workers in white coveralls carefully lifting a large silver tank with a crane in a NASA contractor clean room, film grain, faces not visible, photorealistic, vertical 9:16
+Cartoon scene in a 1968 NASA factory: two factory workers in white coveralls staring in shock at a big silver tank with a small dent lying on the floor, while Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) walks away in the background whistling innocently with his hands behind his back, 2D cartoon illustration in the classic Looney Tunes Warner Bros style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 17.jpg
@@ -134,7 +134,7 @@ Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a whi
 ## 21.jpg
 
 ```
-Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) sipping from a white coffee mug that says 2ND PLACE, eyes half closed, satisfied, sitting on top of a floating space capsule in the ocean, 2D cartoon illustration in the classic Looney Tunes Warner Bros style, bold outlines, vibrant colors, vertical 9:16 composition
+Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) sipping from a white coffee mug that says THANKS FOR PARTICIPATING, eyes half closed, satisfied, sitting on top of a floating space capsule in the ocean, 2D cartoon illustration in the classic Looney Tunes Warner Bros style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 22.jpg
