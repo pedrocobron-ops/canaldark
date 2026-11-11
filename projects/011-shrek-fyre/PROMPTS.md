@@ -62,7 +62,7 @@ Realistic photo of rows of soaked white disaster relief tents on a muddy beach i
 ## 10.jpg
 
 ```
-Realistic photo of a messy festival catering tent on a beach with folding tables, styrofoam boxes and crates of onions. A 2D cartoon Shrek (big green ogre, trumpet-shaped ears, beige tunic, brown vest) inserted into the real photo, hidden behind a tall stack of onion crates, only his green trumpet-shaped ears sticking out, vertical 9:16
+Realistic photo of a messy festival catering tent on a beach with folding tables, styrofoam boxes and crates of onions. A 3D animated Shrek (big green ogre, trumpet-shaped ears, beige tunic, brown vest) inserted into the real photo, hidden behind a tall stack of onion crates, only his green trumpet-shaped ears sticking out, vertical 9:16
 ```
 
 ## 11.jpg
@@ -116,7 +116,7 @@ Realistic photo of an abandoned festival site on a tropical beach at dusk, colla
 ## 18.jpg
 
 ```
-Realistic close-up photo of a wooden judge's gavel striking a sound block on a courtroom bench, dramatic light. A 2D cartoon Shrek (big green ogre, trumpet-shaped ears, beige tunic, brown vest) inserted into the real photo, tiny and hidden as a reflection on the shiny brass part of the gavel, vertical 9:16
+Realistic close-up photo of a wooden judge's gavel striking a sound block on a courtroom bench, dramatic light. A 3D animated Shrek (big green ogre, trumpet-shaped ears, beige tunic, brown vest) inserted into the real photo, tiny and hidden as a reflection on the shiny brass part of the gavel, vertical 9:16
 ```
 
 ## 19.jpg
