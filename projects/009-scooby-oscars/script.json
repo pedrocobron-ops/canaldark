@@ -52,7 +52,7 @@
           "img": "03.jpg",
           "n": 2,
           "fx": "zoom_in",
-          "cap_y": 0.24,
+          "cap_y": 0.8,
           "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo backstage at an awards show, each handcuffed to a silver briefcase, standing at attention like serious security guards, trying to look tough"
         }
       ]
@@ -125,7 +125,7 @@
           "n": 3,
           "fx": "zoom_in",
           "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo in the dark backstage wings of an awards show with their mouths full of food, happily eating and watching the celebration on stage without noticing anything wrong, silver briefcases at their feet",
-          "cap_y": 0.24
+          "cap_y": 0.8
         }
       ]
     },
@@ -226,7 +226,7 @@
           "n": 2,
           "fx": "shake",
           "tr": "punch",
-          "cap_y": 0.24,
+          "cap_y": 0.8,
           "prompt": "Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo with a shocked face and his hands on his cheeks, mouth stuffed with hot dog, Scooby-Doo collapsed behind him with a full round belly, empty hot dog plates everywhere"
         }
       ]
@@ -261,7 +261,7 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "whip",
-          "cap_y": 0.24,
+          "cap_y": 0.8,
           "prompt": "Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo carefully wrapping half of a sandwich dripping mustard inside a red award envelope taken from an open silver briefcase, Scooby-Doo drooling next to him, backstage"
         }
       ]

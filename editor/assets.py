@@ -826,7 +826,7 @@ BADGES = {
     "johnny": {"photo": "projects/007-johnny-bravo-vmas/images/01.jpg", "crop": [0.28, 0.15, 0.72],
                "event": "VMA 2009", "sub": "MTV VIDEO MUSIC AWARDS", "name": "JOHNNY BRAVO",
                "role": "HEAD OF SECURITY", "id": "SEC-0001", "date": "SEPT 13, 2009 · RADIO CITY"},
-    "scooby": {"photo": "projects/009-scooby-oscars/images/03.jpg", "crop": [0.10, 0.20, 0.55],
+    "scooby": {"photo": "projects/009-scooby-oscars/images/01.jpg", "crop": [0.12, 0.16, 0.50],
                "event": "OSCARS 2017", "sub": "ENVELOPE SECURITY · BACKSTAGE", "name": "SCOOBY-DOO",
                "role": "BRIEFCASE GUARD", "id": "SNACK-01", "date": "FEB 26, 2017 · LOS ANGELES",
                "access": ["ALL", "SNACKS"], "top": (90, 20, 20)},
