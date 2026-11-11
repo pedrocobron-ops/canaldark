@@ -1395,7 +1395,7 @@ def envelope(name):
 
 
 THERMOS = {
-    "lox": {"value": "-297°F", "label": "OXYGEN TANK No. 2", "sub": "Liquid oxygen", "level": 0.06},
+    "lox": {"value": "-297°F", "label": "OXYGEN TANK No. 2", "sub": "Cryogenic oxygen", "level": 0.06},
 }
 
 
@@ -1428,7 +1428,7 @@ BOARDS = {
     "armwrestle": {"title": "ARM WRESTLING", "sub": "Backstage · Radio City Music Hall",
                    "left": "JOHNNY", "right": "ROCKETTES", "l": "0", "r": "35"},
     "carrots": {"title": "JUDGE'S SCORE", "sub": "Carrot Cake Bake-Off · NASA cafeteria · 1970",
-                "left": "BUGS", "right": "EVERYONE ELSE", "l": "0", "r": "10"},
+                "left": "WABBIT", "right": "EVERYONE ELSE", "l": "0", "r": "10"},
     "hotdogs": {"title": "HOT DOG CHALLENGE", "sub": "Backstage catering · Oscars 2017",
                 "left": "SCOOBY & SHAGGY", "right": "WAITER", "l": "84", "r": "85"},
     "rock": {"title": "UNDER-A-ROCK", "sub": "Championship 2021 · Bottom of the Suez Canal",

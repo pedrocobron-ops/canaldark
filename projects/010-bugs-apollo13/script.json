@@ -2,10 +2,10 @@
   "title": "Why didn't Bugs Bunny stop the Apollo 13 explosion in 1970?",
   "format": "A",
   "voice": "am_adam",
-  "speed": 0.95,
+  "speed": 0.98,
   "music_volume": 0.24,
   "hook_full": true,
-  "post": "\"Houston, we've had a problem.\" Apollo 13's oxygen tank exploded in 1970... so why didn't Bugs Bunny stop it? Would you trade a moon landing for a mug that says Thanks for Participating? 👇 #bugsbunny #looneytunes #apollo13 #nasa #didyouknow #space",
+  "post": "\"Houston, we've had a problem.\" Apollo 13's oxygen tank exploded in 1970... so why didn't Bugs Bunny stop it? Would you trade a moon landing for a mug that says Thanks for Participating? 👇 #bugsbunny #looneytunes #apollo13 #nasa #didyouknow #history",
   "style_suffix": "2D cartoon illustration in the classic Looney Tunes Warner Bros style, bold outlines, vibrant colors, vertical 9:16 composition",
   "wardrobe": {
     "Bugs Bunny": "grey and white rabbit, white gloves, white lab coat with a round blue NASA-style patch (same in every image)",
@@ -13,7 +13,7 @@
   },
   "cover": {
     "img": "14.jpg",
-    "text": "Why didn't {y:Bugs Bunny} stop {r:Apollo 13}?",
+    "text": "Why didn't {y:Bugs Bunny} stop {r:Apollo 13}?",
     "y": 0.72
   },
   "beats": [
@@ -45,7 +45,7 @@
           "n": 2,
           "fx": "zoom_in",
           "tr": "punch",
-          "cap_y": 0.78,
+          "cap_y": 0.74,
           "bg_img": "02.jpg"
         },
         {
@@ -75,7 +75,7 @@
           "tr": "punch",
           "bg_img": "03.jpg",
           "tilt": -3,
-          "cap_y": 0.8
+          "cap_y": 0.74
         }
       ]
     },
@@ -91,11 +91,11 @@
           "tilt": 3
         },
         {
-          "img": "23.jpg",
+          "img": "24.jpg",
           "n": 1,
-          "fx": "zoom_out",
+          "fx": "zoom_in",
           "tr": "zoom",
-          "prompt": "Realistic photo of a tiny Apollo spacecraft far away in black space, the small blue Earth in the distance behind it and the grey Moon ahead"
+          "cap_y": 0.2
         },
         {
           "img": "05.jpg",
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "say": "The astronauts | radioed: | {r:Houston, we've had a problem}.",
+      "say": "The astronauts | radioed: | {r:Okay, Houston, we've had a problem here}.",
       "shots": [
         {
           "img": "06.jpg",
@@ -125,7 +125,7 @@
           "tr": "punch",
           "bg_img": "06.jpg",
           "bg_dark": 0.65,
-          "cap_y": 0.8
+          "cap_y": 0.74
         }
       ]
     },
@@ -162,24 +162,31 @@
           "n": 3,
           "fx": "zoom_in",
           "tr": "zoom",
-          "prompt": "Realistic vintage 1970 photo of a NASA cafeteria with long tables, trays and a serving counter, film grain. A 2D cartoon Bugs Bunny (grey and white rabbit) inserted into the real photo, hidden behind the serving counter, only his two long grey ears sticking up, vertical 9:16"
+          "prompt": "Realistic vintage 1970 photo of a NASA cafeteria with long tables, trays and a serving counter, film grain. A 2D cartoon Bugs Bunny (grey and white rabbit) inserted into the real photo, hidden behind the serving counter, only his two long grey ears sticking up, vertical 9:16",
+          "cap_y": 0.3
         }
       ]
     },
     {
-      "say": "That day, | the cafeteria held | a {y:carrot cake bake-off}.",
+      "say": "Back in {y:1968}, | the cafeteria held | a {y:carrot cake bake-off}.",
       "shots": [
         {
           "img": "10.jpg",
-          "n": 3,
+          "n": 2,
           "fx": "zoom_in",
           "tr": "whip",
           "prompt": "Cartoon 1970 NASA cafeteria with a long table full of homemade carrot cakes, a banner that says CARROT CAKE BAKE-OFF, cartoon NASA engineers in white shirts proudly showing their cakes"
+        },
+        {
+          "img": "extra_carrotchallenge.jpg",
+          "n": 1,
+          "fx": "zoom_in",
+          "tr": "punch"
         }
       ]
     },
     {
-      "say": "The judge | was {r:Elmer Fudd}. | Bugs came in {r:last}.",
+      "say": "The judge | was {r:Elmer Fudd}. | The {r:wabbit} came in last.",
       "shots": [
         {
           "img": "11.jpg",
@@ -197,7 +204,7 @@
           "fx": "zoom_in",
           "tr": "punch",
           "bg_img": "10.jpg",
-          "cap_y": 0.78
+          "cap_y": 0.74
         }
       ]
     },
@@ -212,7 +219,8 @@
           "sfx": [
             "ding"
           ],
-          "prompt": "Realistic photo of a plain white coffee mug with a small blue NASA-style round logo and the words THANKS FOR PARTICIPATING printed on it, standing alone on a 1970 metal office desk under a desk lamp, dramatic lighting"
+          "prompt": "Realistic photo of a plain white coffee mug with a small blue NASA-style round logo and the words THANKS FOR PARTICIPATING printed on it, standing alone on a 1970 metal office desk under a desk lamp, dramatic lighting",
+          "cap_y": 0.22
         }
       ]
     },
@@ -255,16 +263,16 @@
             "ding"
           ],
           "bg_img": "15.jpg",
-          "cap_y": 0.8
+          "cap_y": 0.74
         }
       ]
     },
     {
-      "say": "And this part is {y:real}: | that tank | had been {r:dropped} | at the factory.",
+      "say": "And this part is {y:real}: | that same year, | that tank | was {r:dropped} | at the factory.",
       "shots": [
         {
           "img": "16.jpg",
-          "n": 2,
+          "n": 3,
           "fx": "zoom_out",
           "tr": "fade",
           "prompt": "Cartoon scene in a 1968 NASA factory: two factory workers in white coveralls staring in shock at a big silver tank with a small dent lying on the floor, while Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) walks away in the background whistling innocently with his hands behind his back"
@@ -279,7 +287,7 @@
       ]
     },
     {
-      "say": "To survive, | the astronauts built a filter | out of {y:duct tape}, | a {y:sock} | and a plastic bag.",
+      "say": "To survive, | the astronauts built a filter | out of {y:duct tape}, | a {y:sock} | and a plastic bag. | The sock | was Bugs's.",
       "shots": [
         {
           "img": "17.jpg",
@@ -293,6 +301,13 @@
           "n": 3,
           "fx": "zoom_in",
           "prompt": "Realistic photo of a single white tube sock and a roll of grey duct tape floating in zero gravity inside a 1970 spacecraft, warm cabin light. A 2D cartoon Bugs Bunny (grey and white rabbit) inserted into the real photo, tiny and hidden as a reflection in a small round window, vertical 9:16"
+        },
+        {
+          "img": "25.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "cap_y": 0.2
         }
       ]
     },
@@ -303,7 +318,7 @@
           "img": "19.jpg",
           "n": 2,
           "fx": "zoom_out",
-          "tr": "fade",
+          "tr": "whip",
           "prompt": "Realistic vintage 1970 photo of a cone-shaped space capsule splashing down in the blue Pacific Ocean under three big orange and white parachutes"
         }
       ]
@@ -317,7 +332,7 @@
           "fx": "shake",
           "tr": "punch",
           "bg_img": "06.jpg",
-          "cap_y": 0.86
+          "cap_y": 0.74
         },
         {
           "img": "20.jpg",
@@ -330,22 +345,27 @@
       ]
     },
     {
-      "say": "To this day, | Bugs drinks his coffee | from the mug. | {y:That's all, folks}.",
+      "say": "To this day, | Bugs drinks his coffee | from that mug. | His inspection report | still says: | {y:nothing inside}.",
       "shots": [
         {
           "img": "21.jpg",
-          "n": 2,
+          "n": 3,
           "fx": "zoom_in",
           "tr": "whip",
-          "cap_y": 0.24,
+          "cap_y": 0.82,
           "prompt": "Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) sipping from a white coffee mug that says THANKS FOR PARTICIPATING, eyes half closed, satisfied, sitting on top of a floating space capsule in the ocean"
         },
         {
           "img": "22.jpg",
-          "n": 2,
+          "n": 3,
           "fx": "pop",
           "tr": "punch",
-          "prompt": "Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) winking at the camera and waving goodbye, holding a carrot, a speech bubble that says THAT'S ALL, FOLKS!, plain red curtain background"
+          "prompt": "Bugs Bunny from Looney Tunes (grey and white rabbit, white gloves, wearing a white lab coat with a round blue NASA-style patch) winking at the camera and waving goodbye, holding a carrot, a speech bubble that says THAT'S ALL, FOLKS!, plain red curtain background",
+          "fit": "contain",
+          "scale": 0.86,
+          "shift_x": -0.05,
+          "bg": "#c8231d",
+          "cap_y": 0.84
         }
       ]
     }
