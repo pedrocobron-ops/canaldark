@@ -18,7 +18,7 @@
 | Why didn't Barney warn the dinosaurs about the asteroid? | A | Barney | extinção dos dinossauros | só fala coisa feliz, avisou cantando | em produção (006) |
 | Why didn't Johnny Bravo stop Kanye from interrupting Taylor Swift? | A | Johnny Bravo | VMA 2009 | campeonato de queda de braço com as Rockettes, prêmio: spray de cabelo de viagem | feito (007) |
 | Why didn't Patrick Star stop the Ever Given from blocking the Suez Canal? | A | Patrick | navio encalhado no Canal de Suez (2021) | campeonato de quem fica mais tempo debaixo da pedra, prêmio: cupom de uma bola de sorvete | feito (008) |
-| Why didn't Scooby-Doo stop the biggest mistake in Oscars history? | A | Scooby-Doo e Salsicha | envelope trocado no Oscar 2017 | campeonato de cachorro-quente, prêmio: metade do sanduíche do garçom | em produção (009) |
+| Why didn't Scooby-Doo stop the biggest mistake in Oscars history? | A | Scooby-Doo e Salsicha | envelope trocado no Oscar 2017 | campeonato de cachorro-quente, prêmio: metade do sanduíche do garçom | feito (009) |
 
 ## Personagens com apelo nos EUA (pesquisa de 10/11/2026)
 
@@ -39,3 +39,4 @@ Fonte principal: YouGov, 2018 (Bugs Bunny 11%, Tom e Jerry 6%, Scooby-Doo 5%; Sp
 | 3 | Patrulha Canina | pais e crianças | Spin Master | não |
 
 Evitar: Simpsons, Family Guy e Futurama (hoje são da Disney), Pokémon (Nintendo), Bluey (distribuição Disney fora da Austrália).
+| Why didn't Bugs Bunny stop the Apollo 13 explosion? | A | Pernalonga | explosão do tanque de oxigênio da Apollo 13 (1970) | campeonato de comer cenoura contra o Hortelino, prêmio: caneca da NASA de 2º lugar | em produção (010) |

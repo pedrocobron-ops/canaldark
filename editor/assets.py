@@ -247,6 +247,7 @@ def lock(name, visible=None, struck=0):
 CALS = {
     "sunday": {"month": "APRIL 1912", "num": "14", "day": "SUNDAY", "time": "11:40 PM", "color": (200, 30, 40)},
     "monday": {"month": "APRIL 1912", "num": "15", "day": "MONDAY", "time": "12:00 AM", "color": (200, 30, 40)},
+    "apollo": {"month": "APRIL 1970", "num": "13", "day": "MONDAY", "time": "9:08 PM CST", "color": (20, 60, 140)},
     "oscars": {"month": "FEBRUARY 2017", "num": "26", "day": "SUNDAY", "time": "9:05 PM", "color": (170, 20, 30)},
     "suez": {"month": "MARCH 2021", "num": "23", "day": "TUESDAY", "time": "7:40 AM", "color": (20, 90, 160)},
     "monday_sink": {"month": "APRIL 1912", "num": "15", "day": "MONDAY", "time": "2:20 AM", "color": (200, 30, 40)},
@@ -511,6 +512,8 @@ def receipt(name):
 
 
 STATS = {
+    "dropped": {"num": "2 in.", "text": ["Oxygen tank No. 2 was", "dropped at the factory", "two years before launch"],
+                "src": "Source: Apollo 13 Review Board, NASA, 1970"},
     "evergiven": {"num": "400 m", "text": ["longer than the Eiffel", "Tower is tall"], "src": "Ever Given · 1,312 ft"},
     "suez96": {"num": "$9.6B", "text": ["of trade blocked", "every single day"], "src": "Source: Lloyd's List, March 2021"},
     "rockodds": {"num": "99%", "text": ["of the fish bet", "on Patrick"], "src": "Under-A-Rock Championship 2021"},
@@ -826,6 +829,10 @@ BADGES = {
     "johnny": {"photo": "projects/007-johnny-bravo-vmas/images/01.jpg", "crop": [0.28, 0.15, 0.72],
                "event": "VMA 2009", "sub": "MTV VIDEO MUSIC AWARDS", "name": "JOHNNY BRAVO",
                "role": "HEAD OF SECURITY", "id": "SEC-0001", "date": "SEPT 13, 2009 · RADIO CITY"},
+    "bugs": {"photo": "projects/010-bugs-apollo13/images/01.jpg", "crop": [0.25, 0.08, 0.75],
+             "event": "APOLLO 13", "sub": "NASA · MANNED SPACECRAFT CENTER", "name": "BUGS BUNNY",
+             "role": "TANK INSPECTOR", "id": "O2-0002", "date": "APRIL 1970 · TANK No. 2",
+             "access": ["TANK", "ACCESS"], "top": (20, 40, 110)},
     "scooby": {"photo": "projects/009-scooby-oscars/images/01.jpg", "crop": [0.12, 0.16, 0.50],
                "event": "OSCARS 2017", "sub": "ENVELOPE SECURITY · BACKSTAGE", "name": "SCOOBY-DOO",
                "role": "BRIEFCASE GUARD", "id": "SNACK-01", "date": "FEB 26, 2017 · LOS ANGELES",
@@ -929,6 +936,7 @@ def badge(name):
 
 
 QUOTES = {
+    "apollo": {"text": ["\"Okay, Houston,", "we've had", "a problem here.\""], "who": "Apollo 13 · April 13, 1970 · 55 hours into the mission"},
     "horowitz": {"text": ["\"Moonlight,", "you guys won.", "This is", "not a joke.\""], "who": "Jordan Horowitz · La La Land producer · Feb 26, 2017"},
     "patrick": {"text": ["\"I waved.", "It didn't", "wave back.\""], "who": "Patrick Star · official statement · March 2021"},
     "call": {"text": ["\"Hello, is this", "the ship guide?\""], "who": "Suez Canal Authority · phone call · March 23, 2021"},
@@ -1100,6 +1108,10 @@ def site(name):
 
 
 REPORTS = {
+    "jobbugs": {"title": "JOB DESCRIPTION", "sub": "NASA · Manned Spacecraft Center · 1970",
+                "rows": [("Position", "Tank inspector"), ("Duty", "Look inside tanks"), ("Must find", "Nothing"),
+                         ("Lunch", "12:00 sharp"), ("Carrots", "Not allowed"), ("Hired", "Bugs Bunny")],
+                "stamp": "HIRED"},
     "job": {"title": "JOB DESCRIPTION", "sub": "Suez Canal Authority · Position #0002",
             "rows": [("Position", "Official ship guide"), ("Duty 1", "Wave flag (left)"), ("Duty 2", "Wave flag (right)"),
                      ("Other duties", "None"), ("Hours", "When awake"), ("Hired", "Patrick Star")],
@@ -1253,6 +1265,7 @@ def podium(name):
 
 
 CALLS = {
+    "houston": {"caller": "Houston Mission Control", "sub": "NASA · Texas", "note": "We've had a problem."},
     "suez": {"caller": "Suez Canal Authority", "sub": "Egypt · mobile", "note": "Is this the ship guide?"},
 }
 
@@ -1384,6 +1397,8 @@ def envelope(name):
 BOARDS = {
     "armwrestle": {"title": "ARM WRESTLING", "sub": "Backstage · Radio City Music Hall",
                    "left": "JOHNNY", "right": "ROCKETTES", "l": "0", "r": "35"},
+    "carrots": {"title": "CARROT CHALLENGE", "sub": "NASA cafeteria · Houston · April 1970",
+                "left": "BUGS", "right": "ELMER", "l": "99", "r": "100"},
     "hotdogs": {"title": "HOT DOG CHALLENGE", "sub": "Backstage catering · Oscars 2017",
                 "left": "SCOOBY & SHAGGY", "right": "WAITER", "l": "84", "r": "85"},
     "rock": {"title": "UNDER-A-ROCK", "sub": "Championship 2021 · Bottom of the Suez Canal",
