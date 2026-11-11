@@ -1,5 +1,5 @@
 {
-  "title": "Why didn't Scooby-Doo stop the biggest mistake in Oscars history?",
+  "title": "Why didn't Scooby-Doo stop La La Land from winning the wrong Oscar?",
   "format": "A",
   "voice": "am_adam",
   "speed": 0.95,
@@ -13,12 +13,12 @@
   },
   "cover": {
     "img": "19.jpg",
-    "text": "Why didn't {y:Scooby-Doo} stop the {r:Oscars} mistake?",
+    "text": "Why didn't {y:Scooby-Doo} stop the {r:Oscars} mix-up?",
     "y": 0.72
   },
   "beats": [
     {
-      "say": "Why didn't {y:Scooby-Doo} | stop the {r:biggest mistake} | in {y:Oscars} history?",
+      "say": "Why didn't {y:Scooby-Doo} | stop {r:La La Land} | from winning | the wrong {y:Oscar}?",
       "shots": [
         {
           "img": "01.jpg",
@@ -123,7 +123,8 @@
           "img": "09.jpg",
           "n": 3,
           "fx": "zoom_in",
-          "prompt": "Cartoon movie producers in tuxedos giving happy speeches at a microphone on a big awards stage, holding golden statuettes, a clock in the corner showing 2 minutes passing, generic cartoon people"
+          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo in the dark backstage wings of an awards show with their mouths full of food, happily eating and watching the celebration on stage without noticing anything wrong, silver briefcases at their feet",
+          "cap_y": 0.24
         }
       ]
     },
@@ -240,20 +241,27 @@
           "sfx": [
             "ding"
           ],
-          "prompt": "Realistic photo of half of a sandwich with a big mustard drip, displayed on a red velvet pedestal under a single dramatic spotlight like a precious museum treasure, dark background"
+          "prompt": "Realistic photo of half of a sandwich with a big mustard drip served on a shiny silver trophy plate with a small engraved plaque that says 2ND PLACE, held by a waiter's white-gloved hand, catering kitchen background"
         }
       ]
     },
     {
-      "say": "Shaggy saved it | for later, | wrapped in the {r:Best Actress} envelope.",
+      "say": "Best Actress | was already announced, | so Shaggy wrapped it | in the {r:spare envelope}.",
       "shots": [
         {
+          "img": "25.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "whip",
+          "prompt": "Cartoon actress with a blonde bob in an elegant golden dress smiling and holding a golden award statuette on a big awards stage, applause, generic cartoon person, no real celebrity"
+        },
+        {
           "img": "18.jpg",
-          "n": 3,
+          "n": 2,
           "fx": "zoom_in",
           "tr": "whip",
           "cap_y": 0.24,
-          "prompt": "Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo carefully wrapping half of a sandwich dripping mustard inside a red award envelope, Scooby-Doo drooling next to him, backstage"
+          "prompt": "Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo carefully wrapping half of a sandwich dripping mustard inside a red award envelope taken from an open silver briefcase, Scooby-Doo drooling next to him, backstage"
         }
       ]
     },
@@ -278,30 +286,37 @@
       ]
     },
     {
-      "say": "And this part is {y:real}: | Beatty was holding | the {r:Best Actress} envelope | for {y:La La Land}.",
+      "say": "And this part is {y:real}: | the man in charge | of the envelopes | was backstage | {r:tweeting a photo} | of Emma Stone.",
       "shots": [
-        {
-          "img": "@envelope:actress",
-          "n": 2,
-          "fx": "zoom_in",
-          "tr": "fade",
-          "bg_img": "07.jpg",
-          "tilt": -3
-        },
         {
           "img": "21.jpg",
           "n": 2,
           "fx": "zoom_out",
           "prompt": "Realistic photo from the back of a theater audience of a big awards stage in chaos, many people standing on stage confused, stage lights, golden backdrop, no recognizable faces"
+        },
+        {
+          "img": "24.jpg",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "prompt": "Realistic close-up photo of a man's hand in a suit holding a smartphone backstage at an awards show, the phone screen showing a social media app posting a photo, two silver briefcases left open on a table behind him, dim backstage light, no face visible"
+        },
+        {
+          "img": "@envelope:actress",
+          "n": 2,
+          "fx": "zoom_in",
+          "tr": "punch",
+          "bg_img": "07.jpg",
+          "tilt": -3
         }
       ]
     },
     {
-      "say": "To this day, | Scooby says | it was a {y:great sandwich}. | {y:Scooby-Dooby-Doo}!",
+      "say": "To this day, | when people ask | why he didn't stop it, | Scooby just says: | {r:Ruh-roh}.",
       "shots": [
         {
           "img": "22.jpg",
-          "n": 2,
+          "n": 3,
           "fx": "zoom_in",
           "tr": "punch",
           "cap_y": 0.24,
@@ -312,7 +327,7 @@
           "n": 2,
           "fx": "pop",
           "tr": "punch",
-          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) from Scooby-Doo howling happily with his head up and eyes closed, a speech bubble that says SCOOBY-DOOBY-DOO!, golden confetti, awards show stage behind him"
+          "prompt": "Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) from Scooby-Doo with a guilty sheepish smile, ears down, a little mustard on his mouth, holding an empty red award envelope, a speech bubble that says RUH-ROH!, awards show stage behind him"
         }
       ]
     }

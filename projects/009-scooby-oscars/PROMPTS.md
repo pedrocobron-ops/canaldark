@@ -56,7 +56,7 @@ Cartoon crowd of happy movie cast members in tuxedos and gowns jumping and huggi
 ## 09.jpg
 
 ```
-Cartoon movie producers in tuxedos giving happy speeches at a microphone on a big awards stage, holding golden statuettes, a clock in the corner showing 2 minutes passing, generic cartoon people, 2D cartoon illustration in the classic Scooby-Doo Where Are You Hanna-Barbera style, bold outlines, vibrant colors, vertical 9:16 composition
+Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) and Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo in the dark backstage wings of an awards show with their mouths full of food, happily eating and watching the celebration on stage without noticing anything wrong, silver briefcases at their feet, 2D cartoon illustration in the classic Scooby-Doo Where Are You Hanna-Barbera style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 10.jpg
@@ -104,13 +104,19 @@ Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, bro
 ## 17.jpg
 
 ```
-Realistic photo of half of a sandwich with a big mustard drip, displayed on a red velvet pedestal under a single dramatic spotlight like a precious museum treasure, dark background, photorealistic, vertical 9:16
+Realistic photo of half of a sandwich with a big mustard drip served on a shiny silver trophy plate with a small engraved plaque that says 2ND PLACE, held by a waiter's white-gloved hand, catering kitchen background, photorealistic, vertical 9:16
+```
+
+## 25.jpg
+
+```
+Cartoon actress with a blonde bob in an elegant golden dress smiling and holding a golden award statuette on a big awards stage, applause, generic cartoon person, no real celebrity, 2D cartoon illustration in the classic Scooby-Doo Where Are You Hanna-Barbera style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 18.jpg
 
 ```
-Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo carefully wrapping half of a sandwich dripping mustard inside a red award envelope, Scooby-Doo drooling next to him, backstage, 2D cartoon illustration in the classic Scooby-Doo Where Are You Hanna-Barbera style, bold outlines, vibrant colors, vertical 9:16 composition
+Shaggy Rogers (skinny, messy brown hair, scruffy goatee, green V-neck shirt, brown pants, small black bow tie) from Scooby-Doo carefully wrapping half of a sandwich dripping mustard inside a red award envelope taken from an open silver briefcase, Scooby-Doo drooling next to him, backstage, 2D cartoon illustration in the classic Scooby-Doo Where Are You Hanna-Barbera style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
 
 ## 19.jpg
@@ -131,6 +137,12 @@ Realistic close-up photo of a red award envelope with a yellow mustard stain bei
 Realistic photo from the back of a theater audience of a big awards stage in chaos, many people standing on stage confused, stage lights, golden backdrop, no recognizable faces, photorealistic, vertical 9:16
 ```
 
+## 24.jpg
+
+```
+Realistic close-up photo of a man's hand in a suit holding a smartphone backstage at an awards show, the phone screen showing a social media app posting a photo, two silver briefcases left open on a table behind him, dim backstage light, no face visible, photorealistic, vertical 9:16
+```
+
 ## 22.jpg
 
 ```
@@ -140,5 +152,5 @@ Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, s
 ## 23.jpg
 
 ```
-Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) from Scooby-Doo howling happily with his head up and eyes closed, a speech bubble that says SCOOBY-DOOBY-DOO!, golden confetti, awards show stage behind him, 2D cartoon illustration in the classic Scooby-Doo Where Are You Hanna-Barbera style, bold outlines, vibrant colors, vertical 9:16 composition
+Scooby-Doo (brown Great Dane with black spots, blue collar with a gold SD tag, small black bow tie) from Scooby-Doo with a guilty sheepish smile, ears down, a little mustard on his mouth, holding an empty red award envelope, a speech bubble that says RUH-ROH!, awards show stage behind him, 2D cartoon illustration in the classic Scooby-Doo Where Are You Hanna-Barbera style, bold outlines, vibrant colors, vertical 9:16 composition
 ```
